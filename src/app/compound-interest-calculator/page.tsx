@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { FaCalculator, FaChartLine, FaMoneyBillWave, FaPercentage, FaCalendarAlt } from 'react-icons/fa';
+import { FaCalculator, FaChartLine, FaMoneyBillWave, FaPercentage, FaCalendarAlt, FaHome } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 interface CompoundResult {
   finalAmount: number;
@@ -106,71 +107,101 @@ export default function CompoundInterestCalculator() {
     });
   };
 
+  const resetCalculator = () => {
+    setPrincipal('');
+    setPrincipalDisplay('');
+    setMonthlyContribution('');
+    setMonthlyContributionDisplay('');
+    setAnnualRate('');
+    setYears('');
+    setCompoundingFrequency('monthly');
+    setResult(null);
+  };
+
   return (
-    <div className="min-h-screen bg-white">
-      <Header onSearch={() => {}} />
+    <div className="min-h-screen bg-gray-100">
+      <Header />
       
-      {/* 메인 계산기 섹션 */}
-      <div className="w-full px-8 py-12 bg-gray-50">
+      <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">복리계산기</h1>
+          <div className="text-center mb-6">
+            <div className="flex justify-center items-center mb-2">
+              <FaChartLine className="text-4xl text-black mr-3" />
+              <h1 className="text-4xl font-bold text-gray-800">복리계산기</h1>
+            </div>
             <p className="text-lg text-gray-600">복리 효과를 활용한 투자 수익을 계산해보세요</p>
           </div>
 
-          {/* 복리계산기 */}
-          <div className="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
+          {/* 입력 폼 */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-6">투자 정보 입력</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">초기 투자금 (원)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaMoneyBillWave className="inline mr-2 text-black" />
+                  초기 투자금 (원)
+                </label>
                 <input
                   type="text"
                   value={principalDisplay}
                   onChange={handlePrincipalChange}
                   placeholder="1,000,000"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">월 투자금 (원)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaMoneyBillWave className="inline mr-2 text-black" />
+                  월 투자금 (원)
+                </label>
                 <input
                   type="text"
                   value={monthlyContributionDisplay}
                   onChange={handleMonthlyContributionChange}
                   placeholder="100,000"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">연 수익률 (%)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaPercentage className="inline mr-2 text-black" />
+                  연 수익률 (%)
+                </label>
                 <input
                   type="number"
                   value={annualRate}
                   onChange={(e) => setAnnualRate(e.target.value)}
                   placeholder="7.0"
                   step="0.1"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                 />
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">투자 기간 (년)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaCalendarAlt className="inline mr-2 text-black" />
+                  투자 기간 (년)
+                </label>
                 <input
                   type="number"
                   value={years}
                   onChange={(e) => setYears(e.target.value)}
                   placeholder="10"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">복리 빈도</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaCalculator className="inline mr-2 text-black" />
+                  복리 빈도
+                </label>
                 <select
                   value={compoundingFrequency}
                   onChange={(e) => setCompoundingFrequency(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                 >
                   <option value="annually">연복리</option>
                   <option value="semiannually">반기복리</option>
@@ -181,114 +212,171 @@ export default function CompoundInterestCalculator() {
               </div>
             </div>
 
-            <div className="flex gap-4 mb-6">
+            <div className="flex gap-4 mt-6">
               <button
                 onClick={calculateCompoundInterest}
-                className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                className="flex-1 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center"
+                style={{ backgroundColor: '#003366' }}
               >
+                <FaCalculator className="mr-2" />
                 계산하기
               </button>
+              <button
+                onClick={resetCalculator}
+                className="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors duration-200"
+              >
+                초기화
+              </button>
             </div>
+          </div>
 
-            {/* 결과 표시 */}
-            {result && (
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">복리 계산 결과</h3>
-                
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="text-center p-4 bg-white rounded-lg border">
-                    <div className="text-sm text-gray-600 mb-1">최종 금액</div>
-                    <div className="text-2xl font-bold text-blue-600">
-                      {result.finalAmount.toLocaleString()}원
-                    </div>
-                    <div className="text-xs text-gray-500 mt-1">
-                      {years}년 후 총 자산
-                    </div>
+          {/* 구글 AdSense 광고 */}
+          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
+            <div className="text-center text-gray-500 text-xs mb-1">Google AdSense</div>
+            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
+              구글 AdSense 광고 (320x80)
+            </div>
+          </div>
+
+          {/* 결과 표시 */}
+          {result && (
+            <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+              <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">복리 계산 결과</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                  <div className="flex items-center mb-3">
+                    <FaMoneyBillWave className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">최종 금액</h4>
                   </div>
-                  <div className="text-center p-4 bg-white rounded-lg border">
-                    <div className="text-sm text-gray-600 mb-1">총 투자금</div>
-                    <div className="text-2xl font-bold text-green-600">
-                      {result.totalContribution.toLocaleString()}원
-                    </div>
-                    <div className="text-xs text-gray-500 mt-1">
-                      원금 + 월 투자금 합계
-                    </div>
+                  <div className="text-2xl font-bold text-black">
+                    {result.finalAmount.toLocaleString()}원
                   </div>
-                  <div className="text-center p-4 bg-white rounded-lg border">
-                    <div className="text-sm text-gray-600 mb-1">총 수익</div>
-                    <div className="text-2xl font-bold text-red-600">
-                      {result.totalInterest.toLocaleString()}원
-                    </div>
-                    <div className="text-xs text-gray-500 mt-1">
-                      복리 효과로 얻은 수익
-                    </div>
+                </div>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                  <div className="flex items-center mb-3">
+                    <FaChartLine className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">총 이자 수익</h4>
+                  </div>
+                  <div className="text-2xl font-bold text-black">
+                    {result.totalInterest.toLocaleString()}원
+                  </div>
+                </div>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                  <div className="flex items-center mb-3">
+                    <FaCalculator className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">총 투자금액</h4>
+                  </div>
+                  <div className="text-2xl font-bold text-black">
+                    {result.totalContribution.toLocaleString()}원
                   </div>
                 </div>
               </div>
-            )}
-          </div>
 
-          {/* 연도별 상세 내역 */}
-          {result && (
-            <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                <FaCalendarAlt className="mr-2 text-green-600" />
-                연도별 상세 내역
-              </h3>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="bg-gray-50">
-                      <th className="px-4 py-3 text-left font-semibold text-gray-700">연도</th>
-                      <th className="px-4 py-3 text-left font-semibold text-gray-700">투자금</th>
-                      <th className="px-4 py-3 text-left font-semibold text-gray-700">수익</th>
-                      <th className="px-4 py-3 text-left font-semibold text-gray-700">총 자산</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {result.yearlyBreakdown.map((item, index) => (
-                      <tr key={item.year} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                        <td className="px-4 py-3 text-gray-700">{item.year}년</td>
-                        <td className="px-4 py-3 font-semibold text-green-600">
-                          {item.contribution.toLocaleString()}원
-                        </td>
-                        <td className="px-4 py-3 font-semibold text-red-600">
-                          {item.interest.toLocaleString()}원
-                        </td>
-                        <td className="px-4 py-3 font-semibold text-blue-600">
-                          {item.balance.toLocaleString()}원
-                        </td>
+              {/* 연도별 상세 내역 */}
+              <div className="mt-8">
+                <h4 className="text-lg font-semibold text-gray-800 mb-4">연도별 상세 내역</h4>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse border border-gray-200">
+                    <thead>
+                      <tr className="bg-gray-50">
+                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">연도</th>
+                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">투자금액</th>
+                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">이자 수익</th>
+                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">누적 잔액</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {result.yearlyBreakdown.map((item, index) => (
+                        <tr key={item.year} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                          <td className="border border-gray-200 px-4 py-2 text-center">{item.year}년</td>
+                          <td className="border border-gray-200 px-4 py-2 text-right font-semibold text-black">
+                            {item.contribution.toLocaleString()}원
+                          </td>
+                          <td className="border border-gray-200 px-4 py-2 text-right font-semibold text-black">
+                            {item.interest.toLocaleString()}원
+                          </td>
+                          <td className="border border-gray-200 px-4 py-2 text-right font-semibold text-black">
+                            {item.balance.toLocaleString()}원
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           )}
 
-          {/* 설명 섹션 */}
-          <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-              <FaPercentage className="mr-2 text-purple-600" />
-              복리계산기 설명
-            </h3>
-            <div className="prose text-gray-600 space-y-3">
-              <p>
-                <strong>복리 효과:</strong> 이전 기간의 수익이 다음 기간의 원금에 포함되어 수익이 기하급수적으로 증가하는 현상입니다.
-              </p>
-              <p>
-                <strong>복리 빈도:</strong> 연복리, 반기복리, 분기복리, 월복리, 일복리 등 수익이 원금에 합산되는 주기입니다.
-              </p>
-              <p>
-                <strong>월 투자금:</strong> 매월 정기적으로 투자하는 금액으로, 복리 효과로 인해 장기적으로 큰 차이를 만듭니다.
-              </p>
-              <p>
-                <strong>총 수익:</strong> 원금과 월 투자금을 제외한 순수한 수익으로, 복리 효과의 힘을 보여줍니다.
-              </p>
+          {/* 복리 계산 설명 */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-6">복리 계산 공식</h3>
+            <div className="space-y-4 text-gray-600">
+              <p>• <strong>복리 효과:</strong> 이자에 대한 이자가 추가로 발생하는 효과</p>
+              <p>• <strong>최종 금액:</strong> 초기금액 × (1 + 이율)^기간 + 월투자금 × 복리계산</p>
+              <p>• <strong>복리 빈도:</strong> 이자가 계산되는 주기 (월복리, 분기복리 등)</p>
+            </div>
+          </div>
+
+          {/* 주의사항 */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-6">주의사항</h3>
+            <div className="space-y-4 text-gray-600">
+              <p>• <strong>이 계산기는 참고용입니다.</strong> 실제 투자 수익률은 변동될 수 있습니다.</p>
+              <p>• <strong>복리 효과:</strong> 투자 기간이 길수록 복리 효과가 커집니다.</p>
+              <p>• <strong>위험 요소:</strong> 투자에는 원금 손실의 위험이 따를 수 있습니다.</p>
+            </div>
+          </div>
+
+          {/* 스폰서 개인 광고 - 관련계산기 위 */}
+          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
+            <div className="text-center text-gray-500 text-xs mb-1">스폰서 광고</div>
+            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
+              스폰서 개인 광고 (320x80)
+            </div>
+          </div>
+
+          {/* 관련 계산기 */}
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-6">관련 계산기</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <a href="/investment-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+                <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaChartLine className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">투자 계산기</h4>
+                <p className="text-xs text-gray-600">수익률 계산</p>
+              </a>
+              
+              <a href="/inflation-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+                <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaPercentage className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">인플레이션 계산기</h4>
+                <p className="text-xs text-gray-600">물가 상승</p>
+              </a>
+              
+              <a href="/retirement-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+                <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaHome className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">은퇴 계산기</h4>
+                <p className="text-xs text-gray-600">은퇴 계획</p>
+              </a>
+              
+              <a href="/salary-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+                <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaMoneyBillWave className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">급여 계산기</h4>
+                <p className="text-xs text-gray-600">실수령액</p>
+              </a>
             </div>
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 } 

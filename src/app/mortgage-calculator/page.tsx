@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FaHome, FaCalculator, FaChartLine, FaMoneyBillWave, FaCalendarAlt, FaPercent } from "react-icons/fa";
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 interface MortgageResult {
   monthlyPayment: number;
@@ -155,14 +156,14 @@ export default function MortgageCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100">
+    <div className="min-h-screen bg-gray-100">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <div className="flex justify-center items-center mb-4">
-              <FaHome className="text-4xl text-green-500 mr-3" />
+          <div className="text-center mb-6">
+            <div className="flex justify-center items-center mb-2">
+              <FaHome className="text-4xl text-black mr-3" />
               <h1 className="text-4xl font-bold text-gray-800">주택담보대출 계산기</h1>
             </div>
             <p className="text-lg text-gray-600">월 상환금, 총 이자, 상환 스케줄 계산</p>
@@ -175,21 +176,21 @@ export default function MortgageCalculator() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaMoneyBillWave className="inline mr-2 text-green-500" />
+                  <FaMoneyBillWave className="inline mr-2 text-black" />
                   대출금액 (원)
                 </label>
                 <input
                   type="text"
                   value={loanAmountDisplay}
                   onChange={handleLoanAmountChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                   placeholder="예: 300,000,000"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaPercent className="inline mr-2 text-blue-500" />
+                  <FaPercent className="inline mr-2 text-black" />
                   연 이자율 (%)
                 </label>
                 <input
@@ -197,20 +198,20 @@ export default function MortgageCalculator() {
                   step="0.01"
                   value={interestRate}
                   onChange={(e) => setInterestRate(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                   placeholder="예: 3.5"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaCalendarAlt className="inline mr-2 text-purple-500" />
+                  <FaCalendarAlt className="inline mr-2 text-black" />
                   대출기간 (년)
                 </label>
                 <select
                   value={loanTerm}
                   onChange={(e) => setLoanTerm(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                 >
                   <option value="5">5년</option>
                   <option value="10">10년</option>
@@ -225,13 +226,13 @@ export default function MortgageCalculator() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaChartLine className="inline mr-2 text-orange-500" />
+                  <FaChartLine className="inline mr-2 text-black" />
                   상환 방식
                 </label>
                 <select
                   value={paymentType}
                   onChange={(e) => setPaymentType(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                 >
                   <option value="equal">원리금균등상환</option>
                   <option value="principal">원금균등상환</option>
@@ -243,7 +244,8 @@ export default function MortgageCalculator() {
             <div className="flex gap-4 mt-6">
               <button
                 onClick={calculateMortgage}
-                className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center"
+                className="flex-1 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center"
+                style={{ backgroundColor: '#003366' }}
               >
                 <FaCalculator className="mr-2" />
                 계산하기
@@ -257,48 +259,56 @@ export default function MortgageCalculator() {
             </div>
           </div>
 
+          {/* 광고 자리 */}
+          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
+            <div className="text-center text-gray-500 text-xs mb-1">광고</div>
+            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
+              광고 영역 (320x80)
+            </div>
+          </div>
+
           {/* 결과 표시 */}
           {result && (
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
               <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">계산 결과</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
                   <div className="flex items-center mb-3">
-                    <FaMoneyBillWave className="text-2xl text-green-500 mr-3" />
+                    <FaMoneyBillWave className="text-2xl text-black mr-3" />
                     <h4 className="text-lg font-semibold text-gray-800">월 상환금</h4>
                   </div>
-                  <div className="text-2xl font-bold text-green-600">
+                  <div className="text-2xl font-bold text-black">
                     {formatCurrency(result.monthlyPayment)}원
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
                   <div className="flex items-center mb-3">
-                    <FaChartLine className="text-2xl text-blue-500 mr-3" />
+                    <FaChartLine className="text-2xl text-black mr-3" />
                     <h4 className="text-lg font-semibold text-gray-800">총 상환금</h4>
                   </div>
-                  <div className="text-2xl font-bold text-blue-600">
+                  <div className="text-2xl font-bold text-black">
                     {formatCurrency(result.totalPayment)}원
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl border border-red-200">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
                   <div className="flex items-center mb-3">
-                    <FaPercent className="text-2xl text-red-500 mr-3" />
+                    <FaPercent className="text-2xl text-black mr-3" />
                     <h4 className="text-lg font-semibold text-gray-800">총 이자</h4>
                   </div>
-                  <div className="text-2xl font-bold text-red-600">
+                  <div className="text-2xl font-bold text-black">
                     {formatCurrency(result.totalInterest)}원
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
                   <div className="flex items-center mb-3">
-                    <FaHome className="text-2xl text-purple-500 mr-3" />
+                    <FaHome className="text-2xl text-black mr-3" />
                     <h4 className="text-lg font-semibold text-gray-800">대출원금</h4>
                   </div>
-                  <div className="text-2xl font-bold text-purple-600">
+                  <div className="text-2xl font-bold text-black">
                     {formatCurrency(result.principal)}원
                   </div>
                 </div>
@@ -381,13 +391,21 @@ export default function MortgageCalculator() {
             </div>
           </div>
 
+          {/* 광고 자리 2 - 하단 */}
+          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
+            <div className="text-center text-gray-500 text-xs mb-1">광고</div>
+            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
+              광고 영역 2 (320x80)
+            </div>
+          </div>
+
           {/* 관련 계산기 */}
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h3 className="text-xl font-bold text-gray-800 mb-6">관련 계산기</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <a href="/loan-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
                 <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaMoneyBillWave className="text-xl text-blue-600" />
+                  <FaMoneyBillWave className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">대출 계산기</h4>
                 <p className="text-xs text-gray-600">일반 대출</p>
@@ -395,7 +413,7 @@ export default function MortgageCalculator() {
               
               <a href="/car-loan-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
                 <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaMoneyBillWave className="text-xl text-green-600" />
+                  <FaMoneyBillWave className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">자동차 대출</h4>
                 <p className="text-xs text-gray-600">차량 구매</p>
@@ -403,7 +421,7 @@ export default function MortgageCalculator() {
               
               <a href="/percentage-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
                 <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaCalculator className="text-xl text-orange-600" />
+                  <FaCalculator className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">백분율 계산기</h4>
                 <p className="text-xs text-gray-600">이자율 계산</p>
@@ -411,7 +429,7 @@ export default function MortgageCalculator() {
               
               <a href="/unit-converter" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
                 <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaCalculator className="text-xl text-purple-600" />
+                  <FaCalculator className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">단위 변환기</h4>
                 <p className="text-xs text-gray-600">통화 변환</p>
@@ -420,6 +438,7 @@ export default function MortgageCalculator() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 } 

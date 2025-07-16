@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaCalculator, FaMoneyBillWave, FaPercent, FaFileInvoiceDollar, FaChartLine, FaReceipt } from 'react-icons/fa';
+import { FaCalculator, FaMoneyBillWave, FaPercent, FaFileInvoiceDollar, FaChartLine, FaReceipt, FaHome, FaCreditCard, FaPiggyBank, FaChartBar, FaDollarSign, FaHandHoldingUsd, FaUniversity, FaShieldAlt, FaUserTie, FaGift, FaBalanceScale, FaUserCog, FaExchangeAlt, FaGlobe, FaTruck, FaBox, FaInfoCircle, FaExclamationTriangle } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
 
 interface SalesTaxResult {
@@ -103,14 +103,17 @@ export default function SalesTaxCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <Header onSearch={() => {}} />
       
       {/* 메인 계산기 섹션 */}
-      <div className="w-full px-8 py-12 bg-gray-50">
+      <div className="w-full px-8 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">판매세 계산기</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-4 flex items-center justify-center">
+              <FaCalculator className="mr-3 text-black" />
+              판매세 계산기
+            </h1>
             <p className="text-lg text-gray-600">부가가치세(VAT)를 포함한 판매가격을 계산해보세요</p>
           </div>
 
@@ -122,7 +125,7 @@ export default function SalesTaxCalculator() {
                 <select
                   value={calculationType}
                   onChange={(e) => setCalculationType(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                 >
                   <option value="forward">공급가액 → 합계금액</option>
                   <option value="reverse">합계금액 → 공급가액</option>
@@ -133,7 +136,7 @@ export default function SalesTaxCalculator() {
                 <select
                   value={taxpayerType}
                   onChange={(e) => setTaxpayerType(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                 >
                   <option value="general">일반과세자 (10%)</option>
                   <option value="simplified">간이과세자 (0.5~3%)</option>
@@ -151,7 +154,7 @@ export default function SalesTaxCalculator() {
                     value={supplyAmountDisplay}
                     onChange={handleSupplyAmountChange}
                     placeholder="1,000,000"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                   />
                   <p className="text-xs text-gray-500 mt-1">부가세를 제외한 금액</p>
                 </div>
@@ -163,7 +166,7 @@ export default function SalesTaxCalculator() {
                     onChange={(e) => setVatRate(e.target.value)}
                     placeholder="10"
                     step="0.1"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                   />
                   <p className="text-xs text-gray-500 mt-1">기본 10%, 간이과세자는 0.5~3%</p>
                 </div>
@@ -177,7 +180,7 @@ export default function SalesTaxCalculator() {
                     value={totalAmountDisplay}
                     onChange={handleTotalAmountChange}
                     placeholder="1,100,000"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                   />
                   <p className="text-xs text-gray-500 mt-1">부가세를 포함한 금액</p>
                 </div>
@@ -189,7 +192,7 @@ export default function SalesTaxCalculator() {
                     onChange={(e) => setVatRate(e.target.value)}
                     placeholder="10"
                     step="0.1"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                   />
                   <p className="text-xs text-gray-500 mt-1">기본 10%, 간이과세자는 0.5~3%</p>
                 </div>
@@ -199,10 +202,16 @@ export default function SalesTaxCalculator() {
             <div className="flex gap-4 mb-6">
               <button
                 onClick={calculateSalesTax}
-                className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                className="flex-1 bg-[#003366] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#002244] transition-colors"
               >
                 계산하기
               </button>
+            </div>
+
+            {/* 광고 플레이스홀더 */}
+            <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center mb-6">
+              <p className="text-gray-500 text-sm">광고 영역</p>
+              <p className="text-gray-400 text-xs mt-1">Google AdSense 또는 개인 광고 코드를 여기에 삽입하세요</p>
             </div>
 
             {/* 결과 표시 */}
@@ -213,7 +222,7 @@ export default function SalesTaxCalculator() {
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="text-center p-4 bg-white rounded-lg border">
                     <div className="text-sm text-gray-600 mb-1">공급가액</div>
-                    <div className="text-2xl font-bold text-blue-600">
+                    <div className="text-2xl font-bold text-black">
                       {result.supplyAmount.toLocaleString()}원
                     </div>
                     <div className="text-xs text-gray-500 mt-1">
@@ -247,84 +256,163 @@ export default function SalesTaxCalculator() {
           {result && (
             <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                <FaReceipt className="mr-2 text-orange-600" />
+                <FaReceipt className="mr-2 text-black" />
                 상세 계산 내역
               </h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-3">계산 과정</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">공급가액</span>
-                      <span className="font-semibold">{result.breakdown.supplyAmount.toLocaleString()}원</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">부가세율</span>
-                      <span className="font-semibold">{result.breakdown.vatRate}%</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">부가세</span>
-                      <span className="font-semibold text-red-600">{result.breakdown.vatAmount.toLocaleString()}원</span>
-                    </div>
-                    <hr className="my-2" />
-                    <div className="flex justify-between font-bold text-green-600">
-                      <span>합계금액</span>
-                      <span>{result.breakdown.totalAmount.toLocaleString()}원</span>
-                    </div>
-                  </div>
+              
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                  <span className="font-medium">공급가액</span>
+                  <span className="font-bold">{result.breakdown.supplyAmount.toLocaleString()}원</span>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-3">과세자 정보</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">과세자 구분</span>
-                      <span className="font-semibold">
-                        {taxpayerType === 'general' && '일반과세자'}
-                        {taxpayerType === 'simplified' && '간이과세자'}
-                        {taxpayerType === 'exempt' && '면세사업자'}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">적용 세율</span>
-                      <span className="font-semibold">{vatRate}%</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">신고 의무</span>
-                      <span className="font-semibold">
-                        {taxpayerType === 'general' && '월별 신고'}
-                        {taxpayerType === 'simplified' && '연 1회 신고'}
-                        {taxpayerType === 'exempt' && '신고 불필요'}
-                      </span>
-                    </div>
-                  </div>
+                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                  <span className="font-medium">부가세율</span>
+                  <span className="font-bold">{result.breakdown.vatRate}%</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                  <span className="font-medium">부가세</span>
+                  <span className="font-bold text-red-600">{result.breakdown.vatAmount.toLocaleString()}원</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-blue-50 rounded border-l-4 border-blue-500">
+                  <span className="font-medium">합계금액</span>
+                  <span className="font-bold text-blue-600">{result.breakdown.totalAmount.toLocaleString()}원</span>
                 </div>
               </div>
             </div>
           )}
 
-          {/* 설명 섹션 */}
+          {/* 설명 및 주의사항 */}
           <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-              <FaPercent className="mr-2 text-purple-600" />
-              판매세 계산기 설명
+              <FaInfoCircle className="mr-2 text-black" />
+              판매세 계산기 사용법
             </h3>
-            <div className="prose text-gray-600 space-y-3">
-              <p>
-                <strong>공급가액:</strong> 부가가치세를 제외한 순수한 상품/서비스의 가격입니다.
-              </p>
-              <p>
-                <strong>부가가치세:</strong> 상품/서비스의 부가가치에 대해 부과되는 세금으로, 기본 10%입니다.
-              </p>
-              <p>
-                <strong>합계금액:</strong> 공급가액에 부가가치세를 포함한 최종 판매가격입니다.
-              </p>
-              <p>
-                <strong>과세자 구분:</strong> 일반과세자(10%), 간이과세자(0.5~3%), 면세사업자(0%)로 구분됩니다.
-              </p>
+            
+            <div className="space-y-4 text-gray-700">
+              <div>
+                <h4 className="font-semibold mb-2">📊 계산 방식</h4>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li><strong>공급가액 → 합계금액:</strong> 부가세를 제외한 금액에서 부가세를 포함한 총 금액 계산</li>
+                  <li><strong>합계금액 → 공급가액:</strong> 부가세를 포함한 총 금액에서 부가세를 제외한 금액 계산</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">🏢 과세자 구분</h4>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li><strong>일반과세자:</strong> 매출 8,000만원 이상, 기본 부가세율 10%</li>
+                  <li><strong>간이과세자:</strong> 매출 8,000만원 미만, 업종별 0.5~3%</li>
+                  <li><strong>면세사업자:</strong> 부가세 면세 대상, 부가세율 0%</li>
+                </ul>
+              </div>
             </div>
+          </div>
+
+          {/* 주의사항 */}
+          <div className="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+            <div className="flex items-start">
+              <FaExclamationTriangle className="text-yellow-600 mt-0.5 mr-2 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold text-yellow-800 mb-1">주의사항</h4>
+                <ul className="text-sm text-yellow-700 space-y-1">
+                  <li>• 이 계산기는 참고용이며, 실제 세무 신고 시에는 전문가와 상담하세요</li>
+                  <li>• 간이과세자의 경우 업종별로 다른 세율이 적용될 수 있습니다</li>
+                  <li>• 면세 대상 상품이나 서비스의 경우 부가세가 면제됩니다</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 관련 계산기 */}
+          <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+              <FaCalculator className="mr-2 text-black" />
+              관련 계산기
+            </h3>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <a href="/vat-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+                <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaDollarSign className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">부가세 계산기</h4>
+                <p className="text-xs text-gray-600">VAT 계산</p>
+              </a>
+              
+              <a href="/income-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+                <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaUniversity className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">소득세 계산기</h4>
+                <p className="text-xs text-gray-600">세금 계산</p>
+              </a>
+              
+              <a href="/customs-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+                <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaGlobe className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">해외직구 계산기</h4>
+                <p className="text-xs text-gray-600">관세 계산</p>
+              </a>
+              
+              <a href="/business-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+                <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaChartBar className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">사업소득세 계산기</h4>
+                <p className="text-xs text-gray-600">사업세 계산</p>
+              </a>
+            </div>
+          </div>
+
+          {/* 광고 플레이스홀더 */}
+          <div className="mt-6 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+            <p className="text-gray-500 text-sm">광고 영역</p>
+            <p className="text-gray-400 text-xs mt-1">Google AdSense 또는 개인 광고 코드를 여기에 삽입하세요</p>
           </div>
         </div>
       </div>
+
+      {/* 푸터 */}
+      <footer className="bg-gray-800 text-white py-8 mt-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">AllCalc</h3>
+              <p className="text-gray-300 text-sm">
+                다양한 계산기를 한 곳에서 편리하게 이용하세요.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">빠른 링크</h4>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li><a href="/" className="hover:text-white">홈</a></li>
+                <li><a href="/mortgage-calculator" className="hover:text-white">대출 계산기</a></li>
+                <li><a href="/investment-calculator" className="hover:text-white">투자 계산기</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">계산기 카테고리</h4>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li><a href="/" className="hover:text-white">금융 계산기</a></li>
+                <li><a href="/" className="hover:text-white">건강 계산기</a></li>
+                <li><a href="/" className="hover:text-white">학업 계산기</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">연락처</h4>
+              <p className="text-gray-300 text-sm">
+                문의사항이 있으시면 언제든 연락주세요.
+              </p>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p className="text-gray-300 text-sm">
+              © 2024 AllCalc. All rights reserved. Made with ❤️
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 } 

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaCalculator, FaMoneyBillWave, FaPercent, FaFileInvoiceDollar, FaChartLine, FaReceipt } from 'react-icons/fa';
+import { FaCalculator, FaMoneyBillWave, FaPercent, FaFileInvoiceDollar, FaChartLine, FaReceipt, FaHome, FaCalendarAlt, FaCreditCard, FaPiggyBank, FaChartBar, FaHandHoldingUsd, FaUniversity, FaShieldAlt, FaUserTie, FaGift, FaBalanceScale, FaUserCog, FaExchangeAlt, FaGlobe, FaTruck, FaBox, FaInfoCircle, FaExclamationTriangle } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
 
 interface SalaryResult {
@@ -138,60 +138,90 @@ export default function SalaryCalculator() {
     });
   };
 
+  const resetCalculator = () => {
+    setBasicSalary('');
+    setBasicSalaryDisplay('');
+    setAllowances('');
+    setAllowancesDisplay('');
+    setOvertimeHours('');
+    setOvertimeRate('1.5');
+    setBonuses('');
+    setBonusesDisplay('');
+    setWorkDays('22');
+    setWorkHours('8');
+    setResult(null);
+  };
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <Header onSearch={() => {}} />
       
-      {/* 메인 계산기 섹션 */}
-      <div className="w-full px-8 py-12 bg-gray-50">
+      <div className="w-full px-8 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">급여계산기</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-4 flex items-center justify-center">
+              <FaMoneyBillWave className="mr-3 text-black" />
+              급여계산기
+            </h1>
             <p className="text-lg text-gray-600">2024년 기준으로 실수령액과 각종 공제를 계산해보세요</p>
           </div>
 
-          {/* 급여계산기 */}
-          <div className="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {/* 입력 폼 */}
+          <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-6">급여 정보 입력</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">기본급 (원)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaMoneyBillWave className="inline mr-2 text-black" />
+                  기본급 (원)
+                </label>
                 <input
                   type="text"
                   value={basicSalaryDisplay}
                   onChange={handleBasicSalaryChange}
                   placeholder="3,000,000"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">수당 (원)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaMoneyBillWave className="inline mr-2 text-black" />
+                  수당 (원)
+                </label>
                 <input
                   type="text"
                   value={allowancesDisplay}
                   onChange={handleAllowancesChange}
                   placeholder="500,000"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                 />
               </div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">초과근무 시간 (시간)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaCalendarAlt className="inline mr-2 text-black" />
+                  초과근무 시간 (시간)
+                </label>
                 <input
                   type="number"
                   value={overtimeHours}
                   onChange={(e) => setOvertimeHours(e.target.value)}
                   placeholder="20"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">초과근무 배율</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaPercent className="inline mr-2 text-black" />
+                  초과근무 배율
+                </label>
                 <select
                   value={overtimeRate}
                   onChange={(e) => setOvertimeRate(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                 >
                   <option value="1.5">1.5배 (일반)</option>
                   <option value="2.0">2.0배 (휴일)</option>
@@ -199,178 +229,331 @@ export default function SalaryCalculator() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">상여금 (원)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaMoneyBillWave className="inline mr-2 text-black" />
+                  상여금 (원)
+                </label>
                 <input
                   type="text"
                   value={bonusesDisplay}
                   onChange={handleBonusesChange}
                   placeholder="0"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                 />
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">월 근무일수 (일)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaCalendarAlt className="inline mr-2 text-black" />
+                  월 근무일수 (일)
+                </label>
                 <input
                   type="number"
                   value={workDays}
                   onChange={(e) => setWorkDays(e.target.value)}
                   placeholder="22"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">일 근무시간 (시간)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <FaCalendarAlt className="inline mr-2 text-black" />
+                  일 근무시간 (시간)
+                </label>
                 <input
                   type="number"
                   value={workHours}
                   onChange={(e) => setWorkHours(e.target.value)}
                   placeholder="8"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                 />
               </div>
             </div>
 
-            <div className="flex gap-4 mb-6">
+            <div className="flex gap-4 mt-6">
               <button
                 onClick={calculateSalary}
-                className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                className="flex-1 bg-[#003366] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#002244] transition-colors"
               >
-                급여 계산하기
+                <FaCalculator className="mr-2 inline" />
+                계산하기
+              </button>
+              <button
+                onClick={resetCalculator}
+                className="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                초기화
               </button>
             </div>
-
-            {/* 결과 표시 */}
-            {result && (
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">급여 계산 결과</h3>
-                
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="text-center p-4 bg-white rounded-lg border">
-                    <div className="text-sm text-gray-600 mb-1">총 급여 (세전)</div>
-                    <div className="text-2xl font-bold text-blue-600">
-                      {result.grossSalary.toLocaleString()}원
-                    </div>
-                    <div className="text-xs text-gray-500 mt-1">
-                      기본급 + 수당 + 초과근무 + 상여금
-                    </div>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-lg border">
-                    <div className="text-sm text-gray-600 mb-1">실수령액 (세후)</div>
-                    <div className="text-2xl font-bold text-green-600">
-                      {result.netSalary.toLocaleString()}원
-                    </div>
-                    <div className="text-xs text-gray-500 mt-1">
-                      총 급여 - 공제액
-                    </div>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-lg border">
-                    <div className="text-sm text-gray-600 mb-1">총 공제액</div>
-                    <div className="text-2xl font-bold text-red-600">
-                      {result.totalDeductions.toLocaleString()}원
-                    </div>
-                    <div className="text-xs text-gray-500 mt-1">
-                      4대보험 + 소득세 + 지방세
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
 
-          {/* 급여 상세 내역 */}
+          {/* 광고 플레이스홀더 */}
+          <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center mb-6">
+            <p className="text-gray-500 text-sm">광고 영역</p>
+            <p className="text-gray-400 text-xs mt-1">Google AdSense 또는 개인 광고 코드를 여기에 삽입하세요</p>
+          </div>
+
+          {/* 결과 표시 */}
           {result && (
-            <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                <FaReceipt className="mr-2 text-orange-600" />
-                급여 상세 내역
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-3">급여 구성</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">기본급</span>
-                      <span className="font-semibold">{result.breakdown.basicSalary.toLocaleString()}원</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">수당</span>
-                      <span className="font-semibold">{result.breakdown.allowances.toLocaleString()}원</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">초과근무수당</span>
-                      <span className="font-semibold">{result.breakdown.overtimePay.toLocaleString()}원</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">상여금</span>
-                      <span className="font-semibold">{result.breakdown.bonuses.toLocaleString()}원</span>
-                    </div>
-                    <hr className="my-2" />
-                    <div className="flex justify-between font-bold text-blue-600">
-                      <span>총 급여</span>
-                      <span>{result.grossSalary.toLocaleString()}원</span>
-                    </div>
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+              <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">급여 계산 결과</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                  <div className="flex items-center mb-3">
+                    <FaMoneyBillWave className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">총 급여</h4>
                   </div>
+                  <div className="text-2xl font-bold text-black">{result.grossSalary.toLocaleString()}원</div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-3">공제 내역</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">국민연금 (4.5%)</span>
-                      <span className="font-semibold text-red-600">{result.nationalPension.toLocaleString()}원</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">건강보험 (3.43%)</span>
-                      <span className="font-semibold text-red-600">{result.healthInsurance.toLocaleString()}원</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">고용보험 (0.8%)</span>
-                      <span className="font-semibold text-red-600">{result.employmentInsurance.toLocaleString()}원</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">소득세</span>
-                      <span className="font-semibold text-red-600">{result.incomeTax.toLocaleString()}원</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">지방소득세</span>
-                      <span className="font-semibold text-red-600">{result.localTax.toLocaleString()}원</span>
-                    </div>
-                    <hr className="my-2" />
-                    <div className="flex justify-between font-bold text-red-600">
-                      <span>총 공제액</span>
-                      <span>{result.totalDeductions.toLocaleString()}원</span>
-                    </div>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                  <div className="flex items-center mb-3">
+                    <FaFileInvoiceDollar className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">실수령액</h4>
                   </div>
+                  <div className="text-2xl font-bold text-black">{result.netSalary.toLocaleString()}원</div>
+                </div>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                  <div className="flex items-center mb-3">
+                    <FaPercent className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">총 공제액</h4>
+                  </div>
+                  <div className="text-2xl font-bold text-black">{result.totalDeductions.toLocaleString()}원</div>
+                </div>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                  <div className="flex items-center mb-3">
+                    <FaCalculator className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">총 세금</h4>
+                  </div>
+                  <div className="text-2xl font-bold text-black">{result.totalTax.toLocaleString()}원</div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                  <div className="flex items-center mb-3">
+                    <FaReceipt className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">국민연금</h4>
+                  </div>
+                  <div className="text-2xl font-bold text-black">{result.nationalPension.toLocaleString()}원</div>
+                </div>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                  <div className="flex items-center mb-3">
+                    <FaReceipt className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">건강보험</h4>
+                  </div>
+                  <div className="text-2xl font-bold text-black">{result.healthInsurance.toLocaleString()}원</div>
+                </div>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                  <div className="flex items-center mb-3">
+                    <FaReceipt className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">고용보험</h4>
+                  </div>
+                  <div className="text-2xl font-bold text-black">{result.employmentInsurance.toLocaleString()}원</div>
+                </div>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                  <div className="flex items-center mb-3">
+                    <FaChartLine className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">소득세</h4>
+                  </div>
+                  <div className="text-2xl font-bold text-black">{result.incomeTax.toLocaleString()}원</div>
+                </div>
+              </div>
+
+              {/* 급여 구성 상세 내역 */}
+              <div className="mt-8">
+                <h4 className="text-lg font-semibold text-gray-800 mb-4">급여 구성 상세 내역</h4>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse border border-gray-200">
+                    <thead>
+                      <tr className="bg-gray-50">
+                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">구분</th>
+                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">금액</th>
+                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">비율</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="bg-white">
+                        <td className="border border-gray-200 px-4 py-2">기본급</td>
+                        <td className="border border-gray-200 px-4 py-2 text-right font-semibold text-black">
+                          {result.breakdown.basicSalary.toLocaleString()}원
+                        </td>
+                        <td className="border border-gray-200 px-4 py-2 text-right">
+                          {((result.breakdown.basicSalary / result.grossSalary) * 100).toFixed(1)}%
+                        </td>
+                      </tr>
+                      <tr className="bg-gray-50">
+                        <td className="border border-gray-200 px-4 py-2">수당</td>
+                        <td className="border border-gray-200 px-4 py-2 text-right font-semibold text-black">
+                          {result.breakdown.allowances.toLocaleString()}원
+                        </td>
+                        <td className="border border-gray-200 px-4 py-2 text-right">
+                          {((result.breakdown.allowances / result.grossSalary) * 100).toFixed(1)}%
+                        </td>
+                      </tr>
+                      <tr className="bg-white">
+                        <td className="border border-gray-200 px-4 py-2">초과근무수당</td>
+                        <td className="border border-gray-200 px-4 py-2 text-right font-semibold text-black">
+                          {result.breakdown.overtimePay.toLocaleString()}원
+                        </td>
+                        <td className="border border-gray-200 px-4 py-2 text-right">
+                          {((result.breakdown.overtimePay / result.grossSalary) * 100).toFixed(1)}%
+                        </td>
+                      </tr>
+                      <tr className="bg-gray-50">
+                        <td className="border border-gray-200 px-4 py-2">상여금</td>
+                        <td className="border border-gray-200 px-4 py-2 text-right font-semibold text-black">
+                          {result.breakdown.bonuses.toLocaleString()}원
+                        </td>
+                        <td className="border border-gray-200 px-4 py-2 text-right">
+                          {((result.breakdown.bonuses / result.grossSalary) * 100).toFixed(1)}%
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           )}
 
-          {/* 설명 섹션 */}
+          {/* 설명 및 주의사항 */}
           <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-              <FaPercent className="mr-2 text-purple-600" />
-              급여계산기 설명
+              <FaInfoCircle className="mr-2 text-black" />
+              급여 계산기 사용법
             </h3>
-            <div className="prose text-gray-600 space-y-3">
-              <p>
-                <strong>총 급여:</strong> 기본급, 수당, 초과근무수당, 상여금을 모두 합한 세전 급여입니다.
-              </p>
-              <p>
-                <strong>4대보험:</strong> 국민연금, 건강보험, 고용보험, 산재보험을 포함하며, 2024년 기준으로 계산됩니다.
-              </p>
-              <p>
-                <strong>소득세:</strong> 간이세율표를 기준으로 계산되며, 지방소득세는 소득세의 10%입니다.
-              </p>
-              <p>
-                <strong>실수령액:</strong> 총 급여에서 모든 공제액을 제외한 실제 받는 금액입니다.
-              </p>
+            
+            <div className="space-y-4 text-gray-700">
+              <div>
+                <h4 className="font-semibold mb-2">💰 급여 구성 요소</h4>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li><strong>기본급:</strong> 월 기본 급여 (세전)</li>
+                  <li><strong>수당:</strong> 각종 수당 (교통비, 식대 등)</li>
+                  <li><strong>초과근무수당:</strong> 법정 근무시간 초과 근무에 대한 수당</li>
+                  <li><strong>상여금:</strong> 성과급, 연말정산 등</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">🏥 4대보험 공제</h4>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li><strong>국민연금:</strong> 4.5% (2024년 기준)</li>
+                  <li><strong>건강보험:</strong> 3.43% (2024년 기준)</li>
+                  <li><strong>고용보험:</strong> 0.8% (2024년 기준)</li>
+                  <li><strong>산재보험:</strong> 업종별 차등 적용</li>
+                </ul>
+              </div>
             </div>
+          </div>
+
+          {/* 주의사항 */}
+          <div className="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+            <div className="flex items-start">
+              <FaExclamationTriangle className="text-yellow-600 mt-0.5 mr-2 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold text-yellow-800 mb-1">주의사항</h4>
+                <ul className="text-sm text-yellow-700 space-y-1">
+                  <li>• 이 계산기는 참고용이며, 실제 급여는 회사 정책에 따라 다를 수 있습니다</li>
+                  <li>• 2024년 기준 4대보험료율과 소득세율을 적용했습니다</li>
+                  <li>• 실제 공제 가능한 항목은 개인 상황에 따라 다를 수 있습니다</li>
+                  <li>• 세무 신고 시에는 전문가와 상담하시기 바랍니다</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 관련 계산기 */}
+          <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+              <FaCalculator className="mr-2 text-black" />
+              관련 계산기
+            </h3>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <a href="/income-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+                <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaUniversity className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">소득세 계산기</h4>
+                <p className="text-xs text-gray-600">세금 계산</p>
+              </a>
+              
+              <a href="/social-insurance-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+                <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaShieldAlt className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">4대보험 계산기</h4>
+                <p className="text-xs text-gray-600">보험료 계산</p>
+              </a>
+              
+              <a href="/retirement-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+                <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaHome className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">은퇴 계산기</h4>
+                <p className="text-xs text-gray-600">은퇴 계획</p>
+              </a>
+              
+              <a href="/investment-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+                <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaChartLine className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">투자 계산기</h4>
+                <p className="text-xs text-gray-600">수익률 계산</p>
+              </a>
+            </div>
+          </div>
+
+          {/* 광고 플레이스홀더 */}
+          <div className="mt-6 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+            <p className="text-gray-500 text-sm">광고 영역</p>
+            <p className="text-gray-400 text-xs mt-1">Google AdSense 또는 개인 광고 코드를 여기에 삽입하세요</p>
           </div>
         </div>
       </div>
+
+      {/* 푸터 */}
+      <footer className="bg-gray-800 text-white py-8 mt-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">AllCalc</h3>
+              <p className="text-gray-300 text-sm">
+                다양한 계산기를 한 곳에서 편리하게 이용하세요.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">빠른 링크</h4>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li><a href="/" className="hover:text-white">홈</a></li>
+                <li><a href="/mortgage-calculator" className="hover:text-white">대출 계산기</a></li>
+                <li><a href="/investment-calculator" className="hover:text-white">투자 계산기</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">계산기 카테고리</h4>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li><a href="/" className="hover:text-white">금융 계산기</a></li>
+                <li><a href="/" className="hover:text-white">건강 계산기</a></li>
+                <li><a href="/" className="hover:text-white">학업 계산기</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">연락처</h4>
+              <p className="text-gray-300 text-sm">
+                문의사항이 있으시면 언제든 연락주세요.
+              </p>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p className="text-gray-300 text-sm">
+              © 2024 AllCalc. All rights reserved. Made with ❤️
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 } 

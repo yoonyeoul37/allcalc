@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { FaChartLine, FaCalculator, FaMoneyBillWave, FaPercent, FaCalendarAlt, FaIndustry } from "react-icons/fa";
+import { FaChartLine, FaCalculator, FaMoneyBillWave, FaPercent, FaCalendarAlt, FaIndustry, FaHome } from "react-icons/fa";
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 interface DepreciationResult {
   originalValue: number;
@@ -170,14 +171,14 @@ export default function DepreciationCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-100">
+    <div className="min-h-screen bg-gray-100">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <div className="flex justify-center items-center mb-4">
-              <FaChartLine className="text-4xl text-gray-500 mr-3" />
+          <div className="text-center mb-6">
+            <div className="flex justify-center items-center mb-2">
+              <FaChartLine className="text-4xl text-black mr-3" />
               <h1 className="text-4xl font-bold text-gray-800">감가상각 계산기</h1>
             </div>
             <p className="text-lg text-gray-600">정액법, 정률법, 연수합계법 감가상각 계산</p>
@@ -190,55 +191,55 @@ export default function DepreciationCalculator() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaMoneyBillWave className="inline mr-2 text-green-500" />
+                  <FaMoneyBillWave className="inline mr-2 text-black" />
                   자산 원가 (원)
                 </label>
                 <input
                   type="text"
                   value={originalValueDisplay}
                   onChange={handleOriginalValueChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                   placeholder="예: 10,000,000"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaMoneyBillWave className="inline mr-2 text-blue-500" />
+                  <FaMoneyBillWave className="inline mr-2 text-black" />
                   잔존가치 (원)
                 </label>
                 <input
                   type="text"
                   value={salvageValueDisplay}
                   onChange={handleSalvageValueChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                   placeholder="예: 1,000,000"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaCalendarAlt className="inline mr-2 text-purple-500" />
+                  <FaCalendarAlt className="inline mr-2 text-black" />
                   사용기간 (년)
                 </label>
                 <input
                   type="number"
                   value={usefulLife}
                   onChange={(e) => setUsefulLife(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                   placeholder="예: 5"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaIndustry className="inline mr-2 text-orange-500" />
+                  <FaIndustry className="inline mr-2 text-black" />
                   감가상각 방식
                 </label>
                 <select
                   value={depreciationMethod}
                   onChange={(e) => setDepreciationMethod(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
                 >
                   <option value="straight-line">정액법</option>
                   <option value="declining-balance">정률법 (이중정률법)</option>
@@ -250,7 +251,8 @@ export default function DepreciationCalculator() {
             <div className="flex gap-4 mt-6">
               <button
                 onClick={calculateDepreciation}
-                className="flex-1 bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center"
+                className="flex-1 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center"
+                style={{ backgroundColor: '#003366' }}
               >
                 <FaCalculator className="mr-2" />
                 계산하기
@@ -264,151 +266,91 @@ export default function DepreciationCalculator() {
             </div>
           </div>
 
+          {/* 구글 AdSense 광고 */}
+          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
+            <div className="text-center text-gray-500 text-xs mb-1">Google AdSense</div>
+            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
+              구글 AdSense 광고 (320x80)
+            </div>
+          </div>
+
           {/* 결과 표시 */}
           {result && (
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-              <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">감가상각 계산 결과</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">계산 결과</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
                   <div className="flex items-center mb-3">
-                    <FaMoneyBillWave className="text-2xl text-green-500 mr-3" />
+                    <FaMoneyBillWave className="text-2xl text-black mr-3" />
                     <h4 className="text-lg font-semibold text-gray-800">자산 원가</h4>
                   </div>
-                  <div className="text-2xl font-bold text-green-600">
-                    {formatCurrency(result.originalValue)}원
-                  </div>
+                  <div className="text-2xl font-bold text-black">{formatCurrency(result.originalValue)}원</div>
                 </div>
-
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
                   <div className="flex items-center mb-3">
-                    <FaChartLine className="text-2xl text-blue-500 mr-3" />
-                    <h4 className="text-lg font-semibold text-gray-800">연 감가상각비</h4>
+                    <FaMoneyBillWave className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">잔존가치</h4>
                   </div>
-                  <div className="text-2xl font-bold text-blue-600">
-                    {formatCurrency(result.yearlyDepreciation)}원
-                  </div>
+                  <div className="text-2xl font-bold text-black">{formatCurrency(result.salvageValue)}원</div>
                 </div>
-
-                <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
                   <div className="flex items-center mb-3">
-                    <FaPercent className="text-2xl text-purple-500 mr-3" />
-                    <h4 className="text-lg font-semibold text-gray-800">총 감가상각비</h4>
+                    <FaChartLine className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">총 감가상각액</h4>
                   </div>
-                  <div className="text-2xl font-bold text-purple-600">
-                    {formatCurrency(result.totalDepreciation)}원
-                  </div>
+                  <div className="text-2xl font-bold text-black">{formatCurrency(result.totalDepreciation)}원</div>
                 </div>
-
-                <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
                   <div className="flex items-center mb-3">
-                    <FaIndustry className="text-2xl text-orange-500 mr-3" />
-                    <h4 className="text-lg font-semibold text-gray-800">감가상각 방식</h4>
+                    <FaPercent className="text-2xl text-black mr-3" />
+                    <h4 className="text-lg font-semibold text-gray-800">연간 감가상각액</h4>
                   </div>
-                  <div className="text-lg font-bold text-orange-600">
-                    {getMethodName(result.depreciationMethod)}
+                  <div className="text-2xl font-bold text-black">{formatCurrency(result.yearlyDepreciation)}원</div>
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-800 mb-4">감가상각 방식: {getMethodName(result.depreciationMethod)}</h4>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="text-sm text-gray-600">
+                    <strong>정액법:</strong> 매년 동일한 금액을 감가상각<br/>
+                    <strong>정률법:</strong> 매년 감소하는 잔액에 일정 비율 적용<br/>
+                    <strong>연수합계법:</strong> 사용기간의 합계를 기준으로 감가상각
                   </div>
                 </div>
               </div>
 
-              {/* 감가상각 스케줄 */}
-              <div className="mt-8">
-                <h4 className="text-lg font-semibold text-gray-800 mb-4">감가상각 스케줄</h4>
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse border border-gray-200">
-                    <thead>
-                      <tr className="bg-gray-50">
-                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">연도</th>
-                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">감가상각비</th>
-                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">누적감가상각</th>
-                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">장부가치</th>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="border border-gray-300 px-4 py-2 text-left">연도</th>
+                      <th className="border border-gray-300 px-4 py-2 text-right">감가상각액</th>
+                      <th className="border border-gray-300 px-4 py-2 text-right">누적 감가상각액</th>
+                      <th className="border border-gray-300 px-4 py-2 text-right">장부가치</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {result.depreciationSchedule.map((item, index) => (
+                      <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                        <td className="border border-gray-300 px-4 py-2">{item.year}년</td>
+                        <td className="border border-gray-300 px-4 py-2 text-right">{formatCurrency(item.depreciation)}원</td>
+                        <td className="border border-gray-300 px-4 py-2 text-right">{formatCurrency(item.accumulatedDepreciation)}원</td>
+                        <td className="border border-gray-300 px-4 py-2 text-right">{formatCurrency(item.bookValue)}원</td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {result.depreciationSchedule.map((item) => (
-                        <tr key={item.year} className="hover:bg-gray-50">
-                          <td className="border border-gray-200 px-4 py-2 text-center">{item.year}년차</td>
-                          <td className="border border-gray-200 px-4 py-2 text-right">{formatCurrency(item.depreciation)}원</td>
-                          <td className="border border-gray-200 px-4 py-2 text-right">{formatCurrency(item.accumulatedDepreciation)}원</td>
-                          <td className="border border-gray-200 px-4 py-2 text-right">{formatCurrency(item.bookValue)}원</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           )}
 
-          {/* 감가상각 방식 설명 */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-6">감가상각 방식별 특징</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="border border-gray-200 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-800 mb-3">정액법 (Straight Line)</h4>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>• 매년 동일한 금액으로 감가상각</li>
-                  <li>• 가장 일반적이고 간단한 방식</li>
-                  <li>• 공식: (원가 - 잔존가치) ÷ 사용기간</li>
-                  <li>• 회계상 가장 안정적인 방식</li>
-                </ul>
-              </div>
-              <div className="border border-gray-200 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-800 mb-3">정률법 (Declining Balance)</h4>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>• 매년 잔액의 일정 비율로 감가상각</li>
-                  <li>• 초기에는 큰 금액, 후기에는 작은 금액</li>
-                  <li>• 이중정률법: 연 2배율 적용</li>
-                  <li>• 기술 발전이 빠른 자산에 적합</li>
-                </ul>
-              </div>
-              <div className="border border-gray-200 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-800 mb-3">연수합계법 (Sum of Years)</h4>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>• 남은 사용연수의 합계를 분모로 사용</li>
-                  <li>• 초기에는 큰 금액, 후기에는 작은 금액</li>
-                  <li>• 정률법보다 완만한 감소</li>
-                  <li>• 중간 정도의 감가상각 방식</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* 감가상각의 목적 */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-6">감가상각의 목적</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="border border-gray-200 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-800 mb-3">회계적 목적</h4>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>• 자산의 실제 가치를 정확히 반영</li>
-                  <li>• 손익계산서의 비용 계산</li>
-                  <li>• 재무제표의 신뢰성 향상</li>
-                  <li>• 자산의 경제적 가치 감소 인정</li>
-                </ul>
-              </div>
-              <div className="border border-gray-200 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-800 mb-3">세무적 목적</h4>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>• 감가상각비를 비용으로 인정</li>
-                  <li>• 법인세, 소득세 절약 효과</li>
-                  <li>• 세금 계산 시 공제</li>
-                  <li>• 투자 유인 효과</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* 주의사항 */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-6">주의사항</h3>
-            <div className="space-y-4 text-gray-600">
-              <p>• <strong>이 계산기는 참고용입니다.</strong> 실제 회계처리는 전문가와 상담하세요.</p>
-              <p>• <strong>세법 규정:</strong> 감가상각 방식은 세법에 따라 제한될 수 있습니다.</p>
-              <p>• <strong>자산 종류:</strong> 건물, 기계, 차량 등에 따라 다른 방식이 적용될 수 있습니다.</p>
-              <p>• <strong>잔존가치:</strong> 실제 잔존가치는 시장 상황에 따라 변동될 수 있습니다.</p>
-              <p>• <strong>사용기간:</strong> 실제 사용기간은 예상과 다를 수 있습니다.</p>
-              <p>• <strong>정기 검토:</strong> 매년 감가상각 정책을 검토하고 조정하세요.</p>
+          {/* 스폰서 개인 광고 - 관련계산기 위 */}
+          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
+            <div className="text-center text-gray-500 text-xs mb-1">스폰서 광고</div>
+            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
+              스폰서 개인 광고 (320x80)
             </div>
           </div>
 
@@ -416,41 +358,43 @@ export default function DepreciationCalculator() {
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h3 className="text-xl font-bold text-gray-800 mb-6">관련 계산기</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/interest-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+              <a href="/mortgage-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
                 <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaPercent className="text-xl text-blue-600" />
+                  <FaHome className="text-xl text-black" />
                 </div>
-                <h4 className="font-semibold text-gray-800 text-sm">이자 계산기</h4>
-                <p className="text-xs text-gray-600">비용 계산</p>
+                <h4 className="font-semibold text-gray-800 text-sm">주택담보대출</h4>
+                <p className="text-xs text-gray-600">대출 계산</p>
               </a>
               
               <a href="/loan-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
                 <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaMoneyBillWave className="text-xl text-green-600" />
+                  <FaMoneyBillWave className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">대출 계산기</h4>
-                <p className="text-xs text-gray-600">자금 조달</p>
+                <p className="text-xs text-gray-600">이자 계산</p>
               </a>
               
-              <a href="/percentage-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+              <a href="/investment-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
                 <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaCalculator className="text-xl text-orange-600" />
+                  <FaChartLine className="text-xl text-black" />
                 </div>
-                <h4 className="font-semibold text-gray-800 text-sm">백분율 계산기</h4>
-                <p className="text-xs text-gray-600">비율 계산</p>
+                <h4 className="font-semibold text-gray-800 text-sm">투자 계산기</h4>
+                <p className="text-xs text-gray-600">수익률 계산</p>
               </a>
               
-              <a href="/concrete-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+              <a href="/compound-interest-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
                 <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaIndustry className="text-xl text-purple-600" />
+                  <FaPercent className="text-xl text-black" />
                 </div>
-                <h4 className="font-semibold text-gray-800 text-sm">콘크리트 계산기</h4>
-                <p className="text-xs text-gray-600">건설 자산</p>
+                <h4 className="font-semibold text-gray-800 text-sm">복리 계산기</h4>
+                <p className="text-xs text-gray-600">복리 이자</p>
               </a>
             </div>
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 } 

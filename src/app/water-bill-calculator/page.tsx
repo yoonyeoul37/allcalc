@@ -1,0 +1,260 @@
+'use client';
+
+import { useState } from 'react';
+import { FaCalculator, FaTint, FaHome, FaBuilding, FaInfoCircle } from 'react-icons/fa';
+import Header from '../../components/ui/Header';
+
+interface WaterRate {
+  tier: string;
+  minUsage: number;
+  maxUsage: number;
+  rate: number;
+  description: string;
+}
+
+const waterRates: WaterRate[] = [
+  {
+    tier: '1단계',
+    minUsage: 0,
+    maxUsage: 20,
+    rate: 430,
+    description: '기본 사용량 (1~20㎥)'
+  },
+  {
+    tier: '2단계',
+    minUsage: 21,
+    maxUsage: 50,
+    rate: 640,
+    description: '일반 사용량 (21~50㎥)'
+  },
+  {
+    tier: '3단계',
+    minUsage: 51,
+    maxUsage: 100,
+    rate: 1050,
+    description: '높은 사용량 (51~100㎥)'
+  },
+  {
+    tier: '4단계',
+    minUsage: 101,
+    maxUsage: Infinity,
+    rate: 1400,
+    description: '최고 사용량 (101㎥ 이상)'
+  }
+];
+
+export default function WaterBillCalculator() {
+  const [monthlyUsage, setMonthlyUsage] = useState('');
+  const [billAmount, setBillAmount] = useState(0);
+  const [baseCharge, setBaseCharge] = useState(0);
+  const [usageBreakdown, setUsageBreakdown] = useState<{ tier: string; usage: number; charge: number }[]>([]);
+
+  const formatNumber = (value: string) => {
+    return value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
+
+  const parseNumber = (value: string) => {
+    return parseInt(value.replace(/,/g, '')) || 0;
+  };
+
+  const calculateWaterBill = () => {
+    const usage = parseNumber(monthlyUsage);
+    let totalCharge = 0;
+    let baseCharge = 0;
+    const breakdown: { tier: string; usage: number; charge: number }[] = [];
+
+    // 기본요금 (고정)
+    baseCharge = 1000;
+    totalCharge += baseCharge;
+
+    let remainingUsage = usage;
+
+    for (const rate of waterRates) {
+      if (remainingUsage <= 0) break;
+
+      let tierUsage = 0;
+      if (remainingUsage <= (rate.maxUsage - rate.minUsage + 1)) {
+        tierUsage = remainingUsage;
+      } else {
+        tierUsage = rate.maxUsage - rate.minUsage + 1;
+      }
+
+      const tierCharge = tierUsage * rate.rate;
+      totalCharge += tierCharge;
+
+      if (tierUsage > 0) {
+        breakdown.push({
+          tier: rate.tier,
+          usage: tierUsage,
+          charge: tierCharge
+        });
+      }
+
+      remainingUsage -= tierUsage;
+    }
+
+    // 하수도 요금 (상수도 요금의 90%)
+    const sewageCharge = (totalCharge - baseCharge) * 0.9;
+    totalCharge += sewageCharge;
+
+    // 부가가치세 (10%)
+    const vat = totalCharge * 0.1;
+    totalCharge += vat;
+
+    setBaseCharge(baseCharge);
+    setUsageBreakdown(breakdown);
+    setBillAmount(totalCharge);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-100">
+      <Header onSearch={() => {}} />
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
+            <FaTint className="mr-3 text-blue-600" />
+            수도요금 계산기
+          </h1>
+          <p className="text-gray-600 text-lg">
+            월 사용량에 따른 수도요금을 계산해보세요
+          </p>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
+          <div className="max-w-md mx-auto">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                월 사용량 (㎥)
+              </label>
+              <input
+                type="text"
+                value={monthlyUsage}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^\d]/g, '');
+                  setMonthlyUsage(formatNumber(value));
+                }}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="예: 30"
+              />
+              <p className="text-sm text-gray-500 mt-2">
+                1㎥ = 1,000리터 (1톤)
+              </p>
+            </div>
+
+            <button
+              onClick={calculateWaterBill}
+              className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors mt-6"
+            >
+              수도요금 계산하기
+            </button>
+          </div>
+
+          {billAmount > 0 && (
+            <div className="bg-blue-50 rounded-lg p-6 mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-blue-800 mb-4">수도요금 계산 결과</h3>
+              
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-lg">
+                  <p className="text-sm text-gray-600">기본요금</p>
+                  <p className="text-xl font-bold text-blue-600">
+                    {baseCharge.toLocaleString()}원
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <p className="text-sm text-gray-600">총 수도요금</p>
+                  <p className="text-xl font-bold text-red-600">
+                    {billAmount.toLocaleString()}원
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg">
+                <h4 className="font-medium text-gray-800 mb-3">사용량별 요금 내역</h4>
+                <div className="space-y-2">
+                  {usageBreakdown.map((item, index) => (
+                    <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <div>
+                        <span className="font-medium text-gray-800">{item.tier}</span>
+                        <span className="text-sm text-gray-600 ml-2">({item.usage}㎥)</span>
+                      </div>
+                      <span className="font-semibold text-blue-600">
+                        {item.charge.toLocaleString()}원
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h4 className="font-medium text-gray-800 mb-2">요금 구성</h4>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex justify-between">
+                    <span>기본요금:</span>
+                    <span>{baseCharge.toLocaleString()}원</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>상수도 요금:</span>
+                    <span>{(billAmount - baseCharge - ((billAmount - baseCharge) * 0.9) - (billAmount * 0.1)).toLocaleString()}원</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>하수도 요금 (90%):</span>
+                    <span>{((billAmount - baseCharge - (billAmount * 0.1)) * 0.9).toLocaleString()}원</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>부가가치세 (10%):</span>
+                    <span>{(billAmount * 0.1).toLocaleString()}원</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-xl p-6">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <FaInfoCircle className="mr-2 text-blue-600" />
+            수도요금 정보
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            {waterRates.map((rate, index) => (
+              <div key={index} className="bg-blue-50 rounded-lg p-4">
+                <h3 className="font-semibold text-blue-800 mb-2 flex items-center">
+                  <FaHome className="mr-2" />
+                  {rate.tier}
+                </h3>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li>• {rate.minUsage}~{rate.maxUsage === Infinity ? '∞' : rate.maxUsage}㎥</li>
+                  <li>• {rate.rate.toLocaleString()}원/㎥</li>
+                  <li>• {rate.description}</li>
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-gray-50 rounded-lg p-4">
+            <h3 className="font-semibold text-gray-800 mb-2">요금 계산 방법</h3>
+            <div className="text-sm text-gray-600 space-y-2">
+              <p>• 기본요금: 월 1,000원 (고정)</p>
+              <p>• 상수도 요금: 사용량별 단계별 요금 적용</p>
+              <p>• 하수도 요금: 상수도 요금의 90%</p>
+              <p>• 부가가치세: 총 요금의 10%</p>
+              <p>• 총 요금 = 기본요금 + 상수도 요금 + 하수도 요금 + 부가가치세</p>
+            </div>
+          </div>
+
+          <div className="mt-6 bg-yellow-50 rounded-lg p-4">
+            <h3 className="font-semibold text-yellow-800 mb-2">절약 팁</h3>
+            <div className="text-sm text-gray-600 space-y-1">
+              <p>• 샤워 시간을 1분 줄이면 약 10리터 절약</p>
+              <p>• 양치할 때 컵 사용으로 약 5리터 절약</p>
+              <p>• 설거지할 때 받침대 사용으로 약 20리터 절약</p>
+              <p>• 세탁기는 가득 찰 때 사용</p>
+              <p>• 수도꼭지 누수 점검으로 물 낭비 방지</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+} 
