@@ -230,21 +230,19 @@ export default function Home() {
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">재무 계산기</h2>
               <div className="space-y-1">
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>모기지 계산기</a></div>
+                <div><a href="/mortgage-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>주택담보대출 계산기</a></div>
                 <div><a href="/loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>대출 계산기</a></div>
                 <div><a href="/car-loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 대출 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>이자 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>상환 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>은퇴 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>상각 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>투자 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>인플레이션 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>금융 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>소득세 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>복리 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>급여 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>금리 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>판매세 계산기</a></div>
+                <div><a href="/interest-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>이자 계산기</a></div>
+                <div><a href="/repayment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>상환 계산기</a></div>
+                <div><a href="/retirement-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>은퇴 계산기</a></div>
+                <div><a href="/depreciation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>감가상각 계산기</a></div>
+                <div><a href="/investment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>투자 계산기</a></div>
+                <div><a href="/inflation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>인플레이션 계산기</a></div>
+                <div><a href="/income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>소득세 계산기</a></div>
+                <div><a href="/compound-interest-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>복리 계산기</a></div>
+                <div><a href="/salary-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>급여 계산기</a></div>
+                <div><a href="/sales-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>판매세 계산기</a></div>
               </div>
             </div>
 
