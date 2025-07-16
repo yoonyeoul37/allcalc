@@ -342,8 +342,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full px-8 py-12 bg-white mt-8">
-        <div className="max-w-7xl mx-auto">
+      <div className="w-full py-12 bg-white mt-8">
+        <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             
             <div className="text-center">
@@ -423,13 +423,13 @@ export default function Home() {
         </div>
 
         {/* 새로운 카테고리 섹션 - 다른 배경색 */}
-        <div className="w-full px-8 py-12" style={{backgroundColor: '#f8f9fa'}}>
-          <div className="max-w-7xl mx-auto">
+        <div className="w-full py-12" style={{backgroundColor: '#f8f9fa'}}>
+          <div className="max-w-7xl mx-auto px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             <div className="text-center">
-              <div className="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaFileInvoiceDollar className="text-3xl text-blue-600" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaFileInvoiceDollar className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">사업자/프리랜서</h2>
               <div className="space-y-1">
@@ -445,8 +445,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaGlobe className="text-3xl text-green-600" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaGlobe className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">해외/국제/무역</h2>
               <div className="space-y-1">
@@ -457,8 +457,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-orange-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaTools className="text-3xl text-orange-600" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaTools className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">건설/공사/인테리어</h2>
               <div className="space-y-1">
@@ -471,8 +471,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaSearch className="text-3xl text-purple-600" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaSearch className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">네트워크/IT/개발</h2>
               <div className="space-y-1">
@@ -488,13 +488,13 @@ export default function Home() {
         </div>
 
         {/* 추가 카테고리 섹션 */}
-        <div className="w-full px-8 py-12" style={{backgroundColor: '#e8f4f8'}}>
-          <div className="max-w-7xl mx-auto">
+        <div className="w-full py-12" style={{backgroundColor: '#e8f4f8'}}>
+          <div className="max-w-7xl mx-auto px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             <div className="text-center">
-              <div className="w-24 h-24 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaTools className="text-3xl text-red-600" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaTools className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">자동차/교통</h2>
               <div className="space-y-1">
@@ -505,8 +505,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-yellow-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaMoneyBillWave className="text-3xl text-yellow-600" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaMoneyBillWave className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">세금/연말정산</h2>
               <div className="space-y-1">
@@ -516,8 +516,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-indigo-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaCalculator className="text-3xl text-indigo-600" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaCalculator className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">근무/일정</h2>
               <div className="space-y-1">
@@ -526,8 +526,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-pink-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaHeart className="text-3xl text-pink-600" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaHeart className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">가정법률</h2>
               <div className="space-y-1">
@@ -537,8 +537,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-teal-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaGavel className="text-3xl text-teal-600" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaGavel className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">개인회생/파산/법률</h2>
               <div className="space-y-1">
@@ -548,8 +548,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-cyan-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaHome className="text-3xl text-cyan-600" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaHome className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">부동산/임대차</h2>
               <div className="space-y-1">
@@ -562,8 +562,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-lime-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaLightbulb className="text-3xl text-lime-600" />
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaLightbulb className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">공과금/요금</h2>
               <div className="space-y-1">
