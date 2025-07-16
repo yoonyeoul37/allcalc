@@ -15,6 +15,7 @@ import {
   FaGlobe
 } from "react-icons/fa";
 import Header from '../components/ui/Header';
+import Footer from '../components/ui/Footer';
 import ScientificCalculator from '../components/ui/ScientificCalculator';
 import BasicCalculator from '../components/ui/BasicCalculator';
 
@@ -304,7 +305,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Header onSearch={handleSearch} />
       
       <div className="w-full px-8 py-6" style={{backgroundColor: '#d1dde9', minHeight: '600px'}}>
@@ -488,7 +489,7 @@ export default function Home() {
         </div>
 
         {/* 추가 카테고리 섹션 */}
-        <div className="w-full py-12" style={{backgroundColor: '#e8f4f8'}}>
+        <div className="w-full py-12 bg-white">
           <div className="max-w-7xl mx-auto px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
@@ -576,25 +577,9 @@ export default function Home() {
           </div>
           </div>
         </div>
-        
-        <div className="bg-gray-200 p-6 mt-8 text-sm text-gray-700 leading-relaxed">
-          <p className="mb-4">
-            Calculator.net의 유일한 초점은 다양한 분야에서 빠르고 포괄적이며 편리한 무료 온라인 계산기를 제공하는 것입니다. 
-            현재 우리는 금융, 피트니스, 건강, 수학 등의 분야에서 "빠른 계산"을 도와주는 약 200개의 계산기를 보유하고 있으며, 
-            계속해서 더 많은 계산기를 개발하고 있습니다. 우리의 목표는 빠른 계산이 필요한 사람들을 위한 원스톱, 최고의 사이트가 되는 것입니다. 
-            또한 우리는 인터넷이 무료 정보의 원천이어야 한다고 믿습니다. 따라서 우리의 모든 도구와 서비스는 회원가입 없이 완전히 무료입니다.
-          </p>
-          <p className="mb-4">
-            우리는 각 계산기를 개별적으로 코딩하고 개발했으며 각각을 엄격하고 포괄적인 테스트를 거쳤습니다. 
-            그러나 아주 작은 오류라도 발견하시면 알려주시기 바랍니다 – 귀하의 의견은 우리에게 매우 소중합니다. 
-            Calculator.net의 대부분의 계산기는 전 세계적으로 사용할 수 있도록 설계되었지만, 일부는 특정 국가 전용입니다. 
-            예를 들어, 소득세 계산기는 미국 거주자만을 위한 것입니다.
-          </p>
-          <div className="text-center text-xs text-gray-500">
-            우리에 대해 | 사이트맵 | 이용 약관 | 개인정보 보호정책 © 2008 - 2025 calculator.net
-          </div>
-        </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }
