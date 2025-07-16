@@ -482,6 +482,33 @@ export default function Home() {
                 <div><a href="/data-converter" className="hover:underline text-sm" style={{color: '#276699'}}>데이터 변환 계산기</a></div>
               </div>
             </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaCalculator className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">자동차/교통</h2>
+              <div className="space-y-1">
+                <div><a href="/automobile-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차세 계산기</a></div>
+                <div><a href="/automobile-fuel-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 연비/유류비 계산기</a></div>
+                <div><a href="/acquisition-transfer-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 취득세/등록세 계산기</a></div>
+                <div><a href="/car-loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 대출 계산기</a></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaFileInvoiceDollar className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">세금/연말정산</h2>
+              <div className="space-y-1">
+                <div><a href="/comprehensive-income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>종합소득세 간이 계산기</a></div>
+                <div><a href="/work-income-tax-refund-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>근로소득세 연말정산 환급액 계산기</a></div>
+                <div><a href="/income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>소득세 계산기</a></div>
+                <div><a href="/vat-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>부가가치세 계산기</a></div>
+                <div><a href="/sales-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>판매세 계산기</a></div>
+              </div>
+            </div>
             
           </div>
           </div>
