@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaFire, FaHeart, FaWeight, FaChartLine } from "react-icons/fa";
+import { FaFire, FaHeart, FaWeight, FaChartLine, FaHome, FaCreditCard, FaPiggyBank, FaChartBar, FaHandHoldingUsd, FaUniversity, FaShieldAlt, FaUserTie, FaGift, FaBalanceScale, FaUserCog, FaExchangeAlt, FaGlobe, FaTruck, FaBox, FaInfoCircle, FaExclamationTriangle, FaUser, FaDumbbell, FaBaby, FaCalendarAlt, FaCalculator, FaRuler } from "react-icons/fa";
 import Header from '../../components/ui/Header';
 
 interface BMRResult {
@@ -82,14 +82,17 @@ export default function BMRCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <Header onSearch={() => {}} />
       
       {/* 메인 계산기 섹션 */}
-      <div className="w-full px-8 py-12 bg-gray-50">
+      <div className="w-full px-8 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">기초대사율(BMR) 계산기</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-4 flex items-center justify-center">
+              <FaFire className="mr-3 text-black" />
+              기초대사율(BMR) 계산기
+            </h1>
             <p className="text-lg text-gray-600">아무것도 하지 않아도 소모되는 하루 최소 칼로리를 계산해보세요</p>
           </div>
 
@@ -101,44 +104,56 @@ export default function BMRCalculator() {
               <h3 className="text-lg font-semibold text-gray-800 mb-4">기본 정보</h3>
               <div className="grid md:grid-cols-4 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">성별</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <FaUser className="inline mr-2 text-black" />
+                    성별
+                  </label>
                   <select
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                   >
                     <option value="male">남성</option>
                     <option value="female">여성</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">나이</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <FaCalendarAlt className="inline mr-2 text-black" />
+                    나이
+                  </label>
                   <input
                     type="number"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                     placeholder="25"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">키 (cm)</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <FaRuler className="inline mr-2 text-black" />
+                    키 (cm)
+                  </label>
                   <input
                     type="number"
                     value={height}
                     onChange={(e) => setHeight(e.target.value)}
                     placeholder="170"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">체중 (kg)</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <FaWeight className="inline mr-2 text-black" />
+                    체중 (kg)
+                  </label>
                   <input
                     type="number"
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="70"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
                   />
                 </div>
               </div>
@@ -156,8 +171,9 @@ export default function BMRCalculator() {
             <div className="flex gap-4 mb-6">
               <button
                 onClick={calculateBMR}
-                className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                className="flex-1 bg-[#003366] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#002244] transition-colors"
               >
+                <FaCalculator className="mr-2 inline" />
                 BMR 계산하기
               </button>
               <button
@@ -168,41 +184,38 @@ export default function BMRCalculator() {
               </button>
             </div>
 
+            {/* 광고 플레이스홀더 */}
+            <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center mb-6">
+              <p className="text-gray-500 text-sm">광고 영역</p>
+              <p className="text-gray-400 text-xs mt-1">Google AdSense 또는 개인 광고 코드를 여기에 삽입하세요</p>
+            </div>
+
             {/* 결과 표시 */}
             {result && (
-              <div className="border border-gray-200 p-6 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">기초대사율 계산 결과</h3>
                 
-                {/* 선택 옵션 표시 */}
-                <div className="mb-4 p-4 border border-gray-200 rounded-lg">
-                  <div className="text-sm text-gray-700 text-center">
-                    <span className="font-semibold">
-                      {gender === "male" ? "남성" : "여성"} • {age}세 • {height}cm • {weight}kg
-                    </span>
-                  </div>
-                </div>
-
                 {/* BMR 계산 방법별 결과 */}
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
-                  <div className="text-center p-4 border border-gray-200 rounded-lg">
+                  <div className="text-center p-4 bg-white rounded-lg border">
                     <div className="text-sm text-gray-600 mb-1">Harris-Benedict 공식</div>
-                    <div className="text-2xl font-bold text-gray-800">
+                    <div className="text-2xl font-bold text-black">
                       {result.harrisBenedict.toLocaleString()} kcal
                     </div>
                     <div className="text-xs text-gray-500 mt-1">
                       1919년 개발 (개정판)
                     </div>
                   </div>
-                  <div className="text-center p-4 border border-gray-200 rounded-lg">
+                  <div className="text-center p-4 bg-white rounded-lg border">
                     <div className="text-sm text-gray-600 mb-1">Mifflin-St Jeor 공식</div>
-                    <div className="text-2xl font-bold text-gray-800">
+                    <div className="text-2xl font-bold text-blue-600">
                       {result.mifflinStJeor.toLocaleString()} kcal
                     </div>
                     <div className="text-xs text-gray-500 mt-1">
                       1990년 개발 (더 정확)
                     </div>
                   </div>
-                  <div className="text-center p-4 border border-gray-200 rounded-lg bg-blue-50">
+                  <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-200">
                     <div className="text-sm text-gray-600 mb-1">권장 BMR</div>
                     <div className="text-2xl font-bold text-blue-600">
                       {result.averageBMR.toLocaleString()} kcal
@@ -214,7 +227,7 @@ export default function BMRCalculator() {
                 </div>
 
                 {/* 활동량별 일일 칼로리 */}
-                <div className="mt-6">
+                <div className="bg-white p-4 rounded-lg border">
                   <h4 className="text-lg font-semibold text-gray-700 mb-3 text-center">활동량별 일일 필요 칼로리</h4>
                   <div className="grid md:grid-cols-5 gap-3">
                     <div className="text-center p-3 border border-gray-200 rounded-lg">
@@ -250,343 +263,150 @@ export default function BMRCalculator() {
                       <div className="text-lg font-bold text-gray-800">
                         {result.dailyCalories.veryActive.toLocaleString()}
                       </div>
-                      <div className="text-xs text-gray-500">하루 2회</div>
+                      <div className="text-xs text-gray-500">하루 2회 운동</div>
                     </div>
-                  </div>
-                </div>
-
-                {/* BMR 해석 */}
-                <div className="mt-6 p-4 border border-gray-200 rounded-lg">
-                  <h4 className="font-semibold text-gray-700 mb-3">BMR 해석</h4>
-                  <div className="text-sm text-gray-600 space-y-2">
-                    <p>• <strong>BMR은 최소 칼로리:</strong> 이보다 적게 먹으면 건강에 위험할 수 있습니다.</p>
-                    <p>• <strong>실제 소비 칼로리:</strong> 활동량을 고려한 일일 칼로리를 참고하세요.</p>
-                    <p>• <strong>개인차 존재:</strong> 근육량, 유전적 요인에 따라 10-15% 차이가 있을 수 있습니다.</p>
-                    <p>• <strong>나이에 따른 변화:</strong> 나이가 들수록 BMR은 점차 감소합니다.</p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* 광고 1: 계산 결과 바로 아래 */}
-            {result && (
-              <div className="mt-6 p-4 border border-gray-200 rounded-lg bg-gray-50">
-                <div className="text-center">
-                  <div className="text-xs text-gray-500 mb-2">광고</div>
-                  <div className="bg-gradient-to-r from-green-500 to-blue-600 text-white p-6 rounded-lg">
-                    <h3 className="text-lg font-bold mb-2">⚖️ 스마트 체성분 측정</h3>
-                    <p className="text-sm mb-3">기초대사율 + 근육량 + 체지방률까지 정확한 측정</p>
-                    <button className="bg-white text-green-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                      측정 받기 →
-                    </button>
                   </div>
                 </div>
               </div>
             )}
           </div>
-        </div>
-      </div>
 
-      {/* 광고 2: 계산기와 정보 섹션 사이 */}
-      <div className="w-full px-8 py-6 bg-gradient-to-r from-gray-50 to-blue-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-4">
-            <div className="text-xs text-gray-500 mb-3">스폰서 광고</div>
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex-1 text-left">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">🔥 대사량 증가 프로그램</h3>
-                  <p className="text-gray-600 mb-3">근력 운동 + 개인 맞춤 영양 상담으로 기초대사율 UP</p>
-                  <div className="flex gap-2">
-                    <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">1개월 무료</span>
-                    <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">전문가 상담</span>
-                  </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all transform hover:scale-105">
-                    상담 신청하기
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* 정보 섹션 */}
-      <div className="w-full px-8 py-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex gap-8">
-            {/* 메인 콘텐츠 */}
-            <div className="flex-1 max-w-4xl">
-              
-              {/* BMR이란? */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">기초대사율(BMR)이란?</h2>
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    기초대사율(Basal Metabolic Rate, BMR)은 생명 유지를 위해 최소한으로 필요한 에너지량입니다. 
-                    심장 박동, 호흡, 체온 유지, 세포 재생 등 기본적인 생명 활동에 하루 동안 소모되는 칼로리를 의미합니다.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    BMR은 하루 총 에너지 소비량의 60-70%를 차지하며, 다이어트나 체중 관리의 기본 지표가 됩니다. 
-                    BMR보다 적게 먹으면 신체 기능이 저하될 수 있어 주의가 필요합니다.
-                  </p>
-                </div>
-              </section>
-
-              {/* BMR 계산 공식 비교 */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">BMR 계산 공식 비교</h2>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="p-6 border border-gray-200 rounded-lg">
-                    <h3 className="text-xl font-semibold text-gray-700 mb-4">Harris-Benedict 공식</h3>
-                    <p className="text-gray-700 mb-4">
-                      1919년에 개발되어 가장 널리 알려진 공식입니다. 1984년에 개정되어 정확도가 향상되었습니다.
-                    </p>
-                    <div className="text-sm text-gray-600">
-                      <p><strong>남성:</strong> 88.362 + (13.397 × 체중) + (4.799 × 키) - (5.677 × 나이)</p>
-                      <p><strong>여성:</strong> 447.593 + (9.247 × 체중) + (3.098 × 키) - (4.330 × 나이)</p>
-                      <p className="mt-2"><strong>특징:</strong> 오랜 기간 검증된 공식</p>
-                    </div>
-                  </div>
-                  
-                  <div className="p-6 border border-gray-200 rounded-lg">
-                    <h3 className="text-xl font-semibold text-gray-700 mb-4">Mifflin-St Jeor 공식</h3>
-                    <p className="text-gray-700 mb-4">
-                      1990년에 개발된 공식으로 현재 가장 정확하다고 인정받고 있습니다. 현대인의 체형을 더 잘 반영합니다.
-                    </p>
-                    <div className="text-sm text-gray-600">
-                      <p><strong>남성:</strong> (10 × 체중) + (6.25 × 키) - (5 × 나이) + 5</p>
-                      <p><strong>여성:</strong> (10 × 체중) + (6.25 × 키) - (5 × 나이) - 161</p>
-                      <p className="mt-2"><strong>특징:</strong> 더 정확하고 현대적인 공식</p>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* 광고 3: 정보 섹션 중간 */}
-              <div className="mb-12 p-6 border border-gray-200 rounded-lg bg-gray-50">
-                <div className="text-center">
-                  <div className="text-xs text-gray-500 mb-4">Google AdSense</div>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-white p-4 rounded-lg border border-gray-100 hover:shadow-md transition-shadow cursor-pointer">
-                      <div className="text-center">
-                        <div className="text-2xl mb-2">💊</div>
-                        <h4 className="font-semibold text-gray-800 mb-1">대사량 증가 보조제</h4>
-                        <p className="text-sm text-gray-600 mb-2">자연 추출 성분</p>
-                        <div className="text-green-600 text-sm font-semibold">구매하기</div>
-                      </div>
-                    </div>
-                    <div className="bg-white p-4 rounded-lg border border-gray-100 hover:shadow-md transition-shadow cursor-pointer">
-                      <div className="text-center">
-                        <div className="text-2xl mb-2">🏋️‍♀️</div>
-                        <h4 className="font-semibold text-gray-800 mb-1">근력 운동 프로그램</h4>
-                        <p className="text-sm text-gray-600 mb-2">기초대사율 향상</p>
-                        <div className="text-blue-600 text-sm font-semibold">시작하기</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* BMR에 영향을 주는 요인 */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">BMR에 영향을 주는 요인</h2>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-700 mb-4">BMR을 높이는 요인</h3>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>• <strong>근육량 증가:</strong> 근육은 지방보다 많은 에너지를 소모</li>
-                      <li>• <strong>규칙적인 운동:</strong> 특히 근력 운동이 효과적</li>
-                      <li>• <strong>충분한 수면:</strong> 7-8시간의 양질의 수면</li>
-                      <li>• <strong>적절한 단백질 섭취:</strong> 근육량 유지에 필수</li>
-                      <li>• <strong>충분한 수분 섭취:</strong> 신진대사 활성화</li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-700 mb-4">BMR을 낮추는 요인</h3>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>• <strong>나이 증가:</strong> 10년마다 약 2-3% 감소</li>
-                      <li>• <strong>극단적 다이어트:</strong> 신체가 에너지 절약 모드로 전환</li>
-                      <li>• <strong>근육량 감소:</strong> 잘못된 다이어트로 인한 근손실</li>
-                      <li>• <strong>수면 부족:</strong> 호르몬 불균형 유발</li>
-                      <li>• <strong>스트레스:</strong> 코르티솔 증가로 대사율 저하</li>
-                    </ul>
-                  </div>
-                </div>
-              </section>
-
-              {/* 한국인 BMR 특성 */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">한국인 BMR 특성</h2>
-                <div className="border border-gray-200 p-6 rounded-lg">
-                  <p className="text-gray-700 mb-4">
-                    한국인을 포함한 아시아인은 서구인과 비교해 몇 가지 특성이 있습니다.
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-gray-700 mb-3">아시아인 특성</h4>
-                      <ul className="space-y-2 text-gray-700 text-sm">
-                        <li>• 상대적으로 근육량이 적어 BMR이 낮음</li>
-                        <li>• 같은 체중이라도 BMR이 5-10% 낮을 수 있음</li>
-                        <li>• 내장지방 축적 경향이 높음</li>
-                        <li>• 탄수화물 대사가 상대적으로 효율적</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-700 mb-3">관리 방법</h4>
-                      <ul className="space-y-2 text-gray-700 text-sm">
-                        <li>• 근력 운동을 통한 근육량 증가</li>
-                        <li>• 단백질 섭취량 늘리기 (체중 1kg당 1.2-1.6g)</li>
-                        <li>• 유산소와 근력 운동의 적절한 조합</li>
-                        <li>• 정기적인 체성분 검사로 모니터링</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* BMR 활용법 */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">BMR 활용법</h2>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="p-6 border border-gray-200 rounded-lg">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-3">체중 감량</h3>
-                    <ul className="space-y-2 text-gray-700 text-sm">
-                      <li>• BMR보다 적게 먹지 말 것</li>
-                      <li>• TDEE에서 300-500kcal 적게 섭취</li>
-                      <li>• 근력 운동으로 근육량 유지</li>
-                      <li>• 천천히 안전하게 감량</li>
-                    </ul>
-                  </div>
-                  <div className="p-6 border border-gray-200 rounded-lg">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-3">체중 유지</h3>
-                    <ul className="space-y-2 text-gray-700 text-sm">
-                      <li>• 활동량에 맞는 칼로리 섭취</li>
-                      <li>• 규칙적인 운동 습관</li>
-                      <li>• 체중 변화 주기적 체크</li>
-                      <li>• 균형 잡힌 영양소 섭취</li>
-                    </ul>
-                  </div>
-                  <div className="p-6 border border-gray-200 rounded-lg">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-3">체중 증량</h3>
-                    <ul className="space-y-2 text-gray-700 text-sm">
-                      <li>• TDEE보다 300-500kcal 많이 섭취</li>
-                      <li>• 근력 운동과 함께 진행</li>
-                      <li>• 양질의 단백질 충분히 섭취</li>
-                      <li>• 건강한 지방도 적절히 포함</li>
-                    </ul>
-                  </div>
-                </div>
-              </section>
-
-              {/* 관련 계산기 */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">관련 계산기</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <a href="/calorie-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
-                    <div className="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <FaFire className="text-2xl text-green-600" />
-                    </div>
-                    <h3 className="font-semibold text-gray-800 mb-2">칼로리 계산기</h3>
-                    <p className="text-sm text-gray-600">목표별 칼로리 계산</p>
-                  </a>
-                  <a href="/bmi-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <FaWeight className="text-2xl text-blue-600" />
-                    </div>
-                    <h3 className="font-semibold text-gray-800 mb-2">BMI 계산기</h3>
-                    <p className="text-sm text-gray-600">체질량지수 계산</p>
-                  </a>
-                  <a href="/body-fat-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
-                    <div className="w-16 h-16 bg-orange-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <FaHeart className="text-2xl text-orange-600" />
-                    </div>
-                    <h3 className="font-semibold text-gray-800 mb-2">체지방 계산기</h3>
-                    <p className="text-sm text-gray-600">체지방률 측정</p>
-                  </a>
-                  <a href="/ideal-weight-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-gray-300 cursor-pointer">
-                    <div className="w-16 h-16 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <FaChartLine className="text-2xl text-gray-600" />
-                    </div>
-                    <h3 className="font-semibold text-gray-800 mb-2">이상체중 계산기</h3>
-                    <p className="text-sm text-gray-600">목표 체중 계산</p>
-                  </a>
-                </div>
-              </section>
-            </div>
+          {/* 설명 및 주의사항 */}
+          <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+              <FaInfoCircle className="mr-2 text-black" />
+              기초대사율 계산기 사용법
+            </h3>
             
-            {/* 사이드바 광고 (데스크톱 전용) */}
-            <div className="hidden lg:block w-80">
-              <div className="sticky top-8 space-y-6">
-                {/* 광고 4: 사이드바 배너 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-xs text-gray-500 mb-3">추천 광고</div>
-                    <div className="bg-gradient-to-b from-green-400 to-green-600 text-white p-6 rounded-lg mb-4">
-                      <h4 className="font-bold text-lg mb-2">🔥 대사율 UP</h4>
-                      <p className="text-sm mb-3">근력 + 유산소 프로그램</p>
-                      <button className="bg-white text-green-600 px-4 py-2 rounded-full text-sm font-semibold w-full">
-                        시작하기
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 광고 5: 네이티브 광고 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-xs text-gray-500 mb-4">스폰서</div>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                        🔥
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">대사량 증가 앱</h5>
-                        <p className="text-xs text-gray-600">일일 운동 + 식단 관리</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                        💪
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">홈트레이닝</h5>
-                        <p className="text-xs text-gray-600">근력 운동 프로그램</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        ⚖️
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">체성분 측정</h5>
-                        <p className="text-xs text-gray-600">정확한 BMR 측정</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div className="space-y-4 text-gray-700">
+              <div>
+                <h4 className="font-semibold mb-2">🔥 Harris-Benedict 공식</h4>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li><strong>개발:</strong> 1919년 개발된 전통적인 공식</li>
+                  <li><strong>특징:</strong> 체중, 키, 나이, 성별을 고려</li>
+                  <li><strong>정확도:</strong> 일반적으로 ±10% 오차</li>
+                  <li><strong>적용:</strong> 대부분의 사람들에게 적합</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">📊 Mifflin-St Jeor 공식</h4>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li><strong>개발:</strong> 1990년 개발된 현대적인 공식</li>
+                  <li><strong>특징:</strong> 더 정확한 계산 방법</li>
+                  <li><strong>정확도:</strong> ±5% 오차로 더 정확</li>
+                  <li><strong>적용:</strong> 현재 가장 널리 사용되는 공식</li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Footer */}
-      <div className="bg-gray-200 p-6 text-sm text-gray-700 leading-relaxed">
-        <div className="max-w-4xl mx-auto">
-          <p className="mb-4">
-            이 BMR 계산기는 Harris-Benedict 공식과 Mifflin-St Jeor 공식을 기반으로 계산됩니다. 
-            실제 기초대사율은 개인의 근육량, 유전적 요인, 건강 상태에 따라 차이가 있을 수 있으므로 
-            정확한 측정을 위해서는 전문 기관에서 체성분 검사를 받으시기 바랍니다.
-          </p>
-          <div className="text-center text-xs text-gray-500">
-            © 2025 AllCalc - 무료 온라인 계산기
+          {/* 주의사항 */}
+          <div className="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+            <div className="flex items-start">
+              <FaExclamationTriangle className="text-yellow-600 mt-0.5 mr-2 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold text-yellow-800 mb-1">주의사항</h4>
+                <ul className="text-sm text-yellow-700 space-y-1">
+                  <li>• 이 계산기는 참고용이며, 개인차이가 있을 수 있습니다</li>
+                  <li>• 근육량, 체지방률, 활동량에 따라 실제 BMR이 달라질 수 있습니다</li>
+                  <li>• 정확한 BMR 측정을 위해서는 전문가와 상담하시기 바랍니다</li>
+                  <li>• 체중 관리 시에는 활동량을 포함한 총 소모 칼로리를 고려하세요</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 관련 계산기 */}
+          <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+              <FaCalculator className="mr-2 text-black" />
+              관련 계산기
+            </h3>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <a href="/calorie-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-red-300 cursor-pointer">
+                <div className="w-12 h-12 bg-red-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaHeart className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">칼로리 계산기</h4>
+                <p className="text-xs text-gray-600">일일 칼로리</p>
+              </a>
+              
+              <a href="/bmi-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+                <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaUser className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">BMI 계산기</h4>
+                <p className="text-xs text-gray-600">체질량지수</p>
+              </a>
+              
+              <a href="/body-fat-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+                <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaWeight className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">체지방률 계산기</h4>
+                <p className="text-xs text-gray-600">체지방 측정</p>
+              </a>
+              
+              <a href="/muscle-mass-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+                <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <FaDumbbell className="text-xl text-black" />
+                </div>
+                <h4 className="font-semibold text-gray-800 text-sm">근육량 계산기</h4>
+                <p className="text-xs text-gray-600">근육량 측정</p>
+              </a>
+            </div>
+          </div>
+
+          {/* 광고 플레이스홀더 */}
+          <div className="mt-6 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+            <p className="text-gray-500 text-sm">광고 영역</p>
+            <p className="text-gray-400 text-xs mt-1">Google AdSense 또는 개인 광고 코드를 여기에 삽입하세요</p>
           </div>
         </div>
       </div>
+
+      {/* 푸터 */}
+      <footer className="bg-gray-800 text-white py-8 mt-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">AllCalc</h3>
+              <p className="text-gray-300 text-sm">
+                다양한 계산기를 한 곳에서 편리하게 이용하세요.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">빠른 링크</h4>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li><a href="/" className="hover:text-white">홈</a></li>
+                <li><a href="/mortgage-calculator" className="hover:text-white">대출 계산기</a></li>
+                <li><a href="/investment-calculator" className="hover:text-white">투자 계산기</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">계산기 카테고리</h4>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li><a href="/" className="hover:text-white">금융 계산기</a></li>
+                <li><a href="/" className="hover:text-white">건강 계산기</a></li>
+                <li><a href="/" className="hover:text-white">학업 계산기</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">연락처</h4>
+              <p className="text-gray-300 text-sm">
+                문의사항이 있으시면 언제든 연락주세요.
+              </p>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p className="text-gray-300 text-sm">
+              © 2024 AllCalc. All rights reserved. Made with ❤️
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 } 
