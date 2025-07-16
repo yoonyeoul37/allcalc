@@ -117,13 +117,14 @@ const categoriesData = [
     id: "health", 
     title: "건강/운동/다이어트", 
     icon: FaTools, 
-    count: 9, 
-    completed: 9,
+    count: 10, 
+    completed: 10,
     calculators: [
       { name: "BMI 계산기", description: "체질량지수 및 비만도 계산", popular: true },
       { name: "기초대사율 계산기", description: "하루 기초대사량 계산" },
       { name: "칼로리 계산기", description: "음식별 칼로리 및 운동량 계산" },
       { name: "체지방률 계산기", description: "체지방률 측정 및 관리" },
+      { name: "근육량 계산기", description: "근육량 추정 및 관리" },
       { name: "단백질 필요량 계산기", description: "일일 단백질 필요량" },
       { name: "물 섭취량 계산기", description: "하루 권장 수분 섭취량" },
       { name: "혈압 계산기", description: "혈압 수치 해석 및 관리" },
@@ -256,46 +257,46 @@ export default function Home() {
                 <div><a href="/bmi-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>BMI 계산기</a></div>
                 <div><a href="/calorie-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>칼로리 계산기</a></div>
                 <div><a href="/body-fat-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>체지방 계산기</a></div>
+                <div><a href="/muscle-mass-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>근육량 계산기</a></div>
                 <div><a href="/bmr-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>BMR 계산기</a></div>
                 <div><a href="/ideal-weight-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>이상체중 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>페이스 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>임신 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>임신 수정 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>출산 예정일 계산기</a></div>
+                <div><a href="/pace-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>페이스 계산기</a></div>
+                <div><a href="/pregnancy-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>임신 계산기</a></div>
+                <div><a href="/pregnancy-adjustment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>임신 수정 계산기</a></div>
+                <div><a href="/due-date-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>출산 예정일 계산기</a></div>
               </div>
             </div>
 
-            <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaCalculator className="text-3xl text-gray-600" />
+                          <div className="text-center">
+                <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <FaCalculator className="text-3xl text-gray-600" />
+                </div>
+                <h2 className="text-lg font-bold text-gray-800 mb-4">수학 계산기</h2>
+                <div className="space-y-1">
+                  <div><a href="/engineering-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>공학용 계산기</a></div>
+                  <div><a href="/fraction-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>분수 계산기</a></div>
+                  <div><a href="/percentage-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>백분율 계산기</a></div>
+                  <div><a href="/random-number-generator" className="hover:underline text-sm" style={{color: '#276699'}}>난수 생성기</a></div>
+                  <div><a href="/triangle-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>삼각형 계산기</a></div>
+                  <div><a href="/standard-deviation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>표준편차 계산기</a></div>
+                </div>
               </div>
-              <h2 className="text-lg font-bold text-gray-800 mb-4">수학 계산기</h2>
-              <div className="space-y-1">
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>공학용 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>분수 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>백분율 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>난수 생성기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>삼각형 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>표준편차 계산기</a></div>
-              </div>
-            </div>
 
-            <div className="text-center">
+                          <div className="text-center">
               <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <FaTools className="text-3xl text-gray-600" />
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">기타 계산기</h2>
               <div className="space-y-1">
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>나이 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>날짜 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>시간 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>시간 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>GPA 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>성적 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>콘크리트 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>서브넷 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>암호 생성기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>변환 계산기</a></div>
+                <div><a href="/age-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>나이 계산기</a></div>
+                <div><a href="/date-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>날짜 계산기</a></div>
+                <div><a href="/time-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>시간 계산기</a></div>
+                <div><a href="/gpa-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>GPA 계산기</a></div>
+                <div><a href="/grade-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>성적 계산기</a></div>
+                <div><a href="/concrete-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>콘크리트 계산기</a></div>
+                <div><a href="/subnet-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>서브넷 계산기</a></div>
+                <div><a href="/password-generator" className="hover:underline text-sm" style={{color: '#276699'}}>암호 생성기</a></div>
+                <div><a href="/unit-converter" className="hover:underline text-sm" style={{color: '#276699'}}>단위 변환기</a></div>
               </div>
             </div>
             

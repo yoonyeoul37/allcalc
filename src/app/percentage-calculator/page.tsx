@@ -1,0 +1,615 @@
+"use client";
+
+import { useState } from "react";
+import { FaCalculator, FaPercent, FaArrowUp, FaArrowDown, FaDollarSign } from "react-icons/fa";
+import Header from '../../components/ui/Header';
+
+export default function PercentageCalculator() {
+  const [calculationType, setCalculationType] = useState<string>("basic");
+  const [value1, setValue1] = useState<string>("");
+  const [value2, setValue2] = useState<string>("");
+  const [result, setResult] = useState<string>("");
+  const [calculationSteps, setCalculationSteps] = useState<string>("");
+
+  // 기본 백분율 계산
+  const calculateBasicPercentage = () => {
+    const num1 = parseFloat(value1);
+    const num2 = parseFloat(value2);
+    
+    if (isNaN(num1) || isNaN(num2) || num2 === 0) {
+      setResult("오류: 유효한 숫자를 입력하세요");
+      return;
+    }
+
+    const percentage = (num1 / num2) * 100;
+    setResult(`${percentage.toFixed(2)}%`);
+    setCalculationSteps(`(${num1} ÷ ${num2}) × 100 = ${percentage.toFixed(2)}%`);
+  };
+
+  // 백분율로 값 계산
+  const calculateValueFromPercentage = () => {
+    const num1 = parseFloat(value1);
+    const percentage = parseFloat(value2);
+    
+    if (isNaN(num1) || isNaN(percentage)) {
+      setResult("오류: 유효한 숫자를 입력하세요");
+      return;
+    }
+
+    const result = (num1 * percentage) / 100;
+    setResult(result.toFixed(2));
+    setCalculationSteps(`${num1} × ${percentage}% ÷ 100 = ${result.toFixed(2)}`);
+  };
+
+  // 증가율 계산
+  const calculateIncrease = () => {
+    const original = parseFloat(value1);
+    const newValue = parseFloat(value2);
+    
+    if (isNaN(original) || isNaN(newValue)) {
+      setResult("오류: 유효한 숫자를 입력하세요");
+      return;
+    }
+
+    const increase = newValue - original;
+    const percentage = (increase / original) * 100;
+    
+    setResult(`${percentage.toFixed(2)}%`);
+    setCalculationSteps(`(${newValue} - ${original}) ÷ ${original} × 100 = ${percentage.toFixed(2)}%`);
+  };
+
+  // 감소율 계산
+  const calculateDecrease = () => {
+    const original = parseFloat(value1);
+    const newValue = parseFloat(value2);
+    
+    if (isNaN(original) || isNaN(newValue)) {
+      setResult("오류: 유효한 숫자를 입력하세요");
+      return;
+    }
+
+    const decrease = original - newValue;
+    const percentage = (decrease / original) * 100;
+    
+    setResult(`${percentage.toFixed(2)}%`);
+    setCalculationSteps(`(${original} - ${newValue}) ÷ ${original} × 100 = ${percentage.toFixed(2)}%`);
+  };
+
+  // 할인율 계산
+  const calculateDiscount = () => {
+    const originalPrice = parseFloat(value1);
+    const salePrice = parseFloat(value2);
+    
+    if (isNaN(originalPrice) || isNaN(salePrice)) {
+      setResult("오류: 유효한 숫자를 입력하세요");
+      return;
+    }
+
+    const discount = originalPrice - salePrice;
+    const discountPercentage = (discount / originalPrice) * 100;
+    
+    setResult(`${discountPercentage.toFixed(2)}%`);
+    setCalculationSteps(`(${originalPrice} - ${salePrice}) ÷ ${originalPrice} × 100 = ${discountPercentage.toFixed(2)}%`);
+  };
+
+  // 세금 계산
+  const calculateTax = () => {
+    const amount = parseFloat(value1);
+    const taxRate = parseFloat(value2);
+    
+    if (isNaN(amount) || isNaN(taxRate)) {
+      setResult("오류: 유효한 숫자를 입력하세요");
+      return;
+    }
+
+    const taxAmount = (amount * taxRate) / 100;
+    const totalWithTax = amount + taxAmount;
+    
+    setResult(`세금: ${taxAmount.toFixed(2)}, 총액: ${totalWithTax.toFixed(2)}`);
+    setCalculationSteps(`세금: ${amount} × ${taxRate}% ÷ 100 = ${taxAmount.toFixed(2)}`);
+  };
+
+  // 계산 실행
+  const performCalculation = () => {
+    switch (calculationType) {
+      case "basic":
+        calculateBasicPercentage();
+        break;
+      case "value":
+        calculateValueFromPercentage();
+        break;
+      case "increase":
+        calculateIncrease();
+        break;
+      case "decrease":
+        calculateDecrease();
+        break;
+      case "discount":
+        calculateDiscount();
+        break;
+      case "tax":
+        calculateTax();
+        break;
+      default:
+        break;
+    }
+  };
+
+  // 입력 초기화
+  const clearInputs = () => {
+    setValue1("");
+    setValue2("");
+    setResult("");
+    setCalculationSteps("");
+  };
+
+  // 계산 타입에 따른 입력 라벨
+  const getInputLabels = () => {
+    switch (calculationType) {
+      case "basic":
+        return { label1: "값", label2: "전체" };
+      case "value":
+        return { label1: "값", label2: "백분율 (%)" };
+      case "increase":
+        return { label1: "원래 값", label2: "새 값" };
+      case "decrease":
+        return { label1: "원래 값", label2: "새 값" };
+      case "discount":
+        return { label1: "원래 가격", label2: "할인 가격" };
+      case "tax":
+        return { label1: "금액", label2: "세율 (%)" };
+      default:
+        return { label1: "값 1", label2: "값 2" };
+    }
+  };
+
+  const labels = getInputLabels();
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Header onSearch={() => {}} />
+      
+      {/* 메인 계산기 섹션 */}
+      <div className="w-full px-8 py-12 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-bold text-gray-800 mb-4">백분율 계산기</h1>
+            <p className="text-lg text-gray-600">백분율 계산, 증가율, 감소율, 할인율 등을 지원하는 계산기</p>
+          </div>
+
+          {/* 백분율 계산기 */}
+          <div className="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+            
+            {/* 계산 타입 선택 */}
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-gray-800 mb-3">계산 타입 선택</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <button
+                  onClick={() => setCalculationType("basic")}
+                  className={`p-3 rounded-lg font-medium text-sm transition-colors ${
+                    calculationType === "basic"
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  기본 백분율
+                </button>
+                <button
+                  onClick={() => setCalculationType("value")}
+                  className={`p-3 rounded-lg font-medium text-sm transition-colors ${
+                    calculationType === "value"
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  백분율로 값 계산
+                </button>
+                <button
+                  onClick={() => setCalculationType("increase")}
+                  className={`p-3 rounded-lg font-medium text-sm transition-colors ${
+                    calculationType === "increase"
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  증가율 계산
+                </button>
+                <button
+                  onClick={() => setCalculationType("decrease")}
+                  className={`p-3 rounded-lg font-medium text-sm transition-colors ${
+                    calculationType === "decrease"
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  감소율 계산
+                </button>
+                <button
+                  onClick={() => setCalculationType("discount")}
+                  className={`p-3 rounded-lg font-medium text-sm transition-colors ${
+                    calculationType === "discount"
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  할인율 계산
+                </button>
+                <button
+                  onClick={() => setCalculationType("tax")}
+                  className={`p-3 rounded-lg font-medium text-sm transition-colors ${
+                    calculationType === "tax"
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  세금 계산
+                </button>
+              </div>
+            </div>
+
+            {/* 입력 필드 */}
+            <div className="mb-6">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {labels.label1}
+                  </label>
+                  <input
+                    type="number"
+                    value={value1}
+                    onChange={(e) => setValue1(e.target.value)}
+                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:outline-none"
+                    placeholder="첫 번째 값 입력"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {labels.label2}
+                  </label>
+                  <input
+                    type="number"
+                    value={value2}
+                    onChange={(e) => setValue2(e.target.value)}
+                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:outline-none"
+                    placeholder="두 번째 값 입력"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* 계산 버튼 */}
+            <div className="flex justify-center gap-4 mb-6">
+              <button
+                onClick={performCalculation}
+                className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors"
+              >
+                계산하기
+              </button>
+              <button
+                onClick={clearInputs}
+                className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors"
+              >
+                초기화
+              </button>
+            </div>
+
+            {/* 결과 표시 */}
+            {result && (
+              <div className="bg-gray-100 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">계산 결과</h3>
+                <div className="bg-white p-4 rounded-lg border-2 border-gray-200 mb-4">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-gray-800">{result}</div>
+                  </div>
+                </div>
+                
+                {calculationSteps && (
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-gray-800 mb-2">계산 과정:</h4>
+                    <div className="text-sm text-gray-600">{calculationSteps}</div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* 빠른 계산 예시 */}
+            <div className="mt-8">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">빠른 계산 예시</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <button
+                  onClick={() => {
+                    setCalculationType("basic");
+                    setValue1("25");
+                    setValue2("100");
+                  }}
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
+                >
+                  25/100 = 25%
+                </button>
+                <button
+                  onClick={() => {
+                    setCalculationType("value");
+                    setValue1("200");
+                    setValue2("15");
+                  }}
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
+                >
+                  200의 15% = 30
+                </button>
+                <button
+                  onClick={() => {
+                    setCalculationType("increase");
+                    setValue1("100");
+                    setValue2("120");
+                  }}
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
+                >
+                  100→120 = 20% 증가
+                </button>
+                <button
+                  onClick={() => {
+                    setCalculationType("discount");
+                    setValue1("100");
+                    setValue2("80");
+                  }}
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
+                >
+                  100→80 = 20% 할인
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 광고 2: 계산기와 정보 섹션 사이 */}
+      <div className="w-full px-8 py-6 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-4">
+            <div className="text-xs text-gray-500 mb-3">스폰서 광고</div>
+            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex-1 text-left">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">💰 금융 계산기</h3>
+                  <p className="text-gray-600 mb-3">이자율, 할인율, 세금 계산 도구</p>
+                  <div className="flex gap-2">
+                    <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">무료</span>
+                    <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">금융</span>
+                  </div>
+                </div>
+                <div className="flex-shrink-0">
+                  <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105">
+                    다운로드
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 정보 섹션 */}
+      <div className="w-full px-8 py-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex gap-8">
+            {/* 메인 콘텐츠 */}
+            <div className="flex-1 max-w-4xl">
+          
+          {/* 백분율 계산기란? */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">백분율 계산기란?</h2>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                백분율 계산기는 다양한 백분율 관련 계산을 자동으로 수행해주는 도구입니다. 
+                기본적인 백분율 계산부터 증가율, 감소율, 할인율, 세금 계산까지 다양한 기능을 제공합니다.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                백분율은 일상생활에서 자주 사용되는 중요한 개념으로, 할인, 이자율, 성장률 등을 
+                계산할 때 매우 유용합니다. 이 계산기로 복잡한 백분율 계산을 쉽고 정확하게 할 수 있습니다.
+              </p>
+            </div>
+          </section>
+
+          {/* 백분율 계산 방법 */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">백분율 계산 방법</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="border border-gray-200 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">기본 백분율</h3>
+                <ul className="text-gray-700 space-y-2 text-sm">
+                  <li>• 백분율 = (값 ÷ 전체) × 100</li>
+                  <li>• 예: 25/100 = 25%</li>
+                  <li>• 예: 3/5 = 60%</li>
+                  <li>• 소수점 이하 반올림</li>
+                </ul>
+              </div>
+              <div className="border border-gray-200 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">백분율로 값 계산</h3>
+                <ul className="text-gray-700 space-y-2 text-sm">
+                  <li>• 값 = (전체 × 백분율) ÷ 100</li>
+                  <li>• 예: 200의 15% = 30</li>
+                  <li>• 예: 1000의 8% = 80</li>
+                  <li>• 할인액, 세금 등 계산</li>
+                </ul>
+              </div>
+              <div className="border border-gray-200 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">증가율/감소율</h3>
+                <ul className="text-gray-700 space-y-2 text-sm">
+                  <li>• 증가율 = (새값 - 원래값) ÷ 원래값 × 100</li>
+                  <li>• 감소율 = (원래값 - 새값) ÷ 원래값 × 100</li>
+                  <li>• 예: 100→120 = 20% 증가</li>
+                  <li>• 예: 100→80 = 20% 감소</li>
+                </ul>
+              </div>
+              <div className="border border-gray-200 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">할인율/세금</h3>
+                <ul className="text-gray-700 space-y-2 text-sm">
+                  <li>• 할인율 = (원가 - 할인가) ÷ 원가 × 100</li>
+                  <li>• 세금액 = 금액 × 세율 ÷ 100</li>
+                  <li>• 총액 = 원가 + 세금액</li>
+                  <li>• 실수령액 = 원가 - 할인액</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* 사용 예시 */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">사용 예시</h2>
+            <div className="bg-blue-50 p-6 rounded-lg">
+              <h3 className="font-semibold text-gray-800 mb-4">기본 백분율 계산</h3>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p><strong>예시 1:</strong> 25/100 = 25%</p>
+                <p><strong>예시 2:</strong> 3/5 = 60%</p>
+                <p><strong>예시 3:</strong> 7/8 = 87.5%</p>
+              </div>
+              
+              <h3 className="font-semibold text-gray-800 mb-4 mt-6">백분율로 값 계산</h3>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p><strong>예시 1:</strong> 200의 15% = 30</p>
+                <p><strong>예시 2:</strong> 1000의 8% = 80</p>
+                <p><strong>예시 3:</strong> 500의 20% = 100</p>
+              </div>
+              
+              <h3 className="font-semibold text-gray-800 mb-4 mt-6">증가율/감소율 계산</h3>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p><strong>예시 1:</strong> 100→120 = 20% 증가</p>
+                <p><strong>예시 2:</strong> 200→150 = 25% 감소</p>
+                <p><strong>예시 3:</strong> 50→75 = 50% 증가</p>
+              </div>
+              
+              <h3 className="font-semibold text-gray-800 mb-4 mt-6">할인율 계산</h3>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p><strong>예시 1:</strong> 100원→80원 = 20% 할인</p>
+                <p><strong>예시 2:</strong> 200원→150원 = 25% 할인</p>
+                <p><strong>예시 3:</strong> 1000원→700원 = 30% 할인</p>
+              </div>
+            </div>
+          </section>
+
+          {/* 주의사항 */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">사용 시 주의사항</h2>
+            <div className="space-y-4">
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-semibold text-gray-800 mb-2">🔢 숫자 입력</h3>
+                <p className="text-gray-600">유효한 숫자만 입력하세요. 0으로 나누기는 불가능합니다.</p>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-semibold text-gray-800 mb-2">📊 소수점 처리</h3>
+                <p className="text-gray-600">결과는 소수점 둘째 자리까지 표시됩니다. 필요시 반올림됩니다.</p>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-semibold text-gray-800 mb-2">💡 계산 과정</h3>
+                <p className="text-gray-600">계산 과정을 확인하여 백분율 계산의 원리를 이해할 수 있습니다.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* 관련 계산기 */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">관련 계산기</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <a href="/fraction-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+                <div className="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <FaCalculator className="text-2xl text-blue-600" />
+                </div>
+                <h3 className="font-semibold text-gray-800 mb-2">분수 계산기</h3>
+                <p className="text-sm text-gray-600">분수 연산 계산기</p>
+              </a>
+              <a href="/engineering-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+                <div className="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <FaPercent className="text-2xl text-green-600" />
+                </div>
+                <h3 className="font-semibold text-gray-800 mb-2">공학용 계산기</h3>
+                <p className="text-sm text-gray-600">고급 수학 함수</p>
+              </a>
+              <a href="/triangle-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+                <div className="w-16 h-16 bg-orange-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <FaDollarSign className="text-2xl text-orange-600" />
+                </div>
+                <h3 className="font-semibold text-gray-800 mb-2">삼각형 계산기</h3>
+                <p className="text-sm text-gray-600">기하학 계산</p>
+              </a>
+              <a href="/standard-deviation-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+                <div className="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <FaArrowUp className="text-2xl text-purple-600" />
+                </div>
+                <h3 className="font-semibold text-gray-800 mb-2">표준편차 계산기</h3>
+                <p className="text-sm text-gray-600">통계 분석</p>
+              </a>
+            </div>
+          </section>
+            </div>
+            
+            {/* 사이드바 광고 (데스크톱 전용) */}
+            <div className="hidden lg:block w-80">
+              <div className="sticky top-8 space-y-6">
+                {/* 광고 4: 사이드바 배너 */}
+                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-xs text-gray-500 mb-3">추천 광고</div>
+                    <div className="bg-gradient-to-b from-blue-400 to-purple-500 text-white p-6 rounded-lg mb-4">
+                      <h4 className="font-bold text-lg mb-2">💰 금융 도구</h4>
+                      <p className="text-sm mb-3">이자율, 할인율, 세금 계산</p>
+                      <button className="bg-white text-blue-500 px-4 py-2 rounded-full text-sm font-semibold w-full">
+                        시작하기
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 광고 5: 네이티브 광고 */}
+                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                  <div className="text-xs text-gray-500 mb-4">스폰서</div>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        💰
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="font-semibold text-sm">금융 계산기 앱</h5>
+                        <p className="text-xs text-gray-600">이자율 + 할인율 계산</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                        📊
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="font-semibold text-sm">투자 분석 도구</h5>
+                        <p className="text-xs text-gray-600">수익률 + 성장률 계산</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                      <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                        🏪
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="font-semibold text-sm">쇼핑 할인 계산</h5>
+                        <p className="text-xs text-gray-600">할인율 + 세금 계산</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="bg-gray-200 p-6 text-sm text-gray-700 leading-relaxed">
+        <div className="max-w-4xl mx-auto">
+          <p className="mb-4">
+            이 백분율 계산기는 기본 백분율 계산부터 증가율, 감소율, 할인율, 세금 계산까지 
+            다양한 백분율 관련 계산을 지원합니다. 계산 과정도 함께 표시하여 학습에 도움이 됩니다.
+          </p>
+          <div className="text-center text-xs text-gray-500">
+            © 2025 AllCalc - 무료 온라인 계산기
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+} 

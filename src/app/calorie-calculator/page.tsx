@@ -580,34 +580,34 @@ export default function CalorieCalculator() {
               <section className="mb-12">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">관련 계산기</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <a href="/bmi-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
                     <div className="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                       <FaRunning className="text-2xl text-blue-600" />
                     </div>
                     <h3 className="font-semibold text-gray-800 mb-2">BMI 계산기</h3>
                     <p className="text-sm text-gray-600">체질량지수 계산</p>
-                  </div>
-                  <div className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  </a>
+                  <a href="/bmr-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
                     <div className="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                       <FaAppleAlt className="text-2xl text-green-600" />
                     </div>
-                    <h3 className="font-semibold text-gray-800 mb-2">영양소 계산기</h3>
-                    <p className="text-sm text-gray-600">탄단지 비율 계산</p>
-                  </div>
-                  <div className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                    <h3 className="font-semibold text-gray-800 mb-2">기초대사율 계산기</h3>
+                    <p className="text-sm text-gray-600">하루 필요 칼로리</p>
+                  </a>
+                  <a href="/body-fat-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
                     <div className="w-16 h-16 bg-orange-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                       <FaFire className="text-2xl text-orange-600" />
                     </div>
-                    <h3 className="font-semibold text-gray-800 mb-2">운동 칼로리 계산기</h3>
-                    <p className="text-sm text-gray-600">운동별 소모 칼로리</p>
-                  </div>
-                  <div className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                    <h3 className="font-semibold text-gray-800 mb-2">체지방률 계산기</h3>
+                    <p className="text-sm text-gray-600">체지방 비율 측정</p>
+                  </a>
+                  <a href="/ideal-weight-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-gray-300 cursor-pointer">
                     <div className="w-16 h-16 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                       <FaChartLine className="text-2xl text-gray-600" />
                     </div>
-                    <h3 className="font-semibold text-gray-800 mb-2">체지방률 계산기</h3>
-                    <p className="text-sm text-gray-600">체지방 비율 측정</p>
-                  </div>
+                    <h3 className="font-semibold text-gray-800 mb-2">이상체중 계산기</h3>
+                    <p className="text-sm text-gray-600">목표 체중 계산</p>
+                  </a>
                 </div>
               </section>
             </div>
