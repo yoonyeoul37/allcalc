@@ -498,79 +498,13 @@ export default function Home() {
 
             <div className="text-center">
               <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaFileInvoiceDollar className="text-3xl text-gray-600" />
+                <FaGavel className="text-3xl text-gray-600" />
               </div>
-              <h2 className="text-lg font-bold text-gray-800 mb-4">세금/연말정산</h2>
-              <div className="space-y-1">
-                <div><a href="/comprehensive-income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>종합소득세 간이 계산기</a></div>
-                <div><a href="/work-income-tax-refund-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>근로소득세 연말정산 환급액 계산기</a></div>
-                <div><a href="/income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>소득세 계산기</a></div>
-                <div><a href="/vat-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>부가가치세 계산기</a></div>
-                <div><a href="/sales-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>판매세 계산기</a></div>
-              </div>
-            </div>
-            
-          </div>
-          </div>
-        </div>
-
-        {/* 추가 카테고리 섹션 */}
-        <div className="w-full py-12" style={{backgroundColor: '#e8f4f8'}}>
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            
-            <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaTools className="text-3xl text-gray-600" />
-              </div>
-              <h2 className="text-lg font-bold text-gray-800 mb-4">자동차/교통</h2>
-              <div className="space-y-1">
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>자동차세 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 연비/유류비 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 취득세/등록세 계산기</a></div>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaMoneyBillWave className="text-3xl text-gray-600" />
-              </div>
-              <h2 className="text-lg font-bold text-gray-800 mb-4">세금/연말정산</h2>
-              <div className="space-y-1">
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>종합소득세 간이 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>근로소득세/연말정산 환급액 계산기</a></div>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaCalculator className="text-3xl text-gray-600" />
-              </div>
-              <h2 className="text-lg font-bold text-gray-800 mb-4">근무/일정</h2>
-              <div className="space-y-1">
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>공휴일/근무일수 계산기</a></div>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaHeart className="text-3xl text-gray-600" />
-              </div>
-              <h2 className="text-lg font-bold text-gray-800 mb-4">가정법률</h2>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">가정법률/개인회생</h2>
               <div className="space-y-1">
                 <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>양육비 계산기</a></div>
                 <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>위자료 계산기</a></div>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaGavel className="text-3xl text-gray-600" />
-              </div>
-              <h2 className="text-lg font-bold text-gray-800 mb-4">개인회생/파산/법률</h2>
-              <div className="space-y-1">
                 <div><a href="/personal-rehabilitation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>개인회생 변제금 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>법정이자/연체이자 계산기</a></div>
               </div>
             </div>
 
@@ -588,6 +522,28 @@ export default function Home() {
               </div>
             </div>
 
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaFileInvoiceDollar className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">세금/연말정산</h2>
+              <div className="space-y-1">
+                <div><a href="/comprehensive-income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>종합소득세 간이 계산기</a></div>
+                <div><a href="/work-income-tax-refund-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>근로소득세 연말정산 환급액 계산기</a></div>
+                <div><a href="/income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>소득세 계산기</a></div>
+                <div><a href="/vat-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>부가가치세 계산기</a></div>
+              </div>
+            </div>
+            
+          </div>
+          </div>
+        </div>
+
+        {/* 추가 카테고리 섹션 */}
+        <div className="w-full py-12" style={{backgroundColor: '#e8f4f8'}}>
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
             <div className="text-center">
               <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <FaLightbulb className="text-3xl text-gray-600" />
