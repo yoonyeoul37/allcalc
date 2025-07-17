@@ -249,15 +249,7 @@ export default function RepaymentCalculator() {
             </div>
           </div>
 
-          {/* 구글 AdSense 광고 */}
-          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
-            <div className="text-center text-gray-500 text-xs mb-1">Google AdSense</div>
-            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
-              구글 AdSense 광고 (320x80)
-            </div>
-          </div>
-
-          {/* 결과 표시 */}
+          {/* 계산 결과 */}
           {result && (
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
               <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">계산 결과</h3>
@@ -374,52 +366,6 @@ export default function RepaymentCalculator() {
               <p>• <strong>이자율:</strong> 시장 상황에 따라 변동될 수 있습니다.</p>
               <p>• <strong>부대비용:</strong> 중개수수료, 등록세, 인지세 등이 추가로 발생할 수 있습니다.</p>
               <p>• <strong>조기상환:</strong> 일정 기간 후 조기상환이 가능하지만 수수료가 발생할 수 있습니다.</p>
-            </div>
-          </div>
-
-          {/* 스폰서 개인 광고 - 관련계산기 위 */}
-          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
-            <div className="text-center text-gray-500 text-xs mb-1">스폰서 광고</div>
-            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
-              스폰서 개인 광고 (320x80)
-            </div>
-          </div>
-
-          {/* 관련 계산기 */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-6">관련 계산기</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/loan-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
-                <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaMoneyBillWave className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">대출 계산기</h4>
-                <p className="text-xs text-gray-600">일반 대출</p>
-              </a>
-              
-              <a href="/mortgage-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
-                <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaCalculator className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">주택담보대출</h4>
-                <p className="text-xs text-gray-600">주택 구매</p>
-              </a>
-              
-              <a href="/interest-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
-                <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaCalculator className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">이자 계산기</h4>
-                <p className="text-xs text-gray-600">이자율 계산</p>
-              </a>
-              
-              <a href="/percentage-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
-                <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaCalculator className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">백분율 계산기</h4>
-                <p className="text-xs text-gray-600">비율 계산</p>
-              </a>
             </div>
           </div>
         </div>

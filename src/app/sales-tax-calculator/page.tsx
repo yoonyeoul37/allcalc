@@ -208,12 +208,6 @@ export default function SalesTaxCalculator() {
               </button>
             </div>
 
-            {/* 광고 플레이스홀더 */}
-            <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center mb-6">
-              <p className="text-gray-500 text-sm">광고 영역</p>
-              <p className="text-gray-400 text-xs mt-1">Google AdSense 또는 개인 광고 코드를 여기에 삽입하세요</p>
-            </div>
-
             {/* 결과 표시 */}
             {result && (
               <div className="bg-gray-50 p-6 rounded-lg">
@@ -363,12 +357,6 @@ export default function SalesTaxCalculator() {
                 <p className="text-xs text-gray-600">사업세 계산</p>
               </a>
             </div>
-          </div>
-
-          {/* 광고 플레이스홀더 */}
-          <div className="mt-6 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
-            <p className="text-gray-500 text-sm">광고 영역</p>
-            <p className="text-gray-400 text-xs mt-1">Google AdSense 또는 개인 광고 코드를 여기에 삽입하세요</p>
           </div>
         </div>
       </div>

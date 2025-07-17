@@ -325,14 +325,6 @@ export default function LoanCalculator() {
             </div>
           )}
 
-          {/* 광고 자리 - 관련계산기 위 */}
-          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
-            <div className="text-center text-gray-500 text-xs mb-1">광고</div>
-            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
-              광고 영역 (320x80)
-            </div>
-          </div>
-
           {/* 대출 계산기 설명 */}
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
             <h3 className="text-xl font-bold text-gray-800 mb-6">대출 계산기란?</h3>

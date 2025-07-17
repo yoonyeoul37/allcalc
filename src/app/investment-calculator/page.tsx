@@ -568,15 +568,7 @@ export default function InvestmentCalculator() {
             )}
           </div>
 
-          {/* 구글 AdSense 광고 */}
-          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
-            <div className="text-center text-gray-500 text-xs mb-1">Google AdSense</div>
-            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
-              구글 AdSense 광고 (320x80)
-            </div>
-          </div>
-
-          {/* 결과 표시 */}
+          {/* 계산 결과 */}
           {activeTab === 'roi' && roiResult && (
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
               <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">ROI 계산 결과</h3>
@@ -716,52 +708,6 @@ export default function InvestmentCalculator() {
               </div>
             </div>
           )}
-
-          {/* 스폰서 개인 광고 - 관련계산기 위 */}
-          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
-            <div className="text-center text-gray-500 text-xs mb-1">스폰서 광고</div>
-            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
-              스폰서 개인 광고 (320x80)
-            </div>
-          </div>
-
-          {/* 관련 계산기 */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-6">관련 계산기</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/mortgage-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
-                <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaHome className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">주택담보대출</h4>
-                <p className="text-xs text-gray-600">대출 계산</p>
-              </a>
-              
-              <a href="/loan-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
-                <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaDollarSign className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">대출 계산기</h4>
-                <p className="text-xs text-gray-600">이자 계산</p>
-              </a>
-              
-              <a href="/compound-interest-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
-                <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaPercent className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">복리 계산기</h4>
-                <p className="text-xs text-gray-600">복리 이자</p>
-              </a>
-              
-              <a href="/depreciation-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
-                <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaChartLine className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">감가상각 계산기</h4>
-                <p className="text-xs text-gray-600">자산 감가상각</p>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
 

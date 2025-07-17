@@ -259,15 +259,7 @@ export default function MortgageCalculator() {
             </div>
           </div>
 
-          {/* 광고 자리 */}
-          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
-            <div className="text-center text-gray-500 text-xs mb-1">광고</div>
-            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
-              광고 영역 (320x80)
-            </div>
-          </div>
-
-          {/* 결과 표시 */}
+          {/* 계산 결과 */}
           {result && (
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
               <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">계산 결과</h3>
@@ -388,14 +380,6 @@ export default function MortgageCalculator() {
               <p>• <strong>이자율:</strong> 시장 상황에 따라 변동될 수 있습니다.</p>
               <p>• <strong>부대비용:</strong> 중개수수료, 등록세, 인지세 등이 추가로 발생할 수 있습니다.</p>
               <p>• <strong>조기상환:</strong> 일정 기간 후 조기상환이 가능하지만 수수료가 발생할 수 있습니다.</p>
-            </div>
-          </div>
-
-          {/* 광고 자리 2 - 하단 */}
-          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
-            <div className="text-center text-gray-500 text-xs mb-1">광고</div>
-            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
-              광고 영역 2 (320x80)
             </div>
           </div>
 

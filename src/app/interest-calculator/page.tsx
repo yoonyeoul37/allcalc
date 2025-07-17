@@ -241,86 +241,76 @@ export default function InterestCalculator() {
             </div>
           </div>
 
-          {/* 구글 AdSense 광고 */}
-          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
-            <div className="text-center text-gray-500 text-xs mb-1">Google AdSense</div>
-            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
-              구글 AdSense 광고 (320x80)
+          {/* 계산 결과 */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">계산 결과</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                <div className="flex items-center mb-3">
+                  <FaMoneyBillWave className="text-2xl text-black mr-3" />
+                  <h4 className="text-lg font-semibold text-gray-800">원금</h4>
+                </div>
+                <div className="text-2xl font-bold text-black">
+                  {formatCurrency(Number(principal))}원
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                <div className="flex items-center mb-3">
+                  <FaPercent className="text-2xl text-black mr-3" />
+                  <h4 className="text-lg font-semibold text-gray-800">총 이자</h4>
+                </div>
+                <div className="text-2xl font-bold text-black">
+                  {formatCurrency(result?.interestEarned ?? 0)}원
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                <div className="flex items-center mb-3">
+                  <FaChartLine className="text-2xl text-black mr-3" />
+                  <h4 className="text-lg font-semibold text-gray-800">총 수령액</h4>
+                </div>
+                <div className="text-2xl font-bold text-black">
+                  {formatCurrency(result?.totalAmount ?? 0)}원
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                <div className="flex items-center mb-3">
+                  <FaCalculator className="text-2xl text-black mr-3" />
+                  <h4 className="text-lg font-semibold text-gray-800">복리/단리 비교</h4>
+                </div>
+                <div className="text-base text-gray-700">
+                  <span className="font-semibold">단리:</span> {formatCurrency(result?.simpleInterest ?? 0)}원<br />
+                  <span className="font-semibold">복리:</span> {formatCurrency(result?.compoundInterest ?? 0)}원
+                </div>
+              </div>
+            </div>
+
+            {/* 월별 상세 내역 */}
+            <div className="mt-8">
+              <h4 className="text-lg font-semibold text-gray-800 mb-4">월별 복리 내역 (최대 12개월)</h4>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse border border-gray-200">
+                  <thead>
+                    <tr className="bg-gray-50">
+                      <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">월</th>
+                      <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">원금</th>
+                      <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">이자</th>
+                      <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">누적금액</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {result?.monthlyBreakdown.map((item) => (
+                      <tr key={item.month} className="hover:bg-gray-50">
+                        <td className="border border-gray-200 px-4 py-2 text-center">{item.month}개월</td>
+                        <td className="border border-gray-200 px-4 py-2 text-right">{formatCurrency(item.principal)}원</td>
+                        <td className="border border-gray-200 px-4 py-2 text-right">{formatCurrency(item.interest)}원</td>
+                        <td className="border border-gray-200 px-4 py-2 text-right">{formatCurrency(item.total)}원</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-
-          {/* 결과 표시 */}
-          {result && (
-            <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-              <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">계산 결과</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
-                  <div className="flex items-center mb-3">
-                    <FaMoneyBillWave className="text-2xl text-black mr-3" />
-                    <h4 className="text-lg font-semibold text-gray-800">원금</h4>
-                  </div>
-                  <div className="text-2xl font-bold text-black">
-                    {formatCurrency(Number(principal))}원
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
-                  <div className="flex items-center mb-3">
-                    <FaPercent className="text-2xl text-black mr-3" />
-                    <h4 className="text-lg font-semibold text-gray-800">총 이자</h4>
-                  </div>
-                  <div className="text-2xl font-bold text-black">
-                    {formatCurrency(result.interestEarned)}원
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
-                  <div className="flex items-center mb-3">
-                    <FaChartLine className="text-2xl text-black mr-3" />
-                    <h4 className="text-lg font-semibold text-gray-800">총 수령액</h4>
-                  </div>
-                  <div className="text-2xl font-bold text-black">
-                    {formatCurrency(result.totalAmount)}원
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
-                  <div className="flex items-center mb-3">
-                    <FaCalculator className="text-2xl text-black mr-3" />
-                    <h4 className="text-lg font-semibold text-gray-800">복리/단리 비교</h4>
-                  </div>
-                  <div className="text-base text-gray-700">
-                    <span className="font-semibold">단리:</span> {formatCurrency(result.simpleInterest)}원<br />
-                    <span className="font-semibold">복리:</span> {formatCurrency(result.compoundInterest)}원
-                  </div>
-                </div>
-              </div>
-
-              {/* 월별 상세 내역 */}
-              <div className="mt-8">
-                <h4 className="text-lg font-semibold text-gray-800 mb-4">월별 복리 내역 (최대 12개월)</h4>
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse border border-gray-200">
-                    <thead>
-                      <tr className="bg-gray-50">
-                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">월</th>
-                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">원금</th>
-                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">이자</th>
-                        <th className="border border-gray-200 px-4 py-2 text-sm font-semibold">누적금액</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {result.monthlyBreakdown.map((item) => (
-                        <tr key={item.month} className="hover:bg-gray-50">
-                          <td className="border border-gray-200 px-4 py-2 text-center">{item.month}개월</td>
-                          <td className="border border-gray-200 px-4 py-2 text-right">{formatCurrency(item.principal)}원</td>
-                          <td className="border border-gray-200 px-4 py-2 text-right">{formatCurrency(item.interest)}원</td>
-                          <td className="border border-gray-200 px-4 py-2 text-right">{formatCurrency(item.total)}원</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          )}
 
           {/* 이자 계산 설명 */}
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
@@ -340,52 +330,6 @@ export default function InterestCalculator() {
               <p>• <strong>이 계산기는 참고용입니다.</strong> 실제 이자율 및 조건은 금융기관마다 다를 수 있습니다.</p>
               <p>• <strong>세금:</strong> 이자소득세 등 세금이 발생할 수 있습니다.</p>
               <p>• <strong>복리주기:</strong> 실제 상품의 복리주기를 확인하세요.</p>
-            </div>
-          </div>
-
-          {/* 스폰서 개인 광고 - 관련계산기 위 */}
-          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
-            <div className="text-center text-gray-500 text-xs mb-1">스폰서 광고</div>
-            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
-              스폰서 개인 광고 (320x80)
-            </div>
-          </div>
-
-          {/* 관련 계산기 */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-6">관련 계산기</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/loan-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
-                <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaMoneyBillWave className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">대출 계산기</h4>
-                <p className="text-xs text-gray-600">일반 대출</p>
-              </a>
-              
-              <a href="/mortgage-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
-                <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaCalculator className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">주택담보대출</h4>
-                <p className="text-xs text-gray-600">주택 구매</p>
-              </a>
-              
-              <a href="/compound-interest-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
-                <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaCalculator className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">복리 계산기</h4>
-                <p className="text-xs text-gray-600">복리 이자</p>
-              </a>
-              
-              <a href="/investment-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
-                <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaChartLine className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">투자 계산기</h4>
-                <p className="text-xs text-gray-600">수익률 계산</p>
-              </a>
             </div>
           </div>
         </div>

@@ -230,15 +230,7 @@ export default function CompoundInterestCalculator() {
             </div>
           </div>
 
-          {/* 구글 AdSense 광고 */}
-          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
-            <div className="text-center text-gray-500 text-xs mb-1">Google AdSense</div>
-            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
-              구글 AdSense 광고 (320x80)
-            </div>
-          </div>
-
-          {/* 결과 표시 */}
+          {/* 계산 결과 */}
           {result && (
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
               <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">복리 계산 결과</h3>
@@ -325,52 +317,6 @@ export default function CompoundInterestCalculator() {
               <p>• <strong>이 계산기는 참고용입니다.</strong> 실제 투자 수익률은 변동될 수 있습니다.</p>
               <p>• <strong>복리 효과:</strong> 투자 기간이 길수록 복리 효과가 커집니다.</p>
               <p>• <strong>위험 요소:</strong> 투자에는 원금 손실의 위험이 따를 수 있습니다.</p>
-            </div>
-          </div>
-
-          {/* 스폰서 개인 광고 - 관련계산기 위 */}
-          <div className="bg-white rounded-lg border border-gray-200 p-3 mb-4">
-            <div className="text-center text-gray-500 text-xs mb-1">스폰서 광고</div>
-            <div className="bg-gray-100 h-20 rounded flex items-center justify-center">
-              스폰서 개인 광고 (320x80)
-            </div>
-          </div>
-
-          {/* 관련 계산기 */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-6">관련 계산기</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/investment-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
-                <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaChartLine className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">투자 계산기</h4>
-                <p className="text-xs text-gray-600">수익률 계산</p>
-              </a>
-              
-              <a href="/inflation-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
-                <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaPercentage className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">인플레이션 계산기</h4>
-                <p className="text-xs text-gray-600">물가 상승</p>
-              </a>
-              
-              <a href="/retirement-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
-                <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaHome className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">은퇴 계산기</h4>
-                <p className="text-xs text-gray-600">은퇴 계획</p>
-              </a>
-              
-              <a href="/salary-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
-                <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <FaMoneyBillWave className="text-xl text-black" />
-                </div>
-                <h4 className="font-semibold text-gray-800 text-sm">급여 계산기</h4>
-                <p className="text-xs text-gray-600">실수령액</p>
-              </a>
             </div>
           </div>
         </div>
