@@ -509,48 +509,24 @@ export default function EngineeringCalculator() {
         </div>
       </div>
 
-      {/* 광고 2: 계산기와 정보 섹션 사이 */}
-      <div className="w-full px-8 py-6 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-4">
-            <div className="text-xs text-gray-500 mb-3">스폰서 광고</div>
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex-1 text-left">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">📱 고급 계산기 앱</h3>
-                  <p className="text-gray-600 mb-3">공학용 계산기, 그래프 계산기, 수식 편집기</p>
-                  <div className="flex gap-2">
-                    <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">무료</span>
-                    <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">고급 기능</span>
-                  </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105">
-                    다운로드
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* 정보 섹션 */}
       <div className="w-full px-8 py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="flex gap-8">
+          <div className="flex justify-center">
             {/* 메인 콘텐츠 */}
-            <div className="flex-1 max-w-4xl">
+            <div className="w-full max-w-4xl">
           
           {/* 공학용 계산기란? */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">공학용 계산기란?</h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-gray-700 leading-relaxed mb-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-gray-700 leading-relaxed mb-4 text-center mx-auto max-w-3xl">
                 공학용 계산기는 기본적인 사칙연산뿐만 아니라 삼각함수, 로그, 지수, 제곱근 등 고급 수학 함수를 
                 지원하는 계산기입니다. 공학, 물리학, 수학 등의 분야에서 복잡한 계산을 수행할 때 사용됩니다.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-center mx-auto max-w-3xl">
                 이 계산기는 각도 단위(DEG/RAD)를 선택할 수 있고, 메모리 기능을 통해 계산 결과를 저장하고 
                 재사용할 수 있습니다. 또한 팩토리얼, 절댓값, 역수 등 다양한 수학 함수를 제공합니다.
               </p>
@@ -558,7 +534,7 @@ export default function EngineeringCalculator() {
           </section>
 
           {/* 주요 기능 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">주요 기능</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="border border-gray-200 p-6 rounded-lg">
@@ -601,7 +577,7 @@ export default function EngineeringCalculator() {
           </section>
 
           {/* 사용 예시 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">사용 예시</h2>
             <div className="bg-blue-50 p-6 rounded-lg">
               <h3 className="font-semibold text-gray-800 mb-4">삼각함수 계산</h3>
@@ -628,7 +604,7 @@ export default function EngineeringCalculator() {
           </section>
 
           {/* 주의사항 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">사용 시 주의사항</h2>
             <div className="space-y-4">
               <div className="border border-gray-200 rounded-lg p-4">
@@ -647,7 +623,7 @@ export default function EngineeringCalculator() {
           </section>
 
           {/* 관련 계산기 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">관련 계산기</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <a href="/triangle-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
@@ -689,58 +665,7 @@ export default function EngineeringCalculator() {
           </section>
             </div>
             
-            {/* 사이드바 광고 (데스크톱 전용) */}
-            <div className="hidden lg:block w-80">
-              <div className="sticky top-8 space-y-6">
-                {/* 광고 4: 사이드바 배너 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-xs text-gray-500 mb-3">추천 광고</div>
-                    <div className="bg-gradient-to-b from-blue-400 to-purple-500 text-white p-6 rounded-lg mb-4">
-                      <h4 className="font-bold text-lg mb-2">📊 수학 도구</h4>
-                      <p className="text-sm mb-3">그래프 계산기, 수식 편집기</p>
-                      <button className="bg-white text-blue-500 px-4 py-2 rounded-full text-sm font-semibold w-full">
-                        시작하기
-                      </button>
-                    </div>
-                  </div>
-                </div>
 
-                {/* 광고 5: 네이티브 광고 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-xs text-gray-500 mb-4">스폰서</div>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        📱
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">고급 계산기 앱</h5>
-                        <p className="text-xs text-gray-600">공학용 + 그래프 기능</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                        📚
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">수학 학습 앱</h5>
-                        <p className="text-xs text-gray-600">개념 설명 + 연습문제</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                        🎓
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">온라인 수학 강의</h5>
-                        <p className="text-xs text-gray-600">고등학교 ~ 대학교 수학</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

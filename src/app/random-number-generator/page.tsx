@@ -440,57 +440,30 @@ export default function RandomNumberGenerator() {
         </div>
       </div>
 
-      {/* 광고 2: 생성기와 정보 섹션 사이 */}
-      <div className="w-full px-8 py-6 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-4">
-            <div className="text-xs text-gray-500 mb-3">스폰서 광고</div>
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex-1 text-left">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">🎲 게임 도구</h3>
-                  <p className="text-gray-600 mb-3">주사위, 카드, 로또 번호 생성기</p>
-                  <div className="flex gap-2">
-                    <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">무료</span>
-                    <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">게임</span>
-                  </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105">
-                    다운로드
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* 정보 섹션 */}
       <div className="w-full px-8 py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="flex gap-8">
+          <div className="flex justify-center">
             {/* 메인 콘텐츠 */}
-            <div className="flex-1 max-w-4xl">
+            <div className="w-full max-w-4xl">
           
           {/* 난수 생성기란? */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">난수 생성기란?</h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-gray-700 leading-relaxed mb-4">
-                난수 생성기는 예측할 수 없는 무작위 숫자를 생성해주는 도구입니다. 
-                게임, 시뮬레이션, 암호화, 통계 등 다양한 분야에서 사용됩니다.
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-gray-700 leading-relaxed mb-4 text-center mx-auto max-w-3xl">
+                난수 생성기는 무작위 숫자를 생성하는 도구입니다. 게임, 추첨, 통계 분석, 암호화 등 
+                다양한 분야에서 사용되는 무작위 숫자를 쉽게 생성할 수 있습니다.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                이 도구는 범위를 지정한 난수 생성부터 로또 번호, 주사위, 동전 던지기, 
-                카드 뽑기 등 다양한 형태의 무작위 결과를 제공합니다. 생성 히스토리도 
-                함께 저장되어 이전 결과들을 확인할 수 있습니다.
+              <p className="text-gray-700 leading-relaxed text-center mx-auto max-w-3xl">
+                최소값과 최대값을 설정하여 원하는 범위 내의 난수를 생성할 수 있으며, 
+                중복 제거 옵션을 통해 고유한 난수들만 생성할 수도 있습니다.
               </p>
             </div>
           </section>
 
           {/* 난수 생성 방법 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">난수 생성 방법</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="border border-gray-200 p-6 rounded-lg">
@@ -533,7 +506,7 @@ export default function RandomNumberGenerator() {
           </section>
 
           {/* 사용 예시 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">사용 예시</h2>
             <div className="bg-blue-50 p-6 rounded-lg">
               <h3 className="font-semibold text-gray-800 mb-4">범위 지정 생성</h3>
@@ -560,7 +533,7 @@ export default function RandomNumberGenerator() {
           </section>
 
           {/* 주의사항 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">사용 시 주의사항</h2>
             <div className="space-y-4">
               <div className="border border-gray-200 rounded-lg p-4">
@@ -579,7 +552,7 @@ export default function RandomNumberGenerator() {
           </section>
 
           {/* 관련 계산기 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">관련 계산기</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <a href="/percentage-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
@@ -614,58 +587,6 @@ export default function RandomNumberGenerator() {
           </section>
             </div>
             
-            {/* 사이드바 광고 (데스크톱 전용) */}
-            <div className="hidden lg:block w-80">
-              <div className="sticky top-8 space-y-6">
-                {/* 광고 4: 사이드바 배너 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-xs text-gray-500 mb-3">추천 광고</div>
-                    <div className="bg-gradient-to-b from-blue-400 to-purple-500 text-white p-6 rounded-lg mb-4">
-                      <h4 className="font-bold text-lg mb-2">🎲 게임 도구</h4>
-                      <p className="text-sm mb-3">주사위, 카드, 로또 번호</p>
-                      <button className="bg-white text-blue-500 px-4 py-2 rounded-full text-sm font-semibold w-full">
-                        시작하기
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 광고 5: 네이티브 광고 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-xs text-gray-500 mb-4">스폰서</div>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        🎮
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">게임 앱</h5>
-                        <p className="text-xs text-gray-600">주사위 + 카드 게임</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                        📊
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">통계 도구</h5>
-                        <p className="text-xs text-gray-600">확률 + 시뮬레이션</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                        🎯
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">로또 번호 생성</h5>
-                        <p className="text-xs text-gray-600">무작위 번호 생성</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

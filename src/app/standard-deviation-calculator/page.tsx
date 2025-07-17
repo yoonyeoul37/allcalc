@@ -395,57 +395,30 @@ export default function StandardDeviationCalculator() {
         </div>
       </div>
 
-      {/* 광고 2: 계산기와 정보 섹션 사이 */}
-      <div className="w-full px-8 py-6 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-4">
-            <div className="text-xs text-gray-500 mb-3">스폰서 광고</div>
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex-1 text-left">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">📊 통계 분석 도구</h3>
-                  <p className="text-gray-600 mb-3">표준편차, 평균, 분산 계산기</p>
-                  <div className="flex gap-2">
-                    <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">무료</span>
-                    <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">교육용</span>
-                  </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105">
-                    다운로드
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* 정보 섹션 */}
       <div className="w-full px-8 py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="flex gap-8">
+          <div className="flex justify-center">
             {/* 메인 콘텐츠 */}
-            <div className="flex-1 max-w-4xl">
+            <div className="w-full max-w-4xl">
           
           {/* 표준편차 계산기란? */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">표준편차 계산기란?</h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-gray-700 leading-relaxed mb-4">
-                표준편차 계산기는 데이터의 분산 정도를 측정하는 통계 도구입니다. 
-                데이터가 평균에서 얼마나 퍼져있는지를 나타내는 중요한 지표입니다.
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-gray-700 leading-relaxed mb-4 text-center mx-auto max-w-3xl">
+                표준편차 계산기는 데이터의 분산 정도를 측정하는 통계 도구입니다. 평균으로부터 
+                각 데이터가 얼마나 떨어져 있는지를 수치로 나타내어 데이터의 분포를 분석할 수 있습니다.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                이 계산기는 표본 표준편차와 모집단 표준편차를 모두 지원하며, 
-                평균, 분산, 중앙값, 범위 등 다양한 통계량을 함께 계산합니다. 
-                연구, 교육, 데이터 분석 등 다양한 분야에서 활용됩니다.
+              <p className="text-gray-700 leading-relaxed text-center mx-auto max-w-3xl">
+                표본 표준편차와 모 표준편차를 모두 계산할 수 있으며, 평균, 분산, 변동계수 등 
+                관련 통계량도 함께 제공합니다.
               </p>
             </div>
           </section>
 
           {/* 표준편차 계산 방법 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">표준편차 계산 방법</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="border border-gray-200 p-6 rounded-lg">
@@ -488,7 +461,7 @@ export default function StandardDeviationCalculator() {
           </section>
 
           {/* 사용 예시 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">사용 예시</h2>
             <div className="bg-blue-50 p-6 rounded-lg">
               <h3 className="font-semibold text-gray-800 mb-4">기본 예시</h3>
@@ -517,7 +490,7 @@ export default function StandardDeviationCalculator() {
           </section>
 
           {/* 주의사항 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">사용 시 주의사항</h2>
             <div className="space-y-4">
               <div className="border border-gray-200 rounded-lg p-4">
@@ -536,7 +509,7 @@ export default function StandardDeviationCalculator() {
           </section>
 
           {/* 관련 계산기 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">관련 계산기</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <a href="/engineering-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
@@ -585,58 +558,6 @@ export default function StandardDeviationCalculator() {
           </section>
             </div>
             
-            {/* 사이드바 광고 (데스크톱 전용) */}
-            <div className="hidden lg:block w-80">
-              <div className="sticky top-8 space-y-6">
-                {/* 광고 4: 사이드바 배너 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-xs text-gray-500 mb-3">추천 광고</div>
-                    <div className="bg-gradient-to-b from-blue-400 to-purple-500 text-white p-6 rounded-lg mb-4">
-                      <h4 className="font-bold text-lg mb-2">📊 통계 분석 도구</h4>
-                      <p className="text-sm mb-3">표준편차, 평균, 분산 계산</p>
-                      <button className="bg-white text-blue-500 px-4 py-2 rounded-full text-sm font-semibold w-full">
-                        시작하기
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 광고 5: 네이티브 광고 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-xs text-gray-500 mb-4">스폰서</div>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        📊
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">통계 분석 앱</h5>
-                        <p className="text-xs text-gray-600">표준편차 + 평균 분석</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                        📈
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">데이터 시각화</h5>
-                        <p className="text-xs text-gray-600">그래프 + 차트 도구</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                        🎓
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">통계 교육</h5>
-                        <p className="text-xs text-gray-600">확률 + 통계 학습</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

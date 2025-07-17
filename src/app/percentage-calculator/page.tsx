@@ -362,50 +362,26 @@ export default function PercentageCalculator() {
         </div>
       </div>
 
-      {/* 광고 2: 계산기와 정보 섹션 사이 */}
-      <div className="w-full px-8 py-6 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-4">
-            <div className="text-xs text-gray-500 mb-3">스폰서 광고</div>
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex-1 text-left">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">💰 금융 계산기</h3>
-                  <p className="text-gray-600 mb-3">이자율, 할인율, 세금 계산 도구</p>
-                  <div className="flex gap-2">
-                    <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">무료</span>
-                    <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">금융</span>
-                  </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105">
-                    다운로드
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* 정보 섹션 */}
       <div className="w-full px-8 py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="flex gap-8">
+          <div className="flex justify-center">
             {/* 메인 콘텐츠 */}
-            <div className="flex-1 max-w-4xl">
+            <div className="w-full max-w-4xl">
           
           {/* 백분율 계산기란? */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">백분율 계산기란?</h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-gray-700 leading-relaxed mb-4">
-                백분율 계산기는 다양한 백분율 관련 계산을 자동으로 수행해주는 도구입니다. 
-                기본적인 백분율 계산부터 증가율, 감소율, 할인율, 세금 계산까지 다양한 기능을 제공합니다.
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-gray-700 leading-relaxed mb-4 text-center mx-auto max-w-3xl">
+                백분율 계산기는 퍼센트 계산을 쉽게 할 수 있는 도구입니다. 할인율, 이자율, 세율 등 
+                다양한 상황에서 백분율을 계산하고 변환할 수 있습니다.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                백분율은 일상생활에서 자주 사용되는 중요한 개념으로, 할인, 이자율, 성장률 등을 
-                계산할 때 매우 유용합니다. 이 계산기로 복잡한 백분율 계산을 쉽고 정확하게 할 수 있습니다.
+              <p className="text-gray-700 leading-relaxed text-center mx-auto max-w-3xl">
+                전체 값에서 일정 비율을 계산하거나, 증가율/감소율을 계산할 때 유용합니다. 
+                금융, 쇼핑, 통계 등 다양한 분야에서 활용할 수 있습니다.
               </p>
             </div>
           </section>
@@ -542,58 +518,6 @@ export default function PercentageCalculator() {
           </section>
             </div>
             
-            {/* 사이드바 광고 (데스크톱 전용) */}
-            <div className="hidden lg:block w-80">
-              <div className="sticky top-8 space-y-6">
-                {/* 광고 4: 사이드바 배너 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-xs text-gray-500 mb-3">추천 광고</div>
-                    <div className="bg-gradient-to-b from-blue-400 to-purple-500 text-white p-6 rounded-lg mb-4">
-                      <h4 className="font-bold text-lg mb-2">💰 금융 도구</h4>
-                      <p className="text-sm mb-3">이자율, 할인율, 세금 계산</p>
-                      <button className="bg-white text-blue-500 px-4 py-2 rounded-full text-sm font-semibold w-full">
-                        시작하기
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 광고 5: 네이티브 광고 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-xs text-gray-500 mb-4">스폰서</div>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        💰
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">금융 계산기 앱</h5>
-                        <p className="text-xs text-gray-600">이자율 + 할인율 계산</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                        📊
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">투자 분석 도구</h5>
-                        <p className="text-xs text-gray-600">수익률 + 성장률 계산</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                        🏪
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">쇼핑 할인 계산</h5>
-                        <p className="text-xs text-gray-600">할인율 + 세금 계산</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

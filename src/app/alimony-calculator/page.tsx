@@ -1,308 +1,494 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@/components/ui/Button';
-import Header from '@/components/ui/Header';
-import Footer from '@/components/ui/Footer';
+import { FaHeart, FaMoneyBillWave, FaInfoCircle, FaCalculator, FaUser, FaGavel } from 'react-icons/fa';
+import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
+
+interface FaultFactor {
+  type: string;
+  multiplier: number;
+  description: string;
+}
+
+const faultFactors: FaultFactor[] = [
+  { type: '무과실', multiplier: 1.0, description: '상호 합의 이혼' },
+  { type: '배우자 일방 귀책', multiplier: 1.3, description: '일방 귀책 시 30% 증가' },
+  { type: '중대한 귀책', multiplier: 1.5, description: '중대한 귀책 시 50% 증가' },
+  { type: '폭력/학대', multiplier: 2.0, description: '폭력/학대 시 100% 증가' },
+  { type: '부정행위', multiplier: 1.8, description: '부정행위 시 80% 증가' }
+];
 
 export default function AlimonyCalculator() {
   const [marriageDuration, setMarriageDuration] = useState('');
-  const [faultType, setFaultType] = useState('mutual');
-  const [victimIncome, setVictimIncome] = useState('');
-  const [faultPartyIncome, setFaultPartyIncome] = useState('');
+  const [husbandIncome, setHusbandIncome] = useState('');
+  const [wifeIncome, setWifeIncome] = useState('');
+  const [husbandAssets, setHusbandAssets] = useState('');
+  const [wifeAssets, setWifeAssets] = useState('');
+  const [faultType, setFaultType] = useState('무과실');
+  const [wifeAge, setWifeAge] = useState('');
+  const [wifeEducation, setWifeEducation] = useState('고등학교');
+  const [wifeCareer, setWifeCareer] = useState('none');
   const [childrenCount, setChildrenCount] = useState('0');
-  const [result, setResult] = useState<{
-    baseAmount: number;
-    faultMultiplier: number;
-    incomeAdjustment: number;
-    childrenAdjustment: number;
-    finalAmount: number;
-  } | null>(null);
+  const [wifeHealth, setWifeHealth] = useState('healthy');
+  
+  const [monthlyAlimony, setMonthlyAlimony] = useState(0);
+  const [totalAlimony, setTotalAlimony] = useState(0);
+  const [alimonyPeriod, setAlimonyPeriod] = useState(0);
+
+  const formatNumber = (value: string) => {
+    return value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
+
+  const parseNumber = (value: string) => {
+    return parseInt(value.replace(/,/g, '')) || 0;
+  };
 
   const calculateAlimony = () => {
-    if (!marriageDuration || !victimIncome || !faultPartyIncome) return;
+    const marriageYears = parseInt(marriageDuration) || 0;
+    const husbandMonthlyIncome = parseNumber(husbandIncome);
+    const wifeMonthlyIncome = parseNumber(wifeIncome);
+    const husbandTotalAssets = parseNumber(husbandAssets);
+    const wifeTotalAssets = parseNumber(wifeAssets);
+    const children = parseInt(childrenCount) || 0;
+    const wifeAgeNum = parseInt(wifeAge) || 30;
 
-    const duration = parseFloat(marriageDuration);
-    const victim = parseFloat(victimIncome);
-    const fault = parseFloat(faultPartyIncome);
-    const children = parseInt(childrenCount);
+    // 기본 위자료 계산
+    let baseAlimony = 0;
 
-    // 기본 위자료 계산 (결혼 기간 기준)
-    let baseAmount = 0;
-    if (duration <= 1) {
-      baseAmount = 5000000; // 1년 이하: 500만원
-    } else if (duration <= 3) {
-      baseAmount = 10000000; // 1-3년: 1000만원
-    } else if (duration <= 5) {
-      baseAmount = 15000000; // 3-5년: 1500만원
-    } else if (duration <= 10) {
-      baseAmount = 20000000; // 5-10년: 2000만원
-    } else if (duration <= 15) {
-      baseAmount = 25000000; // 10-15년: 2500만원
+    // 혼인 기간에 따른 기본 위자료
+    if (marriageYears < 3) {
+      baseAlimony = 500000; // 3년 미만: 50만원
+    } else if (marriageYears < 5) {
+      baseAlimony = 800000; // 3-5년: 80만원
+    } else if (marriageYears < 10) {
+      baseAlimony = 1200000; // 5-10년: 120만원
+    } else if (marriageYears < 15) {
+      baseAlimony = 1500000; // 10-15년: 150만원
     } else {
-      baseAmount = 30000000; // 15년 이상: 3000만원
-    }
-
-    // 과실 유형에 따른 배수
-    let faultMultiplier = 1;
-    switch (faultType) {
-      case 'none':
-        faultMultiplier = 0.5; // 과실 없음
-        break;
-      case 'minor':
-        faultMultiplier = 1.0; // 경미한 과실
-        break;
-      case 'moderate':
-        faultMultiplier = 1.5; // 중간 과실
-        break;
-      case 'severe':
-        faultMultiplier = 2.0; // 중대한 과실
-        break;
-      case 'mutual':
-        faultMultiplier = 1.0; // 상호 과실
-        break;
-      default:
-        faultMultiplier = 1.0;
+      baseAlimony = 2000000; // 15년 이상: 200만원
     }
 
     // 소득 차이에 따른 조정
-    const incomeRatio = victim / fault;
-    let incomeAdjustment = 1;
-    if (incomeRatio < 0.5) {
-      incomeAdjustment = 1.2; // 피해자 소득이 매우 낮음
-    } else if (incomeRatio < 0.8) {
-      incomeAdjustment = 1.1; // 피해자 소득이 낮음
-    } else if (incomeRatio > 1.5) {
-      incomeAdjustment = 0.8; // 피해자 소득이 높음
-    } else if (incomeRatio > 2.0) {
-      incomeAdjustment = 0.6; // 피해자 소득이 매우 높음
+    const incomeDifference = husbandMonthlyIncome - wifeMonthlyIncome;
+    if (incomeDifference > 0) {
+      baseAlimony += incomeDifference * 0.1; // 소득 차이의 10%
+    }
+
+    // 재산 차이에 따른 조정
+    const assetDifference = husbandTotalAssets - wifeTotalAssets;
+    if (assetDifference > 0) {
+      baseAlimony += assetDifference * 0.01; // 재산 차이의 1%
+    }
+
+    // 귀책사유에 따른 조정
+    const faultFactor = faultFactors.find(f => f.type === faultType);
+    const faultMultiplier = faultFactor?.multiplier || 1.0;
+    baseAlimony *= faultMultiplier;
+
+    // 아내의 나이에 따른 조정
+    if (wifeAgeNum < 30) {
+      baseAlimony *= 0.8; // 30세 미만: 20% 감소
+    } else if (wifeAgeNum > 50) {
+      baseAlimony *= 1.2; // 50세 이상: 20% 증가
+    }
+
+    // 아내의 학력에 따른 조정
+    if (wifeEducation === '대학교') {
+      baseAlimony *= 0.9; // 대학교 졸업: 10% 감소
+    } else if (wifeEducation === '고등학교') {
+      baseAlimony *= 1.0; // 고등학교 졸업: 기본
+    } else {
+      baseAlimony *= 1.1; // 중학교 이하: 10% 증가
+    }
+
+    // 아내의 경력에 따른 조정
+    if (wifeCareer === 'career') {
+      baseAlimony *= 0.7; // 경력 있음: 30% 감소
+    } else if (wifeCareer === 'parttime') {
+      baseAlimony *= 0.9; // 파트타임: 10% 감소
+    } else {
+      baseAlimony *= 1.0; // 경력 없음: 기본
     }
 
     // 자녀 수에 따른 조정
-    let childrenAdjustment = 1;
-    if (children === 1) {
-      childrenAdjustment = 1.1;
-    } else if (children === 2) {
-      childrenAdjustment = 1.2;
-    } else if (children >= 3) {
-      childrenAdjustment = 1.3;
+    if (children > 0) {
+      baseAlimony *= (1 + children * 0.1); // 자녀 1명당 10% 증가
     }
 
-    const finalAmount = Math.round(baseAmount * faultMultiplier * incomeAdjustment * childrenAdjustment);
+    // 아내의 건강 상태에 따른 조정
+    if (wifeHealth === 'disabled') {
+      baseAlimony *= 1.3; // 장애: 30% 증가
+    } else if (wifeHealth === 'chronic') {
+      baseAlimony *= 1.1; // 만성질환: 10% 증가
+    } else {
+      baseAlimony *= 1.0; // 건강: 기본
+    }
 
-    setResult({
-      baseAmount: Math.round(baseAmount),
-      faultMultiplier,
-      incomeAdjustment,
-      childrenAdjustment,
-      finalAmount
-    });
-  };
+    // 최저/최고 한도 적용
+    const minAlimony = 300000; // 월 30만원 최저
+    const maxAlimony = husbandMonthlyIncome * 0.5; // 남편 소득의 50% 최고
+    baseAlimony = Math.max(minAlimony, Math.min(maxAlimony, baseAlimony));
 
-  const resetCalculator = () => {
-    setMarriageDuration('');
-    setFaultType('mutual');
-    setVictimIncome('');
-    setFaultPartyIncome('');
-    setChildrenCount('0');
-    setResult(null);
+    // 위자료 지급 기간 계산
+    let paymentPeriod = 0;
+    if (marriageYears < 5) {
+      paymentPeriod = 1; // 5년 미만: 1년
+    } else if (marriageYears < 10) {
+      paymentPeriod = 2; // 5-10년: 2년
+    } else if (marriageYears < 15) {
+      paymentPeriod = 3; // 10-15년: 3년
+    } else {
+      paymentPeriod = 5; // 15년 이상: 5년
+    }
+
+    // 귀책사유에 따른 기간 조정
+    if (faultType === '배우자 일방 귀책') {
+      paymentPeriod += 1;
+    } else if (faultType === '중대한 귀책') {
+      paymentPeriod += 2;
+    } else if (faultType === '폭력/학대' || faultType === '부정행위') {
+      paymentPeriod += 3;
+    }
+
+    const totalAlimonyAmount = baseAlimony * 12 * paymentPeriod;
+
+    setMonthlyAlimony(baseAlimony);
+    setTotalAlimony(totalAlimonyAmount);
+    setAlimonyPeriod(paymentPeriod);
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Header onSearch={() => {}} />
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">위자료 계산기</h1>
-            <p className="text-lg text-gray-600">
-              이혼 시 위자료를 계산해보세요
-            </p>
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
+            <FaHeart className="mr-3 text-slate-600" />
+            위자료 계산기
+          </h1>
+          <p className="text-gray-600 text-lg">
+            혼인 기간, 귀책 사유 기반 위자료 계산
+          </p>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                <FaUser className="mr-2 text-slate-600" />
+                남편 정보
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    월 소득 (원)
+                  </label>
+                  <input
+                    type="text"
+                    value={husbandIncome}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/[^\d]/g, '');
+                      setHusbandIncome(formatNumber(value));
+                    }}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+                    placeholder="예: 4,000,000"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    총 재산 (원)
+                  </label>
+                  <input
+                    type="text"
+                    value={husbandAssets}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/[^\d]/g, '');
+                      setHusbandAssets(formatNumber(value));
+                    }}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+                    placeholder="예: 100,000,000"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                <FaUser className="mr-2 text-slate-600" />
+                아내 정보
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    월 소득 (원)
+                  </label>
+                  <input
+                    type="text"
+                    value={wifeIncome}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/[^\d]/g, '');
+                      setWifeIncome(formatNumber(value));
+                    }}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+                    placeholder="예: 2,000,000"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    총 재산 (원)
+                  </label>
+                  <input
+                    type="text"
+                    value={wifeAssets}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/[^\d]/g, '');
+                      setWifeAssets(formatNumber(value));
+                    }}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+                    placeholder="예: 50,000,000"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  혼인 기간 (년)
-                </label>
-                <input
-                  type="number"
-                  value={marriageDuration}
-                  onChange={(e) => setMarriageDuration(e.target.value)}
-                  placeholder="예: 5"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  과실 유형
-                </label>
-                <select
-                  value={faultType}
-                  onChange={(e) => setFaultType(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
-                  <option value="none">과실 없음</option>
-                  <option value="minor">경미한 과실</option>
-                  <option value="moderate">중간 과실</option>
-                  <option value="severe">중대한 과실</option>
-                  <option value="mutual">상호 과실</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  피해자 연간 소득 (원)
-                </label>
-                <input
-                  type="number"
-                  value={victimIncome}
-                  onChange={(e) => setVictimIncome(e.target.value)}
-                  placeholder="예: 30000000"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  과실자 연간 소득 (원)
-                </label>
-                <input
-                  type="number"
-                  value={faultPartyIncome}
-                  onChange={(e) => setFaultPartyIncome(e.target.value)}
-                  placeholder="예: 40000000"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  자녀 수
-                </label>
-                <input
-                  type="number"
-                  value={childrenCount}
-                  onChange={(e) => setChildrenCount(e.target.value)}
-                  placeholder="예: 2"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
+          <div className="grid md:grid-cols-3 gap-6 mt-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                혼인 기간 (년)
+              </label>
+              <input
+                type="number"
+                value={marriageDuration}
+                onChange={(e) => setMarriageDuration(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+                placeholder="예: 8"
+                min="0"
+                max="50"
+              />
             </div>
-
-            <div className="flex gap-4 mt-6">
-              <Button
-                onClick={calculateAlimony}
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                계산하기
-              </Button>
-              <Button
-                onClick={resetCalculator}
-                className="flex-1 bg-gray-500 hover:bg-gray-600 text-white"
-              >
-                초기화
-              </Button>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                아내 나이
+              </label>
+              <input
+                type="number"
+                value={wifeAge}
+                onChange={(e) => setWifeAge(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+                placeholder="예: 35"
+                min="18"
+                max="80"
+              />
             </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                자녀 수
+              </label>
+              <input
+                type="number"
+                value={childrenCount}
+                onChange={(e) => setChildrenCount(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+                placeholder="예: 2"
+                min="0"
+                max="10"
+              />
+            </div>
+          </div>
 
-            {result && (
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                <h3 className="text-lg font-semibold text-blue-800 mb-2">계산 결과</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="text-center">
-                    <p className="text-sm text-gray-600">기본 위자료</p>
-                    <p className="text-xl font-bold text-blue-600">{result.baseAmount.toLocaleString()}원</p>
+          <div className="grid md:grid-cols-3 gap-6 mt-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                귀책사유
+              </label>
+              <select
+                value={faultType}
+                onChange={(e) => setFaultType(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+              >
+                {faultFactors.map((fault) => (
+                  <option key={fault.type} value={fault.type}>
+                    {fault.type}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                아내 학력
+              </label>
+              <select
+                value={wifeEducation}
+                onChange={(e) => setWifeEducation(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+              >
+                <option value="중학교">중학교</option>
+                <option value="고등학교">고등학교</option>
+                <option value="대학교">대학교</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                아내 경력
+              </label>
+              <select
+                value={wifeCareer}
+                onChange={(e) => setWifeCareer(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+              >
+                <option value="none">경력 없음</option>
+                <option value="parttime">파트타임</option>
+                <option value="career">정규직 경력</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              아내 건강 상태
+            </label>
+            <select
+              value={wifeHealth}
+              onChange={(e) => setWifeHealth(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+            >
+              <option value="healthy">건강</option>
+              <option value="chronic">만성질환</option>
+              <option value="disabled">장애</option>
+            </select>
+          </div>
+
+          <button
+            onClick={calculateAlimony}
+            className="w-full bg-slate-600 text-white py-3 rounded-lg font-medium hover:bg-slate-700 transition-colors mt-6"
+          >
+            위자료 계산하기
+          </button>
+
+          {monthlyAlimony > 0 && (
+            <div className="bg-slate-50 rounded-lg p-6 mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">위자료 계산 결과</h3>
+              
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-white p-4 rounded-lg">
+                  <p className="text-sm text-gray-600">월 위자료</p>
+                  <p className="text-2xl font-bold text-gray-800">
+                    {monthlyAlimony.toLocaleString()}원
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <p className="text-sm text-gray-600">총 위자료</p>
+                  <p className="text-xl font-bold text-gray-800">
+                    {totalAlimony.toLocaleString()}원
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <p className="text-sm text-gray-600">지급 기간</p>
+                  <p className="text-lg font-bold text-gray-800">
+                    {alimonyPeriod}년
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h4 className="font-medium text-gray-800 mb-2">상세 내역</h4>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex justify-between">
+                    <span>혼인 기간:</span>
+                    <span>{marriageDuration || 0}년</span>
                   </div>
-                  <div className="text-center">
-                    <p className="text-sm text-gray-600">과실 배수</p>
-                    <p className="text-xl font-bold text-orange-600">{result.faultMultiplier}x</p>
+                  <div className="flex justify-between">
+                    <span>남편 월 소득:</span>
+                    <span>{parseNumber(husbandIncome).toLocaleString()}원</span>
                   </div>
-                  <div className="text-center">
-                    <p className="text-sm text-gray-600">소득 조정</p>
-                    <p className="text-xl font-bold text-green-600">{result.incomeAdjustment}x</p>
+                  <div className="flex justify-between">
+                    <span>아내 월 소득:</span>
+                    <span>{parseNumber(wifeIncome).toLocaleString()}원</span>
                   </div>
-                  <div className="text-center">
-                    <p className="text-sm text-gray-600">자녀 조정</p>
-                    <p className="text-xl font-bold text-purple-600">{result.childrenAdjustment}x</p>
+                  <div className="flex justify-between">
+                    <span>소득 차이:</span>
+                    <span>{(parseNumber(husbandIncome) - parseNumber(wifeIncome)).toLocaleString()}원</span>
                   </div>
-                  <div className="text-center md:col-span-2">
-                    <p className="text-sm text-gray-600">최종 위자료</p>
-                    <p className="text-2xl font-bold text-red-600">{result.finalAmount.toLocaleString()}원</p>
+                  <div className="flex justify-between">
+                    <span>재산 차이:</span>
+                    <span>{(parseNumber(husbandAssets) - parseNumber(wifeAssets)).toLocaleString()}원</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>귀책사유:</span>
+                    <span>{faultType}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>아내 나이:</span>
+                    <span>{wifeAge || 0}세</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>아내 학력:</span>
+                    <span>{wifeEducation}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>아내 경력:</span>
+                    <span>
+                      {wifeCareer === 'none' ? '경력 없음' :
+                       wifeCareer === 'parttime' ? '파트타임' : '정규직 경력'}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>자녀 수:</span>
+                    <span>{childrenCount}명</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>건강 상태:</span>
+                    <span>
+                      {wifeHealth === 'healthy' ? '건강' :
+                       wifeHealth === 'chronic' ? '만성질환' : '장애'}
+                    </span>
                   </div>
                 </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
+        </div>
 
-          <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">위자료란?</h2>
-            <div className="prose max-w-none">
-              <p className="text-gray-700 mb-4">
-                위자료는 이혼 시 정신적, 물질적 손해를 입은 배우자에게 상대방이 지급하는 금전적 보상입니다. 
-                혼인 기간, 과실 유형, 소득 차이, 자녀 유무 등이 고려됩니다.
-              </p>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">혼인 기간별 기본 위자료</h3>
-              <ul className="list-disc list-inside text-gray-700 space-y-1">
-                <li>1년 이하: 500만원</li>
-                <li>1-3년: 1000만원</li>
-                <li>3-5년: 1500만원</li>
-                <li>5-10년: 2000만원</li>
-                <li>10-15년: 2500만원</li>
-                <li>15년 이상: 3000만원</li>
+        <div className="bg-white rounded-2xl shadow-xl p-6">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <FaInfoCircle className="mr-2 text-slate-600" />
+            위자료 계산 정보
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-slate-50 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2">위자료 계산 요소</h3>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• 혼인 기간</li>
+                <li>• 부부의 소득 및 재산</li>
+                <li>• 귀책사유</li>
+                <li>• 아내의 나이 및 학력</li>
+                <li>• 아내의 경력 및 건강</li>
+                <li>• 자녀 수</li>
+              </ul>
+            </div>
+            
+            <div className="bg-blue-50 rounded-lg p-4">
+              <h3 className="font-semibold text-blue-800 mb-2">주의사항</h3>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• 최저 위자료: 월 30만원</li>
+                <li>• 최고 위자료: 남편 소득의 50%</li>
+                <li>• 실제 위자료는 법원이 결정</li>
+                <li>• 상황에 따라 조정 가능</li>
+                <li>• 일시금 또는 분할 지급 가능</li>
               </ul>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">사용 가이드</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">1. 혼인 기간 입력</h3>
-                <p className="text-gray-700">
-                  혼인한 기간을 년 단위로 입력하세요. 소수점도 가능합니다.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">2. 과실 유형 선택</h3>
-                <p className="text-gray-700">
-                  이혼의 원인이 되는 과실 유형을 선택하세요.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">3. 소득 정보 입력</h3>
-                <p className="text-gray-700">
-                  피해자와 과실자의 연간 소득을 입력하세요.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">관련 계산기</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <a
-                href="/child-support-calculator"
-                className="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
-              >
-                <h3 className="font-semibold text-gray-800">양육비 계산기</h3>
-                <p className="text-sm text-gray-600">양육비 계산</p>
-              </a>
-              <a
-                href="/divorce-property-calculator"
-                className="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
-              >
-                <h3 className="font-semibold text-gray-800">이혼 재산분할 계산기</h3>
-                <p className="text-sm text-gray-600">혼인 중 형성 재산 분할</p>
-              </a>
-              <a
-                href="/salary-calculator"
-                className="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
-              >
-                <h3 className="font-semibold text-gray-800">급여 계산기</h3>
-                <p className="text-sm text-gray-600">실수령액 계산</p>
-              </a>
+          <div className="mt-6 bg-gray-50 rounded-lg p-4">
+            <h3 className="font-semibold text-gray-800 mb-2">위자료란?</h3>
+            <div className="text-sm text-gray-600 space-y-2">
+              <p>• 위자료는 이혼 시 정신적 고통을 받은 배우자에게 지급하는 금전적 보상입니다.</p>
+              <p>• 위자료는 혼인 기간, 귀책사유, 경제적 상황 등을 종합적으로 고려하여 결정됩니다.</p>
+              <p>• 위자료는 일시금으로 지급하거나 분할 지급할 수 있습니다.</p>
+              <p>• 위자료는 법원의 판단에 따라 결정되며, 상황에 따라 조정될 수 있습니다.</p>
             </div>
           </div>
         </div>

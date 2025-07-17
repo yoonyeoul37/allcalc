@@ -132,12 +132,12 @@ export default function PersonalRehabilitationCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Header onSearch={() => {}} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
-            <FaUser className="mr-3 text-black" />
+            <FaUser className="mr-3 text-slate-600" />
             개인회생 변제금 계산기
           </h1>
           <p className="text-gray-600 text-lg">
@@ -155,7 +155,7 @@ export default function PersonalRehabilitationCalculator() {
                 type="number"
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
                 placeholder="예: 35"
                 min="1"
                 max="120"
@@ -172,7 +172,7 @@ export default function PersonalRehabilitationCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setMonthlyIncome(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
                 placeholder="예: 3,000,000"
               />
             </div>
@@ -190,7 +190,7 @@ export default function PersonalRehabilitationCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setTotalDebtAmount(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
                 placeholder="예: 50,000,000"
               />
             </div>
@@ -201,7 +201,7 @@ export default function PersonalRehabilitationCalculator() {
               <select
                 value={incomeType}
                 onChange={(e) => setIncomeType(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
               >
                 {incomeTypes.map((type) => (
                   <option key={type.type} value={type.type}>
@@ -220,7 +220,7 @@ export default function PersonalRehabilitationCalculator() {
               <select
                 value={familySize}
                 onChange={(e) => setFamilySize(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
               >
                 <option value="1">1명</option>
                 <option value="2">2명</option>
@@ -240,7 +240,7 @@ export default function PersonalRehabilitationCalculator() {
                   id="hasStocks"
                   checked={hasStocks}
                   onChange={(e) => setHasStocks(e.target.checked)}
-                  className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
+                  className="w-4 h-4 text-slate-600 border-gray-300 rounded focus:ring-slate-500"
                 />
                 <label htmlFor="hasStocks" className="text-sm font-medium text-gray-700">
                   주식 보유
@@ -252,7 +252,7 @@ export default function PersonalRehabilitationCalculator() {
                   id="hasGambling"
                   checked={hasGambling}
                   onChange={(e) => setHasGambling(e.target.checked)}
-                  className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
+                  className="w-4 h-4 text-slate-600 border-gray-300 rounded focus:ring-slate-500"
                 />
                 <label htmlFor="hasGambling" className="text-sm font-medium text-gray-700">
                   도박 이력
@@ -264,7 +264,7 @@ export default function PersonalRehabilitationCalculator() {
                   id="isBasicLivelihood"
                   checked={isBasicLivelihood}
                   onChange={(e) => setIsBasicLivelihood(e.target.checked)}
-                  className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
+                  className="w-4 h-4 text-slate-600 border-gray-300 rounded focus:ring-slate-500"
                 />
                 <label htmlFor="isBasicLivelihood" className="text-sm font-medium text-gray-700">
                   기초생활수급자
@@ -276,7 +276,7 @@ export default function PersonalRehabilitationCalculator() {
                   id="hasDisability"
                   checked={hasDisability}
                   onChange={(e) => setHasDisability(e.target.checked)}
-                  className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
+                  className="w-4 h-4 text-slate-600 border-gray-300 rounded focus:ring-slate-500"
                 />
                 <label htmlFor="hasDisability" className="text-sm font-medium text-gray-700">
                   장애인
@@ -297,7 +297,7 @@ export default function PersonalRehabilitationCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setStockValue(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
                 placeholder="예: 5,000,000"
               />
             </div>
@@ -315,7 +315,7 @@ export default function PersonalRehabilitationCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setGamblingAmount(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
                 placeholder="예: 1,000,000"
               />
             </div>
@@ -328,7 +328,7 @@ export default function PersonalRehabilitationCalculator() {
                 id="hasMedicalExpenses"
                 checked={hasMedicalExpenses}
                 onChange={(e) => setHasMedicalExpenses(e.target.checked)}
-                className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
+                className="w-4 h-4 text-slate-600 border-gray-300 rounded focus:ring-slate-500"
               />
               <label htmlFor="hasMedicalExpenses" className="text-sm font-medium text-gray-700">
                 의료비 공제
@@ -346,7 +346,7 @@ export default function PersonalRehabilitationCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setMedicalExpenses(formatNumber(value));
                   }}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
                   placeholder="예: 200,000"
                 />
               </div>
@@ -355,19 +355,19 @@ export default function PersonalRehabilitationCalculator() {
 
           <button
             onClick={calculatePayment}
-            className="w-full bg-orange-600 text-white py-3 rounded-lg font-medium hover:bg-orange-700 transition-colors mt-6"
+            className="w-full bg-slate-600 text-white py-3 rounded-lg font-medium hover:bg-slate-700 transition-colors mt-6"
           >
             변제금 계산하기
           </button>
 
           {monthlyPayment > 0 && (
-            <div className="bg-orange-50 rounded-lg p-6 mt-6 space-y-4">
-              <h3 className="text-lg font-semibold text-black mb-4">변제금 계산 결과</h3>
+            <div className="bg-slate-50 rounded-lg p-6 mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">변제금 계산 결과</h3>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-sm text-gray-600">월 변제금</p>
-                  <p className="text-2xl font-bold text-black">
+                  <p className="text-2xl font-bold text-gray-800">
                     {monthlyPayment.toLocaleString()}원
                   </p>
                 </div>
@@ -375,7 +375,7 @@ export default function PersonalRehabilitationCalculator() {
                   <p className="text-sm text-gray-600">
                     {parseNumber(totalDebtAmount) > 0 ? '실제 총 채무' : '추정 총 채무'}
                   </p>
-                  <p className="text-xl font-bold text-black">
+                  <p className="text-xl font-bold text-gray-800">
                     {totalDebt.toLocaleString()}원
                   </p>
                 </div>
@@ -447,7 +447,7 @@ export default function PersonalRehabilitationCalculator() {
                   <hr className="my-2" />
                   <div className="flex justify-between font-semibold">
                     <span>최종 월 변제금:</span>
-                    <span className="text-black">{monthlyPayment.toLocaleString()}원</span>
+                    <span className="text-gray-800">{monthlyPayment.toLocaleString()}원</span>
                   </div>
                 </div>
               </div>
@@ -455,7 +455,7 @@ export default function PersonalRehabilitationCalculator() {
               <div className="bg-white p-4 rounded-lg">
                 <div className="flex justify-between items-center">
                   <p className="text-sm text-gray-600">예상 변제 기간</p>
-                  <p className="text-lg font-bold text-black">
+                  <p className="text-lg font-bold text-gray-800">
                     {repaymentPeriod}년
                   </p>
                 </div>
@@ -471,13 +471,13 @@ export default function PersonalRehabilitationCalculator() {
 
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-            <FaInfoCircle className="mr-2 text-black" />
+            <FaInfoCircle className="mr-2 text-slate-600" />
             개인회생 변제금 정보
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-orange-50 rounded-lg p-4">
-              <h3 className="font-semibold text-black mb-2">변제금 계산 요소</h3>
+            <div className="bg-slate-50 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2">변제금 계산 요소</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• 나이: 연령대별 배율 적용</li>
                 <li>• 소득 유형: 근로/사업/이자/배당/임대/기타</li>
@@ -488,8 +488,8 @@ export default function PersonalRehabilitationCalculator() {
               </ul>
             </div>
             
-            <div className="bg-red-50 rounded-lg p-4">
-              <h3 className="font-semibold text-red-800 mb-2">주의사항</h3>
+            <div className="bg-blue-50 rounded-lg p-4">
+              <h3 className="font-semibold text-blue-800 mb-2">주의사항</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• 최저생계비 보장 (월 150만원)</li>
                 <li>• 가족 수에 따른 조정</li>

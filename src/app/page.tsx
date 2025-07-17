@@ -503,8 +503,8 @@ export default function Home() {
               </div>
               <h2 className="text-lg font-bold text-gray-800 mb-4">가정법률/개인회생</h2>
               <div className="space-y-1">
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>양육비 계산기</a></div>
-                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>위자료 계산기</a></div>
+                <div><a href="/child-support-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>양육비 계산기</a></div>
+                <div><a href="/alimony-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>위자료 계산기</a></div>
                 <div><a href="/personal-rehabilitation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>개인회생 변제금 계산기</a></div>
               </div>
             </div>

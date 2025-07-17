@@ -340,56 +340,32 @@ export default function FractionCalculator() {
         </div>
       </div>
 
-      {/* 광고 2: 계산기와 정보 섹션 사이 */}
-      <div className="w-full px-8 py-6 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-4">
-            <div className="text-xs text-gray-500 mb-3">스폰서 광고</div>
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex-1 text-left">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">📚 수학 학습 앱</h3>
-                  <p className="text-gray-600 mb-3">분수, 소수, 백분율 계산 및 학습</p>
-                  <div className="flex gap-2">
-                    <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">무료</span>
-                    <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">교육용</span>
-                  </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105">
-                    다운로드
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* 정보 섹션 */}
       <div className="w-full px-8 py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="flex gap-8">
+          <div className="flex justify-center">
             {/* 메인 콘텐츠 */}
-            <div className="flex-1 max-w-4xl">
+            <div className="w-full max-w-4xl">
           
           {/* 분수 계산기란? */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">분수 계산기란?</h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-gray-700 leading-relaxed mb-4">
-                분수 계산기는 분수의 덧셈, 뺄셈, 곱셈, 나눗셈을 자동으로 계산해주는 도구입니다. 
-                분수 계산은 분모를 맞추고, 기약분수로 만드는 과정이 복잡할 수 있어서 실수를 하기 쉽습니다.
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-gray-700 leading-relaxed mb-4 text-center mx-auto max-w-3xl">
+                분수 계산기는 분수의 덧셈, 뺄셈, 곱셈, 나눗셈을 쉽게 계산할 수 있는 도구입니다. 
+                복잡한 분수 연산을 단계별로 풀어서 보여주며, 결과를 기약분수 형태로 제공합니다.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                이 계산기는 분수를 입력하면 자동으로 최대공약수를 찾아 기약분수로 만들고, 
-                소수 형태로도 결과를 보여줍니다. 또한 계산 과정도 함께 표시하여 학습에 도움이 됩니다.
+              <p className="text-gray-700 leading-relaxed text-center mx-auto max-w-3xl">
+                분자와 분모를 입력하면 자동으로 계산이 수행되며, 소수와 분수 간의 변환도 지원합니다. 
+                수학 학습이나 일상적인 계산에서 유용하게 사용할 수 있습니다.
               </p>
             </div>
           </section>
 
           {/* 분수 연산 방법 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">분수 연산 방법</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="border border-gray-200 p-6 rounded-lg">
@@ -432,7 +408,7 @@ export default function FractionCalculator() {
           </section>
 
           {/* 사용 예시 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">사용 예시</h2>
             <div className="bg-blue-50 p-6 rounded-lg">
               <h3 className="font-semibold text-gray-800 mb-4">덧셈 예시</h3>
@@ -456,7 +432,7 @@ export default function FractionCalculator() {
           </section>
 
           {/* 주의사항 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">사용 시 주의사항</h2>
             <div className="space-y-4">
               <div className="border border-gray-200 rounded-lg p-4">
@@ -475,7 +451,7 @@ export default function FractionCalculator() {
           </section>
 
           {/* 관련 계산기 */}
-          <section className="mb-12">
+          <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">관련 계산기</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <a href="/engineering-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
@@ -510,58 +486,7 @@ export default function FractionCalculator() {
           </section>
             </div>
             
-            {/* 사이드바 광고 (데스크톱 전용) */}
-            <div className="hidden lg:block w-80">
-              <div className="sticky top-8 space-y-6">
-                {/* 광고 4: 사이드바 배너 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-xs text-gray-500 mb-3">추천 광고</div>
-                    <div className="bg-gradient-to-b from-blue-400 to-purple-500 text-white p-6 rounded-lg mb-4">
-                      <h4 className="font-bold text-lg mb-2">📊 수학 도구</h4>
-                      <p className="text-sm mb-3">분수, 소수, 백분율 계산</p>
-                      <button className="bg-white text-blue-500 px-4 py-2 rounded-full text-sm font-semibold w-full">
-                        시작하기
-                      </button>
-                    </div>
-                  </div>
-                </div>
 
-                {/* 광고 5: 네이티브 광고 */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                  <div className="text-xs text-gray-500 mb-4">스폰서</div>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        📚
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">수학 학습 앱</h5>
-                        <p className="text-xs text-gray-600">분수 + 소수 학습</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                        🎓
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">온라인 수학 강의</h5>
-                        <p className="text-xs text-gray-600">초등학교 ~ 중학교 수학</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                      <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                        📱
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="font-semibold text-sm">계산기 앱</h5>
-                        <p className="text-xs text-gray-600">분수 + 백분율 계산</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
