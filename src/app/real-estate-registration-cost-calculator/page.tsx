@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaCalculator, FaHome, FaMoneyBillWave, FaInfoCircle } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 interface RegistrationCost {
   type: string;
@@ -282,6 +283,8 @@ export default function RealEstateRegistrationCostCalculator() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 } 

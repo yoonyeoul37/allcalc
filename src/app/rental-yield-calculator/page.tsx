@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaCalculator, FaHome, FaMoneyBillWave, FaInfoCircle, FaChartLine } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 export default function RentalYieldCalculator() {
   const [propertyValue, setPropertyValue] = useState('');
@@ -303,6 +304,8 @@ export default function RentalYieldCalculator() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 } 

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaCalculator, FaHome, FaExchangeAlt, FaInfoCircle } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 export default function JeonseMonthlyConverter() {
   const [conversionType, setConversionType] = useState<'jeonse-to-monthly' | 'monthly-to-jeonse'>('jeonse-to-monthly');
@@ -254,6 +255,8 @@ export default function JeonseMonthlyConverter() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 } 

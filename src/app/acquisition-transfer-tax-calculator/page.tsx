@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaCalculator, FaHome, FaMoneyBillWave, FaInfoCircle } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 interface TaxRate {
   type: string;
@@ -59,12 +60,12 @@ export default function AcquisitionTransferTaxCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Header onSearch={() => {}} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
-            <FaHome className="mr-3 text-purple-600" />
+            <FaHome className="mr-3 text-blue-600" />
             취득세/양도세 계산기
           </h1>
           <p className="text-gray-600 text-lg">
@@ -78,8 +79,8 @@ export default function AcquisitionTransferTaxCalculator() {
               onClick={() => setTaxType('acquisition')}
               className={`flex-1 py-3 px-4 rounded-md font-medium transition-all ${
                 taxType === 'acquisition'
-                  ? 'bg-purple-600 text-white shadow-md'
-                  : 'text-gray-600 hover:text-purple-600'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-600 hover:text-blue-600'
               }`}
             >
               <FaMoneyBillWave className="inline mr-2" />
@@ -89,8 +90,8 @@ export default function AcquisitionTransferTaxCalculator() {
               onClick={() => setTaxType('transfer')}
               className={`flex-1 py-3 px-4 rounded-md font-medium transition-all ${
                 taxType === 'transfer'
-                  ? 'bg-purple-600 text-white shadow-md'
-                  : 'text-gray-600 hover:text-purple-600'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-600 hover:text-blue-600'
               }`}
             >
               <FaMoneyBillWave className="inline mr-2" />
@@ -106,7 +107,7 @@ export default function AcquisitionTransferTaxCalculator() {
               <select
                 value={propertyType}
                 onChange={(e) => setPropertyType(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 {taxType === 'acquisition' ? (
                   <>
@@ -136,7 +137,7 @@ export default function AcquisitionTransferTaxCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setPropertyValue(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="예: 500,000,000"
               />
             </div>
@@ -144,19 +145,19 @@ export default function AcquisitionTransferTaxCalculator() {
 
           <button
             onClick={calculateTax}
-            className="w-full bg-purple-600 text-white py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors mt-6"
+            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors mt-6"
           >
             세금 계산하기
           </button>
 
           {taxAmount > 0 && (
-            <div className="bg-purple-50 rounded-lg p-6 mt-6 space-y-4">
-              <h3 className="text-lg font-semibold text-purple-800 mb-4">세금 계산 결과</h3>
+            <div className="bg-blue-50 rounded-lg p-6 mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-blue-800 mb-4">세금 계산 결과</h3>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-sm text-gray-600">부동산 가액</p>
-                  <p className="text-xl font-bold text-purple-600">
+                  <p className="text-xl font-bold text-blue-600">
                     {parseNumber(propertyValue).toLocaleString()}원
                   </p>
                 </div>
@@ -243,6 +244,8 @@ export default function AcquisitionTransferTaxCalculator() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 } 

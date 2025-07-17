@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaCalculator, FaMoneyBillWave, FaCalendarAlt, FaInfoCircle } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 export default function InterimPaymentInterestCalculator() {
   const [interimAmount, setInterimAmount] = useState('');
@@ -212,6 +213,8 @@ export default function InterimPaymentInterestCalculator() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 } 
