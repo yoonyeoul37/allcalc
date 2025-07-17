@@ -130,12 +130,6 @@ export default function PregnancyCalculator() {
               </button>
             </div>
 
-            {/* 광고 1: 계산 버튼 아래 */}
-            <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center mb-6">
-              <p className="text-gray-500 text-sm">광고 영역</p>
-              <p className="text-gray-400 text-xs mt-1">Google AdSense 또는 개인 광고 코드를 여기에 삽입하세요</p>
-            </div>
-
             {/* 결과 표시 */}
             {result && (
               <div className="border border-gray-200 p-6 rounded-lg mt-6">
@@ -269,12 +263,6 @@ export default function PregnancyCalculator() {
                 <p className="text-sm text-gray-600">임신 중 영양 관리</p>
               </a>
             </div>
-          </div>
-
-          {/* 광고 2: 관련 계산기 아래 */}
-          <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center mt-8">
-            <p className="text-gray-500 text-sm">광고 영역</p>
-            <p className="text-gray-400 text-xs mt-1">Google AdSense 또는 개인 광고 코드를 여기에 삽입하세요</p>
           </div>
         </div>
       </div>
