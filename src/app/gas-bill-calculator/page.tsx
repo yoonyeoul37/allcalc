@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaCalculator, FaFire, FaHome, FaBuilding, FaInfoCircle } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 interface GasRate {
   tier: string;
@@ -103,12 +104,12 @@ export default function GasBillCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Header onSearch={() => {}} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
-            <FaFire className="mr-3 text-orange-600" />
+            <FaFire className="mr-3 text-gray-600" />
             가스요금 계산기
           </h1>
           <p className="text-gray-600 text-lg">
@@ -129,7 +130,7 @@ export default function GasBillCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setMonthlyUsage(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                 placeholder="예: 25"
               />
               <p className="text-sm text-gray-500 mt-2">
@@ -139,20 +140,20 @@ export default function GasBillCalculator() {
 
             <button
               onClick={calculateGasBill}
-              className="w-full bg-orange-600 text-white py-3 rounded-lg font-medium hover:bg-orange-700 transition-colors mt-6"
+              className="w-full bg-gray-600 text-white py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors mt-6"
             >
               가스요금 계산하기
             </button>
           </div>
 
           {billAmount > 0 && (
-            <div className="bg-orange-50 rounded-lg p-6 mt-6 space-y-4">
-              <h3 className="text-lg font-semibold text-orange-800 mb-4">가스요금 계산 결과</h3>
+            <div className="bg-gray-50 rounded-lg p-6 mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">가스요금 계산 결과</h3>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-sm text-gray-600">기본요금</p>
-                  <p className="text-xl font-bold text-orange-600">
+                  <p className="text-xl font-bold text-gray-600">
                     {baseCharge.toLocaleString()}원
                   </p>
                 </div>
@@ -173,7 +174,7 @@ export default function GasBillCalculator() {
                         <span className="font-medium text-gray-800">{item.tier}</span>
                         <span className="text-sm text-gray-600 ml-2">({item.usage}㎥)</span>
                       </div>
-                      <span className="font-semibold text-orange-600">
+                      <span className="font-semibold text-gray-600">
                         {item.charge.toLocaleString()}원
                       </span>
                     </div>
@@ -204,14 +205,14 @@ export default function GasBillCalculator() {
 
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-            <FaInfoCircle className="mr-2 text-orange-600" />
+            <FaInfoCircle className="mr-2 text-gray-600" />
             가스요금 정보
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             {gasRates.map((rate, index) => (
-              <div key={index} className="bg-orange-50 rounded-lg p-4">
-                <h3 className="font-semibold text-orange-800 mb-2 flex items-center">
+              <div key={index} className="bg-gray-50 rounded-lg p-4">
+                <h3 className="font-semibold text-gray-800 mb-2 flex items-center">
                   <FaHome className="mr-2" />
                   {rate.tier}
                 </h3>
@@ -234,8 +235,8 @@ export default function GasBillCalculator() {
             </div>
           </div>
 
-          <div className="mt-6 bg-yellow-50 rounded-lg p-4">
-            <h3 className="font-semibold text-yellow-800 mb-2">절약 팁</h3>
+          <div className="mt-6 bg-gray-50 rounded-lg p-4">
+            <h3 className="font-semibold text-gray-800 mb-2">절약 팁</h3>
             <div className="text-sm text-gray-600 space-y-1">
               <p>• 보일러 온도를 1도 낮추면 약 5% 절약</p>
               <p>• 샤워 시간을 1분 줄이면 약 10% 절약</p>
@@ -245,8 +246,8 @@ export default function GasBillCalculator() {
             </div>
           </div>
 
-          <div className="mt-6 bg-blue-50 rounded-lg p-4">
-            <h3 className="font-semibold text-blue-800 mb-2">월 평균 사용량 안내</h3>
+          <div className="mt-6 bg-gray-50 rounded-lg p-4">
+            <h3 className="font-semibold text-gray-800 mb-2">월 평균 사용량 안내</h3>
             <div className="text-sm text-gray-600 space-y-1">
               <p>• 1인 가구: 15~20㎥</p>
               <p>• 2인 가구: 20~25㎥</p>
@@ -257,6 +258,7 @@ export default function GasBillCalculator() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 } 

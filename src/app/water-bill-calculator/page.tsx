@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaCalculator, FaTint, FaHome, FaBuilding, FaInfoCircle } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 interface WaterRate {
   tier: string;
@@ -107,12 +108,12 @@ export default function WaterBillCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Header onSearch={() => {}} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
-            <FaTint className="mr-3 text-blue-600" />
+            <FaTint className="mr-3 text-gray-600" />
             수도요금 계산기
           </h1>
           <p className="text-gray-600 text-lg">
@@ -133,7 +134,7 @@ export default function WaterBillCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setMonthlyUsage(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                 placeholder="예: 30"
               />
               <p className="text-sm text-gray-500 mt-2">
@@ -143,20 +144,20 @@ export default function WaterBillCalculator() {
 
             <button
               onClick={calculateWaterBill}
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors mt-6"
+              className="w-full bg-gray-600 text-white py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors mt-6"
             >
               수도요금 계산하기
             </button>
           </div>
 
           {billAmount > 0 && (
-            <div className="bg-blue-50 rounded-lg p-6 mt-6 space-y-4">
-              <h3 className="text-lg font-semibold text-blue-800 mb-4">수도요금 계산 결과</h3>
+            <div className="bg-gray-50 rounded-lg p-6 mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">수도요금 계산 결과</h3>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-sm text-gray-600">기본요금</p>
-                  <p className="text-xl font-bold text-blue-600">
+                  <p className="text-xl font-bold text-gray-600">
                     {baseCharge.toLocaleString()}원
                   </p>
                 </div>
@@ -177,7 +178,7 @@ export default function WaterBillCalculator() {
                         <span className="font-medium text-gray-800">{item.tier}</span>
                         <span className="text-sm text-gray-600 ml-2">({item.usage}㎥)</span>
                       </div>
-                      <span className="font-semibold text-blue-600">
+                      <span className="font-semibold text-gray-600">
                         {item.charge.toLocaleString()}원
                       </span>
                     </div>
@@ -212,14 +213,14 @@ export default function WaterBillCalculator() {
 
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-            <FaInfoCircle className="mr-2 text-blue-600" />
+            <FaInfoCircle className="mr-2 text-gray-600" />
             수도요금 정보
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             {waterRates.map((rate, index) => (
-              <div key={index} className="bg-blue-50 rounded-lg p-4">
-                <h3 className="font-semibold text-blue-800 mb-2 flex items-center">
+              <div key={index} className="bg-gray-50 rounded-lg p-4">
+                <h3 className="font-semibold text-gray-800 mb-2 flex items-center">
                   <FaHome className="mr-2" />
                   {rate.tier}
                 </h3>
@@ -243,18 +244,19 @@ export default function WaterBillCalculator() {
             </div>
           </div>
 
-          <div className="mt-6 bg-yellow-50 rounded-lg p-4">
-            <h3 className="font-semibold text-yellow-800 mb-2">절약 팁</h3>
+          <div className="mt-6 bg-gray-50 rounded-lg p-4">
+            <h3 className="font-semibold text-gray-800 mb-2">절약 팁</h3>
             <div className="text-sm text-gray-600 space-y-1">
               <p>• 샤워 시간을 1분 줄이면 약 10리터 절약</p>
               <p>• 양치할 때 컵 사용으로 약 5리터 절약</p>
-              <p>• 설거지할 때 받침대 사용으로 약 20리터 절약</p>
-              <p>• 세탁기는 가득 찰 때 사용</p>
-              <p>• 수도꼭지 누수 점검으로 물 낭비 방지</p>
+              <p>• 설거지할 때 물 받아서 사용</p>
+              <p>• 수도꼭지 누수 점검</p>
+              <p>• 세탁기 한 번에 모아서 사용</p>
             </div>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 } 

@@ -11,6 +11,7 @@ import {
   FaExchangeAlt
 } from "react-icons/fa";
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 interface BankType {
   name: string;
@@ -448,6 +449,8 @@ export default function InternationalTransferCalculator() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 } 

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaCalculator, FaLightbulb, FaHome, FaBuilding, FaCar, FaInfoCircle } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer';
 
 interface ElectricityRate {
   type: string;
@@ -72,12 +73,12 @@ export default function ElectricityBillCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Header onSearch={() => {}} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
-            <FaLightbulb className="mr-3 text-yellow-600" />
+            <FaLightbulb className="mr-3 text-gray-600" />
             전기요금 계산기
           </h1>
           <p className="text-gray-600 text-lg">
@@ -94,7 +95,7 @@ export default function ElectricityBillCalculator() {
               <select
                 value={electricityType}
                 onChange={(e) => setElectricityType(e.target.value as any)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
               >
                 <option value="residential">주거용 (일반 가정)</option>
                 <option value="commercial">비주거용 (상업/업무)</option>
@@ -115,7 +116,7 @@ export default function ElectricityBillCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setMonthlyUsage(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                 placeholder="예: 300"
               />
             </div>
@@ -123,25 +124,25 @@ export default function ElectricityBillCalculator() {
 
           <button
             onClick={calculateElectricityBill}
-            className="w-full bg-yellow-600 text-white py-3 rounded-lg font-medium hover:bg-yellow-700 transition-colors mt-6"
+            className="w-full bg-gray-600 text-white py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors mt-6"
           >
             전기요금 계산하기
           </button>
 
           {billAmount > 0 && (
-            <div className="bg-yellow-50 rounded-lg p-6 mt-6 space-y-4">
-              <h3 className="text-lg font-semibold text-yellow-800 mb-4">전기요금 계산 결과</h3>
+            <div className="bg-gray-50 rounded-lg p-6 mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">전기요금 계산 결과</h3>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-sm text-gray-600">기본요금</p>
-                  <p className="text-xl font-bold text-yellow-600">
+                  <p className="text-xl font-bold text-gray-600">
                     {baseCharge.toLocaleString()}원
                   </p>
                 </div>
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-sm text-gray-600">사용량 요금</p>
-                  <p className="text-xl font-bold text-yellow-600">
+                  <p className="text-xl font-bold text-gray-600">
                     {usageCharge.toLocaleString()}원
                   </p>
                 </div>
@@ -183,13 +184,13 @@ export default function ElectricityBillCalculator() {
 
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-            <FaInfoCircle className="mr-2 text-yellow-600" />
+            <FaInfoCircle className="mr-2 text-gray-600" />
             전기요금 정보
           </h2>
           
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-yellow-50 rounded-lg p-4">
-              <h3 className="font-semibold text-yellow-800 mb-2 flex items-center">
+            <div className="bg-gray-50 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2 flex items-center">
                 <FaHome className="mr-2" />
                 주거용
               </h3>
@@ -201,8 +202,8 @@ export default function ElectricityBillCalculator() {
               </ul>
             </div>
             
-            <div className="bg-blue-50 rounded-lg p-4">
-              <h3 className="font-semibold text-blue-800 mb-2 flex items-center">
+            <div className="bg-gray-50 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2 flex items-center">
                 <FaBuilding className="mr-2" />
                 비주거용
               </h3>
@@ -214,8 +215,8 @@ export default function ElectricityBillCalculator() {
               </ul>
             </div>
             
-            <div className="bg-green-50 rounded-lg p-4">
-              <h3 className="font-semibold text-green-800 mb-2 flex items-center">
+            <div className="bg-gray-50 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2 flex items-center">
                 <FaCar className="mr-2" />
                 전기차 충전
               </h3>
@@ -240,6 +241,7 @@ export default function ElectricityBillCalculator() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 } 
