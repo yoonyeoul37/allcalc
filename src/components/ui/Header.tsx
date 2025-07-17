@@ -24,7 +24,7 @@ export default function Header({ onSearch }: HeaderProps) {
           {/* 로고 */}
           <div>
             <Link href="/" className="hover:opacity-80 transition-opacity">
-              <h1 className="text-2xl font-bold text-white cursor-pointer">Calculator.net</h1>
+              <h1 className="text-2xl font-bold text-white cursor-pointer">AllCalc 모든계</h1>
             </Link>
           </div>
 
