@@ -65,7 +65,7 @@ export default function AcquisitionTransferTaxCalculator() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
-            <FaHome className="mr-3 text-blue-600" />
+            <FaHome className="mr-3 text-gray-600" />
             취득세/양도세 계산기
           </h1>
           <p className="text-gray-600 text-lg">
@@ -79,8 +79,8 @@ export default function AcquisitionTransferTaxCalculator() {
               onClick={() => setTaxType('acquisition')}
               className={`flex-1 py-3 px-4 rounded-md font-medium transition-all ${
                 taxType === 'acquisition'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-gray-600 hover:text-blue-600'
+                  ? 'bg-gray-600 text-white shadow-md'
+                  : 'text-gray-600 hover:text-gray-800'
               }`}
             >
               <FaMoneyBillWave className="inline mr-2" />
@@ -90,8 +90,8 @@ export default function AcquisitionTransferTaxCalculator() {
               onClick={() => setTaxType('transfer')}
               className={`flex-1 py-3 px-4 rounded-md font-medium transition-all ${
                 taxType === 'transfer'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-gray-600 hover:text-blue-600'
+                  ? 'bg-gray-600 text-white shadow-md'
+                  : 'text-gray-600 hover:text-gray-800'
               }`}
             >
               <FaMoneyBillWave className="inline mr-2" />
@@ -107,7 +107,7 @@ export default function AcquisitionTransferTaxCalculator() {
               <select
                 value={propertyType}
                 onChange={(e) => setPropertyType(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
               >
                 {taxType === 'acquisition' ? (
                   <>
@@ -137,7 +137,7 @@ export default function AcquisitionTransferTaxCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setPropertyValue(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                 placeholder="예: 500,000,000"
               />
             </div>
@@ -145,19 +145,19 @@ export default function AcquisitionTransferTaxCalculator() {
 
           <button
             onClick={calculateTax}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors mt-6"
+            className="w-full bg-gray-600 text-white py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors mt-6"
           >
             세금 계산하기
           </button>
 
           {taxAmount > 0 && (
-            <div className="bg-blue-50 rounded-lg p-6 mt-6 space-y-4">
-              <h3 className="text-lg font-semibold text-blue-800 mb-4">세금 계산 결과</h3>
+            <div className="bg-gray-50 rounded-lg p-6 mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">세금 계산 결과</h3>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-sm text-gray-600">부동산 가액</p>
-                  <p className="text-xl font-bold text-blue-600">
+                  <p className="text-xl font-bold text-gray-600">
                     {parseNumber(propertyValue).toLocaleString()}원
                   </p>
                 </div>
@@ -205,46 +205,61 @@ export default function AcquisitionTransferTaxCalculator() {
 
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-            <FaInfoCircle className="mr-2 text-purple-600" />
+            <FaInfoCircle className="mr-2 text-gray-600" />
             세금 정보
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-purple-50 rounded-lg p-4">
-              <h3 className="font-semibold text-purple-800 mb-2">취득세</h3>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2">취득세</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• 주택: 1%</li>
-                <li>• 토지: 2%</li>
-                <li>• 건물: 2.5%</li>
-                <li>• 상가: 2.5%</li>
-                <li>• 부동산 취득 시 납부</li>
+                <li>• 부동산 취득 시 납부하는 세금</li>
+                <li>• 주택: 1%, 토지: 2%</li>
+                <li>• 건물/상가: 2.5%</li>
+                <li>• 취득 후 60일 이내 신고</li>
               </ul>
             </div>
             
-            <div className="bg-pink-50 rounded-lg p-4">
-              <h3 className="font-semibold text-pink-800 mb-2">양도소득세</h3>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2">양도소득세</h3>
               <ul className="text-sm text-gray-600 space-y-1">
+                <li>• 부동산 양도 시 발생하는 세금</li>
                 <li>• 1세대 1주택: 0.6%</li>
                 <li>• 1세대 2주택: 1.2%</li>
                 <li>• 2세대 이상: 1.8%</li>
-                <li>• 상가/토지: 2.5%</li>
-                <li>• 부동산 양도 시 납부</li>
               </ul>
             </div>
           </div>
 
           <div className="mt-6 bg-gray-50 rounded-lg p-4">
-            <h3 className="font-semibold text-gray-800 mb-2">주의사항</h3>
-            <div className="text-sm text-gray-600 space-y-2">
-              <p>• 실제 세율은 지역, 시기, 조건에 따라 다를 수 있습니다</p>
-              <p>• 정확한 세금 계산은 세무사와 상담하시기 바랍니다</p>
-              <p>• 취득세는 부동산 취득 시, 양도세는 양도 시 납부합니다</p>
-              <p>• 1세대 1주택 양도 시 특별한 혜택이 있을 수 있습니다</p>
+            <h3 className="font-semibold text-gray-800 mb-2">세율 상세 정보</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-medium text-gray-800 mb-2">취득세율</h4>
+                <div className="text-sm text-gray-600 space-y-1">
+                  {acquisitionTaxRates.map((rate, index) => (
+                    <div key={index} className="flex justify-between">
+                      <span>{rate.type}:</span>
+                      <span>{(rate.rate * 100).toFixed(1)}%</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="font-medium text-gray-800 mb-2">양도세율</h4>
+                <div className="text-sm text-gray-600 space-y-1">
+                  {transferTaxRates.map((rate, index) => (
+                    <div key={index} className="flex justify-between">
+                      <span>{rate.type}:</span>
+                      <span>{(rate.rate * 100).toFixed(1)}%</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
       <Footer />
     </div>
   );

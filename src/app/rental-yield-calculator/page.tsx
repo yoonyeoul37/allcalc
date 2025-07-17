@@ -61,12 +61,12 @@ export default function RentalYieldCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Header onSearch={() => {}} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
-            <FaChartLine className="mr-3 text-green-600" />
+            <FaChartLine className="mr-3 text-gray-600" />
             임대수익률 계산기
           </h1>
           <p className="text-gray-600 text-lg">
@@ -87,7 +87,7 @@ export default function RentalYieldCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setPropertyValue(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                 placeholder="예: 500,000,000"
               />
             </div>
@@ -102,7 +102,7 @@ export default function RentalYieldCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setMonthlyRent(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                 placeholder="예: 2,000,000"
               />
             </div>
@@ -122,7 +122,7 @@ export default function RentalYieldCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setMaintenanceCost(formatNumber(value));
                   }}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                   placeholder="예: 100,000"
                 />
               </div>
@@ -137,7 +137,7 @@ export default function RentalYieldCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setPropertyTax(formatNumber(value));
                   }}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                   placeholder="예: 50,000"
                 />
               </div>
@@ -152,7 +152,7 @@ export default function RentalYieldCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setInsuranceCost(formatNumber(value));
                   }}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                   placeholder="예: 30,000"
                 />
               </div>
@@ -167,7 +167,7 @@ export default function RentalYieldCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setManagementFee(formatNumber(value));
                   }}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                   placeholder="예: 50,000"
                 />
               </div>
@@ -182,7 +182,7 @@ export default function RentalYieldCalculator() {
               type="number"
               value={vacancyRate}
               onChange={(e) => setVacancyRate(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
               placeholder="예: 5"
               step="0.1"
               min="0"
@@ -192,35 +192,50 @@ export default function RentalYieldCalculator() {
 
           <button
             onClick={calculateYield}
-            className="w-full bg-green-600 text-white py-3 rounded-lg font-medium hover:bg-green-700 transition-colors mt-6"
+            className="w-full bg-gray-600 text-white py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors mt-6"
           >
             수익률 계산하기
           </button>
 
           {annualYield > 0 && (
-            <div className="bg-green-50 rounded-lg p-6 mt-6 space-y-4">
-              <h3 className="text-lg font-semibold text-green-800 mb-4">수익률 계산 결과</h3>
+            <div className="bg-gray-50 rounded-lg p-6 mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">수익률 계산 결과</h3>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-sm text-gray-600">연간 수익률</p>
-                  <p className="text-2xl font-bold text-green-600">
+                  <p className="text-xl font-bold text-gray-600">
                     {annualYield.toFixed(2)}%
                   </p>
                 </div>
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-sm text-gray-600">월간 수익률</p>
-                  <p className="text-2xl font-bold text-green-600">
+                  <p className="text-xl font-bold text-gray-600">
                     {monthlyYield.toFixed(2)}%
                   </p>
                 </div>
               </div>
 
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-lg">
+                  <p className="text-sm text-gray-600">연간 순수익</p>
+                  <p className="text-xl font-bold text-gray-600">
+                    {netIncome.toLocaleString()}원
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <p className="text-sm text-gray-600">연간 총 비용</p>
+                  <p className="text-xl font-bold text-gray-600">
+                    {totalExpenses.toLocaleString()}원
+                  </p>
+                </div>
+              </div>
+
               <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-medium text-gray-800 mb-2">수익 분석</h4>
+                <h4 className="font-medium text-gray-800 mb-2">수익률 분석</h4>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex justify-between">
-                    <span>연간 임대료:</span>
+                    <span>연간 총 수익:</span>
                     <span>{(parseNumber(monthlyRent) * 12).toLocaleString()}원</span>
                   </div>
                   <div className="flex justify-between">
@@ -228,35 +243,17 @@ export default function RentalYieldCalculator() {
                     <span>{(parseNumber(monthlyRent) * 12 * parseFloat(vacancyRate) / 100).toLocaleString()}원</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>실효 임대료:</span>
-                    <span>{(parseNumber(monthlyRent) * 12 * (1 - parseFloat(vacancyRate) / 100)).toLocaleString()}원</span>
+                    <span>실효 수익:</span>
+                    <span>{((parseNumber(monthlyRent) * 12) - (parseNumber(monthlyRent) * 12 * parseFloat(vacancyRate) / 100)).toLocaleString()}원</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>연간 비용:</span>
+                    <span>연간 총 비용:</span>
                     <span>{totalExpenses.toLocaleString()}원</span>
                   </div>
-                  <hr className="my-2" />
-                  <div className="flex justify-between font-semibold">
+                  <div className="flex justify-between">
                     <span>연간 순수익:</span>
-                    <span className={netIncome >= 0 ? 'text-green-600' : 'text-red-600'}>
-                      {netIncome.toLocaleString()}원
-                    </span>
+                    <span>{netIncome.toLocaleString()}원</span>
                   </div>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-lg">
-                  <p className="text-sm text-gray-600">부동산 가액</p>
-                  <p className="text-xl font-bold text-blue-600">
-                    {parseNumber(propertyValue).toLocaleString()}원
-                  </p>
-                </div>
-                <div className="bg-white p-4 rounded-lg">
-                  <p className="text-sm text-gray-600">월세</p>
-                  <p className="text-xl font-bold text-blue-600">
-                    {parseNumber(monthlyRent).toLocaleString()}원
-                  </p>
                 </div>
               </div>
             </div>
@@ -265,46 +262,44 @@ export default function RentalYieldCalculator() {
 
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-            <FaInfoCircle className="mr-2 text-green-600" />
+            <FaInfoCircle className="mr-2 text-gray-600" />
             임대수익률 정보
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-green-50 rounded-lg p-4">
-              <h3 className="font-semibold text-green-800 mb-2">수익률 기준</h3>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2">수익률 기준</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• 3% 이하: 낮은 수익률</li>
                 <li>• 3~5%: 보통 수익률</li>
                 <li>• 5~8%: 높은 수익률</li>
                 <li>• 8% 이상: 매우 높은 수익률</li>
-                <li>• 지역, 시장 상황에 따라 다름</li>
               </ul>
             </div>
             
-            <div className="bg-teal-50 rounded-lg p-4">
-              <h3 className="font-semibold text-teal-800 mb-2">고려사항</h3>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2">고려사항</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• 공실률: 일반적으로 5~10%</li>
-                <li>• 관리비: 건물 유형에 따라 차등</li>
-                <li>• 재산세: 시세에 따라 변동</li>
-                <li>• 보험료: 건물 가치에 비례</li>
-                <li>• 관리수수료: 임대업체 수수료</li>
+                <li>• 부동산 가치 상승</li>
+                <li>• 공실률 변동</li>
+                <li>• 관리비 증가</li>
+                <li>• 세금 부담</li>
               </ul>
             </div>
           </div>
 
           <div className="mt-6 bg-gray-50 rounded-lg p-4">
-            <h3 className="font-semibold text-gray-800 mb-2">계산 공식</h3>
+            <h3 className="font-semibold text-gray-800 mb-2">수익률 계산 공식</h3>
             <div className="text-sm text-gray-600 space-y-2">
-              <p><strong>연간 수익률:</strong> (연간 순수익 ÷ 부동산 가액) × 100</p>
-              <p><strong>연간 순수익:</strong> 실효 임대료 - 연간 비용</p>
-              <p><strong>실효 임대료:</strong> 연간 임대료 × (1 - 공실률)</p>
-              <p><strong>연간 비용:</strong> 관리비 + 재산세 + 보험료 + 관리수수료</p>
+              <p>• 연간 총 수익 = 월세 × 12</p>
+              <p>• 실효 수익 = 연간 총 수익 × (1 - 공실률)</p>
+              <p>• 연간 총 비용 = (관리비 + 재산세 + 보험료 + 관리수수료) × 12</p>
+              <p>• 연간 순수익 = 실효 수익 - 연간 총 비용</p>
+              <p>• 수익률 = (연간 순수익 ÷ 부동산 가액) × 100</p>
             </div>
           </div>
         </div>
       </div>
-      
       <Footer />
     </div>
   );

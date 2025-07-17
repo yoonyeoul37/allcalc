@@ -44,12 +44,12 @@ export default function InterimPaymentInterestCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Header onSearch={() => {}} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
-            <FaMoneyBillWave className="mr-3 text-green-600" />
+            <FaMoneyBillWave className="mr-3 text-gray-600" />
             중도금 이자 계산기
           </h1>
           <p className="text-gray-600 text-lg">
@@ -70,7 +70,7 @@ export default function InterimPaymentInterestCalculator() {
                   const value = e.target.value.replace(/[^\d]/g, '');
                   setInterimAmount(formatNumber(value));
                 }}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                 placeholder="예: 50,000,000"
               />
             </div>
@@ -82,7 +82,7 @@ export default function InterimPaymentInterestCalculator() {
                 type="number"
                 value={interestRate}
                 onChange={(e) => setInterestRate(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                 placeholder="예: 5.0"
                 step="0.1"
               />
@@ -98,7 +98,7 @@ export default function InterimPaymentInterestCalculator() {
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
               />
             </div>
             <div>
@@ -109,32 +109,32 @@ export default function InterimPaymentInterestCalculator() {
                 type="date"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
               />
             </div>
           </div>
 
           <button
             onClick={calculateInterest}
-            className="w-full bg-green-600 text-white py-3 rounded-lg font-medium hover:bg-green-700 transition-colors mt-6"
+            className="w-full bg-gray-600 text-white py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors mt-6"
           >
             이자 계산하기
           </button>
 
           {interestAmount > 0 && (
-            <div className="bg-green-50 rounded-lg p-6 mt-6 space-y-4">
-              <h3 className="text-lg font-semibold text-green-800 mb-4">이자 계산 결과</h3>
+            <div className="bg-gray-50 rounded-lg p-6 mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">이자 계산 결과</h3>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-sm text-gray-600">계산 기간</p>
-                  <p className="text-xl font-bold text-green-600">
+                  <p className="text-xl font-bold text-gray-600">
                     {days}일
                   </p>
                 </div>
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-sm text-gray-600">이자 금액</p>
-                  <p className="text-xl font-bold text-green-600">
+                  <p className="text-xl font-bold text-gray-600">
                     {interestAmount.toLocaleString()}원
                   </p>
                 </div>
@@ -176,13 +176,13 @@ export default function InterimPaymentInterestCalculator() {
 
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-            <FaInfoCircle className="mr-2 text-green-600" />
+            <FaInfoCircle className="mr-2 text-gray-600" />
             중도금 이자 정보
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-green-50 rounded-lg p-4">
-              <h3 className="font-semibold text-green-800 mb-2">중도금이란?</h3>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2">중도금이란?</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• 건설 중인 아파트 분양 시 지급하는 금액</li>
                 <li>• 일반적으로 분양가의 10~20%</li>
@@ -191,8 +191,8 @@ export default function InterimPaymentInterestCalculator() {
               </ul>
             </div>
             
-            <div className="bg-blue-50 rounded-lg p-4">
-              <h3 className="font-semibold text-blue-800 mb-2">이자 계산 방법</h3>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2">이자 계산 방법</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• 일 단위로 이자 계산</li>
                 <li>• 연 이율을 365일로 나누어 일일 이자율 계산</li>
@@ -203,17 +203,16 @@ export default function InterimPaymentInterestCalculator() {
           </div>
 
           <div className="mt-6 bg-gray-50 rounded-lg p-4">
-            <h3 className="font-semibold text-gray-800 mb-2">계산 공식</h3>
+            <h3 className="font-semibold text-gray-800 mb-2">중도금 이자 특징</h3>
             <div className="text-sm text-gray-600 space-y-2">
-              <p><strong>일일 이자:</strong> 중도금 × 연 이율 ÷ 365</p>
-              <p><strong>총 이자:</strong> 일일 이자 × 계산 기간 (일)</p>
-              <p><strong>총 금액:</strong> 중도금 + 총 이자</p>
-              <p><strong>이율:</strong> 일반적으로 3~6% (시장 상황에 따라 조정)</p>
+              <p>• 중도금 지급일부터 입주일까지 이자 계산</p>
+              <p>• 일반적으로 3~6% 연 이율 적용</p>
+              <p>• 입주 시 잔금에서 이자를 차감</p>
+              <p>• 분양사와 계약서에 명시된 이율 확인 필요</p>
             </div>
           </div>
         </div>
       </div>
-      
       <Footer />
     </div>
   );
