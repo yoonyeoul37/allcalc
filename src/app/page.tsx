@@ -15,6 +15,7 @@ import {
   FaGlobe
 } from "react-icons/fa";
 import Header from '../components/ui/Header';
+import Footer from '../components/ui/Footer';
 import ScientificCalculator from '../components/ui/ScientificCalculator';
 import BasicCalculator from '../components/ui/BasicCalculator';
 
@@ -578,6 +579,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }
