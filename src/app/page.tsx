@@ -1,0 +1,293 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { 
+  FaMoneyBillWave, 
+  FaHeart, 
+  FaCalculator, 
+  FaTools, 
+  FaFileInvoiceDollar,
+  FaGlobe,
+  FaSearch,
+  FaGavel,
+  FaHome,
+  FaLightbulb
+} from "react-icons/fa";
+import { Header, Footer, SearchSection } from '../components';
+
+/**
+ * 홈페이지 메인 컴포넌트
+ * 계산기 검색, 카테고리 표시, 기본/과학 계산기를 제공
+ */
+
+export default function Home() {
+  // 상태 관리
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // 키보드 단축키 처리
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      // Ctrl + 1 또는 Cmd + 1 (Mac)으로 일반계산기로 이동
+      if ((event.ctrlKey || event.metaKey) && event.key === '1') {
+        event.preventDefault();
+        window.location.href = '/basic-calculator';
+      }
+      
+      // Ctrl + 2 또는 Cmd + 2로 공학용 계산기로 이동
+      if ((event.ctrlKey || event.metaKey) && event.key === '2') {
+        event.preventDefault();
+        window.location.href = '/engineering-calculator';
+      }
+      
+      // Ctrl + 3 또는 Cmd + 3으로 과학용 계산기로 이동
+      if ((event.ctrlKey || event.metaKey) && event.key === '3') {
+        event.preventDefault();
+        window.location.href = '/scientific-calculator';
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
+
+  /**
+   * 검색 처리 함수
+   * @param query - 검색어
+   */
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+  };
+
+  return (
+    <div className="min-h-screen">
+      <Header onSearch={handleSearch} />
+      
+      <SearchSection searchQuery={searchQuery} onSearch={handleSearch} />
+
+      {/* 키보드 단축키 안내 */}
+      <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
+        <div className="flex">
+          <div className="flex-shrink-0">
+            <FaCalculator className="h-5 w-5 text-blue-400" />
+          </div>
+          <div className="ml-3">
+            <p className="text-sm text-blue-700">
+              <strong>키보드 단축키:</strong> 
+              <span className="ml-2">
+                <kbd className="px-2 py-1 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-300 rounded">Ctrl + 1</kbd> 일반계산기
+              </span>
+              <span className="ml-2">
+                <kbd className="px-2 py-1 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-300 rounded">Ctrl + 2</kbd> 공학용계산기
+              </span>
+              <span className="ml-2">
+                <kbd className="px-2 py-1 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-300 rounded">Ctrl + 3</kbd> 과학용계산기
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full py-12 bg-white mt-8">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaMoneyBillWave className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">재무 계산기</h2>
+              <div className="space-y-1">
+                <div><a href="/mortgage-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>주택담보대출 계산기</a></div>
+                <div><a href="/loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>대출 계산기</a></div>
+                <div><a href="/car-loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 대출 계산기</a></div>
+                <div><a href="/interest-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>이자 계산기</a></div>
+                <div><a href="/repayment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>상환 계산기</a></div>
+                <div><a href="/retirement-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>은퇴 계산기</a></div>
+                <div><a href="/depreciation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>감가상각 계산기</a></div>
+                <div><a href="/investment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>투자 계산기</a></div>
+                <div><a href="/inflation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>인플레이션 계산기</a></div>
+                <div><a href="/income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>소득세 계산기</a></div>
+                <div><a href="/compound-interest-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>복리 계산기</a></div>
+                <div><a href="/salary-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>급여 계산기</a></div>
+                <div><a href="/sales-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>판매세 계산기</a></div>
+                <div><a href="/customs-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>해외직구 관세 계산기</a></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaHeart className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">피트니스 및 건강 계산기</h2>
+              <div className="space-y-1">
+                <div><a href="/bmi-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>BMI 계산기</a></div>
+                <div><a href="/calorie-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>칼로리 계산기</a></div>
+                <div><a href="/body-fat-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>체지방 계산기</a></div>
+                <div><a href="/muscle-mass-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>근육량 계산기</a></div>
+                <div><a href="/bmr-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>BMR 계산기</a></div>
+                <div><a href="/ideal-weight-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>이상체중 계산기</a></div>
+                <div><a href="/pace-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>페이스 계산기</a></div>
+                <div><a href="/pregnancy-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>임신 계산기</a></div>
+                <div><a href="/pregnancy-adjustment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>임신 수정 계산기</a></div>
+                <div><a href="/due-date-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>출산 예정일 계산기</a></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaCalculator className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">수학 계산기</h2>
+              <div className="space-y-1">
+                <div><a href="/engineering-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>공학용 계산기</a></div>
+                <div><a href="/fraction-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>분수 계산기</a></div>
+                <div><a href="/percentage-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>백분율 계산기</a></div>
+                <div><a href="/random-number-generator" className="hover:underline text-sm" style={{color: '#276699'}}>난수 생성기</a></div>
+                <div><a href="/triangle-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>삼각형 계산기</a></div>
+                <div><a href="/standard-deviation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>표준편차 계산기</a></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaTools className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">기타 계산기</h2>
+              <div className="space-y-1">
+                <div><a href="/age-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>나이 계산기</a></div>
+                <div><a href="/date-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>날짜 계산기</a></div>
+                <div><a href="/time-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>시간 계산기</a></div>
+                <div><a href="/gpa-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>GPA 계산기</a></div>
+                <div><a href="/grade-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>성적 계산기</a></div>
+              </div>
+            </div>
+            
+          </div>
+
+
+        </div>
+
+        {/* 새로운 카테고리 섹션 - 다른 배경색 */}
+        <div className="w-full py-12" style={{backgroundColor: '#f8f9fa'}}>
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaFileInvoiceDollar className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">사업자/프리랜서</h2>
+              <div className="space-y-1">
+                <div><a href="/vat-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>부가가치세 계산기</a></div>
+                <div><a href="/income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>사업소득세 계산기</a></div>
+                <div><a href="/salary-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>프리랜서 세금 계산기</a></div>
+                <div><a href="/social-insurance-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>4대보험 계산기</a></div>
+                <div><a href="/severance-pay-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>퇴직금 계산기</a></div>
+                <div><a href="/freelancer-withholding-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>프리랜서 원천징수세 계산기</a></div>
+                <div><a href="/inheritance-gift-property-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>상속세/증여세/재산세 계산기</a></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaGlobe className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">해외/국제/무역</h2>
+              <div className="space-y-1">
+                <div><a href="/customs-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>해외직구 관세 계산기</a></div>
+                <div><a href="/exchange-rate-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>환율 계산기</a></div>
+                <div><a href="/international-transfer-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>국제송금 수수료 계산기</a></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaTools className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">건설/공사/인테리어</h2>
+              <div className="space-y-1">
+                <div><a href="/concrete-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>콘크리트 계산기</a></div>
+                <div><a href="/wallpaper-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>도배 계산기</a></div>
+                <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>타일 계산기</a></div>
+                <div><a href="/interior-estimate-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>인테리어 견적 계산기</a></div>
+                <div><a href="/scaffolding-estimate-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>비계 견적서 계산기</a></div>
+                <div><a href="/unit-converter" className="hover:underline text-sm" style={{color: '#276699'}}>단위 변환기</a></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaSearch className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">네트워크/IT/개발</h2>
+              <div className="space-y-1">
+                <div><a href="/subnet-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>서브넷 계산기</a></div>
+                <div><a href="/password-generator" className="hover:underline text-sm" style={{color: '#276699'}}>암호 생성기</a></div>
+                <div><a href="/unit-converter" className="hover:underline text-sm" style={{color: '#276699'}}>단위 변환기</a></div>
+                <div><a href="/data-converter" className="hover:underline text-sm" style={{color: '#276699'}}>데이터 변환 계산기</a></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaCalculator className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">자동차/교통</h2>
+              <div className="space-y-1">
+                <div><a href="/automobile-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차세 계산기</a></div>
+                <div><a href="/automobile-fuel-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 연비/유류비 계산기</a></div>
+                <div><a href="/acquisition-transfer-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 취득세/등록세 계산기</a></div>
+                <div><a href="/car-loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 대출 계산기</a></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaGavel className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">가정법률/개인회생</h2>
+              <div className="space-y-1">
+                <div><a href="/child-support-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>양육비 계산기</a></div>
+                <div><a href="/alimony-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>위자료 계산기</a></div>
+                <div><a href="/personal-rehabilitation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>개인회생 변제금 계산기</a></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaHome className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">부동산/임대차</h2>
+              <div className="space-y-1">
+                <div><a href="/jeonse-monthly-converter" className="hover:underline text-sm" style={{color: '#276699'}}>전세/월세 전환 계산기</a></div>
+                <div><a href="/interim-payment-interest-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>중도금 이자 계산기</a></div>
+                <div><a href="/acquisition-transfer-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>취득세/양도세 계산기</a></div>
+                <div><a href="/real-estate-registration-cost-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>부동산 등기비용 계산기</a></div>
+                <div><a href="/rental-yield-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>임대수익률 계산기</a></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <FaLightbulb className="text-3xl text-gray-600" />
+              </div>
+              <h2 className="text-lg font-bold text-gray-800 mb-4">생활/요금</h2>
+              <div className="space-y-1">
+                <div><a href="/electricity-bill-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>전기요금 계산기</a></div>
+                <div><a href="/water-bill-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>수도요금 계산기</a></div>
+                <div><a href="/gas-bill-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>가스요금 계산기</a></div>
+              </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <Footer />
+    </div>
+  );
+}

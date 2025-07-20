@@ -10,10 +10,6 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,7 +27,9 @@ jobs:
         run: npm ci
         
       - name: Build with Next.js
-        run: npm run build
+        run: |
+          npm run build
+          touch out/.nojekyll
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
