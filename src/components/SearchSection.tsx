@@ -43,8 +43,8 @@ export default function SearchSection({ searchQuery, onSearch }: SearchSectionPr
           </div>
         </div>
         
-        {/* 계산기들을 검색 바로 아래에 배치 */}
-        <div className="flex gap-10 justify-center items-start mt-8">
+        {/* 계산기들을 검색 바로 아래에 배치 - 모바일에서는 세로, 데스크톱에서는 가로 */}
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 justify-center items-center lg:items-start mt-8">
           <BasicCalculator />
           <ScientificCalculator />
         </div>
