@@ -1,12 +1,13 @@
 import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV === 'development' || process.env.NODE_ENV === undefined;
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
 
 const nextConfig: NextConfig = {
   /* config options here */
   output: isDev ? undefined : 'export',
   trailingSlash: true,
-  basePath: isDev ? undefined : '/allcalc',
+  basePath: isDev ? undefined : (isGithubPages ? '' : '/allcalc'),
   experimental: {
     optimizePackageImports: ['react-icons'],
   },
