@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: isDev ? undefined : 'export',
   trailingSlash: true,
-  basePath: isDev ? undefined : '',
+  basePath: isDev ? undefined : '/allcalc',
   experimental: {
     optimizePackageImports: ['react-icons'],
   },
