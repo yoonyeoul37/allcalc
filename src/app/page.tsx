@@ -182,7 +182,7 @@ export default function Home() {
         <div className="w-full px-8 py-6 bg-white">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
-              검색 결과: "{searchQuery}" ({filteredCalculators.length}개)
+              검색 결과: &quot;{searchQuery}&quot; ({filteredCalculators.length}개)
             </h2>
             {filteredCalculators.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
