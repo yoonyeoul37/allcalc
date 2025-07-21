@@ -181,7 +181,7 @@ export default function ScientificCalculator() {
 
           {/* 디스플레이 */}
           <div className="bg-black border-2 border-gray-300 rounded-lg p-4 mb-6">
-            <div className="text-right text-3xl font-mono min-h-[2.5rem] flex items-center justify-end text-white">
+            <div className="text-right text-3xl font-mono min-h-[2.5rem] flex items-center justify-end text-white" style={{ color: '#ffffff !important' }}>
               {display}
             </div>
           </div>
