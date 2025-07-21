@@ -156,8 +156,9 @@ export default function RandomNumberGenerator() {
                   className={`p-3 rounded-lg font-medium text-sm transition-colors ${
                     generatorType === "range"
                       ? "bg-[#003366] text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      : "bg-gray-100 text-black hover:bg-gray-200"
                   }`}
+                  style={generatorType !== "range" ? { color: '#000000 !important' } : {}}
                 >
                   범위 지정
                 </button>
@@ -166,8 +167,9 @@ export default function RandomNumberGenerator() {
                   className={`p-3 rounded-lg font-medium text-sm transition-colors ${
                     generatorType === "lotto"
                       ? "bg-[#003366] text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      : "bg-gray-100 text-black hover:bg-gray-200"
                   }`}
+                  style={generatorType !== "lotto" ? { color: '#000000 !important' } : {}}
                 >
                   로또 번호
                 </button>
@@ -176,8 +178,9 @@ export default function RandomNumberGenerator() {
                   className={`p-3 rounded-lg font-medium text-sm transition-colors ${
                     generatorType === "dice"
                       ? "bg-[#003366] text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      : "bg-gray-100 text-black hover:bg-gray-200"
                   }`}
+                  style={generatorType !== "dice" ? { color: '#000000 !important' } : {}}
                 >
                   주사위
                 </button>
@@ -186,8 +189,9 @@ export default function RandomNumberGenerator() {
                   className={`p-3 rounded-lg font-medium text-sm transition-colors ${
                     generatorType === "coin"
                       ? "bg-[#003366] text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      : "bg-gray-100 text-black hover:bg-gray-200"
                   }`}
+                  style={generatorType !== "coin" ? { color: '#000000 !important' } : {}}
                 >
                   동전 던지기
                 </button>
@@ -196,8 +200,9 @@ export default function RandomNumberGenerator() {
                   className={`p-3 rounded-lg font-medium text-sm transition-colors ${
                     generatorType === "card"
                       ? "bg-[#003366] text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      : "bg-gray-100 text-black hover:bg-gray-200"
                   }`}
+                  style={generatorType !== "card" ? { color: '#000000 !important' } : {}}
                 >
                   카드 뽑기
                 </button>
@@ -206,8 +211,9 @@ export default function RandomNumberGenerator() {
                   className={`p-3 rounded-lg font-medium text-sm transition-colors ${
                     generatorType === "sequence"
                       ? "bg-[#003366] text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      : "bg-gray-100 text-black hover:bg-gray-200"
                   }`}
+                  style={generatorType !== "sequence" ? { color: '#000000 !important' } : {}}
                 >
                   시퀀스 섞기
                 </button>
