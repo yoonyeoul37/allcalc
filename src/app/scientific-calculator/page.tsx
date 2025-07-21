@@ -282,18 +282,21 @@ export default function ScientificCalculator() {
             <button
               onClick={() => inputDigit("7")}
               className="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#000000' }}
             >
               7
             </button>
             <button
               onClick={() => inputDigit("8")}
               className="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#000000' }}
             >
               8
             </button>
             <button
               onClick={() => inputDigit("9")}
               className="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#000000' }}
             >
               9
             </button>
@@ -308,18 +311,21 @@ export default function ScientificCalculator() {
             <button
               onClick={() => inputDigit("4")}
               className="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#000000' }}
             >
               4
             </button>
             <button
               onClick={() => inputDigit("5")}
               className="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#000000' }}
             >
               5
             </button>
             <button
               onClick={() => inputDigit("6")}
               className="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#000000' }}
             >
               6
             </button>
@@ -334,18 +340,21 @@ export default function ScientificCalculator() {
             <button
               onClick={() => inputDigit("1")}
               className="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#000000' }}
             >
               1
             </button>
             <button
               onClick={() => inputDigit("2")}
               className="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#000000' }}
             >
               2
             </button>
             <button
               onClick={() => inputDigit("3")}
               className="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#000000' }}
             >
               3
             </button>
@@ -360,12 +369,14 @@ export default function ScientificCalculator() {
             <button
               onClick={() => inputDigit("0")}
               className="col-span-2 bg-white border-2 border-gray-300 hover:bg-gray-100 text-black font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#000000' }}
             >
               0
             </button>
             <button
               onClick={inputDecimal}
               className="bg-white border-2 border-gray-300 hover:bg-gray-100 text-black font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#000000' }}
             >
               .
             </button>
