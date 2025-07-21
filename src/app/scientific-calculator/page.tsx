@@ -173,7 +173,8 @@ export default function ScientificCalculator() {
           <div className="mb-4">
             <button
               onClick={toggleAngleMode}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg transition-colors"
+              className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               {angleMode === "deg" ? "도(DEG)" : "라디안(RAD)"}
             </button>

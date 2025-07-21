@@ -133,13 +133,15 @@ export default function BasicCalculator() {
             </button>
             <button
               onClick={handlePlusMinus}
-              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               ±
             </button>
             <button
               onClick={handlePercent}
-              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               %
             </button>
