@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { 
   FaMoneyBillWave, 
   FaHeart, 
@@ -186,7 +187,7 @@ export default function Home() {
             {filteredCalculators.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {filteredCalculators.map((calc, index) => (
-                  <a
+                  <Link
                     key={index}
                     href={calc.url}
                     className="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all duration-200"
@@ -198,7 +199,7 @@ export default function Home() {
                         <p className="text-sm text-gray-500">{calc.category}</p>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             ) : (
@@ -247,20 +248,20 @@ export default function Home() {
                   </div>
                   <h2 className="text-lg font-bold text-gray-800 mb-4">재무 계산기</h2>
                   <div className="space-y-1">
-                    <div><a href="/mortgage-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>주택담보대출 계산기</a></div>
-                    <div><a href="/loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>대출 계산기</a></div>
-                    <div><a href="/car-loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 대출 계산기</a></div>
-                    <div><a href="/interest-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>이자 계산기</a></div>
-                    <div><a href="/repayment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>상환 계산기</a></div>
-                    <div><a href="/retirement-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>은퇴 계산기</a></div>
-                    <div><a href="/depreciation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>감가상각 계산기</a></div>
-                    <div><a href="/investment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>투자 계산기</a></div>
-                    <div><a href="/inflation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>인플레이션 계산기</a></div>
-                    <div><a href="/income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>소득세 계산기</a></div>
-                    <div><a href="/compound-interest-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>복리 계산기</a></div>
-                    <div><a href="/salary-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>급여 계산기</a></div>
-                    <div><a href="/sales-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>판매세 계산기</a></div>
-                    <div><a href="/customs-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>해외직구 관세 계산기</a></div>
+                    <div><Link href="/mortgage-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>주택담보대출 계산기</Link></div>
+                    <div><Link href="/loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>대출 계산기</Link></div>
+                    <div><Link href="/car-loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 대출 계산기</Link></div>
+                    <div><Link href="/interest-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>이자 계산기</Link></div>
+                    <div><Link href="/repayment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>상환 계산기</Link></div>
+                    <div><Link href="/retirement-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>은퇴 계산기</Link></div>
+                    <div><Link href="/depreciation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>감가상각 계산기</Link></div>
+                    <div><Link href="/investment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>투자 계산기</Link></div>
+                    <div><Link href="/inflation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>인플레이션 계산기</Link></div>
+                    <div><Link href="/income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>소득세 계산기</Link></div>
+                    <div><Link href="/compound-interest-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>복리 계산기</Link></div>
+                    <div><Link href="/salary-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>급여 계산기</Link></div>
+                    <div><Link href="/sales-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>판매세 계산기</Link></div>
+                    <div><Link href="/customs-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>해외직구 관세 계산기</Link></div>
                   </div>
                 </div>
 
@@ -270,16 +271,16 @@ export default function Home() {
                   </div>
                   <h2 className="text-lg font-bold text-gray-800 mb-4">피트니스 및 건강 계산기</h2>
                   <div className="space-y-1">
-                    <div><a href="/bmi-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>BMI 계산기</a></div>
-                    <div><a href="/calorie-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>칼로리 계산기</a></div>
-                    <div><a href="/body-fat-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>체지방 계산기</a></div>
-                    <div><a href="/muscle-mass-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>근육량 계산기</a></div>
-                    <div><a href="/bmr-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>BMR 계산기</a></div>
-                    <div><a href="/ideal-weight-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>이상체중 계산기</a></div>
-                    <div><a href="/pace-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>페이스 계산기</a></div>
-                    <div><a href="/pregnancy-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>임신 계산기</a></div>
-                    <div><a href="/pregnancy-adjustment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>임신 수정 계산기</a></div>
-                    <div><a href="/due-date-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>출산 예정일 계산기</a></div>
+                    <div><Link href="/bmi-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>BMI 계산기</Link></div>
+                    <div><Link href="/calorie-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>칼로리 계산기</Link></div>
+                    <div><Link href="/body-fat-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>체지방 계산기</Link></div>
+                    <div><Link href="/muscle-mass-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>근육량 계산기</Link></div>
+                    <div><Link href="/bmr-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>BMR 계산기</Link></div>
+                    <div><Link href="/ideal-weight-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>이상체중 계산기</Link></div>
+                    <div><Link href="/pace-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>페이스 계산기</Link></div>
+                    <div><Link href="/pregnancy-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>임신 계산기</Link></div>
+                    <div><Link href="/pregnancy-adjustment-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>임신 수정 계산기</Link></div>
+                    <div><Link href="/due-date-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>출산 예정일 계산기</Link></div>
                   </div>
                 </div>
 
@@ -289,12 +290,12 @@ export default function Home() {
                   </div>
                   <h2 className="text-lg font-bold text-gray-800 mb-4">수학 계산기</h2>
                   <div className="space-y-1">
-                    <div><a href="/engineering-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>공학용 계산기</a></div>
-                    <div><a href="/fraction-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>분수 계산기</a></div>
-                    <div><a href="/percentage-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>백분율 계산기</a></div>
-                    <div><a href="/random-number-generator" className="hover:underline text-sm" style={{color: '#276699'}}>난수 생성기</a></div>
-                    <div><a href="/triangle-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>삼각형 계산기</a></div>
-                    <div><a href="/standard-deviation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>표준편차 계산기</a></div>
+                    <div><Link href="/engineering-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>공학용 계산기</Link></div>
+                    <div><Link href="/fraction-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>분수 계산기</Link></div>
+                    <div><Link href="/percentage-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>백분율 계산기</Link></div>
+                    <div><Link href="/random-number-generator" className="hover:underline text-sm" style={{color: '#276699'}}>난수 생성기</Link></div>
+                    <div><Link href="/triangle-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>삼각형 계산기</Link></div>
+                    <div><Link href="/standard-deviation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>표준편차 계산기</Link></div>
                   </div>
                 </div>
 
@@ -304,11 +305,11 @@ export default function Home() {
                   </div>
                   <h2 className="text-lg font-bold text-gray-800 mb-4">기타 계산기</h2>
                   <div className="space-y-1">
-                    <div><a href="/age-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>나이 계산기</a></div>
-                    <div><a href="/date-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>날짜 계산기</a></div>
-                    <div><a href="/time-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>시간 계산기</a></div>
-                    <div><a href="/gpa-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>GPA 계산기</a></div>
-                    <div><a href="/grade-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>성적 계산기</a></div>
+                    <div><Link href="/age-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>나이 계산기</Link></div>
+                    <div><Link href="/date-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>날짜 계산기</Link></div>
+                    <div><Link href="/time-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>시간 계산기</Link></div>
+                    <div><Link href="/gpa-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>GPA 계산기</Link></div>
+                    <div><Link href="/grade-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>성적 계산기</Link></div>
                   </div>
                 </div>
                 
@@ -327,13 +328,13 @@ export default function Home() {
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">사업자/프리랜서</h2>
                 <div className="space-y-1">
-                  <div><a href="/vat-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>부가가치세 계산기</a></div>
-                  <div><a href="/income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>사업소득세 계산기</a></div>
-                  <div><a href="/salary-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>프리랜서 세금 계산기</a></div>
-                  <div><a href="/social-insurance-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>4대보험 계산기</a></div>
-                  <div><a href="/severance-pay-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>퇴직금 계산기</a></div>
-                  <div><a href="/freelancer-withholding-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>프리랜서 원천징수세 계산기</a></div>
-                  <div><a href="/inheritance-gift-property-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>상속세/증여세/재산세 계산기</a></div>
+                  <div><Link href="/vat-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>부가가치세 계산기</Link></div>
+                  <div><Link href="/income-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>사업소득세 계산기</Link></div>
+                  <div><Link href="/salary-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>프리랜서 세금 계산기</Link></div>
+                  <div><Link href="/social-insurance-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>4대보험 계산기</Link></div>
+                  <div><Link href="/severance-pay-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>퇴직금 계산기</Link></div>
+                  <div><Link href="/freelancer-withholding-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>프리랜서 원천징수세 계산기</Link></div>
+                  <div><Link href="/inheritance-gift-property-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>상속세/증여세/재산세 계산기</Link></div>
                 </div>
               </div>
 
@@ -343,9 +344,9 @@ export default function Home() {
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">해외/국제/무역</h2>
                 <div className="space-y-1">
-                  <div><a href="/customs-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>해외직구 관세 계산기</a></div>
-                  <div><a href="/exchange-rate-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>환율 계산기</a></div>
-                  <div><a href="/international-transfer-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>국제송금 수수료 계산기</a></div>
+                  <div><Link href="/customs-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>해외직구 관세 계산기</Link></div>
+                  <div><Link href="/exchange-rate-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>환율 계산기</Link></div>
+                  <div><Link href="/international-transfer-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>국제송금 수수료 계산기</Link></div>
                 </div>
               </div>
 
@@ -355,12 +356,12 @@ export default function Home() {
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">건설/공사/인테리어</h2>
                 <div className="space-y-1">
-                  <div><a href="/concrete-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>콘크리트 계산기</a></div>
-                  <div><a href="/wallpaper-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>도배 계산기</a></div>
-                  <div><a href="#" className="hover:underline text-sm" style={{color: '#276699'}}>타일 계산기</a></div>
-                  <div><a href="/interior-estimate-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>인테리어 견적 계산기</a></div>
-                  <div><a href="/scaffolding-estimate-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>비계 견적서 계산기</a></div>
-                  <div><a href="/unit-converter" className="hover:underline text-sm" style={{color: '#276699'}}>단위 변환기</a></div>
+                  <div><Link href="/concrete-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>콘크리트 계산기</Link></div>
+                  <div><Link href="/wallpaper-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>도배 계산기</Link></div>
+                  <div><Link href="#" className="hover:underline text-sm" style={{color: '#276699'}}>타일 계산기</Link></div>
+                  <div><Link href="/interior-estimate-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>인테리어 견적 계산기</Link></div>
+                  <div><Link href="/scaffolding-estimate-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>비계 견적서 계산기</Link></div>
+                  <div><Link href="/unit-converter" className="hover:underline text-sm" style={{color: '#276699'}}>단위 변환기</Link></div>
                 </div>
               </div>
 
@@ -370,10 +371,10 @@ export default function Home() {
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">네트워크/IT/개발</h2>
                 <div className="space-y-1">
-                  <div><a href="/subnet-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>서브넷 계산기</a></div>
-                  <div><a href="/password-generator" className="hover:underline text-sm" style={{color: '#276699'}}>암호 생성기</a></div>
-                  <div><a href="/unit-converter" className="hover:underline text-sm" style={{color: '#276699'}}>단위 변환기</a></div>
-                  <div><a href="/data-converter" className="hover:underline text-sm" style={{color: '#276699'}}>데이터 변환 계산기</a></div>
+                  <div><Link href="/subnet-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>서브넷 계산기</Link></div>
+                  <div><Link href="/password-generator" className="hover:underline text-sm" style={{color: '#276699'}}>암호 생성기</Link></div>
+                  <div><Link href="/unit-converter" className="hover:underline text-sm" style={{color: '#276699'}}>단위 변환기</Link></div>
+                  <div><Link href="/data-converter" className="hover:underline text-sm" style={{color: '#276699'}}>데이터 변환 계산기</Link></div>
                 </div>
               </div>
 
@@ -383,10 +384,10 @@ export default function Home() {
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">자동차/교통</h2>
                 <div className="space-y-1">
-                  <div><a href="/automobile-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차세 계산기</a></div>
-                  <div><a href="/automobile-fuel-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 연비/유류비 계산기</a></div>
-                  <div><a href="/acquisition-transfer-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 취득세/등록세 계산기</a></div>
-                  <div><a href="/car-loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 대출 계산기</a></div>
+                  <div><Link href="/automobile-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차세 계산기</Link></div>
+                  <div><Link href="/automobile-fuel-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 연비/유류비 계산기</Link></div>
+                  <div><Link href="/acquisition-transfer-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 취득세/등록세 계산기</Link></div>
+                  <div><Link href="/car-loan-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>자동차 대출 계산기</Link></div>
                 </div>
               </div>
 
@@ -396,9 +397,9 @@ export default function Home() {
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">가정법률/개인회생</h2>
                 <div className="space-y-1">
-                  <div><a href="/child-support-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>양육비 계산기</a></div>
-                  <div><a href="/alimony-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>위자료 계산기</a></div>
-                  <div><a href="/personal-rehabilitation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>개인회생 변제금 계산기</a></div>
+                  <div><Link href="/child-support-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>양육비 계산기</Link></div>
+                  <div><Link href="/alimony-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>위자료 계산기</Link></div>
+                  <div><Link href="/personal-rehabilitation-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>개인회생 변제금 계산기</Link></div>
                 </div>
               </div>
 
@@ -408,11 +409,11 @@ export default function Home() {
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">부동산/임대차</h2>
                 <div className="space-y-1">
-                  <div><a href="/jeonse-monthly-converter" className="hover:underline text-sm" style={{color: '#276699'}}>전세/월세 전환 계산기</a></div>
-                  <div><a href="/interim-payment-interest-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>중도금 이자 계산기</a></div>
-                  <div><a href="/acquisition-transfer-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>취득세/양도세 계산기</a></div>
-                  <div><a href="/real-estate-registration-cost-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>부동산 등기비용 계산기</a></div>
-                  <div><a href="/rental-yield-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>임대수익률 계산기</a></div>
+                  <div><Link href="/jeonse-monthly-converter" className="hover:underline text-sm" style={{color: '#276699'}}>전세/월세 전환 계산기</Link></div>
+                  <div><Link href="/interim-payment-interest-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>중도금 이자 계산기</Link></div>
+                  <div><Link href="/acquisition-transfer-tax-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>취득세/양도세 계산기</Link></div>
+                  <div><Link href="/real-estate-registration-cost-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>부동산 등기비용 계산기</Link></div>
+                  <div><Link href="/rental-yield-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>임대수익률 계산기</Link></div>
                 </div>
               </div>
 
@@ -422,9 +423,9 @@ export default function Home() {
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">생활/요금</h2>
                 <div className="space-y-1">
-                  <div><a href="/electricity-bill-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>전기요금 계산기</a></div>
-                  <div><a href="/water-bill-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>수도요금 계산기</a></div>
-                  <div><a href="/gas-bill-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>가스요금 계산기</a></div>
+                  <div><Link href="/electricity-bill-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>전기요금 계산기</Link></div>
+                  <div><Link href="/water-bill-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>수도요금 계산기</Link></div>
+                  <div><Link href="/gas-bill-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>가스요금 계산기</Link></div>
                 </div>
               </div>
 
