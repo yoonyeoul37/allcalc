@@ -775,16 +775,16 @@ export default function ScaffoldingEstimateCalculator() {
                   <h3 className="text-lg font-semibold text-gray-800 mb-3">자재비</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span>파이프 ({totalEstimate.materialCost.totalPipes.toFixed(0)}개)</span>
-                      <span className="font-medium">{formatNumber(totalEstimate.materialCost.pipeCost)}원</span>
+                      <span className="text-black" style={{ color: '#000000 !important' }}>파이프 ({totalEstimate.materialCost.totalPipes.toFixed(0)}개)</span>
+                      <span className="font-medium text-black" style={{ color: '#000000 !important' }}>{formatNumber(totalEstimate.materialCost.pipeCost)}원</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>클램프 ({totalEstimate.materialCost.totalClamps.toFixed(0)}개)</span>
-                      <span className="font-medium">{formatNumber(totalEstimate.materialCost.clampCost)}원</span>
+                      <span className="text-black" style={{ color: '#000000 !important' }}>클램프 ({totalEstimate.materialCost.totalClamps.toFixed(0)}개)</span>
+                      <span className="font-medium text-black" style={{ color: '#000000 !important' }}>{formatNumber(totalEstimate.materialCost.clampCost)}원</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>발판 ({totalEstimate.materialCost.totalFootboards.toFixed(0)}개)</span>
-                      <span className="font-medium">{formatNumber(totalEstimate.materialCost.footboardCost)}원</span>
+                      <span className="text-black" style={{ color: '#000000 !important' }}>발판 ({totalEstimate.materialCost.totalFootboards.toFixed(0)}개)</span>
+                      <span className="font-medium text-black" style={{ color: '#000000 !important' }}>{formatNumber(totalEstimate.materialCost.footboardCost)}원</span>
                     </div>
                     <div className="border-t pt-2 flex justify-between font-bold text-gray-800">
                       <span>자재비 합계</span>
@@ -798,12 +798,12 @@ export default function ScaffoldingEstimateCalculator() {
                   <h3 className="text-lg font-semibold text-gray-800 mb-3">인건비</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span>시공 인건비 ({estimate.installationWorkers}명)</span>
-                      <span className="font-medium">{formatNumber(totalEstimate.laborCost.installationCost)}원</span>
+                      <span className="text-black" style={{ color: '#000000 !important' }}>시공 인건비 ({estimate.installationWorkers}명)</span>
+                      <span className="font-medium text-black" style={{ color: '#000000 !important' }}>{formatNumber(totalEstimate.laborCost.installationCost)}원</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>해체 인건비 ({estimate.disassemblyWorkers}명)</span>
-                      <span className="font-medium">{formatNumber(totalEstimate.laborCost.disassemblyCost)}원</span>
+                      <span className="text-black" style={{ color: '#000000 !important' }}>해체 인건비 ({estimate.disassemblyWorkers}명)</span>
+                      <span className="font-medium text-black" style={{ color: '#000000 !important' }}>{formatNumber(totalEstimate.laborCost.disassemblyCost)}원</span>
                     </div>
                     <div className="border-t pt-2 flex justify-between font-bold text-gray-800">
                       <span>인건비 합계</span>
@@ -817,12 +817,12 @@ export default function ScaffoldingEstimateCalculator() {
                   <h3 className="text-lg font-semibold text-gray-800 mb-3">기타 비용</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span>운반비</span>
-                      <span className="font-medium">{formatNumber(totalEstimate.transportationCost)}원</span>
+                      <span className="text-black" style={{ color: '#000000 !important' }}>운반비</span>
+                      <span className="font-medium text-black" style={{ color: '#000000 !important' }}>{formatNumber(totalEstimate.transportationCost)}원</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>기타비</span>
-                      <span className="font-medium">{formatNumber(totalEstimate.miscellaneousCost)}원</span>
+                      <span className="text-black" style={{ color: '#000000 !important' }}>기타비</span>
+                      <span className="font-medium text-black" style={{ color: '#000000 !important' }}>{formatNumber(totalEstimate.miscellaneousCost)}원</span>
                     </div>
                     <div className="border-t pt-2 flex justify-between font-bold text-gray-800">
                       <span>기타비 합계</span>
