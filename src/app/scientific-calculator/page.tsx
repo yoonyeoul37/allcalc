@@ -180,8 +180,8 @@ export default function ScientificCalculator() {
           </div>
 
           {/* 디스플레이 */}
-          <div className="bg-white border-2 border-gray-300 rounded-lg p-4 mb-6">
-            <div className="text-right text-3xl font-mono text-black min-h-[2.5rem] flex items-center justify-end" style={{ color: '#000000 !important', WebkitTextFillColor: '#000000' }}>
+          <div className="bg-black border-2 border-gray-300 rounded-lg p-4 mb-6">
+            <div className="text-right text-3xl font-mono text-white min-h-[2.5rem] flex items-center justify-end" style={{ color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}>
               {display}
             </div>
           </div>
@@ -281,22 +281,22 @@ export default function ScientificCalculator() {
             {/* 네 번째 행 - 숫자 7-9 */}
             <button
               onClick={() => inputDigit("7")}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
-              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}
+              className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff', textShadow: '0 0 2px #ffffff' }}
             >
               7
             </button>
             <button
               onClick={() => inputDigit("8")}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
-              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}
+              className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff', textShadow: '0 0 2px #ffffff' }}
             >
               8
             </button>
             <button
               onClick={() => inputDigit("9")}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
-              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}
+              className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff', textShadow: '0 0 2px #ffffff' }}
             >
               9
             </button>
@@ -310,22 +310,22 @@ export default function ScientificCalculator() {
             {/* 다섯 번째 행 - 숫자 4-6 */}
             <button
               onClick={() => inputDigit("4")}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
-              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}
+              className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff', textShadow: '0 0 2px #ffffff' }}
             >
               4
             </button>
             <button
               onClick={() => inputDigit("5")}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
-              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}
+              className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff', textShadow: '0 0 2px #ffffff' }}
             >
               5
             </button>
             <button
               onClick={() => inputDigit("6")}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
-              style={{ WebkitTextFillColor: '#ffffff' }}
+              className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff', textShadow: '0 0 2px #ffffff' }}
             >
               6
             </button>
@@ -339,22 +339,22 @@ export default function ScientificCalculator() {
             {/* 여섯 번째 행 - 숫자 1-3 */}
             <button
               onClick={() => inputDigit("1")}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
-              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}
+              className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff', textShadow: '0 0 2px #ffffff' }}
             >
               1
             </button>
             <button
               onClick={() => inputDigit("2")}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
-              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}
+              className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff', textShadow: '0 0 2px #ffffff' }}
             >
               2
             </button>
             <button
               onClick={() => inputDigit("3")}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
-              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}
+              className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff', textShadow: '0 0 2px #ffffff' }}
             >
               3
             </button>
@@ -368,15 +368,15 @@ export default function ScientificCalculator() {
             {/* 일곱 번째 행 - 0, 소수점, 등호 */}
             <button
               onClick={() => inputDigit("0")}
-              className="col-span-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
-              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}
+              className="col-span-2 bg-black hover:bg-gray-800 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff', textShadow: '0 0 2px #ffffff' }}
             >
               0
             </button>
             <button
               onClick={inputDecimal}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
-              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}
+              className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
+              style={{ WebkitTapHighlightColor: 'transparent', color: '#ffffff !important', WebkitTextFillColor: '#ffffff', textShadow: '0 0 2px #ffffff' }}
             >
               .
             </button>
