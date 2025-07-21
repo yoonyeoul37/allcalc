@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaHeart, FaCalculator, FaCalendar, FaBaby, FaHospital, FaHome, FaUser, FaClock, FaInfoCircle } from "react-icons/fa";
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
@@ -262,37 +263,37 @@ export default function PregnancyAdjustmentCalculator() {
           <div className="mt-8">
             <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">관련 계산기</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <a href="/pregnancy-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
+              <Link href="/pregnancy-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
                 <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <FaBaby className="text-pink-600 text-xl" />
                 </div>
                 <h4 className="font-semibold text-gray-800 mb-1">임신 계산기</h4>
                 <p className="text-sm text-gray-600">기본 임신 주수 계산</p>
-              </a>
+              </Link>
               
-              <a href="/due-date-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
+              <Link href="/due-date-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <FaCalendar className="text-blue-600 text-xl" />
                 </div>
                 <h4 className="font-semibold text-gray-800 mb-1">출산 예정일 계산기</h4>
                 <p className="text-sm text-gray-600">정확한 출산일 계산</p>
-              </a>
+              </Link>
               
-              <a href="/bmi-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
+              <Link href="/bmi-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <FaCalculator className="text-green-600 text-xl" />
                 </div>
                 <h4 className="font-semibold text-gray-800 mb-1">BMI 계산기</h4>
                 <p className="text-sm text-gray-600">임신 중 체중 관리</p>
-              </a>
+              </Link>
               
-              <a href="/calorie-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
+              <Link href="/calorie-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
                 <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <FaHeart className="text-orange-600 text-xl" />
                 </div>
                 <h4 className="font-semibold text-gray-800 mb-1">칼로리 계산기</h4>
                 <p className="text-sm text-gray-600">임신 중 영양 관리</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { FaCalculator, FaArrowLeft, FaInfoCircle } from "react-icons/fa";

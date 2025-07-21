@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaCalculator, FaDivide, FaPlus, FaMinus, FaTimes, FaInfoCircle } from "react-icons/fa";
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
@@ -313,37 +314,37 @@ export default function FractionCalculator() {
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h3 className="text-xl font-bold text-gray-800 mb-6">관련 계산기</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/engineering-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+              <Link href="/engineering-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
                 <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaCalculator className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">공학용 계산기</h4>
                 <p className="text-xs text-gray-600">공학 계산</p>
-              </a>
+              </Link>
               
-              <a href="/percentage-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+              <Link href="/percentage-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
                 <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaCalculator className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">백분율 계산기</h4>
                 <p className="text-xs text-gray-600">백분율 계산</p>
-              </a>
+              </Link>
               
-              <a href="/basic-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+              <Link href="/basic-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
                 <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaCalculator className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">기본 계산기</h4>
                 <p className="text-xs text-gray-600">기본 계산</p>
-              </a>
+              </Link>
               
-              <a href="/triangle-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-pink-300 cursor-pointer">
+              <Link href="/triangle-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-pink-300 cursor-pointer">
                 <div className="w-12 h-12 bg-pink-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaCalculator className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">삼각형 계산기</h4>
                 <p className="text-xs text-gray-600">기하학 계산</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from 'react';
+import Link from "next/link";
 import { FaCalculator, FaDatabase, FaNetworkWired, FaShieldAlt, FaExchangeAlt, FaCog, FaCopy } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
@@ -211,37 +212,37 @@ export default function DataConverter() {
             </h3>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/subnet-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+              <Link href="/subnet-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
                 <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaNetworkWired className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">서브넷 계산기</h4>
                 <p className="text-xs text-gray-600">네트워크 계산</p>
-              </a>
+              </Link>
               
-              <a href="/password-generator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+              <Link href="/password-generator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
                 <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaShieldAlt className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">암호 생성기</h4>
                 <p className="text-xs text-gray-600">암호 생성</p>
-              </a>
+              </Link>
               
-              <a href="/unit-converter" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+              <Link href="/unit-converter" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
                 <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaExchangeAlt className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">단위 변환기</h4>
                 <p className="text-xs text-gray-600">단위 변환</p>
-              </a>
+              </Link>
               
-              <a href="/engineering-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+              <Link href="/engineering-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
                 <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaCog className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">공학용 계산기</h4>
                 <p className="text-xs text-gray-600">고급 계산</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { 
   FaCalculator, 
   FaMoneyBillWave, 
@@ -193,37 +194,37 @@ export default function VATCalculator() {
             </h3>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/comprehensive-income-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+              <Link href="/comprehensive-income-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
                 <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaShieldAlt className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">종합소득세 계산기</h4>
                 <p className="text-xs text-gray-600">세율 계산</p>
-              </a>
+              </Link>
               
-              <a href="/work-income-tax-refund-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+              <Link href="/work-income-tax-refund-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
                 <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaMoneyBillWave className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">근로소득세 환급액</h4>
                 <p className="text-xs text-gray-600">연말정산 계산</p>
-              </a>
+              </Link>
               
-              <a href="/income-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+              <Link href="/income-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
                 <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaFileInvoiceDollar className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">소득세 계산기</h4>
                 <p className="text-xs text-gray-600">세율 계산</p>
-              </a>
+              </Link>
               
-              <a href="/acquisition-capital-gains-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+              <Link href="/acquisition-capital-gains-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
                 <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaInfoCircle className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">취득세/양도세</h4>
                 <p className="text-xs text-gray-600">부동산 세금</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

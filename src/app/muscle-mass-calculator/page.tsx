@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaDumbbell, FaUserCheck, FaChartLine, FaHeart, FaHome, FaCreditCard, FaPiggyBank, FaChartBar, FaHandHoldingUsd, FaUniversity, FaShieldAlt, FaUserTie, FaGift, FaBalanceScale, FaUserCog, FaExchangeAlt, FaGlobe, FaTruck, FaBox, FaInfoCircle, FaExclamationTriangle, FaWeight, FaRuler, FaUser, FaBaby, FaCalendarAlt, FaCalculator } from "react-icons/fa";
 import Header from '../../components/ui/Header';
 
@@ -389,37 +390,37 @@ export default function MuscleMassCalculator() {
             </h3>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/body-fat-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+              <Link href="/body-fat-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
                 <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaWeight className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">체지방률 계산기</h4>
                 <p className="text-xs text-gray-600">체지방 측정</p>
-              </a>
+              </Link>
               
-              <a href="/bmi-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+              <Link href="/bmi-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
                 <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaUser className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">BMI 계산기</h4>
                 <p className="text-xs text-gray-600">체질량지수</p>
-              </a>
+              </Link>
               
-              <a href="/calorie-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-red-300 cursor-pointer">
+              <Link href="/calorie-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-red-300 cursor-pointer">
                 <div className="w-12 h-12 bg-red-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaHeart className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">칼로리 계산기</h4>
                 <p className="text-xs text-gray-600">일일 칼로리</p>
-              </a>
+              </Link>
               
-              <a href="/bmr-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+              <Link href="/bmr-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
                 <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaChartLine className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">기초대사량 계산기</h4>
                 <p className="text-xs text-gray-600">BMR 계산</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -438,17 +439,17 @@ export default function MuscleMassCalculator() {
             <div>
               <h4 className="font-semibold mb-4">빠른 링크</h4>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li><a href="/" className="hover:text-white">홈</a></li>
-                <li><a href="/mortgage-calculator" className="hover:text-white">대출 계산기</a></li>
-                <li><a href="/investment-calculator" className="hover:text-white">투자 계산기</a></li>
+                <li><Link href="/" className="hover:text-white">홈</Link></li>
+                <li><Link href="/mortgage-calculator" className="hover:text-white">대출 계산기</Link></li>
+                <li><Link href="/investment-calculator" className="hover:text-white">투자 계산기</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">계산기 카테고리</h4>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li><a href="/" className="hover:text-white">금융 계산기</a></li>
-                <li><a href="/" className="hover:text-white">건강 계산기</a></li>
-                <li><a href="/" className="hover:text-white">학업 계산기</a></li>
+                <li><Link href="/" className="hover:text-white">금융 계산기</Link></li>
+                <li><Link href="/" className="hover:text-white">건강 계산기</Link></li>
+                <li><Link href="/" className="hover:text-white">학업 계산기</Link></li>
               </ul>
             </div>
             <div>

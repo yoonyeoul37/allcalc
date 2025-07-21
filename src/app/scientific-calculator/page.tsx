@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaCalculator, FaArrowLeft, FaInfoCircle, FaCog, FaChartLine } from "react-icons/fa";
 import { Header, Footer } from '../../components';
 
@@ -159,13 +160,13 @@ export default function ScientificCalculator() {
               <FaCalculator className="text-2xl text-blue-600 mr-2" />
               <h1 className="text-2xl font-bold text-gray-800">과학용 계산기</h1>
             </div>
-            <a 
+            <Link 
               href="/" 
               className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
             >
               <FaArrowLeft className="mr-1" />
               <span className="text-sm">홈으로</span>
-            </a>
+            </Link>
           </div>
 
           {/* 각도 모드 표시 */}

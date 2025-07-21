@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaCalculator, FaCalendarAlt, FaUser, FaInfoCircle } from "react-icons/fa";
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
@@ -218,37 +219,37 @@ export default function AgeCalculator() {
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h3 className="text-xl font-bold text-gray-800 mb-6">관련 계산기</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/date-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+              <Link href="/date-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
                 <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaCalendarAlt className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">날짜 계산기</h4>
                 <p className="text-xs text-gray-600">날짜 계산</p>
-              </a>
+              </Link>
               
-              <a href="/time-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+              <Link href="/time-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
                 <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaCalendarAlt className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">시간 계산기</h4>
                 <p className="text-xs text-gray-600">시간 계산</p>
-              </a>
+              </Link>
               
-              <a href="/pregnancy-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+              <Link href="/pregnancy-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
                 <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaUser className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">임신 계산기</h4>
                 <p className="text-xs text-gray-600">임신 기간</p>
-              </a>
+              </Link>
               
-              <a href="/due-date-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-pink-300 cursor-pointer">
+              <Link href="/due-date-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-pink-300 cursor-pointer">
                 <div className="w-12 h-12 bg-pink-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaCalendarAlt className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">출산예정일</h4>
                 <p className="text-xs text-gray-600">출산일 계산</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

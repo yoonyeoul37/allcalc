@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { 
   FaCalculator, 
   FaMoneyBillWave, 
@@ -287,37 +288,37 @@ export default function FreelancerWithholdingTaxCalculator() {
           </h3>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <a href="/income-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+            <Link href="/income-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
               <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                 <FaDollarSign className="text-xl text-black" />
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">소득세 계산기</h4>
               <p className="text-xs text-gray-600">소득세 계산</p>
-            </a>
+            </Link>
             
-            <a href="/salary-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+            <Link href="/salary-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
               <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                 <FaUserTie className="text-xl text-black" />
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">프리랜서 세금</h4>
               <p className="text-xs text-gray-600">프리랜서 세금</p>
-            </a>
+            </Link>
             
-            <a href="/social-insurance-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+            <Link href="/social-insurance-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
               <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                 <FaShieldAlt className="text-xl text-black" />
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">4대보험 계산기</h4>
               <p className="text-xs text-gray-600">보험료 계산</p>
-            </a>
+            </Link>
             
-            <a href="/severance-pay-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+            <Link href="/severance-pay-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
               <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                 <FaMoneyBillWave className="text-xl text-black" />
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">퇴직금 계산기</h4>
               <p className="text-xs text-gray-600">퇴직금 계산</p>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

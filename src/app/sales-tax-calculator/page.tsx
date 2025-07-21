@@ -1,6 +1,7 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
+import Link from "next/link";
 import { FaCalculator, FaMoneyBillWave, FaPercent, FaFileInvoiceDollar, FaChartLine, FaReceipt, FaHome, FaCreditCard, FaPiggyBank, FaChartBar, FaDollarSign, FaHandHoldingUsd, FaUniversity, FaShieldAlt, FaUserTie, FaGift, FaBalanceScale, FaUserCog, FaExchangeAlt, FaGlobe, FaTruck, FaBox, FaInfoCircle, FaExclamationTriangle } from 'react-icons/fa';
 import Header from '../../components/ui/Header';
 
@@ -325,37 +326,37 @@ export default function SalesTaxCalculator() {
             </h3>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/vat-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+              <Link href="/vat-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
                 <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaDollarSign className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">부가세 계산기</h4>
                 <p className="text-xs text-gray-600">VAT 계산</p>
-              </a>
+              </Link>
               
-              <a href="/income-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+              <Link href="/income-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
                 <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaUniversity className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">소득세 계산기</h4>
                 <p className="text-xs text-gray-600">세금 계산</p>
-              </a>
+              </Link>
               
-              <a href="/customs-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+              <Link href="/customs-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
                 <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaGlobe className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">해외직구 계산기</h4>
                 <p className="text-xs text-gray-600">관세 계산</p>
-              </a>
+              </Link>
               
-              <a href="/business-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+              <Link href="/business-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
                 <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaChartBar className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">사업소득세 계산기</h4>
                 <p className="text-xs text-gray-600">사업세 계산</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -374,17 +375,17 @@ export default function SalesTaxCalculator() {
             <div>
               <h4 className="font-semibold mb-4">빠른 링크</h4>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li><a href="/" className="hover:text-white">홈</a></li>
-                <li><a href="/mortgage-calculator" className="hover:text-white">대출 계산기</a></li>
-                <li><a href="/investment-calculator" className="hover:text-white">투자 계산기</a></li>
+                <li><Link href="/" className="hover:text-white">홈</Link></li>
+                <li><Link href="/mortgage-calculator" className="hover:text-white">대출 계산기</Link></li>
+                <li><Link href="/investment-calculator" className="hover:text-white">투자 계산기</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">계산기 카테고리</h4>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li><a href="/" className="hover:text-white">금융 계산기</a></li>
-                <li><a href="/" className="hover:text-white">건강 계산기</a></li>
-                <li><a href="/" className="hover:text-white">학업 계산기</a></li>
+                <li><Link href="/" className="hover:text-white">금융 계산기</Link></li>
+                <li><Link href="/" className="hover:text-white">건강 계산기</Link></li>
+                <li><Link href="/" className="hover:text-white">학업 계산기</Link></li>
               </ul>
             </div>
             <div>

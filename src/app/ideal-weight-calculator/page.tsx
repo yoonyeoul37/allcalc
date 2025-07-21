@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaWeight, FaBullseye, FaChartLine, FaHeart, FaHome, FaCalculator, FaUser, FaRuler, FaBalanceScale } from "react-icons/fa";
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
@@ -288,37 +289,37 @@ export default function IdealWeightCalculator() {
           <div className="mt-8">
             <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">관련 계산기</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <a href="/bmi-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
+              <Link href="/bmi-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <FaCalculator className="text-blue-600 text-xl" />
                 </div>
                 <h4 className="font-semibold text-gray-800 mb-1">BMI 계산기</h4>
                 <p className="text-sm text-gray-600">체질량지수 계산</p>
-              </a>
+              </Link>
               
-              <a href="/body-fat-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
+              <Link href="/body-fat-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <FaBalanceScale className="text-green-600 text-xl" />
                 </div>
                 <h4 className="font-semibold text-gray-800 mb-1">체지방률 계산기</h4>
                 <p className="text-sm text-gray-600">체지방률 측정</p>
-              </a>
+              </Link>
               
-              <a href="/calorie-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
+              <Link href="/calorie-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
                 <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <FaChartLine className="text-orange-600 text-xl" />
                 </div>
                 <h4 className="font-semibold text-gray-800 mb-1">칼로리 계산기</h4>
                 <p className="text-sm text-gray-600">일일 칼로리 계산</p>
-              </a>
+              </Link>
               
-              <a href="/bmr-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
+              <Link href="/bmr-calculator" className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
                 <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <FaHeart className="text-purple-600 text-xl" />
                 </div>
                 <h4 className="font-semibold text-gray-800 mb-1">기초대사량 계산기</h4>
                 <p className="text-sm text-gray-600">BMR 계산</p>
-              </a>
+              </Link>
             </div>
           </div>
 

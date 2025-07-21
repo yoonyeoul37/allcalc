@@ -1,6 +1,7 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import Header from '@/components/ui/Header';
 import Footer from '@/components/ui/Footer';
@@ -276,27 +277,27 @@ export default function HolidayWorkDaysCalculator() {
           <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">관련 계산기</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <a
+              <Link
                 href="/date-calculator"
                 className="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
               >
                 <h3 className="font-semibold text-gray-800">날짜 계산기</h3>
                 <p className="text-sm text-gray-600">날짜 간격 계산</p>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/time-calculator"
                 className="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
               >
                 <h3 className="font-semibold text-gray-800">시간 계산기</h3>
                 <p className="text-sm text-gray-600">시간 계산</p>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/salary-calculator"
                 className="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
               >
                 <h3 className="font-semibold text-gray-800">급여 계산기</h3>
                 <p className="text-sm text-gray-600">실수령액 계산</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

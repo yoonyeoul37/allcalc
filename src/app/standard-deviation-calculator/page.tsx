@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaCalculator, FaDice, FaList, FaCopy, FaTrash, FaPlus } from "react-icons/fa";
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
@@ -513,48 +514,48 @@ export default function StandardDeviationCalculator() {
           <section className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">관련 계산기</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <a href="/engineering-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+              <Link href="/engineering-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
                 <div className="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <FaCalculator className="text-2xl text-blue-600" />
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">공학용 계산기</h3>
                 <p className="text-sm text-gray-600">고급 수학 함수</p>
-              </a>
-              <a href="/fraction-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+              </Link>
+              <Link href="/fraction-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
                 <div className="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <FaDice className="text-2xl text-green-600" />
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">분수 계산기</h3>
                 <p className="text-sm text-gray-600">분수 연산</p>
-              </a>
-              <a href="/percentage-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+              </Link>
+              <Link href="/percentage-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
                 <div className="w-16 h-16 bg-orange-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <FaList className="text-2xl text-orange-600" />
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">백분율 계산기</h3>
                 <p className="text-sm text-gray-600">백분율 계산</p>
-              </a>
-              <a href="/triangle-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+              </Link>
+              <Link href="/triangle-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
                 <div className="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <FaCopy className="text-2xl text-purple-600" />
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">삼각형 계산기</h3>
                 <p className="text-sm text-gray-600">기하학 계산</p>
-              </a>
-              <a href="/engineering-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-red-300 cursor-pointer">
+              </Link>
+              <Link href="/engineering-calculator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-red-300 cursor-pointer">
                 <div className="w-16 h-16 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <FaCalculator className="text-2xl text-red-600" />
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">공학용 계산기</h3>
                 <p className="text-sm text-gray-600">고급 수학 함수</p>
-              </a>
-              <a href="/random-number-generator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-yellow-300 cursor-pointer">
+              </Link>
+              <Link href="/random-number-generator" className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-yellow-300 cursor-pointer">
                 <div className="w-16 h-16 bg-yellow-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <FaList className="text-2xl text-yellow-600" />
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">난수 생성기</h3>
                 <p className="text-sm text-gray-600">무작위 숫자 생성</p>
-              </a>
+              </Link>
             </div>
           </section>
             </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { FaUmbrellaBeach, FaCalculator, FaChartLine, FaMoneyBillWave, FaCalendarAlt, FaPercent, FaPiggyBank } from "react-icons/fa";

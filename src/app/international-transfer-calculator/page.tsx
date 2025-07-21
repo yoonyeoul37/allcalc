@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { 
   FaMoneyBillWave, 
   FaCalculator, 
@@ -455,37 +456,37 @@ export default function InternationalTransferCalculator() {
           </h3>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <a href="/customs-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+            <Link href="/customs-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
               <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                 <FaTruck className="text-xl text-black" />
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">해외직구 관세</h4>
               <p className="text-xs text-gray-600">관세 계산</p>
-            </a>
+            </Link>
             
-            <a href="/exchange-rate-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+            <Link href="/exchange-rate-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
               <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                 <FaGlobe className="text-xl text-black" />
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">환율 계산기</h4>
               <p className="text-xs text-gray-600">환율 변환</p>
-            </a>
+            </Link>
             
-            <a href="/vat-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+            <Link href="/vat-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
               <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                 <FaChartBar className="text-xl text-black" />
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">부가가치세 계산기</h4>
               <p className="text-xs text-gray-600">VAT 계산</p>
-            </a>
+            </Link>
             
-            <a href="/sales-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+            <Link href="/sales-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
               <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                 <FaDollarSign className="text-xl text-black" />
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">판매세 계산기</h4>
               <p className="text-xs text-gray-600">세금 계산</p>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

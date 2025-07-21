@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaExchangeAlt, FaRuler, FaWeight, FaThermometerHalf, FaClock, FaCalculator, FaDollarSign, FaIndustry, FaPaintBrush, FaHome, FaHammer } from "react-icons/fa";
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
@@ -354,37 +355,37 @@ export default function UnitConverter() {
             </h3>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/concrete-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
+              <Link href="/concrete-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
                 <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaIndustry className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">콘크리트 계산기</h4>
                 <p className="text-xs text-gray-600">콘크리트 계산</p>
-              </a>
+              </Link>
               
-              <a href="/wallpaper-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
+              <Link href="/wallpaper-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
                 <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaPaintBrush className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">도배 계산기</h4>
                 <p className="text-xs text-gray-600">도배 계산</p>
-              </a>
+              </Link>
               
-              <a href="/tile-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
+              <Link href="/tile-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
                 <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaHome className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">타일 계산기</h4>
                 <p className="text-xs text-gray-600">타일 계산</p>
-              </a>
+              </Link>
               
-              <a href="/interior-estimate-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
+              <Link href="/interior-estimate-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
                 <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <FaHammer className="text-xl text-black" />
                 </div>
                 <h4 className="font-semibold text-gray-800 text-sm">인테리어 견적</h4>
                 <p className="text-xs text-gray-600">견적 계산</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
