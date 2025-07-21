@@ -155,19 +155,22 @@ export default function BasicCalculator() {
             </button>
             <button
               onClick={() => inputDigit("7")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               7
             </button>
             <button
               onClick={() => inputDigit("8")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               8
             </button>
             <button
               onClick={() => inputDigit("9")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               9
             </button>
@@ -181,19 +184,22 @@ export default function BasicCalculator() {
             </button>
             <button
               onClick={() => inputDigit("4")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               4
             </button>
             <button
               onClick={() => inputDigit("5")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               5
             </button>
             <button
               onClick={() => inputDigit("6")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               6
             </button>
@@ -207,19 +213,22 @@ export default function BasicCalculator() {
             </button>
             <button
               onClick={() => inputDigit("1")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               1
             </button>
             <button
               onClick={() => inputDigit("2")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               2
             </button>
             <button
               onClick={() => inputDigit("3")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               3
             </button>
@@ -233,13 +242,15 @@ export default function BasicCalculator() {
             </button>
             <button
               onClick={() => inputDigit("0")}
-              className="col-span-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="col-span-2 bg-gray-200 hover:bg-gray-300 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               0
             </button>
             <button
               onClick={inputDecimal}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg transition-colors"
+              className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-4 px-6 rounded-lg transition-colors"
+              style={{ color: '#000000 !important' }}
             >
               .
             </button>
