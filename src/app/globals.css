@@ -67,3 +67,28 @@ button.bg-gray-200, button.bg-gray-300, button.bg-gray-400 {
     -webkit-text-fill-color: #000000 !important;
   }
 }
+
+/* 모든 회색 텍스트를 강제로 검정색으로 변경 */
+.text-gray-600, .text-gray-700, .text-gray-800 {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+/* span 태그의 회색 텍스트도 검정색으로 */
+span.text-gray-600, span.text-gray-700, span.text-gray-800 {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+/* 모바일에서 모든 회색 텍스트 강제 검정색 */
+@media (max-width: 768px) {
+  .text-gray-600, .text-gray-700, .text-gray-800 {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
+  
+  span.text-gray-600, span.text-gray-700, span.text-gray-800 {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
+}
