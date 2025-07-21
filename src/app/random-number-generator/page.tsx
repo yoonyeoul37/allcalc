@@ -309,7 +309,7 @@ export default function RandomNumberGenerator() {
                 <h3 className="text-lg font-semibold text-gray-800 mb-4">생성 결과</h3>
                 <div className="bg-white p-4 rounded-lg border-2 border-gray-200 mb-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-800">{getResultText()}</div>
+                    <div className="text-2xl font-bold text-black" style={{ color: '#000000 !important' }}>{getResultText()}</div>
                   </div>
                 </div>
                 
@@ -360,8 +360,8 @@ export default function RandomNumberGenerator() {
                 <div className="space-y-2">
                   {history.map((result, index) => (
                     <div key={index} className="bg-gray-50 p-3 rounded-lg flex justify-between items-center">
-                      <span className="text-sm text-gray-600">#{index + 1}</span>
-                      <span className="font-medium">
+                      <span className="text-sm text-black" style={{ color: '#000000 !important' }}>#{index + 1}</span>
+                      <span className="font-medium text-black" style={{ color: '#000000 !important' }}>
                         {generatorType === "lotto" 
                           ? result.join(" - ")
                           : generatorType === "dice"
@@ -408,7 +408,8 @@ export default function RandomNumberGenerator() {
                     setCount("5");
                     setAllowDuplicates(true);
                   }}
-                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   1-100, 5개
                 </button>
@@ -417,7 +418,8 @@ export default function RandomNumberGenerator() {
                     setGeneratorType("lotto");
                     generateLottoNumbers();
                   }}
-                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   로또 번호
                 </button>
@@ -426,7 +428,8 @@ export default function RandomNumberGenerator() {
                     setGeneratorType("dice");
                     rollDice();
                   }}
-                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   주사위 굴리기
                 </button>
@@ -435,7 +438,8 @@ export default function RandomNumberGenerator() {
                     setGeneratorType("coin");
                     flipCoin();
                   }}
-                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   동전 던지기
                 </button>
