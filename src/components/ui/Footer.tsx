@@ -1,4 +1,5 @@
 import { FaCalculator, FaHome, FaEnvelope, FaGithub, FaHeart } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -16,9 +17,9 @@ export default function Footer() {
               금융, 건강, 학업, 생활에 필요한 모든 계산기를 제공합니다.
             </p>
             <div className="flex space-x-4">
-              <a href="/" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/" className="text-gray-300 hover:text-white transition-colors">
                 <FaHome className="text-lg" />
-              </a>
+              </Link>
               <a href="mailto:contact@allcalc.com" className="text-gray-300 hover:text-white transition-colors">
                 <FaEnvelope className="text-lg" />
               </a>
@@ -32,11 +33,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">빠른 링크</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="/mortgage-calculator" className="hover:text-white transition-colors">주택담보대출</a></li>
-              <li><a href="/loan-calculator" className="hover:text-white transition-colors">대출 계산기</a></li>
-              <li><a href="/interest-calculator" className="hover:text-white transition-colors">이자 계산기</a></li>
-              <li><a href="/investment-calculator" className="hover:text-white transition-colors">투자 계산기</a></li>
-              <li><a href="/bmi-calculator" className="hover:text-white transition-colors">BMI 계산기</a></li>
+              <li><Link href="/mortgage-calculator" className="hover:text-white transition-colors">주택담보대출</Link></li>
+              <li><Link href="/loan-calculator" className="hover:text-white transition-colors">대출 계산기</Link></li>
+              <li><Link href="/interest-calculator" className="hover:text-white transition-colors">이자 계산기</Link></li>
+              <li><Link href="/investment-calculator" className="hover:text-white transition-colors">투자 계산기</Link></li>
+              <li><Link href="/bmi-calculator" className="hover:text-white transition-colors">BMI 계산기</Link></li>
             </ul>
           </div>
 
@@ -44,11 +45,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">카테고리</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="/" className="hover:text-white transition-colors">금융 계산기</a></li>
-              <li><a href="/" className="hover:text-white transition-colors">건강 계산기</a></li>
-              <li><a href="/" className="hover:text-white transition-colors">학업 계산기</a></li>
-              <li><a href="/" className="hover:text-white transition-colors">생활 계산기</a></li>
-              <li><a href="/" className="hover:text-white transition-colors">기타 계산기</a></li>
+              <li><Link href="/" className="hover:text-white transition-colors">금융 계산기</Link></li>
+              <li><Link href="/" className="hover:text-white transition-colors">건강 계산기</Link></li>
+              <li><Link href="/" className="hover:text-white transition-colors">학업 계산기</Link></li>
+              <li><Link href="/" className="hover:text-white transition-colors">생활 계산기</Link></li>
+              <li><Link href="/" className="hover:text-white transition-colors">기타 계산기</Link></li>
             </ul>
           </div>
         </div>
