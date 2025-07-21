@@ -281,19 +281,19 @@ export default function ScientificCalculator() {
             {/* 네 번째 행 - 숫자 7-9 */}
             <button
               onClick={() => inputDigit("7")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-2 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-3 px-2 rounded-lg transition-colors"
             >
               7
             </button>
             <button
               onClick={() => inputDigit("8")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-2 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-3 px-2 rounded-lg transition-colors"
             >
               8
             </button>
             <button
               onClick={() => inputDigit("9")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-2 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-3 px-2 rounded-lg transition-colors"
             >
               9
             </button>
@@ -307,19 +307,19 @@ export default function ScientificCalculator() {
             {/* 다섯 번째 행 - 숫자 4-6 */}
             <button
               onClick={() => inputDigit("4")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-2 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-3 px-2 rounded-lg transition-colors"
             >
               4
             </button>
             <button
               onClick={() => inputDigit("5")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-2 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-3 px-2 rounded-lg transition-colors"
             >
               5
             </button>
             <button
               onClick={() => inputDigit("6")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-2 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-3 px-2 rounded-lg transition-colors"
             >
               6
             </button>
@@ -333,19 +333,19 @@ export default function ScientificCalculator() {
             {/* 여섯 번째 행 - 숫자 1-3 */}
             <button
               onClick={() => inputDigit("1")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-2 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-3 px-2 rounded-lg transition-colors"
             >
               1
             </button>
             <button
               onClick={() => inputDigit("2")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-2 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-3 px-2 rounded-lg transition-colors"
             >
               2
             </button>
             <button
               onClick={() => inputDigit("3")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-2 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-3 px-2 rounded-lg transition-colors"
             >
               3
             </button>
@@ -359,13 +359,13 @@ export default function ScientificCalculator() {
             {/* 일곱 번째 행 - 0, 소수점, 등호 */}
             <button
               onClick={() => inputDigit("0")}
-              className="col-span-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-2 rounded-lg transition-colors"
+              className="col-span-2 bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-3 px-2 rounded-lg transition-colors"
             >
               0
             </button>
             <button
               onClick={inputDecimal}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-2 rounded-lg transition-colors"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-3 px-2 rounded-lg transition-colors"
             >
               .
             </button>
