@@ -125,7 +125,8 @@ export default function AcquisitionCapitalGainsTaxCalculator() {
                 <select
                   value={propertyType}
                   onChange={(e) => setPropertyType(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="house">주택</option>
                   <option value="land">토지</option>
@@ -145,7 +146,8 @@ export default function AcquisitionCapitalGainsTaxCalculator() {
                     setPropertyValue(formatNumber(value));
                   }}
                   placeholder="예: 500,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -157,7 +159,8 @@ export default function AcquisitionCapitalGainsTaxCalculator() {
                   type="date"
                   value={acquisitionDate}
                   onChange={(e) => setAcquisitionDate(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -169,7 +172,8 @@ export default function AcquisitionCapitalGainsTaxCalculator() {
                   type="date"
                   value={disposalDate}
                   onChange={(e) => setDisposalDate(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -185,7 +189,8 @@ export default function AcquisitionCapitalGainsTaxCalculator() {
                     setAcquisitionCost(formatNumber(value));
                   }}
                   placeholder="예: 400,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -201,7 +206,8 @@ export default function AcquisitionCapitalGainsTaxCalculator() {
                     setDisposalPrice(formatNumber(value));
                   }}
                   placeholder="예: 600,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 

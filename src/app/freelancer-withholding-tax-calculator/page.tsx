@@ -140,7 +140,8 @@ export default function FreelancerWithholdingTaxCalculator() {
                 <select
                   value={calculationType}
                   onChange={(e) => setCalculationType(e.target.value as "monthly" | "annual")}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="monthly">월 소득 기준</option>
                   <option value="annual">연 소득 기준</option>
@@ -157,7 +158,8 @@ export default function FreelancerWithholdingTaxCalculator() {
                   value={monthlyIncome}
                   onChange={(e) => handleInputChange(e.target.value, setMonthlyIncome)}
                   placeholder={`${calculationType === "monthly" ? "월 소득" : "연 소득"}을 입력하세요`}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

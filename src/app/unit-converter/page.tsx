@@ -229,7 +229,8 @@ export default function UnitConverter() {
                   type="number"
                   value={fromValue}
                   onChange={(e) => handleValueChange(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="변환할 값 입력"
                 />
               </div>
@@ -260,7 +261,8 @@ export default function UnitConverter() {
                     const unit = currentType?.units.find(u => u.symbol === e.target.value);
                     if (unit) handleFromUnitChange(unit);
                   }}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="">단위 선택</option>
                   {currentType?.units.map((unit) => (
@@ -279,7 +281,8 @@ export default function UnitConverter() {
                     const unit = currentType?.units.find(u => u.symbol === e.target.value);
                     if (unit) handleToUnitChange(unit);
                   }}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="">단위 선택</option>
                   {currentType?.units.map((unit) => (
@@ -313,7 +316,7 @@ export default function UnitConverter() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">입력 진수</label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black" style={{ color: '#000000 !important' }}>
                     {numberSystems.map((sys) => (
                       <option key={sys.base} value={sys.base}>
                         {sys.name} ({sys.symbol})
@@ -323,7 +326,7 @@ export default function UnitConverter() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">출력 진수</label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black" style={{ color: '#000000 !important' }}>
                     {numberSystems.map((sys) => (
                       <option key={sys.base} value={sys.base}>
                         {sys.name} ({sys.symbol})

@@ -273,7 +273,8 @@ export default function ConcreteCalculator() {
                 <select
                   value={selectedShape}
                   onChange={(e) => setSelectedShape(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {shapes.map(shape => (
                     <option key={shape.id} value={shape.id}>
@@ -291,7 +292,8 @@ export default function ConcreteCalculator() {
                 <select
                   value={selectedMix}
                   onChange={(e) => setSelectedMix(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {mixRatios.map(mix => (
                     <option key={mix.id} value={mix.id}>
@@ -313,7 +315,8 @@ export default function ConcreteCalculator() {
                     onChange={(e) => setDimensions({...dimensions, length: e.target.value})}
                     placeholder="0"
                     step="0.01"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               )}
@@ -327,7 +330,8 @@ export default function ConcreteCalculator() {
                     onChange={(e) => setDimensions({...dimensions, width: e.target.value})}
                     placeholder="0"
                     step="0.01"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               )}
@@ -341,7 +345,8 @@ export default function ConcreteCalculator() {
                     onChange={(e) => setDimensions({...dimensions, height: e.target.value})}
                     placeholder="0"
                     step="0.01"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               )}
@@ -355,7 +360,8 @@ export default function ConcreteCalculator() {
                     onChange={(e) => setDimensions({...dimensions, radius: e.target.value})}
                     placeholder="0"
                     step="0.01"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               )}
@@ -369,7 +375,8 @@ export default function ConcreteCalculator() {
                     onChange={(e) => setDimensions({...dimensions, base: e.target.value})}
                     placeholder="0"
                     step="0.01"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               )}
@@ -383,7 +390,8 @@ export default function ConcreteCalculator() {
                     onChange={(e) => setDimensions({...dimensions, depth: e.target.value})}
                     placeholder="0"
                     step="0.01"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               )}
@@ -400,7 +408,8 @@ export default function ConcreteCalculator() {
                   value={unitPrice}
                   onChange={(e) => setUnitPrice(e.target.value)}
                   placeholder="80000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             )}

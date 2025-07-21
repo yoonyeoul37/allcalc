@@ -166,7 +166,8 @@ export default function FractionCalculator() {
                     type="number"
                     value={firstFraction.numerator}
                     onChange={(e) => handleInput(1, 'numerator', e.target.value)}
-                    className="w-20 h-12 text-center border-2 border-gray-300 rounded-lg text-lg font-medium focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                    className="w-20 h-12 text-center border-2 border-gray-300 rounded-lg text-lg font-medium focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                    style={{ color: '#000000 !important' }}
                     placeholder="분자"
                   />
                   <div className="w-20 h-0.5 bg-gray-400 my-1"></div>
@@ -174,7 +175,8 @@ export default function FractionCalculator() {
                     type="number"
                     value={firstFraction.denominator}
                     onChange={(e) => handleInput(1, 'denominator', e.target.value)}
-                    className="w-20 h-12 text-center border-2 border-gray-300 rounded-lg text-lg font-medium focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                    className="w-20 h-12 text-center border-2 border-gray-300 rounded-lg text-lg font-medium focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                    style={{ color: '#000000 !important' }}
                     placeholder="분모"
                   />
                 </div>
@@ -229,7 +231,8 @@ export default function FractionCalculator() {
                     type="number"
                     value={secondFraction.numerator}
                     onChange={(e) => handleInput(2, 'numerator', e.target.value)}
-                    className="w-20 h-12 text-center border-2 border-gray-300 rounded-lg text-lg font-medium focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                    className="w-20 h-12 text-center border-2 border-gray-300 rounded-lg text-lg font-medium focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                    style={{ color: '#000000 !important' }}
                     placeholder="분자"
                   />
                   <div className="w-20 h-0.5 bg-gray-400 my-1"></div>
@@ -237,7 +240,8 @@ export default function FractionCalculator() {
                     type="number"
                     value={secondFraction.denominator}
                     onChange={(e) => handleInput(2, 'denominator', e.target.value)}
-                    className="w-20 h-12 text-center border-2 border-gray-300 rounded-lg text-lg font-medium focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                    className="w-20 h-12 text-center border-2 border-gray-300 rounded-lg text-lg font-medium focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                    style={{ color: '#000000 !important' }}
                     placeholder="분모"
                   />
                 </div>

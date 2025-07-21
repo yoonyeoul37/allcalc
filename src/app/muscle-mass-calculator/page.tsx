@@ -132,7 +132,8 @@ export default function MuscleMassCalculator() {
                   <select
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   >
                     <option value="male">남성</option>
                     <option value="female">여성</option>
@@ -148,7 +149,8 @@ export default function MuscleMassCalculator() {
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                     placeholder="25"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -161,7 +163,8 @@ export default function MuscleMassCalculator() {
                     value={height}
                     onChange={(e) => setHeight(e.target.value)}
                     placeholder="170"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -174,7 +177,8 @@ export default function MuscleMassCalculator() {
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="70"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -194,7 +198,8 @@ export default function MuscleMassCalculator() {
                     value={bodyFatPercentage}
                     onChange={(e) => setBodyFatPercentage(e.target.value)}
                     placeholder="20"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <p className="text-xs text-gray-500 mt-1">체지방률 계산기에서 측정한 값</p>
                 </div>

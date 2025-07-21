@@ -126,7 +126,8 @@ export default function SalesTaxCalculator() {
                 <select
                   value={calculationType}
                   onChange={(e) => setCalculationType(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="forward">공급가액 → 합계금액</option>
                   <option value="reverse">합계금액 → 공급가액</option>
@@ -137,7 +138,8 @@ export default function SalesTaxCalculator() {
                 <select
                   value={taxpayerType}
                   onChange={(e) => setTaxpayerType(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="general">일반과세자 (10%)</option>
                   <option value="simplified">간이과세자 (0.5~3%)</option>
@@ -155,7 +157,8 @@ export default function SalesTaxCalculator() {
                     value={supplyAmountDisplay}
                     onChange={handleSupplyAmountChange}
                     placeholder="1,000,000"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <p className="text-xs text-gray-500 mt-1">부가세를 제외한 금액</p>
                 </div>
@@ -167,7 +170,8 @@ export default function SalesTaxCalculator() {
                     onChange={(e) => setVatRate(e.target.value)}
                     placeholder="10"
                     step="0.1"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <p className="text-xs text-gray-500 mt-1">기본 10%, 간이과세자는 0.5~3%</p>
                 </div>
@@ -181,7 +185,8 @@ export default function SalesTaxCalculator() {
                     value={totalAmountDisplay}
                     onChange={handleTotalAmountChange}
                     placeholder="1,100,000"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <p className="text-xs text-gray-500 mt-1">부가세를 포함한 금액</p>
                 </div>
@@ -193,7 +198,8 @@ export default function SalesTaxCalculator() {
                     onChange={(e) => setVatRate(e.target.value)}
                     placeholder="10"
                     step="0.1"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <p className="text-xs text-gray-500 mt-1">기본 10%, 간이과세자는 0.5~3%</p>
                 </div>

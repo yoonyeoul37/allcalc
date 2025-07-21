@@ -124,7 +124,8 @@ export default function GPACalculator() {
                       value={course.name}
                       onChange={(e) => updateCourse(index, "name", e.target.value)}
                       placeholder="예: 수학"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                     />
                   </div>
                   
@@ -139,7 +140,8 @@ export default function GPACalculator() {
                       value={course.credits}
                       onChange={(e) => updateCourse(index, "credits", parseFloat(e.target.value) || 0)}
                       placeholder="3"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                     />
                   </div>
                   
@@ -150,7 +152,8 @@ export default function GPACalculator() {
                     <select
                       value={course.grade}
                       onChange={(e) => updateCourse(index, "grade", e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                     >
                       <option value="A+">A+ (4.5)</option>
                       <option value="A">A (4.0)</option>

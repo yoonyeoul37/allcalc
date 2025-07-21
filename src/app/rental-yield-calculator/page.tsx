@@ -89,8 +89,9 @@ export default function RentalYieldCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setPropertyValue(formatNumber(value));
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
                   placeholder="예: 500,000,000"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -104,8 +105,9 @@ export default function RentalYieldCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setMonthlyRent(formatNumber(value));
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
                   placeholder="예: 2,000,000"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>
@@ -124,8 +126,9 @@ export default function RentalYieldCalculator() {
                       const value = e.target.value.replace(/[^\d]/g, '');
                       setMaintenanceCost(formatNumber(value));
                     }}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
                     placeholder="예: 100,000"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -139,8 +142,9 @@ export default function RentalYieldCalculator() {
                       const value = e.target.value.replace(/[^\d]/g, '');
                       setPropertyTax(formatNumber(value));
                     }}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
                     placeholder="예: 50,000"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -154,8 +158,9 @@ export default function RentalYieldCalculator() {
                       const value = e.target.value.replace(/[^\d]/g, '');
                       setInsuranceCost(formatNumber(value));
                     }}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
                     placeholder="예: 30,000"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -169,8 +174,9 @@ export default function RentalYieldCalculator() {
                       const value = e.target.value.replace(/[^\d]/g, '');
                       setManagementFee(formatNumber(value));
                     }}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
                     placeholder="예: 50,000"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -184,11 +190,12 @@ export default function RentalYieldCalculator() {
                 type="number"
                 value={vacancyRate}
                 onChange={(e) => setVacancyRate(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
                 placeholder="예: 5"
                 step="0.1"
                 min="0"
                 max="100"
+                style={{ color: '#000000 !important' }}
               />
             </div>
 

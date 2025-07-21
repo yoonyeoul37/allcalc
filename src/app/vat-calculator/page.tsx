@@ -118,7 +118,8 @@ export default function VATCalculator() {
                   <select
                     value={calculationType}
                     onChange={(e) => setCalculationType(e.target.value as "supply" | "total" | "vat")}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   >
                     <option value="supply">공급가액 기준</option>
                     <option value="total">합계금액 기준</option>
@@ -138,7 +139,8 @@ export default function VATCalculator() {
                     onChange={(e) => handleInputChange(e.target.value, setInputAmount)}
                     placeholder={`${calculationType === "supply" ? "공급가액" : 
                                  calculationType === "total" ? "합계금액" : "부가세"}을 입력하세요`}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
 
@@ -150,7 +152,8 @@ export default function VATCalculator() {
                   <select
                     value={vatRate}
                     onChange={(e) => setVatRate(e.target.value)}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   >
                     <option value="10">10% (일반)</option>
                     <option value="0">0% (면세)</option>

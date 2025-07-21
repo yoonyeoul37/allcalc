@@ -266,7 +266,8 @@ export default function InternationalTransferCalculator() {
                     const bank = banks.find(b => b.name === e.target.value);
                     if (bank) setSelectedBank(bank);
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {banks.map(bank => (
                     <option key={bank.name} value={bank.name}>
@@ -290,7 +291,8 @@ export default function InternationalTransferCalculator() {
                       fetchExchangeRate();
                     }
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {currencies.map(currency => (
                     <option key={currency.code} value={currency.code}>
@@ -310,7 +312,8 @@ export default function InternationalTransferCalculator() {
                   value={transferAmount}
                   onChange={(e) => handleInputChange(e.target.value, setTransferAmount)}
                   placeholder="1,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -325,7 +328,8 @@ export default function InternationalTransferCalculator() {
                     value={exchangeRate}
                     onChange={(e) => handleInputChange(e.target.value, setExchangeRate)}
                     placeholder="1300"
-                    className="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <button
                     onClick={fetchExchangeRate}
@@ -348,7 +352,8 @@ export default function InternationalTransferCalculator() {
                     const method = transferMethods.find(m => m.name === e.target.value);
                     if (method) setSelectedMethod(method);
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {transferMethods.map(method => (
                     <option key={method.name} value={method.name}>

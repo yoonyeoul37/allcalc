@@ -187,7 +187,8 @@ export default function CarLoanCalculator() {
                   value={carPriceDisplay}
                   onChange={handleCarPriceChange}
                   placeholder="예: 35,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -198,7 +199,8 @@ export default function CarLoanCalculator() {
                 <select
                   value={carType}
                   onChange={(e) => setCarType(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="new">신차</option>
                   <option value="used">중고차</option>
@@ -218,7 +220,8 @@ export default function CarLoanCalculator() {
                   value={downPaymentDisplay}
                   onChange={handleDownPaymentChange}
                   placeholder="예: 5,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -231,7 +234,8 @@ export default function CarLoanCalculator() {
                   value={interestRate}
                   onChange={(e) => setInterestRate(e.target.value)}
                   placeholder={getRecommendedRate()}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -242,7 +246,8 @@ export default function CarLoanCalculator() {
                 <select
                   value={loanTerm}
                   onChange={(e) => setLoanTerm(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="12">12개월</option>
                   <option value="24">24개월</option>
@@ -263,7 +268,8 @@ export default function CarLoanCalculator() {
                 <select
                   value={financeType}
                   onChange={(e) => setFinanceType(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="installment">할부</option>
                   <option value="loan">대출</option>
@@ -293,7 +299,8 @@ export default function CarLoanCalculator() {
                   value={balloonPercent}
                   onChange={(e) => setBalloonPercent(e.target.value)}
                   placeholder="30"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             )}

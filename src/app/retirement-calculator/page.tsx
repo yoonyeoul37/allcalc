@@ -194,7 +194,8 @@ export default function RetirementCalculator() {
                   type="number"
                   value={currentAge}
                   onChange={(e) => setCurrentAge(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 30"
                 />
               </div>
@@ -207,7 +208,8 @@ export default function RetirementCalculator() {
                   type="number"
                   value={retirementAge}
                   onChange={(e) => setRetirementAge(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 60"
                 />
               </div>
@@ -220,7 +222,8 @@ export default function RetirementCalculator() {
                   type="text"
                   value={currentMonthlyExpenseDisplay}
                   onChange={handleCurrentMonthlyExpenseChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 2,000,000"
                 />
               </div>
@@ -233,7 +236,8 @@ export default function RetirementCalculator() {
                   type="number"
                   value={retirementExpenseRatio}
                   onChange={(e) => setRetirementExpenseRatio(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 70"
                 />
               </div>
@@ -246,7 +250,8 @@ export default function RetirementCalculator() {
                   type="text"
                   value={currentSavingsDisplay}
                   onChange={handleCurrentSavingsChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 10,000,000"
                 />
               </div>
@@ -259,7 +264,8 @@ export default function RetirementCalculator() {
                   type="number"
                   value={investmentReturn}
                   onChange={(e) => setInvestmentReturn(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 5"
                 />
               </div>
@@ -272,7 +278,8 @@ export default function RetirementCalculator() {
                   type="number"
                   value={inflationRate}
                   onChange={(e) => setInflationRate(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 2"
                 />
               </div>

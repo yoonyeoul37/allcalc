@@ -145,7 +145,8 @@ export default function SocialInsuranceCalculator() {
                 <select
                   value={insuranceType}
                   onChange={(e) => setInsuranceType(e.target.value as "employee" | "employer" | "freelancer")}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="employee">근로자</option>
                   <option value="employer">사업주</option>
@@ -161,7 +162,8 @@ export default function SocialInsuranceCalculator() {
                 <select
                   value={calculationType}
                   onChange={(e) => setCalculationType(e.target.value as "monthly" | "annual")}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="monthly">월 급여 기준</option>
                   <option value="annual">연 급여 기준</option>
@@ -178,7 +180,8 @@ export default function SocialInsuranceCalculator() {
                   value={monthlySalary}
                   onChange={(e) => handleInputChange(e.target.value, setMonthlySalary)}
                   placeholder={`${calculationType === "monthly" ? "월 급여" : "연 급여"}를 입력하세요`}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

@@ -324,8 +324,9 @@ export default function TriangleCalculator() {
                     type="number"
                     value={sideA}
                     onChange={(e) => setSideA(e.target.value)}
-                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none text-black"
                     placeholder="첫 번째 값 입력"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -336,8 +337,9 @@ export default function TriangleCalculator() {
                     type="number"
                     value={sideB}
                     onChange={(e) => setSideB(e.target.value)}
-                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none text-black"
                     placeholder="두 번째 값 입력"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -348,9 +350,10 @@ export default function TriangleCalculator() {
                     type="number"
                     value={sideC}
                     onChange={(e) => setSideC(e.target.value)}
-                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none text-black"
                     placeholder="세 번째 값 입력"
                     disabled={calculationType === "area" || calculationType === "pythagorean" || calculationType === "height"}
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>

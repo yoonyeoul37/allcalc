@@ -122,7 +122,8 @@ export default function SeverancePayCalculator() {
                 <select
                   value={calculationType}
                   onChange={(e) => setCalculationType(e.target.value as "date" | "manual")}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="date">입사일/퇴사일 기준</option>
                   <option value="manual">근속연수 수동 입력</option>
@@ -140,7 +141,8 @@ export default function SeverancePayCalculator() {
                       type="date"
                       value={startDate}
                       onChange={(e) => setStartDate(e.target.value)}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                     />
                   </div>
                   <div>
@@ -152,7 +154,8 @@ export default function SeverancePayCalculator() {
                       type="date"
                       value={endDate}
                       onChange={(e) => setEndDate(e.target.value)}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                     />
                   </div>
                 </div>
@@ -168,7 +171,8 @@ export default function SeverancePayCalculator() {
                       value={yearsOfService}
                       onChange={(e) => handleInputChange(e.target.value, setYearsOfService)}
                       placeholder="근속연수를 입력하세요"
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                     />
                   </div>
                   <div>
@@ -181,7 +185,8 @@ export default function SeverancePayCalculator() {
                       value={monthsOfService}
                       onChange={(e) => handleInputChange(e.target.value, setMonthsOfService)}
                       placeholder="근속개월수를 입력하세요"
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                     />
                   </div>
                 </div>
@@ -197,7 +202,8 @@ export default function SeverancePayCalculator() {
                   value={monthlyWage}
                   onChange={(e) => handleInputChange(e.target.value, setMonthlyWage)}
                   placeholder="월 평균임금을 입력하세요"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

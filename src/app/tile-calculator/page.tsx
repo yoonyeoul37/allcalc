@@ -190,14 +190,16 @@ export default function TileCalculator() {
                     value={roomWidth}
                     onChange={(e) => handleInputChange(e.target.value, setRoomWidth)}
                     placeholder="가로"
-                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <input
                     type="text"
                     value={roomLength}
                     onChange={(e) => handleInputChange(e.target.value, setRoomLength)}
                     placeholder="세로"
-                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -212,14 +214,16 @@ export default function TileCalculator() {
                     value={doorArea}
                     onChange={(e) => handleInputChange(e.target.value, setDoorArea)}
                     placeholder="문 면적"
-                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <input
                     type="text"
                     value={windowArea}
                     onChange={(e) => handleInputChange(e.target.value, setWindowArea)}
                     placeholder="창문 면적"
-                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -278,8 +282,9 @@ export default function TileCalculator() {
                 type="text"
                 value={laborCostPerSqm}
                 onChange={(e) => handleInputChange(e.target.value, setLaborCostPerSqm)}
-                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
                 placeholder="35000"
+                style={{ color: '#000000 !important' }}
               />
             </div>
           </div>

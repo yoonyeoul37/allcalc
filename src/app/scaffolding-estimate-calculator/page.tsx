@@ -435,7 +435,8 @@ export default function ScaffoldingEstimateCalculator() {
                       type="text"
                       value={estimate.estimateNumber}
                       onChange={(e) => handleInputChange('estimateNumber', e.target.value)}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="견적번호"
                     />
                   </div>
@@ -447,7 +448,8 @@ export default function ScaffoldingEstimateCalculator() {
                       type="date"
                       value={estimate.estimateDate}
                       onChange={(e) => handleInputChange('estimateDate', e.target.value)}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                      style={{ color: '#000000 !important' }}
                     />
                   </div>
                 </div>
@@ -464,7 +466,8 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={estimate.supplierName}
                         onChange={(e) => handleInputChange('supplierName', e.target.value)}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="공급자명"
                       />
                     </div>
@@ -476,7 +479,8 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={estimate.supplierBusinessNumber}
                         onChange={(e) => handleInputChange('supplierBusinessNumber', e.target.value)}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="000-00-00000"
                       />
                     </div>
@@ -488,7 +492,8 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={estimate.supplierAddress}
                         onChange={(e) => handleInputChange('supplierAddress', e.target.value)}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="공급자 주소"
                       />
                     </div>
@@ -500,8 +505,9 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={estimate.supplierPhone}
                         onChange={(e) => handleInputChange('supplierPhone', e.target.value)}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500"
-                        placeholder="000-0000-0000"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
+                        placeholder="공급자 연락처"
                       />
                     </div>
                   </div>
@@ -519,8 +525,9 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={estimate.customerName}
                         onChange={(e) => handleInputChange('customerName', e.target.value)}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500"
-                        placeholder="공급받는자명"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
+                        placeholder="고객명"
                       />
                     </div>
                     <div>
@@ -531,8 +538,9 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={estimate.customerPhone}
                         onChange={(e) => handleInputChange('customerPhone', e.target.value)}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500"
-                        placeholder="000-0000-0000"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
+                        placeholder="고객 연락처"
                       />
                     </div>
                     <div className="md:col-span-2">
@@ -543,8 +551,9 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={estimate.customerAddress}
                         onChange={(e) => handleInputChange('customerAddress', e.target.value)}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500"
-                        placeholder="공급받는자 주소"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
+                        placeholder="고객 주소"
                       />
                     </div>
                   </div>
@@ -561,7 +570,8 @@ export default function ScaffoldingEstimateCalculator() {
                       type="text"
                       value={formatNumber(estimate.totalArea)}
                       onChange={(e) => handleInputChange('totalArea', e.target.value)}
-                      className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                      className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="100"
                     />
                     <span className="ml-2 text-gray-600">평</span>
@@ -580,7 +590,8 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={formatNumber(estimate.pipeUnitPrice)}
                         onChange={(e) => handleInputChange('pipeUnitPrice', e.target.value)}
-                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="5000"
                       />
                       <span className="ml-2 text-gray-600">원</span>
@@ -597,7 +608,8 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={formatNumber(estimate.clampUnitPrice)}
                         onChange={(e) => handleInputChange('clampUnitPrice', e.target.value)}
-                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="3000"
                       />
                       <span className="ml-2 text-gray-600">원</span>
@@ -614,7 +626,8 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={formatNumber(estimate.footboardUnitPrice)}
                         onChange={(e) => handleInputChange('footboardUnitPrice', e.target.value)}
-                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="8000"
                       />
                       <span className="ml-2 text-gray-600">원</span>
@@ -634,7 +647,8 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={estimate.installationWorkers}
                         onChange={(e) => handleInputChange('installationWorkers', e.target.value)}
-                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="4"
                       />
                       <span className="ml-2 text-gray-600">명</span>
@@ -651,7 +665,8 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={formatNumber(estimate.installationLaborCost)}
                         onChange={(e) => handleInputChange('installationLaborCost', e.target.value)}
-                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="150000"
                       />
                       <span className="ml-2 text-gray-600">원</span>
@@ -670,7 +685,8 @@ export default function ScaffoldingEstimateCalculator() {
                        type="text"
                        value={formatNumber(estimate.transportationCost)}
                        onChange={(e) => handleInputChange('transportationCost', e.target.value)}
-                                               className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                                               className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="200000"
                      />
                     <span className="ml-2 text-gray-600">원</span>
@@ -689,7 +705,8 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={estimate.disassemblyWorkers}
                         onChange={(e) => handleInputChange('disassemblyWorkers', e.target.value)}
-                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="3"
                       />
                       <span className="ml-2 text-gray-600">명</span>
@@ -706,7 +723,8 @@ export default function ScaffoldingEstimateCalculator() {
                         type="text"
                         value={formatNumber(estimate.disassemblyLaborCost)}
                         onChange={(e) => handleInputChange('disassemblyLaborCost', e.target.value)}
-                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                        className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="120000"
                       />
                       <span className="ml-2 text-gray-600">원</span>
@@ -725,7 +743,8 @@ export default function ScaffoldingEstimateCalculator() {
                       type="text"
                       value={formatNumber(estimate.miscellaneousCost)}
                       onChange={(e) => handleInputChange('miscellaneousCost', e.target.value)}
-                                              className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                                              className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-blue-500 text-black"
+                        style={{ color: '#000000 !important' }}
                         placeholder="100000"
                     />
                     <span className="ml-2 text-gray-600">원</span>

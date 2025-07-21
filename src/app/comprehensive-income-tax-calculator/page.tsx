@@ -108,7 +108,8 @@ export default function ComprehensiveIncomeTaxCalculator() {
                     setSalary(formatNumber(value));
                   }}
                   placeholder="예: 50,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -124,7 +125,8 @@ export default function ComprehensiveIncomeTaxCalculator() {
                     setBusinessIncome(formatNumber(value));
                   }}
                   placeholder="예: 10,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -140,7 +142,8 @@ export default function ComprehensiveIncomeTaxCalculator() {
                     setInterestIncome(formatNumber(value));
                   }}
                   placeholder="예: 1,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -156,7 +159,8 @@ export default function ComprehensiveIncomeTaxCalculator() {
                     setDividendIncome(formatNumber(value));
                   }}
                   placeholder="예: 500,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -172,7 +176,8 @@ export default function ComprehensiveIncomeTaxCalculator() {
                     setOtherIncome(formatNumber(value));
                   }}
                   placeholder="예: 2,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -188,7 +193,8 @@ export default function ComprehensiveIncomeTaxCalculator() {
                     setDeductions(formatNumber(value));
                   }}
                   placeholder="예: 5,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

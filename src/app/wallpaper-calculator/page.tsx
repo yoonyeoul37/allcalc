@@ -209,21 +209,24 @@ export default function WallpaperCalculator() {
                     value={roomWidth}
                     onChange={(e) => handleInputChange(e.target.value, setRoomWidth)}
                     placeholder="가로"
-                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <input
                     type="text"
                     value={roomLength}
                     onChange={(e) => handleInputChange(e.target.value, setRoomLength)}
                     placeholder="세로"
-                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <input
                     type="text"
                     value={roomHeight}
                     onChange={(e) => handleInputChange(e.target.value, setRoomHeight)}
                     placeholder="높이"
-                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -238,14 +241,16 @@ export default function WallpaperCalculator() {
                     value={doorArea}
                     onChange={(e) => handleInputChange(e.target.value, setDoorArea)}
                     placeholder="문 면적"
-                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <input
                     type="text"
                     value={windowArea}
                     onChange={(e) => handleInputChange(e.target.value, setWindowArea)}
                     placeholder="창문 면적"
-                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -261,7 +266,8 @@ export default function WallpaperCalculator() {
                     const wallpaper = wallpaperTypes.find(w => w.name === e.target.value);
                     if (wallpaper) handleWallpaperChange(wallpaper);
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {wallpaperTypes.map(wallpaper => (
                     <option key={wallpaper.name} value={wallpaper.name}>
@@ -282,7 +288,8 @@ export default function WallpaperCalculator() {
                     const worker = workerTypes.find(w => w.name === e.target.value);
                     if (worker) setSelectedWorker(worker);
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {workerTypes
                     .filter(worker => selectedWallpaper.allowedWorkers.includes(worker.name))

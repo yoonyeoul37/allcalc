@@ -145,7 +145,8 @@ export default function ExchangeRateCalculator() {
                   value={amount}
                   onChange={(e) => handleInputChange(e.target.value)}
                   placeholder="금액을 입력하세요"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -161,7 +162,8 @@ export default function ExchangeRateCalculator() {
                       const currency = currencies.find(c => c.code === e.target.value);
                       if (currency) setFromCurrency(currency);
                     }}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   >
                     {currencies.map(currency => (
                       <option key={currency.code} value={currency.code}>
@@ -182,7 +184,8 @@ export default function ExchangeRateCalculator() {
                       const currency = currencies.find(c => c.code === e.target.value);
                       if (currency) setToCurrency(currency);
                     }}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   >
                     {currencies.map(currency => (
                       <option key={currency.code} value={currency.code}>

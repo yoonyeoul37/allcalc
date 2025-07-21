@@ -117,7 +117,7 @@ export default function BasicCalculator() {
 
           {/* 디스플레이 */}
           <div className="bg-gray-100 rounded-lg p-4 mb-6">
-            <div className="text-right text-3xl font-mono text-black min-h-[2.5rem] flex items-center justify-end" style={{ color: '#000000 !important' }}>
+            <div className="text-right text-3xl font-mono text-black min-h-[2.5rem] flex items-center justify-end">
               {display}
             </div>
           </div>

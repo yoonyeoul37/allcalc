@@ -112,7 +112,8 @@ export default function BMRCalculator() {
                   <select
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   >
                     <option value="male">남성</option>
                     <option value="female">여성</option>
@@ -128,7 +129,8 @@ export default function BMRCalculator() {
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                     placeholder="25"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -141,7 +143,8 @@ export default function BMRCalculator() {
                     value={height}
                     onChange={(e) => setHeight(e.target.value)}
                     placeholder="170"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -154,7 +157,8 @@ export default function BMRCalculator() {
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="70"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>

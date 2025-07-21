@@ -163,7 +163,8 @@ export default function CalorieCalculator() {
                   <select
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   >
                     <option value="male">남성</option>
                     <option value="female">여성</option>
@@ -179,7 +180,8 @@ export default function CalorieCalculator() {
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                     placeholder="25"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -192,7 +194,8 @@ export default function CalorieCalculator() {
                     value={height}
                     onChange={(e) => setHeight(e.target.value)}
                     placeholder="170"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -205,7 +208,8 @@ export default function CalorieCalculator() {
                     value={weightDisplay}
                     onChange={handleWeightChange}
                     placeholder="70"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -223,7 +227,8 @@ export default function CalorieCalculator() {
                   <select
                     value={activityLevel}
                     onChange={(e) => setActivityLevel(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   >
                     <option value="sedentary">거의 운동 안함 (사무직)</option>
                     <option value="light">가벼운 운동 (주 1-3회)</option>
@@ -254,7 +259,8 @@ export default function CalorieCalculator() {
                   <select
                     value={goal}
                     onChange={(e) => setGoal(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   >
                     <option value="lose">체중 감량</option>
                     <option value="maintain">체중 유지</option>
@@ -269,7 +275,8 @@ export default function CalorieCalculator() {
                   <select
                     value={timeframe}
                     onChange={(e) => setTimeframe(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   >
                     <option value="2weeks">빠르게 (2주)</option>
                     <option value="1month">적당히 (1개월)</option>

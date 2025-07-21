@@ -79,7 +79,8 @@ export default function BMICalculator() {
                   value={height}
                   onChange={(e) => setHeight(e.target.value)}
                   placeholder="예: 170"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -92,7 +93,8 @@ export default function BMICalculator() {
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
                   placeholder="예: 65"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

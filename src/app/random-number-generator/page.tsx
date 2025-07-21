@@ -224,7 +224,8 @@ export default function RandomNumberGenerator() {
                       type="number"
                       value={minValue}
                       onChange={(e) => setMinValue(e.target.value)}
-                      className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="최소값"
                     />
                   </div>
@@ -234,7 +235,8 @@ export default function RandomNumberGenerator() {
                       type="number"
                       value={maxValue}
                       onChange={(e) => setMaxValue(e.target.value)}
-                      className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="최대값"
                     />
                   </div>
@@ -244,7 +246,8 @@ export default function RandomNumberGenerator() {
                       type="number"
                       value={count}
                       onChange={(e) => setCount(e.target.value)}
-                      className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="개수"
                     />
                   </div>

@@ -162,7 +162,8 @@ export default function ChildSupportCalculator() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setFatherIncome(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 3,000,000"
                     />
                   </div>
@@ -177,7 +178,8 @@ export default function ChildSupportCalculator() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setFatherAdditionalIncome(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 500,000"
                     />
                   </div>
@@ -192,7 +194,8 @@ export default function ChildSupportCalculator() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setFatherExpenses(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 1,500,000"
                     />
                   </div>
@@ -216,7 +219,8 @@ export default function ChildSupportCalculator() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setMotherIncome(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 2,500,000"
                     />
                   </div>
@@ -231,7 +235,8 @@ export default function ChildSupportCalculator() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setMotherAdditionalIncome(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 300,000"
                     />
                   </div>
@@ -246,7 +251,8 @@ export default function ChildSupportCalculator() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setMotherExpenses(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 1,200,000"
                     />
                   </div>
@@ -263,7 +269,8 @@ export default function ChildSupportCalculator() {
                   type="number"
                   value={marriageDuration}
                   onChange={(e) => setMarriageDuration(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 8"
                 />
               </div>
@@ -274,7 +281,8 @@ export default function ChildSupportCalculator() {
                 <select
                   value={fault}
                   onChange={(e) => setFault(e.target.value as any)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="none">무과실</option>
                   <option value="father">남편 귀책</option>
@@ -289,7 +297,8 @@ export default function ChildSupportCalculator() {
                 <select
                   value={custodyType}
                   onChange={(e) => setCustodyType(e.target.value as any)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="sole">단독양육</option>
                   <option value="shared">공동양육</option>

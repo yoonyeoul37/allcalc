@@ -284,7 +284,8 @@ export default function CustomsCalculator() {
                   value={productPriceDisplay}
                   onChange={handlePriceChange}
                   placeholder="100"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -298,7 +299,8 @@ export default function CustomsCalculator() {
                   value={weightDisplay}
                   onChange={handleWeightChange}
                   placeholder="1.5"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -313,7 +315,8 @@ export default function CustomsCalculator() {
                     value={exchangeRateDisplay}
                     onChange={handleExchangeRateChange}
                     placeholder="1300"
-                    className="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <button
                     onClick={fetchExchangeRate}

@@ -149,7 +149,8 @@ export default function BodyFatCalculator() {
                   <select
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   >
                     <option value="male">남성</option>
                     <option value="female">여성</option>
@@ -165,7 +166,8 @@ export default function BodyFatCalculator() {
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                     placeholder="25"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -178,7 +180,8 @@ export default function BodyFatCalculator() {
                     value={height}
                     onChange={(e) => setHeight(e.target.value)}
                     placeholder="170"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -191,7 +194,8 @@ export default function BodyFatCalculator() {
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="70"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -211,7 +215,8 @@ export default function BodyFatCalculator() {
                     value={waist}
                     onChange={(e) => setWaist(e.target.value)}
                     placeholder="85"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <p className="text-xs text-gray-500 mt-1">배꼽 위 가장 가는 부분</p>
                 </div>
@@ -225,7 +230,8 @@ export default function BodyFatCalculator() {
                     value={neck}
                     onChange={(e) => setNeck(e.target.value)}
                     placeholder="38"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <p className="text-xs text-gray-500 mt-1">목의 가장 가는 부분</p>
                 </div>
@@ -240,7 +246,8 @@ export default function BodyFatCalculator() {
                       value={hip}
                       onChange={(e) => setHip(e.target.value)}
                       placeholder="95"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black text-lg text-black"
+                      style={{ color: '#000000 !important' }}
                     />
                     <p className="text-xs text-gray-500 mt-1">엉덩이의 가장 넓은 부분</p>
                   </div>

@@ -100,7 +100,8 @@ export default function PasswordGenerator() {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   readOnly
-                  className="w-full p-3 pr-20 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 pr-20 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="암호를 생성해주세요"
                 />
                 <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex space-x-2">

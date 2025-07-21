@@ -109,7 +109,8 @@ export default function PregnancyAdjustmentCalculator() {
                     type="date"
                     value={lastPeriodDate}
                     onChange={(e) => setLastPeriodDate(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -118,7 +119,8 @@ export default function PregnancyAdjustmentCalculator() {
                     type="date"
                     value={ultrasoundDate}
                     onChange={(e) => setUltrasoundDate(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -138,7 +140,8 @@ export default function PregnancyAdjustmentCalculator() {
                     value={ultrasoundWeek}
                     onChange={(e) => setUltrasoundWeek(e.target.value)}
                     placeholder="8"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -148,7 +151,8 @@ export default function PregnancyAdjustmentCalculator() {
                     value={ultrasoundDay}
                     onChange={(e) => setUltrasoundDay(e.target.value)}
                     placeholder="2"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>

@@ -187,8 +187,9 @@ export default function StandardDeviationCalculator() {
                     type="text"
                     value={dataInput}
                     onChange={(e) => setDataInput(e.target.value)}
-                    className="flex-1 p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none"
+                    className="flex-1 p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none text-black"
                     placeholder="예: 1, 2, 3, 4, 5 또는 1 2 3 4 5"
+                    style={{ color: '#000000 !important' }}
                   />
                   <button
                     onClick={handleDataInput}
@@ -208,8 +209,9 @@ export default function StandardDeviationCalculator() {
                   <input
                     type="number"
                     id="singleInput"
-                    className="flex-1 p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none"
+                    className="flex-1 p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none text-black"
                     placeholder="숫자 입력"
+                    style={{ color: '#000000 !important' }}
                     onKeyPress={(e) => {
                       if (e.key === 'Enter') {
                         const target = e.target as HTMLInputElement;

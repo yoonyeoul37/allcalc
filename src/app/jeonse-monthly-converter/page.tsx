@@ -103,7 +103,8 @@ export default function JeonseMonthlyConverter() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setJeonseAmount(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 50,000,000"
                     />
                   </div>
@@ -118,7 +119,8 @@ export default function JeonseMonthlyConverter() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setDeposit(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 10,000,000"
                     />
                   </div>
@@ -134,7 +136,8 @@ export default function JeonseMonthlyConverter() {
                       const value = e.target.value.replace(/[^\d]/g, '');
                       setMonthlyRent(formatNumber(value));
                     }}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                     placeholder="예: 500,000"
                   />
                 </div>
@@ -155,7 +158,8 @@ export default function JeonseMonthlyConverter() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setMonthlyRent(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 500,000"
                     />
                   </div>
@@ -170,7 +174,8 @@ export default function JeonseMonthlyConverter() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setDeposit(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 10,000,000"
                     />
                   </div>
@@ -186,7 +191,8 @@ export default function JeonseMonthlyConverter() {
                 type="number"
                 value={conversionRate * 100}
                 onChange={(e) => setConversionRate(parseFloat(e.target.value) / 100)}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                style={{ color: '#000000 !important' }}
                 placeholder="5.0"
                 step="0.1"
               />

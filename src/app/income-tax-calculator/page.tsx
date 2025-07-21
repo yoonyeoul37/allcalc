@@ -175,7 +175,8 @@ export default function IncomeTaxCalculator() {
                 <select
                   value={incomeType}
                   onChange={(e) => setIncomeType(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="salary">근로소득 (급여)</option>
                   <option value="business">사업소득 (개인사업자)</option>
@@ -194,7 +195,8 @@ export default function IncomeTaxCalculator() {
                   value={annualIncomeDisplay}
                   onChange={handleAnnualIncomeChange}
                   placeholder="50,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>
@@ -206,7 +208,8 @@ export default function IncomeTaxCalculator() {
                   value={basicDeductionDisplay}
                   onChange={handleBasicDeductionChange}
                   placeholder="1,500,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -216,7 +219,8 @@ export default function IncomeTaxCalculator() {
                   value={additionalDeductionDisplay}
                   onChange={handleAdditionalDeductionChange}
                   placeholder="1,000,000"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -226,7 +230,8 @@ export default function IncomeTaxCalculator() {
                   value={specialDeductionDisplay}
                   onChange={handleSpecialDeductionChange}
                   placeholder="0"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>
@@ -238,7 +243,8 @@ export default function IncomeTaxCalculator() {
                   value={otherDeductionsDisplay}
                   onChange={handleOtherDeductionsChange}
                   placeholder="0"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

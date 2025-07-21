@@ -260,7 +260,8 @@ export default function PercentageCalculator() {
                     type="number"
                     value={value1}
                     onChange={(e) => setValue1(e.target.value)}
-                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                     placeholder="첫 번째 값 입력"
                   />
                 </div>
@@ -272,7 +273,8 @@ export default function PercentageCalculator() {
                     type="number"
                     value={value2}
                     onChange={(e) => setValue2(e.target.value)}
-                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                     placeholder="두 번째 값 입력"
                   />
                 </div>

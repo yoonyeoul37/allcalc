@@ -221,7 +221,8 @@ export default function InheritanceGiftPropertyTaxCalculator() {
                     value={inheritanceAmount}
                     onChange={(e) => setInheritanceAmount(formatNumber(e.target.value))}
                     placeholder="1,000,000,000"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -231,7 +232,8 @@ export default function InheritanceGiftPropertyTaxCalculator() {
                     value={inheritanceDeduction}
                     onChange={(e) => setInheritanceDeduction(formatNumber(e.target.value))}
                     placeholder="500,000,000"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -270,7 +272,8 @@ export default function InheritanceGiftPropertyTaxCalculator() {
                     value={giftAmount}
                     onChange={(e) => setGiftAmount(formatNumber(e.target.value))}
                     placeholder="100,000,000"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
                 <div>
@@ -280,7 +283,8 @@ export default function InheritanceGiftPropertyTaxCalculator() {
                     value={giftDeduction}
                     onChange={(e) => setGiftDeduction(formatNumber(e.target.value))}
                     placeholder="50,000,000"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -319,7 +323,8 @@ export default function InheritanceGiftPropertyTaxCalculator() {
                       <select
                         value={item.type}
                         onChange={(e) => updatePropertyItem(item.id, 'type', e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                        style={{ color: '#000000 !important' }}
                       >
                         <option value="residential">주택</option>
                         <option value="commercial">상가</option>
@@ -334,7 +339,8 @@ export default function InheritanceGiftPropertyTaxCalculator() {
                         value={item.value}
                         onChange={(e) => updatePropertyItem(item.id, 'value', formatNumber(e.target.value))}
                         placeholder="100,000,000"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                        style={{ color: '#000000 !important' }}
                       />
                     </div>
                     <div className="flex items-end">

@@ -138,7 +138,8 @@ export default function GradeCalculator() {
                       value={course.name}
                       onChange={(e) => updateCourse(index, "name", e.target.value)}
                       placeholder="예: 수학"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                     />
                   </div>
                   
@@ -153,7 +154,8 @@ export default function GradeCalculator() {
                       value={course.score}
                       onChange={(e) => updateCourse(index, "score", parseFloat(e.target.value) || 0)}
                       placeholder="85"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                     />
                   </div>
                   

@@ -235,14 +235,16 @@ export default function InteriorEstimateCalculator() {
                     value={roomWidth}
                     onChange={(e) => handleInputChange(e.target.value, setRoomWidth)}
                     placeholder="가로"
-                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                   <input
                     type="text"
                     value={roomLength}
                     onChange={(e) => handleInputChange(e.target.value, setRoomLength)}
                     placeholder="세로"
-                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                   />
                 </div>
               </div>
@@ -257,7 +259,8 @@ export default function InteriorEstimateCalculator() {
                   value={roomHeight}
                   onChange={(e) => handleInputChange(e.target.value, setRoomHeight)}
                   placeholder="높이"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -272,7 +275,8 @@ export default function InteriorEstimateCalculator() {
                     const room = roomTypes.find(r => r.name === e.target.value);
                     if (room) setSelectedRoom(room);
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {roomTypes.map(room => (
                     <option key={room.name} value={room.name}>
@@ -320,7 +324,8 @@ export default function InteriorEstimateCalculator() {
                   value={designFee}
                   onChange={(e) => handleInputChange(e.target.value, setDesignFee)}
                   placeholder="0"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -333,7 +338,8 @@ export default function InteriorEstimateCalculator() {
                   value={managementFee}
                   onChange={(e) => handleInputChange(e.target.value, setManagementFee)}
                   placeholder="10"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

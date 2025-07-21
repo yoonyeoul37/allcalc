@@ -193,7 +193,8 @@ export default function AlimonyCalculator() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setHusbandIncome(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 4,000,000"
                     />
                   </div>
@@ -208,7 +209,8 @@ export default function AlimonyCalculator() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setHusbandAssets(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 100,000,000"
                     />
                   </div>
@@ -232,7 +234,8 @@ export default function AlimonyCalculator() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setWifeIncome(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 2,000,000"
                     />
                   </div>
@@ -247,7 +250,8 @@ export default function AlimonyCalculator() {
                         const value = e.target.value.replace(/[^\d]/g, '');
                         setWifeAssets(formatNumber(value));
                       }}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 50,000,000"
                     />
                   </div>
@@ -264,7 +268,8 @@ export default function AlimonyCalculator() {
                   type="number"
                   value={marriageDuration}
                   onChange={(e) => setMarriageDuration(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 8"
                 />
               </div>
@@ -275,7 +280,8 @@ export default function AlimonyCalculator() {
                 <select
                   value={faultType}
                   onChange={(e) => setFaultType(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {faultFactors.map((factor) => (
                     <option key={factor.type} value={factor.type}>
@@ -292,7 +298,8 @@ export default function AlimonyCalculator() {
                   type="number"
                   value={wifeAge}
                   onChange={(e) => setWifeAge(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 35"
                 />
               </div>
@@ -306,7 +313,8 @@ export default function AlimonyCalculator() {
                 <select
                   value={wifeEducation}
                   onChange={(e) => setWifeEducation(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="중학교">중학교</option>
                   <option value="고등학교">고등학교</option>
@@ -320,7 +328,8 @@ export default function AlimonyCalculator() {
                 <select
                   value={wifeCareer}
                   onChange={(e) => setWifeCareer(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="none">경력 없음</option>
                   <option value="parttime">파트타임</option>
@@ -335,9 +344,16 @@ export default function AlimonyCalculator() {
                   type="number"
                   value={childrenCount}
                   onChange={(e) => setChildrenCount(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
-                  placeholder="예: 2"
-                />
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
+                >
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
               </div>
             </div>
 

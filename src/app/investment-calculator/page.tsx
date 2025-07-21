@@ -350,7 +350,8 @@ export default function InvestmentCalculator() {
                       type="text"
                       value={roiInitialDisplay}
                       onChange={handleRoiInitialChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 1,000,000"
                     />
                   </div>
@@ -363,7 +364,8 @@ export default function InvestmentCalculator() {
                       type="text"
                       value={roiFinalDisplay}
                       onChange={handleRoiFinalChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 1,200,000"
                     />
                   </div>
@@ -376,7 +378,8 @@ export default function InvestmentCalculator() {
                       type="number"
                       value={roiPeriod}
                       onChange={(e) => setRoiPeriod(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 2"
                     />
                   </div>
@@ -398,7 +401,8 @@ export default function InvestmentCalculator() {
                       type="text"
                       value={compoundInitialDisplay}
                       onChange={handleCompoundInitialChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 1,000,000"
                     />
                   </div>
@@ -411,7 +415,8 @@ export default function InvestmentCalculator() {
                       type="text"
                       value={compoundMonthlyDisplay}
                       onChange={handleCompoundMonthlyChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 100,000"
                     />
                   </div>
@@ -424,7 +429,8 @@ export default function InvestmentCalculator() {
                       type="number"
                       value={compoundRate}
                       onChange={(e) => setCompoundRate(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 7"
                     />
                   </div>
@@ -437,7 +443,8 @@ export default function InvestmentCalculator() {
                       type="number"
                       value={compoundYears}
                       onChange={(e) => setCompoundYears(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 10"
                     />
                   </div>
@@ -459,7 +466,8 @@ export default function InvestmentCalculator() {
                       type="text"
                       value={targetInitialDisplay}
                       onChange={handleTargetInitialChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 1,000,000"
                     />
                   </div>
@@ -472,7 +480,8 @@ export default function InvestmentCalculator() {
                       type="text"
                       value={targetMonthlyDisplay}
                       onChange={handleTargetMonthlyChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 100,000"
                     />
                   </div>
@@ -485,7 +494,8 @@ export default function InvestmentCalculator() {
                       type="number"
                       value={targetRate}
                       onChange={(e) => setTargetRate(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 7"
                     />
                   </div>
@@ -498,7 +508,8 @@ export default function InvestmentCalculator() {
                       type="text"
                       value={targetAmountDisplay}
                       onChange={handleTargetAmountChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 50,000,000"
                     />
                   </div>
@@ -520,7 +531,8 @@ export default function InvestmentCalculator() {
                       type="text"
                       value={periodInitialDisplay}
                       onChange={handlePeriodInitialChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 1,000,000"
                     />
                   </div>
@@ -533,7 +545,8 @@ export default function InvestmentCalculator() {
                       type="text"
                       value={periodMonthlyDisplay}
                       onChange={handlePeriodMonthlyChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 100,000"
                     />
                   </div>
@@ -546,7 +559,8 @@ export default function InvestmentCalculator() {
                       type="number"
                       value={periodRate}
                       onChange={(e) => setPeriodRate(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 7"
                     />
                   </div>
@@ -559,7 +573,8 @@ export default function InvestmentCalculator() {
                       type="text"
                       value={periodTargetDisplay}
                       onChange={handlePeriodTargetChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                      style={{ color: '#000000 !important' }}
                       placeholder="예: 50,000,000"
                     />
                   </div>

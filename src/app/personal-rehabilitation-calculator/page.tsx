@@ -158,7 +158,8 @@ export default function PersonalRehabilitationCalculator() {
                   type="number"
                   value={age}
                   onChange={(e) => setAge(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 35"
                   min="1"
                   max="120"
@@ -175,7 +176,8 @@ export default function PersonalRehabilitationCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setMonthlyIncome(formatNumber(value));
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 3,000,000"
                 />
               </div>
@@ -193,7 +195,8 @@ export default function PersonalRehabilitationCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setTotalDebtAmount(formatNumber(value));
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 50,000,000"
                 />
               </div>
@@ -204,7 +207,8 @@ export default function PersonalRehabilitationCalculator() {
                 <select
                   value={incomeType}
                   onChange={(e) => setIncomeType(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {incomeTypes.map((type) => (
                     <option key={type.type} value={type.type}>
@@ -223,7 +227,8 @@ export default function PersonalRehabilitationCalculator() {
                 <select
                   value={familySize}
                   onChange={(e) => setFamilySize(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="1">1명</option>
                   <option value="2">2명</option>

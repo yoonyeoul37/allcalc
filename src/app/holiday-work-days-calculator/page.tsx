@@ -135,7 +135,8 @@ export default function HolidayWorkDaysCalculator() {
                   type="date"
                   value={startDate}
                   onChange={(e) => setStartDate(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -147,7 +148,8 @@ export default function HolidayWorkDaysCalculator() {
                   type="date"
                   value={endDate}
                   onChange={(e) => setEndDate(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -172,7 +174,8 @@ export default function HolidayWorkDaysCalculator() {
                   value={customHolidays}
                   onChange={(e) => setCustomHolidays(e.target.value)}
                   placeholder="예: 2024-01-15, 2024-02-20"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

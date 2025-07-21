@@ -109,7 +109,8 @@ export default function AcquisitionTransferTaxCalculator() {
                 <select
                   value={propertyType}
                   onChange={(e) => setPropertyType(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {taxType === 'acquisition' ? (
                     <>
@@ -139,7 +140,8 @@ export default function AcquisitionTransferTaxCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setPropertyValue(formatNumber(value));
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 500,000,000"
                 />
               </div>

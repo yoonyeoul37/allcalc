@@ -119,8 +119,9 @@ export default function ElectricityBillCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setMonthlyUsage(formatNumber(value));
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
                   placeholder="예: 300"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

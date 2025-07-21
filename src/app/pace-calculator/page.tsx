@@ -95,7 +95,8 @@ export default function PaceCalculator() {
                   value={distance}
                   onChange={(e) => setDistance(e.target.value)}
                   placeholder="거리 (km)"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg"
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg text-black"
+                  style={{ color: '#000000 !important' }}
                 />
                 <span className="text-gray-600 font-medium">km</span>
               </div>
@@ -147,7 +148,8 @@ export default function PaceCalculator() {
                         value={hours}
                         onChange={(e) => setHours(e.target.value)}
                         placeholder="0"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-black"
+                        style={{ color: '#000000 !important' }}
                       />
                     </div>
                     <div>
@@ -157,7 +159,8 @@ export default function PaceCalculator() {
                         value={minutes}
                         onChange={(e) => setMinutes(e.target.value)}
                         placeholder="0"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-black"
+                        style={{ color: '#000000 !important' }}
                       />
                     </div>
                     <div>
@@ -167,7 +170,8 @@ export default function PaceCalculator() {
                         value={seconds}
                         onChange={(e) => setSeconds(e.target.value)}
                         placeholder="0"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-black"
+                        style={{ color: '#000000 !important' }}
                       />
                     </div>
                   </div>
@@ -189,7 +193,8 @@ export default function PaceCalculator() {
                         value={paceMinutes}
                         onChange={(e) => setPaceMinutes(e.target.value)}
                         placeholder="5"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-black"
+                        style={{ color: '#000000 !important' }}
                       />
                     </div>
                     <div>
@@ -198,8 +203,9 @@ export default function PaceCalculator() {
                         type="number"
                         value={paceSeconds}
                         onChange={(e) => setPaceSeconds(e.target.value)}
-                        placeholder="0"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none"
+                        placeholder="30"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-black"
+                        style={{ color: '#000000 !important' }}
                       />
                     </div>
                   </div>

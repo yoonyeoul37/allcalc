@@ -81,7 +81,8 @@ export default function AutomobileFuelCalculator() {
                   value={fuelEfficiency}
                   onChange={(e) => setFuelEfficiency(e.target.value)}
                   placeholder="예: 12.5"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -94,7 +95,8 @@ export default function AutomobileFuelCalculator() {
                   value={distance}
                   onChange={(e) => setDistance(e.target.value)}
                   placeholder="예: 100"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -105,7 +107,8 @@ export default function AutomobileFuelCalculator() {
                 <select
                   value={fuelType}
                   onChange={(e) => handleFuelTypeChange(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="gasoline">휘발유</option>
                   <option value="diesel">경유</option>
@@ -122,7 +125,8 @@ export default function AutomobileFuelCalculator() {
                   value={fuelPrice}
                   onChange={(e) => setFuelPrice(e.target.value)}
                   placeholder="예: 1700"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

@@ -93,7 +93,8 @@ export default function SubnetCalculator() {
                   value={ipAddress}
                   onChange={(e) => setIpAddress(e.target.value)}
                   placeholder="192.168.1.1"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -106,7 +107,8 @@ export default function SubnetCalculator() {
                   value={subnetMask}
                   onChange={(e) => setSubnetMask(e.target.value)}
                   placeholder="255.255.255.0"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

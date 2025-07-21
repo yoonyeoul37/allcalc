@@ -111,7 +111,8 @@ export default function DueDateCalculator() {
                   type="date"
                   value={lastPeriodDate}
                   onChange={(e) => setLastPeriodDate(e.target.value)}
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg"
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black focus:outline-none text-lg text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

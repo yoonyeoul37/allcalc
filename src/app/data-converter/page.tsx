@@ -139,7 +139,8 @@ export default function DataConverter() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder={`${inputType === 'decimal' ? '10진수' : inputType === 'binary' ? '2진수' : inputType === 'hexadecimal' ? '16진수' : '8진수'} 입력`}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                style={{ color: '#000000 !important' }}
               />
             </div>
 

@@ -198,8 +198,9 @@ export default function DepreciationCalculator() {
                   type="text"
                   value={originalValueDisplay}
                   onChange={handleOriginalValueChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
                   placeholder="예: 10,000,000"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -212,8 +213,9 @@ export default function DepreciationCalculator() {
                   type="text"
                   value={salvageValueDisplay}
                   onChange={handleSalvageValueChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
                   placeholder="예: 1,000,000"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -226,8 +228,9 @@ export default function DepreciationCalculator() {
                   type="number"
                   value={usefulLife}
                   onChange={(e) => setUsefulLife(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
                   placeholder="예: 5"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -239,7 +242,8 @@ export default function DepreciationCalculator() {
                 <select
                   value={depreciationMethod}
                   onChange={(e) => setDepreciationMethod(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="straight-line">정액법</option>
                   <option value="declining-balance">정률법 (이중정률법)</option>

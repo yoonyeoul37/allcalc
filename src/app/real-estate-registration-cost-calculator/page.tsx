@@ -83,7 +83,8 @@ export default function RealEstateRegistrationCostCalculator() {
                 <select
                   value={registrationType}
                   onChange={(e) => setRegistrationType(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   {registrationCosts.map((cost) => (
                     <option key={cost.type} value={cost.type}>
@@ -103,7 +104,8 @@ export default function RealEstateRegistrationCostCalculator() {
                     const value = e.target.value.replace(/[^\d]/g, '');
                     setPropertyValue(formatNumber(value));
                   }}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  style={{ color: '#000000 !important' }}
                   placeholder="예: 500,000,000"
                 />
               </div>
@@ -123,7 +125,8 @@ export default function RealEstateRegistrationCostCalculator() {
                       const value = parseInt(e.target.value) || 0;
                       setAdditionalCosts(prev => ({ ...prev, stampDuty: value }));
                     }}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                     placeholder="예: 35,000"
                   />
                 </div>
@@ -138,7 +141,8 @@ export default function RealEstateRegistrationCostCalculator() {
                       const value = parseInt(e.target.value) || 0;
                       setAdditionalCosts(prev => ({ ...prev, certificateFee: value }));
                     }}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                     placeholder="예: 1,000"
                   />
                 </div>
@@ -153,7 +157,8 @@ export default function RealEstateRegistrationCostCalculator() {
                       const value = parseInt(e.target.value) || 0;
                       setAdditionalCosts(prev => ({ ...prev, notaryFee: value }));
                     }}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                     placeholder="예: 50,000"
                   />
                 </div>
@@ -168,7 +173,8 @@ export default function RealEstateRegistrationCostCalculator() {
                       const value = parseInt(e.target.value) || 0;
                       setAdditionalCosts(prev => ({ ...prev, agentFee: value }));
                     }}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                    style={{ color: '#000000 !important' }}
                     placeholder="예: 100,000"
                   />
                 </div>
