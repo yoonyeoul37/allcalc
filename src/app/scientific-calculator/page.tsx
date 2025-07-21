@@ -181,7 +181,12 @@ export default function ScientificCalculator() {
 
           {/* 디스플레이 */}
           <div className="bg-black border-2 border-gray-300 rounded-lg p-4 mb-6">
-            <div className="text-right text-3xl font-mono text-white min-h-[2.5rem] flex items-center justify-end" style={{ color: '#ffffff !important', WebkitTextFillColor: '#ffffff' }}>
+            <div className="text-right text-3xl font-mono min-h-[2.5rem] flex items-center justify-end" style={{ 
+              color: '#ffffff !important', 
+              WebkitTextFillColor: '#ffffff !important',
+              WebkitTextStroke: '0.5px #ffffff',
+              textShadow: '0 0 2px #ffffff'
+            }}>
               {display}
             </div>
           </div>
@@ -283,19 +288,40 @@ export default function ScientificCalculator() {
               onClick={() => inputDigit("7")}
               className="bg-red-600 hover:bg-red-700 font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
             >
-              <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 'bold' }}>7</span>
+              <span style={{ 
+                color: '#ffffff !important', 
+                fontSize: '18px', 
+                fontWeight: 'bold',
+                WebkitTextFillColor: '#ffffff !important',
+                WebkitTextStroke: '0.5px #ffffff',
+                textShadow: '0 0 2px #ffffff'
+              }}>7</span>
             </button>
             <button
               onClick={() => inputDigit("8")}
               className="bg-red-600 hover:bg-red-700 font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
             >
-              <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 'bold' }}>8</span>
+              <span style={{ 
+                color: '#ffffff !important', 
+                fontSize: '18px', 
+                fontWeight: 'bold',
+                WebkitTextFillColor: '#ffffff !important',
+                WebkitTextStroke: '0.5px #ffffff',
+                textShadow: '0 0 2px #ffffff'
+              }}>8</span>
             </button>
             <button
               onClick={() => inputDigit("9")}
               className="bg-red-600 hover:bg-red-700 font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
             >
-              <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 'bold' }}>9</span>
+              <span style={{ 
+                color: '#ffffff !important', 
+                fontSize: '18px', 
+                fontWeight: 'bold',
+                WebkitTextFillColor: '#ffffff !important',
+                WebkitTextStroke: '0.5px #ffffff',
+                textShadow: '0 0 2px #ffffff'
+              }}>9</span>
             </button>
             <button
               onClick={() => performOperation("×")}
@@ -309,19 +335,40 @@ export default function ScientificCalculator() {
               onClick={() => inputDigit("4")}
               className="bg-red-600 hover:bg-red-700 font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
             >
-              <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 'bold' }}>4</span>
+              <span style={{ 
+                color: '#ffffff !important', 
+                fontSize: '18px', 
+                fontWeight: 'bold',
+                WebkitTextFillColor: '#ffffff !important',
+                WebkitTextStroke: '0.5px #ffffff',
+                textShadow: '0 0 2px #ffffff'
+              }}>4</span>
             </button>
             <button
               onClick={() => inputDigit("5")}
               className="bg-red-600 hover:bg-red-700 font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
             >
-              <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 'bold' }}>5</span>
+              <span style={{ 
+                color: '#ffffff !important', 
+                fontSize: '18px', 
+                fontWeight: 'bold',
+                WebkitTextFillColor: '#ffffff !important',
+                WebkitTextStroke: '0.5px #ffffff',
+                textShadow: '0 0 2px #ffffff'
+              }}>5</span>
             </button>
             <button
               onClick={() => inputDigit("6")}
               className="bg-red-600 hover:bg-red-700 font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
             >
-              <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 'bold' }}>6</span>
+              <span style={{ 
+                color: '#ffffff !important', 
+                fontSize: '18px', 
+                fontWeight: 'bold',
+                WebkitTextFillColor: '#ffffff !important',
+                WebkitTextStroke: '0.5px #ffffff',
+                textShadow: '0 0 2px #ffffff'
+              }}>6</span>
             </button>
             <button
               onClick={() => performOperation("-")}
@@ -335,19 +382,40 @@ export default function ScientificCalculator() {
               onClick={() => inputDigit("1")}
               className="bg-red-600 hover:bg-red-700 font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
             >
-              <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 'bold' }}>1</span>
+              <span style={{ 
+                color: '#ffffff !important', 
+                fontSize: '18px', 
+                fontWeight: 'bold',
+                WebkitTextFillColor: '#ffffff !important',
+                WebkitTextStroke: '0.5px #ffffff',
+                textShadow: '0 0 2px #ffffff'
+              }}>1</span>
             </button>
             <button
               onClick={() => inputDigit("2")}
               className="bg-red-600 hover:bg-red-700 font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
             >
-              <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 'bold' }}>2</span>
+              <span style={{ 
+                color: '#ffffff !important', 
+                fontSize: '18px', 
+                fontWeight: 'bold',
+                WebkitTextFillColor: '#ffffff !important',
+                WebkitTextStroke: '0.5px #ffffff',
+                textShadow: '0 0 2px #ffffff'
+              }}>2</span>
             </button>
             <button
               onClick={() => inputDigit("3")}
               className="bg-red-600 hover:bg-red-700 font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
             >
-              <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 'bold' }}>3</span>
+              <span style={{ 
+                color: '#ffffff !important', 
+                fontSize: '18px', 
+                fontWeight: 'bold',
+                WebkitTextFillColor: '#ffffff !important',
+                WebkitTextStroke: '0.5px #ffffff',
+                textShadow: '0 0 2px #ffffff'
+              }}>3</span>
             </button>
             <button
               onClick={() => performOperation("+")}
@@ -361,13 +429,27 @@ export default function ScientificCalculator() {
               onClick={() => inputDigit("0")}
               className="col-span-2 bg-red-600 hover:bg-red-700 font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
             >
-              <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 'bold' }}>0</span>
+              <span style={{ 
+                color: '#ffffff !important', 
+                fontSize: '18px', 
+                fontWeight: 'bold',
+                WebkitTextFillColor: '#ffffff !important',
+                WebkitTextStroke: '0.5px #ffffff',
+                textShadow: '0 0 2px #ffffff'
+              }}>0</span>
             </button>
             <button
               onClick={inputDecimal}
               className="bg-red-600 hover:bg-red-700 font-bold py-3 px-2 rounded-lg transition-colors shadow-sm"
             >
-              <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 'bold' }}>.</span>
+              <span style={{ 
+                color: '#ffffff !important', 
+                fontSize: '18px', 
+                fontWeight: 'bold',
+                WebkitTextFillColor: '#ffffff !important',
+                WebkitTextStroke: '0.5px #ffffff',
+                textShadow: '0 0 2px #ffffff'
+              }}>.</span>
             </button>
             <button
               onClick={handleEquals}
