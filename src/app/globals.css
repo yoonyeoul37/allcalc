@@ -24,3 +24,21 @@ body {
   color: var(--foreground);
   font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
 }
+
+/* 모든 입력 필드와 select의 텍스트 색상을 강제로 검정색으로 설정 */
+input, select, textarea {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+/* select option 요소들의 텍스트 색상도 검정색으로 설정 */
+select option {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* placeholder 텍스트는 연한 회색으로 유지 */
+input::placeholder, textarea::placeholder {
+  color: #9ca3af !important;
+  -webkit-text-fill-color: #9ca3af !important;
+}
