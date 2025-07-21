@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 
-const isDev = process.env.NODE_ENV === 'development' || process.env.NODE_ENV === undefined;
-
 const nextConfig: NextConfig = {
   /* config options here */
-  output: isDev ? undefined : 'export',
+  output: 'export',
   trailingSlash: true,
   experimental: {
     optimizePackageImports: ['react-icons'],
@@ -13,6 +11,8 @@ const nextConfig: NextConfig = {
     domains: ['calculator.net'],
     unoptimized: true,
   },
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/allcalc' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/allcalc' : '',
 };
 
 export default nextConfig;
