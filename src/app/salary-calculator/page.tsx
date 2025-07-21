@@ -183,7 +183,8 @@ export default function SalaryCalculator() {
                   value={basicSalaryDisplay}
                   onChange={handleBasicSalaryChange}
                   placeholder="3,000,000"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003366] focus:border-[#003366] text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003366] focus:border-[#003366] text-lg text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -196,7 +197,8 @@ export default function SalaryCalculator() {
                   value={allowancesDisplay}
                   onChange={handleAllowancesChange}
                   placeholder="500,000"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003366] focus:border-[#003366] text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003366] focus:border-[#003366] text-lg text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>

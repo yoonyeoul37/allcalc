@@ -161,8 +161,9 @@ export default function InterestCalculator() {
                   type="text"
                   value={principalDisplay}
                   onChange={handlePrincipalChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
                   placeholder="예: 1,000,000"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -175,8 +176,9 @@ export default function InterestCalculator() {
                   step="0.01"
                   value={rate}
                   onChange={(e) => setRate(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
                   placeholder="예: 5.0"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>

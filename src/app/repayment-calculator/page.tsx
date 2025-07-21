@@ -183,8 +183,9 @@ export default function RepaymentCalculator() {
                   type="text"
                   value={loanAmountDisplay}
                   onChange={handleLoanAmountChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
                   placeholder="예: 10,000,000"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -197,8 +198,9 @@ export default function RepaymentCalculator() {
                   step="0.01"
                   value={interestRate}
                   onChange={(e) => setInterestRate(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
                   placeholder="예: 3.5"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>

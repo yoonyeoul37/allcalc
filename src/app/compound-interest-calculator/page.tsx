@@ -147,7 +147,8 @@ export default function CompoundInterestCalculator() {
                   value={principalDisplay}
                   onChange={handlePrincipalChange}
                   placeholder="1,000,000"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>

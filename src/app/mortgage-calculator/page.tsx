@@ -184,8 +184,9 @@ export default function MortgageCalculator() {
                   type="text"
                   value={loanAmountDisplay}
                   onChange={handleLoanAmountChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
                   placeholder="예: 300,000,000"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -199,8 +200,9 @@ export default function MortgageCalculator() {
                   step="0.01"
                   value={interestRate}
                   onChange={(e) => setInterestRate(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
                   placeholder="예: 3.5"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
 
@@ -212,7 +214,8 @@ export default function MortgageCalculator() {
                 <select
                   value={loanTerm}
                   onChange={(e) => setLoanTerm(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="5">5년</option>
                   <option value="10">10년</option>
@@ -233,7 +236,8 @@ export default function MortgageCalculator() {
                 <select
                   value={paymentType}
                   onChange={(e) => setPaymentType(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                 >
                   <option value="equal">원리금균등상환</option>
                   <option value="principal">원금균등상환</option>

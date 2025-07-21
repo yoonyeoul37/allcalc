@@ -202,7 +202,8 @@ export default function LoanCalculator() {
                   value={loanAmountDisplay}
                   onChange={handleLoanAmountChange}
                   placeholder="예: 300,000,000"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -216,7 +217,8 @@ export default function LoanCalculator() {
                   value={interestRate}
                   onChange={(e) => setInterestRate(e.target.value)}
                   placeholder="예: 3.5"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
               <div>
@@ -229,7 +231,8 @@ export default function LoanCalculator() {
                   value={loanTerm}
                   onChange={(e) => setLoanTerm(e.target.value)}
                   placeholder="예: 30"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-400 focus:outline-none focus:ring-offset-0 text-black"
+                  style={{ color: '#000000 !important' }}
                 />
               </div>
             </div>
