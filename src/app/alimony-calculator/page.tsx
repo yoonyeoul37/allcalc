@@ -340,8 +340,7 @@ export default function AlimonyCalculator() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   자녀 수
                 </label>
-                <input
-                  type="number"
+                <select
                   value={childrenCount}
                   onChange={(e) => setChildrenCount(e.target.value)}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
