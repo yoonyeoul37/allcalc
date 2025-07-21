@@ -6,8 +6,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: isDev ? undefined : 'export',
   trailingSlash: true,
-  // GitHub Pages 배포를 위해 basePath 설정
+  // GitHub Pages 배포를 위해 basePath와 assetPrefix 설정
   basePath: isDev ? undefined : '/allcalc',
+  assetPrefix: isDev ? undefined : '/allcalc/',
   experimental: {
     optimizePackageImports: ['react-icons'],
   },
