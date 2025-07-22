@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 
+export const dynamic = "force-static"
+
 export default function sitemap(): MetadataRoute.Sitemap {
   // 환경변수에서 도메인 가져오기 (기본값: calculator.net)
   const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN || 'calculator.net';

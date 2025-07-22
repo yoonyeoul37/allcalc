@@ -11,8 +11,6 @@ const nextConfig: NextConfig = {
     domains: ['calculator.net'],
     unoptimized: true,
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/allcalc' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/allcalc' : '',
 };
 
 export default nextConfig;
