@@ -63,13 +63,8 @@ input::placeholder, textarea::placeholder {
     -webkit-text-fill-color: #000000 !important;
   }
   
-  /* 모바일에서 모든 회색 텍스트 강제 검정색 (아이콘 제외) */
-  .text-gray-600:not(svg), .text-gray-700:not(svg), .text-gray-800:not(svg) {
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000 !important;
-  }
-  
-  span.text-gray-600:not(svg), span.text-gray-700:not(svg), span.text-gray-800:not(svg) {
+  /* 모바일에서 모든 회색 텍스트 강제 검정색 */
+  .text-gray-600, .text-gray-700, .text-gray-800 {
     color: #000000 !important;
     -webkit-text-fill-color: #000000 !important;
   }
