@@ -55,6 +55,12 @@ button.bg-gray-200, button.bg-gray-300, button.bg-gray-400 {
   -webkit-text-fill-color: #000000 !important;
 }
 
+/* 흰색 배경의 버튼들은 강제로 검정색 텍스트 */
+button.bg-white {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
 /* 모바일 특화 스타일 */
 @media (max-width: 768px) {
   button {
@@ -66,28 +72,34 @@ button.bg-gray-200, button.bg-gray-300, button.bg-gray-400 {
     color: #000000 !important;
     -webkit-text-fill-color: #000000 !important;
   }
+  
+  /* 모바일에서 흰색 배경 버튼 텍스트 강제 검정색 */
+  button.bg-white {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
 }
 
-/* 모든 회색 텍스트를 강제로 검정색으로 변경 */
-.text-gray-600, .text-gray-700, .text-gray-800 {
+/* 모든 회색 텍스트를 강제로 검정색으로 변경 (아이콘 제외) */
+.text-gray-600:not(svg), .text-gray-700:not(svg), .text-gray-800:not(svg) {
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
 }
 
-/* span 태그의 회색 텍스트도 검정색으로 */
-span.text-gray-600, span.text-gray-700, span.text-gray-800 {
+/* span 태그의 회색 텍스트도 검정색으로 (아이콘 제외) */
+span.text-gray-600:not(svg), span.text-gray-700:not(svg), span.text-gray-800:not(svg) {
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
 }
 
-/* 모바일에서 모든 회색 텍스트 강제 검정색 */
+/* 모바일에서 모든 회색 텍스트 강제 검정색 (아이콘 제외) */
 @media (max-width: 768px) {
-  .text-gray-600, .text-gray-700, .text-gray-800 {
+  .text-gray-600:not(svg), .text-gray-700:not(svg), .text-gray-800:not(svg) {
     color: #000000 !important;
     -webkit-text-fill-color: #000000 !important;
   }
   
-  span.text-gray-600, span.text-gray-700, span.text-gray-800 {
+  span.text-gray-600:not(svg), span.text-gray-700:not(svg), span.text-gray-800:not(svg) {
     color: #000000 !important;
     -webkit-text-fill-color: #000000 !important;
   }
