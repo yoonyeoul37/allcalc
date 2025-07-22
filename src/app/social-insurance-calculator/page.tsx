@@ -2,15 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { 
-  FaShieldAlt, 
-  FaCalculator, 
-  FaMoneyBillWave,
-  FaInfoCircle,
-  FaUserTie,
-  FaDollarSign,
-  FaExclamationTriangle
-} from "react-icons/fa";
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
 
@@ -219,6 +210,7 @@ export default function SocialInsuranceCalculator() {
           {/* 정보 메시지 */}
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
             <div className="flex items-center">
+              <svg className="w-6 h-6 text-yellow-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <FaExclamationTriangle className="text-yellow-600 mr-2" />
               <span className="text-gray-700">2025년 기준(계산내용은 모의계산이기 때문에 실제와 다를 수 있습니다.)</span>
             </div>
