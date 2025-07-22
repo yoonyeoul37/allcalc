@@ -68,4 +68,10 @@ input::placeholder, textarea::placeholder {
     color: #000000 !important;
     -webkit-text-fill-color: #000000 !important;
   }
+  
+  /* 모바일에서 모든 텍스트 강제 검정색 */
+  span {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
 }
