@@ -210,8 +210,7 @@ export default function SocialInsuranceCalculator() {
           {/* 정보 메시지 */}
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
             <div className="flex items-center">
-              <svg className="w-6 h-6 text-yellow-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <FaExclamationTriangle className="text-yellow-600 mr-2" />
+              <i className="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>
               <span className="text-gray-700">2025년 기준(계산내용은 모의계산이기 때문에 실제와 다를 수 있습니다.)</span>
             </div>
           </div>
@@ -360,14 +359,14 @@ export default function SocialInsuranceCalculator() {
         {/* 관련 계산기 */}
         <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-            <FaCalculator className="mr-2 text-black" />
+                            <i className="fas fa-calculator mr-2 text-black"></i>
             관련 계산기
           </h3>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <Link href="/income-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-blue-300 cursor-pointer">
               <div className="w-12 h-12 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                <FaDollarSign className="text-xl text-black" />
+                <i className="fas fa-dollar-sign text-xl text-black"></i>
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">소득세 계산기</h4>
               <p className="text-xs text-gray-600">소득세 계산</p>
@@ -375,7 +374,7 @@ export default function SocialInsuranceCalculator() {
             
             <Link href="/salary-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-green-300 cursor-pointer">
               <div className="w-12 h-12 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                <FaUserTie className="text-xl text-black" />
+                <i className="fas fa-user-tie text-xl text-black"></i>
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">프리랜서 세금</h4>
               <p className="text-xs text-gray-600">프리랜서 세금</p>
@@ -383,7 +382,7 @@ export default function SocialInsuranceCalculator() {
             
             <Link href="/severance-pay-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-orange-300 cursor-pointer">
               <div className="w-12 h-12 bg-orange-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                <FaMoneyBillWave className="text-xl text-black" />
+                <i className="fas fa-money-bill-wave text-xl text-black"></i>
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">퇴직금 계산기</h4>
               <p className="text-xs text-gray-600">퇴직금 계산</p>
@@ -391,7 +390,7 @@ export default function SocialInsuranceCalculator() {
             
             <Link href="/freelancer-withholding-tax-calculator" className="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow hover:border-purple-300 cursor-pointer">
               <div className="w-12 h-12 bg-purple-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                <FaUserTie className="text-xl text-black" />
+                <i className="fas fa-user-tie text-xl text-black"></i>
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">원천징수세 계산기</h4>
               <p className="text-xs text-gray-600">원천징수 계산</p>
