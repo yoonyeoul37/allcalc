@@ -232,7 +232,9 @@ export default function Home() {
                 
                 <div className="text-center">
                   <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <i className="fas fa-money-bill-wave text-3xl text-gray-600" style={{fontFamily: 'Font Awesome 6 Free', fontWeight: 900}}></i>
+                    <svg className="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/>
+                    </svg>
                   </div>
                   <h2 className="text-lg font-bold text-gray-800 mb-4">재무 계산기</h2>
                   <div className="space-y-1">
@@ -255,7 +257,9 @@ export default function Home() {
 
                 <div className="text-center">
                   <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <i className="fas fa-heart text-3xl text-gray-600" style={{fontFamily: 'Font Awesome 6 Free', fontWeight: 900}}></i>
+                    <svg className="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd"/>
+                    </svg>
                   </div>
                   <h2 className="text-lg font-bold text-gray-800 mb-4">피트니스 및 건강 계산기</h2>
                   <div className="space-y-1">
@@ -274,7 +278,9 @@ export default function Home() {
 
                                   <div className="text-center">
                     <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <i className="fas fa-calculator text-3xl text-gray-600" style={{fontFamily: 'Font Awesome 6 Free', fontWeight: 900}}></i>
+                      <svg className="w-12 h-12 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clipRule="evenodd"/>
+                      </svg>
                     </div>
                     <h2 className="text-lg font-bold text-gray-800 mb-4">수학 계산기</h2>
                   <div className="space-y-1">
@@ -289,7 +295,7 @@ export default function Home() {
 
                                   <div className="text-center">
                     <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <i className="fas fa-tools text-3xl text-gray-600" style={{fontFamily: 'Font Awesome 6 Free', fontWeight: 900}}></i>
+                      <i className="fas fa-tools text-3xl text-gray-600"></i>
                     </div>
                     <h2 className="text-lg font-bold text-gray-800 mb-4">기타 계산기</h2>
                   <div className="space-y-1">

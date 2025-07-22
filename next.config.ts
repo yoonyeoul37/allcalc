@@ -4,6 +4,8 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
   trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/allcalc' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/allcalc' : '',
   experimental: {
     optimizePackageImports: ['react-icons'],
   },
