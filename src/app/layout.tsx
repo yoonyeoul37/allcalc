@@ -1,6 +1,10 @@
 ﻿import type { Metadata } from "next";
 import "./globals.css";
 
+// 환경변수에서 도메인 가져오기 (기본값: calculator.net)
+const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN || 'calculator.net';
+const BASE_URL = `https://${DOMAIN}`;
+
 export const metadata: Metadata = {
   title: "Calculator.net - 무료 온라인 계산기",
   description: "무료 온라인 계산기 - 재무, 피트니스 및 건강, 수학, 세무, 건설 등 다양한 분야의 계산기를 제공합니다. 부가세, 소득세, 대출, BMI, 임신 등 모든 계산기.",
@@ -13,14 +17,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://calculator.net'),
+  metadataBase: new URL(BASE_URL),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Calculator.net - 무료 온라인 계산기",
     description: "무료 온라인 계산기 - 재무, 피트니스 및 건강, 수학, 세무, 건설 등 다양한 분야의 계산기를 제공합니다.",
-    url: 'https://calculator.net',
+    url: BASE_URL,
     siteName: 'Calculator.net',
     images: [
       {
@@ -51,9 +55,8 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
+    google: 'your-google-verification-code', // Google Search Console에서 받은 코드로 변경 필요
+    yandex: 'your-yandex-verification-code', // Yandex Webmaster에서 받은 코드로 변경 필요
   },
 };
 

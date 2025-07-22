@@ -2,7 +2,13 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://calculator.net/sitemap.xml
+Sitemap: https://${NEXT_PUBLIC_DOMAIN:-calculator.net}/sitemap.xml
 
-# Crawl-delay
+# Disallow admin pages
+Disallow: /admin/
+
+# Allow all other pages
+Allow: /
+
+# Crawl-delay for respectful crawling
 Crawl-delay: 1 
