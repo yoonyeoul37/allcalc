@@ -43,57 +43,21 @@ input::placeholder, textarea::placeholder {
   -webkit-text-fill-color: #9ca3af !important;
 }
 
-/* 모바일에서 버튼 텍스트 색상을 강제로 검정색으로 설정 */
-button {
-  color: inherit !important;
-  -webkit-text-fill-color: inherit !important;
-}
-
-/* 회색 배경의 버튼들은 강제로 검정색 텍스트 */
-button.bg-gray-200, button.bg-gray-300, button.bg-gray-400 {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-}
-
-/* 흰색 배경의 버튼들은 강제로 검정색 텍스트 */
-button.bg-white {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-}
-
-/* 모바일 특화 스타일 */
+/* 모바일에서만 특정 문제가 있는 버튼들의 텍스트 색상을 강제로 검정색으로 설정 */
 @media (max-width: 768px) {
-  button {
-    color: inherit !important;
-    -webkit-text-fill-color: inherit !important;
+  /* 모바일에서 흰색 배경 버튼 텍스트 강제 검정색 (과학 계산기 숫자 버튼들) */
+  button.bg-white {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
   }
   
+  /* 모바일에서 회색 배경의 버튼들은 강제로 검정색 텍스트 */
   button.bg-gray-200, button.bg-gray-300, button.bg-gray-400 {
     color: #000000 !important;
     -webkit-text-fill-color: #000000 !important;
   }
   
-  /* 모바일에서 흰색 배경 버튼 텍스트 강제 검정색 */
-  button.bg-white {
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000 !important;
-  }
-}
-
-/* 모든 회색 텍스트를 강제로 검정색으로 변경 (아이콘 제외) */
-.text-gray-600:not(svg), .text-gray-700:not(svg), .text-gray-800:not(svg) {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-}
-
-/* span 태그의 회색 텍스트도 검정색으로 (아이콘 제외) */
-span.text-gray-600:not(svg), span.text-gray-700:not(svg), span.text-gray-800:not(svg) {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-}
-
-/* 모바일에서 모든 회색 텍스트 강제 검정색 (아이콘 제외) */
-@media (max-width: 768px) {
+  /* 모바일에서 모든 회색 텍스트 강제 검정색 (아이콘 제외) */
   .text-gray-600:not(svg), .text-gray-700:not(svg), .text-gray-800:not(svg) {
     color: #000000 !important;
     -webkit-text-fill-color: #000000 !important;
