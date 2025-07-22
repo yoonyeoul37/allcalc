@@ -1,4 +1,3 @@
-import { FaCalculator, FaHome, FaEnvelope, FaGithub, FaHeart } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Footer() {
@@ -9,7 +8,7 @@ export default function Footer() {
           {/* 사이트 정보 */}
           <div className="md:col-span-1">
             <div className="flex items-center mb-4">
-              <FaCalculator className="text-2xl text-blue-400 mr-3" />
+              <i className="fas fa-calculator text-2xl text-blue-400 mr-3"></i>
               <h3 className="text-xl font-bold">AllCalc</h3>
             </div>
             <p className="text-gray-300 mb-4 text-sm">
@@ -18,13 +17,13 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <Link href="/" className="text-gray-300 hover:text-white transition-colors">
-                <FaHome className="text-lg" />
+                <i className="fas fa-home text-lg"></i>
               </Link>
               <a href="mailto:contact@allcalc.com" className="text-gray-300 hover:text-white transition-colors">
-                <FaEnvelope className="text-lg" />
+                <i className="fas fa-envelope text-lg"></i>
               </a>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                <FaGithub className="text-lg" />
+                <i className="fab fa-github text-lg"></i>
               </a>
             </div>
           </div>
@@ -65,7 +64,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center text-gray-400 text-sm">
               <span>Made with</span>
-              <FaHeart className="text-red-400 mx-1" />
+              <i className="fas fa-heart text-red-400 mx-1"></i>
               <span>for everyone</span>
             </div>
           </div>

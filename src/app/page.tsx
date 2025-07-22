@@ -232,7 +232,7 @@ export default function Home() {
                 
                 <div className="text-center">
                   <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <i className="fas fa-money-bill-wave text-3xl text-gray-600"></i>
+                    <i className="fas fa-money-bill-wave text-3xl text-gray-600" style={{fontFamily: 'Font Awesome 6 Free', fontWeight: 900}}></i>
                   </div>
                   <h2 className="text-lg font-bold text-gray-800 mb-4">재무 계산기</h2>
                   <div className="space-y-1">
@@ -255,7 +255,7 @@ export default function Home() {
 
                 <div className="text-center">
                   <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <i className="fas fa-heart text-3xl text-gray-600"></i>
+                    <i className="fas fa-heart text-3xl text-gray-600" style={{fontFamily: 'Font Awesome 6 Free', fontWeight: 900}}></i>
                   </div>
                   <h2 className="text-lg font-bold text-gray-800 mb-4">피트니스 및 건강 계산기</h2>
                   <div className="space-y-1">
@@ -274,7 +274,7 @@ export default function Home() {
 
                                   <div className="text-center">
                     <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <i className="fas fa-calculator text-3xl text-gray-600"></i>
+                      <i className="fas fa-calculator text-3xl text-gray-600" style={{fontFamily: 'Font Awesome 6 Free', fontWeight: 900}}></i>
                     </div>
                     <h2 className="text-lg font-bold text-gray-800 mb-4">수학 계산기</h2>
                   <div className="space-y-1">
@@ -289,7 +289,7 @@ export default function Home() {
 
                                   <div className="text-center">
                     <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <i className="fas fa-tools text-3xl text-gray-600"></i>
+                      <i className="fas fa-tools text-3xl text-gray-600" style={{fontFamily: 'Font Awesome 6 Free', fontWeight: 900}}></i>
                     </div>
                     <h2 className="text-lg font-bold text-gray-800 mb-4">기타 계산기</h2>
                   <div className="space-y-1">

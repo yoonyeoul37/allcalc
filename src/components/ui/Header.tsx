@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { FaSearch, FaCalculator } from "react-icons/fa";
 import Link from "next/link";
 
 interface HeaderProps {
