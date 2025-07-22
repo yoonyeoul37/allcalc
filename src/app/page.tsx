@@ -2,18 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { 
-  FaMoneyBillWave, 
-  FaHeart, 
-  FaCalculator, 
-  FaTools, 
-  FaFileInvoiceDollar,
-  FaGlobe,
-  FaSearch,
-  FaGavel,
-  FaHome,
-  FaLightbulb
-} from "react-icons/fa";
 import { Header, Footer, SearchSection } from '../components';
 
 // 계산기 데이터 정의
@@ -193,7 +181,7 @@ export default function Home() {
                     className="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all duration-200"
                   >
                     <div className="flex items-center">
-                      <FaCalculator className="text-blue-500 mr-3" />
+                      <i className="fas fa-calculator text-blue-500 mr-3"></i>
                       <div>
                         <h3 className="font-semibold text-gray-800">{calc.name}</h3>
                         <p className="text-sm text-gray-500">{calc.category}</p>
@@ -216,7 +204,7 @@ export default function Home() {
       <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
         <div className="flex">
           <div className="flex-shrink-0">
-            <FaCalculator className="h-5 w-5 text-blue-400" />
+            <i className="fas fa-calculator h-5 w-5 text-blue-400"></i>
           </div>
           <div className="ml-3">
             <p className="text-sm text-blue-700">
@@ -244,7 +232,7 @@ export default function Home() {
                 
                 <div className="text-center">
                   <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <FaMoneyBillWave className="text-3xl text-gray-600" />
+                    <i className="fas fa-money-bill-wave text-3xl text-gray-600"></i>
                   </div>
                   <h2 className="text-lg font-bold text-gray-800 mb-4">재무 계산기</h2>
                   <div className="space-y-1">
@@ -267,7 +255,7 @@ export default function Home() {
 
                 <div className="text-center">
                   <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <FaHeart className="text-3xl text-gray-600" />
+                    <i className="fas fa-heart text-3xl text-gray-600"></i>
                   </div>
                   <h2 className="text-lg font-bold text-gray-800 mb-4">피트니스 및 건강 계산기</h2>
                   <div className="space-y-1">
@@ -284,11 +272,11 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <FaCalculator className="text-3xl text-gray-600" />
-                  </div>
-                  <h2 className="text-lg font-bold text-gray-800 mb-4">수학 계산기</h2>
+                                  <div className="text-center">
+                    <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <i className="fas fa-calculator text-3xl text-gray-600"></i>
+                    </div>
+                    <h2 className="text-lg font-bold text-gray-800 mb-4">수학 계산기</h2>
                   <div className="space-y-1">
                     <div><Link href="/engineering-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>공학용 계산기</Link></div>
                     <div><Link href="/fraction-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>분수 계산기</Link></div>
@@ -299,11 +287,11 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <FaTools className="text-3xl text-gray-600" />
-                  </div>
-                  <h2 className="text-lg font-bold text-gray-800 mb-4">기타 계산기</h2>
+                                  <div className="text-center">
+                    <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <i className="fas fa-tools text-3xl text-gray-600"></i>
+                    </div>
+                    <h2 className="text-lg font-bold text-gray-800 mb-4">기타 계산기</h2>
                   <div className="space-y-1">
                     <div><Link href="/age-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>나이 계산기</Link></div>
                     <div><Link href="/date-calculator" className="hover:underline text-sm" style={{color: '#276699'}}>날짜 계산기</Link></div>
@@ -324,7 +312,7 @@ export default function Home() {
               
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                     <FaFileInvoiceDollar className="text-3xl text-gray-600" />
+                                     <i className="fas fa-file-invoice-dollar text-3xl text-gray-600"></i>
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">사업자/프리랜서</h2>
                 <div className="space-y-1">
@@ -340,7 +328,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                     <FaGlobe className="text-3xl text-gray-600" />
+                                     <i className="fas fa-globe text-3xl text-gray-600"></i>
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">해외/국제/무역</h2>
                 <div className="space-y-1">
@@ -352,7 +340,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                     <FaTools className="text-3xl text-gray-600" />
+                                     <i className="fas fa-tools text-3xl text-gray-600"></i>
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">건설/공사/인테리어</h2>
                 <div className="space-y-1">
@@ -367,7 +355,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                     <FaSearch className="text-3xl text-gray-600" />
+                                     <i className="fas fa-search text-3xl text-gray-600"></i>
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">네트워크/IT/개발</h2>
                 <div className="space-y-1">
@@ -380,7 +368,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                     <FaCalculator className="text-3xl text-gray-600" />
+                                     <i className="fas fa-calculator text-3xl text-gray-600"></i>
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">자동차/교통</h2>
                 <div className="space-y-1">
@@ -393,7 +381,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                     <FaGavel className="text-3xl text-gray-600" />
+                                     <i className="fas fa-gavel text-3xl text-gray-600"></i>
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">가정법률/개인회생</h2>
                 <div className="space-y-1">
@@ -405,7 +393,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                     <FaHome className="text-3xl text-gray-600" />
+                                     <i className="fas fa-home text-3xl text-gray-600"></i>
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">부동산/임대차</h2>
                 <div className="space-y-1">
@@ -419,7 +407,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                     <FaLightbulb className="text-3xl text-gray-600" />
+                                     <i className="fas fa-lightbulb text-3xl text-gray-600"></i>
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">생활/요금</h2>
                 <div className="space-y-1">

@@ -7,7 +7,7 @@ const BASE_URL = `https://${DOMAIN}`;
 
 export const metadata: Metadata = {
   title: "Calculator.net - 무료 온라인 계산기",
-  description: "무료 온라인 계산기 - 재무, 피트니스 및 건강, 수학, 세무, 건설 등 다양한 분야의 계산기를 제공합니다. 부가세, 소득세, 대출, BMI, 임신 등 모든 계산기.",
+  description: "무료 온라인 계산기 - 재무, 피트니스 및 건강, 수학, 세무, 건설 등 다양한 분야의 계산기를 제공합니다. 부가가치세, 소득세, 대출, BMI, 임신 등 모든 계산기.",
   keywords: "계산기, 온라인계산기, 과학계산기, 금융계산기, BMI계산기, 대출계산기, 부가세계산기, 소득세계산기, 프리랜서세금계산기, 4대보험계산기, 퇴직금계산기, Calculator.net",
   authors: [{ name: "Calculator.net" }],
   creator: "Calculator.net",
@@ -74,6 +74,7 @@ export default function RootLayout({
           crossOrigin=""
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#276699" />
