@@ -36,12 +36,45 @@ export default function SocialInsuranceCalculator() {
   const [monthlySalary, setMonthlySalary] = useState("");
   const [employeeCount, setEmployeeCount] = useState<'under150' | 'over150' | 'over1000' | 'government'>('under150');
   
-  // 2025년 기준 보험료율
-  const rates: InsuranceRate = {
-    nationalPension: 9.0, // 국민연금 9.0%
-    healthInsurance: 7.09, // 건강보험 7.09%
-    longTermCare: 0.918, // 장기요양보험 0.918%
-    employmentInsurance: 1.8 // 고용보험 1.8%
+  // 2025년 기준 보험료율 (근로자수별 차등 적용)
+  const getInsuranceRates = (employeeCount: string): InsuranceRate => {
+    switch (employeeCount) {
+      case 'under150': // 150인 미만 기업
+        return {
+          nationalPension: 9.0, // 국민연금 9.0%
+          healthInsurance: 7.09, // 건강보험 7.09%
+          longTermCare: 0.918, // 장기요양보험 0.918%
+          employmentInsurance: 1.8 // 고용보험 1.8%
+        };
+      case 'over150': // 150인 이상(우선지원 대상기업)
+        return {
+          nationalPension: 9.0, // 국민연금 9.0%
+          healthInsurance: 7.09, // 건강보험 7.09%
+          longTermCare: 0.918, // 장기요양보험 0.918%
+          employmentInsurance: 1.5 // 고용보험 1.5% (감면)
+        };
+      case 'over1000': // 150인 이상 1,000인 미만 기업
+        return {
+          nationalPension: 9.0, // 국민연금 9.0%
+          healthInsurance: 7.09, // 건강보험 7.09%
+          longTermCare: 0.918, // 장기요양보험 0.918%
+          employmentInsurance: 1.8 // 고용보험 1.8%
+        };
+      case 'government': // 1,000인 이상 기업, 국가 지방자치단체
+        return {
+          nationalPension: 9.0, // 국민연금 9.0%
+          healthInsurance: 7.09, // 건강보험 7.09%
+          longTermCare: 0.918, // 장기요양보험 0.918%
+          employmentInsurance: 2.0 // 고용보험 2.0% (대기업)
+        };
+      default:
+        return {
+          nationalPension: 9.0,
+          healthInsurance: 7.09,
+          longTermCare: 0.918,
+          employmentInsurance: 1.8
+        };
+    }
   };
 
   // 콤마 포맷팅 함수
@@ -66,6 +99,7 @@ export default function SocialInsuranceCalculator() {
   // 4대보험 계산
   const calculateInsurance = (): InsuranceCalculation => {
     const salary = parseFloat(monthlySalary.replace(/[^\d.]/g, "")) || 0;
+    const rates = getInsuranceRates(employeeCount);
     
     if (salary === 0) {
       return {
@@ -85,9 +119,16 @@ export default function SocialInsuranceCalculator() {
     const longTermCare = Math.round(salary * (rates.longTermCare / 100));
     const employmentInsurance = Math.round(salary * (rates.employmentInsurance / 100));
 
-    // 근로자 부담금 (국민연금 4.5%, 건강보험 3.545%, 장기요양 0.459%, 고용보험 0.9%)
+    // 근로자 부담금 (국민연금 4.5%, 건강보험 3.545%, 장기요양 0.459%, 고용보험 비율은 규모별 차등)
+    let employeeEmploymentRate = 0.009; // 기본 0.9%
+    if (employeeCount === 'over150') {
+      employeeEmploymentRate = 0.0075; // 0.75% (감면)
+    } else if (employeeCount === 'government') {
+      employeeEmploymentRate = 0.01; // 1.0% (대기업)
+    }
+
     const employeeShare = Math.round(salary * 0.045) + Math.round(salary * 0.03545) + 
-                         Math.round(salary * 0.00459) + Math.round(salary * 0.009);
+                         Math.round(salary * 0.00459) + Math.round(salary * employeeEmploymentRate);
     
     // 사업주 부담금 (나머지)
     const employerShare = nationalPension + healthInsurance + longTermCare + employmentInsurance - employeeShare;
