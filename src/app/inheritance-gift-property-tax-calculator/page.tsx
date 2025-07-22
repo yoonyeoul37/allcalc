@@ -73,7 +73,9 @@ export default function InheritanceGiftPropertyTaxCalculator() {
   const [totalPropertyValue, setTotalPropertyValue] = useState(0);
 
   const formatNumber = (value: string) => {
-    return value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    // 이미 콤마가 있는 경우 제거 후 다시 포맷팅
+    const cleanValue = value.replace(/,/g, '');
+    return cleanValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
 
   const parseNumber = (value: string) => {
