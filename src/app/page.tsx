@@ -324,7 +324,7 @@ export default function Home() {
               
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <FaFileInvoiceDollar className="text-3xl text-gray-600" />
+                                     <FaFileInvoiceDollar className="text-3xl text-gray-600" />
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">사업자/프리랜서</h2>
                 <div className="space-y-1">
@@ -340,7 +340,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <FaGlobe className="text-3xl text-gray-600" />
+                                     <FaGlobe className="text-3xl text-gray-600" />
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">해외/국제/무역</h2>
                 <div className="space-y-1">
@@ -352,7 +352,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <FaTools className="text-3xl text-gray-600" />
+                                     <FaTools className="text-3xl text-gray-600" />
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">건설/공사/인테리어</h2>
                 <div className="space-y-1">
@@ -367,7 +367,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <FaSearch className="text-3xl text-gray-600" />
+                                     <FaSearch className="text-3xl text-gray-600" />
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">네트워크/IT/개발</h2>
                 <div className="space-y-1">
@@ -380,7 +380,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <FaCalculator className="text-3xl text-gray-600" />
+                                     <FaCalculator className="text-3xl text-gray-600" />
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">자동차/교통</h2>
                 <div className="space-y-1">
@@ -393,7 +393,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <FaGavel className="text-3xl text-gray-600" />
+                                     <FaGavel className="text-3xl text-gray-600" />
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">가정법률/개인회생</h2>
                 <div className="space-y-1">
@@ -405,7 +405,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <FaHome className="text-3xl text-gray-600" />
+                                     <FaHome className="text-3xl text-gray-600" />
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">부동산/임대차</h2>
                 <div className="space-y-1">
@@ -419,7 +419,7 @@ export default function Home() {
 
               <div className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <FaLightbulb className="text-3xl text-gray-600" />
+                                     <FaLightbulb className="text-3xl text-gray-600" />
                 </div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4">생활/요금</h2>
                 <div className="space-y-1">
