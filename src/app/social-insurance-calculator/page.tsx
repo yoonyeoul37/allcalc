@@ -8,44 +8,47 @@ import {
   FaMoneyBillWave,
   FaInfoCircle,
   FaUserTie,
-  FaDollarSign
+  FaDollarSign,
+  FaExclamationTriangle
 } from "react-icons/fa";
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
 
 interface InsuranceCalculation {
-  healthInsurance: number; // 건강보험
   nationalPension: number; // 국민연금
+  healthInsurance: number; // 건강보험
+  longTermCare: number; // 장기요양보험
   employmentInsurance: number; // 고용보험
-  industrialAccident: number; // 산재보험
   totalInsurance: number; // 총 보험료
-  employerShare: number; // 사업주 부담
-  employeeShare: number; // 근로자 부담
+  employeeShare: number; // 근로자 부담금
+  employerShare: number; // 사업주 부담금
 }
 
 interface InsuranceRate {
-  healthInsurance: number; // 건강보험율
   nationalPension: number; // 국민연금율
+  healthInsurance: number; // 건강보험율
+  longTermCare: number; // 장기요양보험율
   employmentInsurance: number; // 고용보험율
-  industrialAccident: number; // 산재보험율
 }
 
 export default function SocialInsuranceCalculator() {
+  const [activeTab, setActiveTab] = useState<'total' | 'national' | 'health' | 'employment' | 'industrial'>('total');
   const [monthlySalary, setMonthlySalary] = useState("");
-  const [insuranceType, setInsuranceType] = useState<"employee" | "employer" | "freelancer">("employee");
-  const [calculationType, setCalculationType] = useState<"monthly" | "annual">("monthly");
+  const [employeeCount, setEmployeeCount] = useState<'under150' | 'over150' | 'over1000' | 'government'>('under150');
   
-  // 2024년 기준 보험료율
+  // 2025년 기준 보험료율
   const rates: InsuranceRate = {
-    healthInsurance: 3.545, // 건강보험 3.545%
     nationalPension: 9.0, // 국민연금 9.0%
-    employmentInsurance: 1.05, // 고용보험 1.05%
-    industrialAccident: 0.8 // 산재보험 0.8% (업종별 차등)
+    healthInsurance: 7.09, // 건강보험 7.09%
+    longTermCare: 0.918, // 장기요양보험 0.918%
+    employmentInsurance: 1.8 // 고용보험 1.8%
   };
 
   // 콤마 포맷팅 함수
   const formatNumber = (value: string) => {
-    return value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    // 이미 콤마가 있는 경우 제거 후 다시 포맷팅
+    const cleanValue = value.replace(/,/g, '');
+    return cleanValue.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
   // 숫자만 추출 함수
@@ -61,210 +64,268 @@ export default function SocialInsuranceCalculator() {
   };
 
   // 4대보험 계산
-  const calculateInsurance = ((): InsuranceCalculation => {
+  const calculateInsurance = (): InsuranceCalculation => {
     const salary = parseFloat(monthlySalary.replace(/[^\d.]/g, "")) || 0;
-    const annualSalary = calculationType === "monthly" ? salary * 12 : salary;
-    const monthlySalaryForCalc = calculationType === "monthly" ? salary : salary / 12;
     
     if (salary === 0) {
       return {
-        healthInsurance: 0,
         nationalPension: 0,
+        healthInsurance: 0,
+        longTermCare: 0,
         employmentInsurance: 0,
-        industrialAccident: 0,
         totalInsurance: 0,
-        employerShare: 0,
-        employeeShare: 0
+        employeeShare: 0,
+        employerShare: 0
       };
     }
 
     // 보험료 계산
-    const healthInsurance = Math.round(monthlySalaryForCalc * (rates.healthInsurance / 100));
-    const nationalPension = Math.round(monthlySalaryForCalc * (rates.nationalPension / 100));
-    const employmentInsurance = Math.round(monthlySalaryForCalc * (rates.employmentInsurance / 100));
-    const industrialAccident = Math.round(monthlySalaryForCalc * (rates.industrialAccident / 100));
+    const nationalPension = Math.round(salary * (rates.nationalPension / 100));
+    const healthInsurance = Math.round(salary * (rates.healthInsurance / 100));
+    const longTermCare = Math.round(salary * (rates.longTermCare / 100));
+    const employmentInsurance = Math.round(salary * (rates.employmentInsurance / 100));
 
-    let employerShare: number;
-    let employeeShare: number;
+    // 근로자 부담금 (국민연금 4.5%, 건강보험 3.545%, 장기요양 0.459%, 고용보험 0.9%)
+    const employeeShare = Math.round(salary * 0.045) + Math.round(salary * 0.03545) + 
+                         Math.round(salary * 0.00459) + Math.round(salary * 0.009);
+    
+    // 사업주 부담금 (나머지)
+    const employerShare = nationalPension + healthInsurance + longTermCare + employmentInsurance - employeeShare;
 
-    switch (insuranceType) {
-      case "employee": // 근로자
-        employerShare = healthInsurance + nationalPension + employmentInsurance + industrialAccident;
-        employeeShare = healthInsurance + nationalPension + employmentInsurance;
-        break;
-      
-      case "employer": // 사업주
-        employerShare = healthInsurance + nationalPension + employmentInsurance + industrialAccident;
-        employeeShare = 0;
-        break;
-      
-      case "freelancer": // 프리랜서
-        employerShare = 0;
-        employeeShare = healthInsurance + nationalPension + employmentInsurance + industrialAccident;
-        break;
-      
-      default:
-        employerShare = healthInsurance + nationalPension + employmentInsurance + industrialAccident;
-        employeeShare = healthInsurance + nationalPension + employmentInsurance;
-    }
-
-    const totalInsurance = employerShare + employeeShare;
+    const totalInsurance = nationalPension + healthInsurance + longTermCare + employmentInsurance;
 
     return {
-      healthInsurance,
       nationalPension,
+      healthInsurance,
+      longTermCare,
       employmentInsurance,
-      industrialAccident,
       totalInsurance,
-      employerShare,
-      employeeShare
+      employeeShare,
+      employerShare
     };
-  })();
+  };
+
+  const result = calculateInsurance();
 
   return (
     <div className="min-h-screen bg-gray-100">
       <Header onSearch={() => {}} />
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <div className="flex items-center mb-6">
-            <FaShieldAlt className="text-3xl text-black mr-3" />
-            <div>
-              <h1 className="text-3xl font-bold text-gray-800">4대보험 계산기</h1>
-              <p className="text-gray-600">건강보험, 국민연금, 고용보험, 산재보험 계산</p>
+          <div className="flex items-center justify-between mb-6">
+            <h1 className="text-3xl font-bold text-gray-800">4대사회보험료 모의계산</h1>
+            <button className="text-gray-500 hover:text-gray-700">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* 탭 메뉴 */}
+          <div className="flex space-x-1 mb-6 bg-gray-100 rounded-lg p-1">
+            <button
+              onClick={() => setActiveTab('total')}
+              className={`flex-1 py-3 px-4 rounded-md font-medium transition-all ${
+                activeTab === 'total'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-600 hover:text-black'
+              }`}
+            >
+              전체
+            </button>
+            <button
+              onClick={() => setActiveTab('national')}
+              className={`flex-1 py-3 px-4 rounded-md font-medium transition-all ${
+                activeTab === 'national'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-600 hover:text-black'
+              }`}
+            >
+              국민연금
+            </button>
+            <button
+              onClick={() => setActiveTab('health')}
+              className={`flex-1 py-3 px-4 rounded-md font-medium transition-all ${
+                activeTab === 'health'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-600 hover:text-black'
+              }`}
+            >
+              건강보험
+            </button>
+            <button
+              onClick={() => setActiveTab('employment')}
+              className={`flex-1 py-3 px-4 rounded-md font-medium transition-all ${
+                activeTab === 'employment'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-600 hover:text-black'
+              }`}
+            >
+              고용보험
+            </button>
+            <button
+              onClick={() => setActiveTab('industrial')}
+              className={`flex-1 py-3 px-4 rounded-md font-medium transition-all ${
+                activeTab === 'industrial'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-600 hover:text-black'
+              }`}
+            >
+              산재보험
+            </button>
+          </div>
+
+          {/* 정보 메시지 */}
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+            <div className="flex items-center">
+              <FaExclamationTriangle className="text-yellow-600 mr-2" />
+              <span className="text-gray-700">2025년 기준(계산내용은 모의계산이기 때문에 실제와 다를 수 있습니다.)</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* 입력 섹션 */}
-            <div className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaUserTie className="inline mr-2" />
-                  보험 가입자 유형
-                </label>
-                <select
-                  value={insuranceType}
-                  onChange={(e) => setInsuranceType(e.target.value as "employee" | "employer" | "freelancer")}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
-                  style={{ color: '#000000 !important' }}
-                >
-                  <option value="employee">근로자</option>
-                  <option value="employer">사업주</option>
-                  <option value="freelancer">프리랜서</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaCalculator className="inline mr-2" />
-                  계산 기준
-                </label>
-                <select
-                  value={calculationType}
-                  onChange={(e) => setCalculationType(e.target.value as "monthly" | "annual")}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
-                  style={{ color: '#000000 !important' }}
-                >
-                  <option value="monthly">월 급여 기준</option>
-                  <option value="annual">연 급여 기준</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaMoneyBillWave className="inline mr-2" />
-                  {calculationType === "monthly" ? "월 급여" : "연 급여"} (원)
-                </label>
+          {/* 입력 섹션 */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                월급여
+              </label>
+              <div className="flex items-center space-x-2">
                 <input
                   type="text"
                   value={monthlySalary}
                   onChange={(e) => handleInputChange(e.target.value, setMonthlySalary)}
-                  placeholder={`${calculationType === "monthly" ? "월 급여" : "연 급여"}를 입력하세요`}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003366] focus:border-[#003366] focus:outline-none text-black"
+                  placeholder="2,000,000"
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-black"
                   style={{ color: '#000000 !important' }}
                 />
+                <span className="text-gray-600">원</span>
+                <button
+                  onClick={() => {}} // 계산 함수
+                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  계산
+                </button>
+                <button
+                  onClick={() => setMonthlySalary("")}
+                  className="px-6 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors"
+                >
+                  초기화
+                </button>
               </div>
             </div>
 
-            {/* 결과 섹션 */}
-            <div className="space-y-4">
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <h3 className="text-lg font-semibold text-black mb-3">보험료 계산 결과</h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>건강보험 ({rates.healthInsurance}%):</span>
-                    <span className="font-semibold">{calculateInsurance.healthInsurance.toLocaleString()}원</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>국민연금 ({rates.nationalPension}%):</span>
-                    <span className="font-semibold">{calculateInsurance.nationalPension.toLocaleString()}원</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>고용보험 ({rates.employmentInsurance}%):</span>
-                    <span className="font-semibold">{calculateInsurance.employmentInsurance.toLocaleString()}원</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>산재보험 ({rates.industrialAccident}%):</span>
-                    <span className="font-semibold">{calculateInsurance.industrialAccident.toLocaleString()}원</span>
-                  </div>
-                  <div className="border-t pt-2">
-                    <div className="flex justify-between text-lg font-bold text-black">
-                      <span>총 보험료:</span>
-                      <span>{calculateInsurance.totalInsurance.toLocaleString()}원</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-green-50 p-4 rounded-lg">
-                <h3 className="text-lg font-semibold text-black mb-3">부담 구분</h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>사업주 부담:</span>
-                    <span className="font-semibold text-blue-600">{calculateInsurance.employerShare.toLocaleString()}원</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>근로자 부담:</span>
-                    <span className="font-semibold text-green-600">{calculateInsurance.employeeShare.toLocaleString()}원</span>
-                  </div>
-                </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                근로자수
+              </label>
+              <div className="space-y-2">
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="employeeCount"
+                    value="under150"
+                    checked={employeeCount === 'under150'}
+                    onChange={(e) => setEmployeeCount(e.target.value as any)}
+                    className="mr-2"
+                  />
+                  <span className="text-sm">150인 미만 기업</span>
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="employeeCount"
+                    value="over150"
+                    checked={employeeCount === 'over150'}
+                    onChange={(e) => setEmployeeCount(e.target.value as any)}
+                    className="mr-2"
+                  />
+                  <span className="text-sm">150인 이상(우선지원 대상기업)</span>
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="employeeCount"
+                    value="over1000"
+                    checked={employeeCount === 'over1000'}
+                    onChange={(e) => setEmployeeCount(e.target.value as any)}
+                    className="mr-2"
+                  />
+                  <span className="text-sm">150인 이상 1,000인 미만 기업</span>
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="employeeCount"
+                    value="government"
+                    checked={employeeCount === 'government'}
+                    onChange={(e) => setEmployeeCount(e.target.value as any)}
+                    className="mr-2"
+                  />
+                  <span className="text-sm">1,000인 이상 기업, 국가 지방자치단체</span>
+                </label>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* 안내 정보 */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <div className="flex items-center mb-4">
-            <FaInfoCircle className="text-2xl text-black mr-3" />
-            <h2 className="text-xl font-bold text-gray-800">4대보험 안내</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-semibold text-gray-800 mb-2">보험료율 (2024년 기준)</h3>
-              <div className="space-y-2 text-sm text-gray-600">
-                <div>• <strong>건강보험</strong>: 3.545% (사업주 3.545%, 근로자 3.545%)</div>
-                <div>• <strong>국민연금</strong>: 9.0% (사업주 4.5%, 근로자 4.5%)</div>
-                <div>• <strong>고용보험</strong>: 1.05% (사업주 0.8%, 근로자 0.25%)</div>
-                <div>• <strong>산재보험</strong>: 0.8% (사업주 전액 부담)</div>
-              </div>
+          {/* 계산 결과 테이블 */}
+          {monthlySalary && (
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">구분</th>
+                    <th className="border border-gray-300 px-4 py-3 text-center font-semibold">보험료 총액</th>
+                    <th className="border border-gray-300 px-4 py-3 text-center font-semibold">근로자 부담금</th>
+                    <th className="border border-gray-300 px-4 py-3 text-center font-semibold">사업주 부담금</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-3 font-medium">국민연금</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{result.nationalPension.toLocaleString()}원</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{Math.round(result.nationalPension / 2).toLocaleString()}원</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{Math.round(result.nationalPension / 2).toLocaleString()}원</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-3 font-medium">건강보험</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{result.healthInsurance.toLocaleString()}원</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{Math.round(result.healthInsurance / 2).toLocaleString()}원</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{Math.round(result.healthInsurance / 2).toLocaleString()}원</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-3 font-medium">건강보험(장기요양)</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{result.longTermCare.toLocaleString()}원</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{Math.round(result.longTermCare / 2).toLocaleString()}원</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{Math.round(result.longTermCare / 2).toLocaleString()}원</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-3 font-medium">고용보험</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{result.employmentInsurance.toLocaleString()}원</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{Math.round(result.employmentInsurance * 0.4).toLocaleString()}원</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center">{Math.round(result.employmentInsurance * 0.6).toLocaleString()}원</td>
+                  </tr>
+                  <tr className="bg-blue-50">
+                    <td className="border border-gray-300 px-4 py-3 font-bold">합계</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center font-bold">{result.totalInsurance.toLocaleString()}원</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center font-bold">{result.employeeShare.toLocaleString()}원</td>
+                    <td className="border border-gray-300 px-4 py-3 text-center font-bold">{result.employerShare.toLocaleString()}원</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            
-            <div>
-              <h3 className="font-semibold text-gray-800 mb-2">가입자별 특징</h3>
-              <div className="space-y-2 text-sm text-gray-600">
-                <div>• <strong>근로자</strong>: 사업주와 분담, 4대보험 모두 가입</div>
-                <div>• <strong>사업주</strong>: 전액 부담, 근로자 부담분 포함</div>
-                <div>• <strong>프리랜서</strong>: 전액 개인 부담, 산재보험 제외</div>
-                <div>• <strong>산재보험</strong>: 업종별 차등 적용 (0.5~27%)</div>
-              </div>
-            </div>
+          )}
+
+          {/* 하단 안내 */}
+          <div className="mt-6 space-y-4">
+            <p className="text-red-600 text-sm">※ 산재보험료는 별도로 확인하시기 바랍니다.</p>
+            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              산재보험료율 및 산재보험료 알아보기
+            </button>
           </div>
         </div>
 
         {/* 관련 계산기 */}
-        <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
+        <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
             <FaCalculator className="mr-2 text-black" />
             관련 계산기
